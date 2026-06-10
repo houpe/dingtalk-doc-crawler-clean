@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 数据目录
+output/
+site/
+
+# AI 相关（保留，不上传）
+ai/
+
+# 历史遗留（待清理）
+dingtalk_docs_html/
+docs-site/
+gitbook/
+manual_source/
+md-viewer/
+"根目录"/
+output_optimized/
+output_reformatted/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Cache
+.pytest_cache/
+.ruff_cache/
