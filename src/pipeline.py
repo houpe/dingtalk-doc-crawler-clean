@@ -891,6 +891,15 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
 
     _build_sidebar(docs_dir, vp_dir)
 
+    # 防御：清理可能残留的 .js 配置文件。
+    # VitePress 会优先加载 config.js / sidebar-data.js（而非 .mts/.mjs），
+    # 若存在旧版 .js 配置，会让 pipeline 生成的 .mts/.mjs 配置失效，
+    # 表现为 sidebar 显示陈旧结构。每次构建前删除，确保 .mts/.mjs 生效。
+    for stale in ("config.js", "sidebar-data.js", "config.ts", "sidebar-data.ts"):
+        stale_path = vp_dir / stale
+        if stale_path.exists():
+            stale_path.unlink()
+
     config_mts = vp_dir / "config.mts"
     if not config_mts.exists():
         config_mts.write_text(VP_CONFIG_MTS, encoding="utf-8")
@@ -1143,8 +1152,9 @@ def _flatten_docs(dir_path: Path, rel_prefix: str) -> list[dict]:
             continue
         raw_title = md.replace(".md", "")
         title = _clean_sidebar_text(raw_title)
-        rel = f"{rel_prefix}/{md}"
-        items.append({"text": title, "link": f"/{rel}"})
+        # rel_prefix 形如 "/一、网点操作/01物料购买篇"，拼接后去掉 .md（clean URL）
+        link = f"{rel_prefix}/{raw_title}".replace("//", "/")
+        items.append({"text": title, "link": link})
 
     # 再递归子目录，把里面的文章提上来
     for d in sorted(dirs):
@@ -1162,6 +1172,11 @@ def _flatten_docs(dir_path: Path, rel_prefix: str) -> list[dict]:
 
 
 def _vp_build_sidebar(dir_path: Path, rel_prefix: str) -> list:
+    """递归生成保留层级的 sidebar：分类作为分组，文章作为叶子。
+
+    层级：模块(一级) → 篇章(二级) → 文章(三级)，若篇章下还有文件夹则继续递归。
+    不显式设置 collapsed，由 VitePress 默认行为决定展开/折叠。
+    """
     items: list[dict] = []
     entries = sorted(os.listdir(dir_path))
     dirs = [i for i in entries if (dir_path / i).is_dir() and i != "images" and not i.startswith(".")]
@@ -1170,13 +1185,12 @@ def _vp_build_sidebar(dir_path: Path, rel_prefix: str) -> list:
     for d in sorted(dirs):
         full = dir_path / d
         sub_rel = f"{rel_prefix}/{d}"
-        sub_items = _flatten_docs(full, sub_rel)
+        sub_items = _vp_build_sidebar(full, sub_rel)
         if not sub_items:
             continue
         _ensure_dir_index(full, sub_items)
         items.append({
             "text": _clean_sidebar_text(d),
-            "collapsed": True,
             "items": sub_items,
         })
 
@@ -1185,8 +1199,8 @@ def _vp_build_sidebar(dir_path: Path, rel_prefix: str) -> list:
             continue
         raw_title = md.replace(".md", "")
         title = _clean_sidebar_text(raw_title)
-        rel = f"{rel_prefix}/{md}"
-        items.append({"text": title, "link": f"/{rel}"})
+        link = f"{rel_prefix}/{raw_title}".replace("//", "/")
+        items.append({"text": title, "link": link})
 
     return items
 
