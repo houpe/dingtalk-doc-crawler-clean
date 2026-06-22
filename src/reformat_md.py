@@ -71,6 +71,33 @@ PLACEHOLDER_LINES = {"待完善", "待补充", "补充中", "TBD", "TODO"}
 TRANSITION_TO_ORDERED = {"流程说明", "操作流程", "操作流程说明", "步骤如下", "流程如下", "推荐顺序"}
 TRANSITION_TO_BULLET = {"清单如下", "如下清单", "清单", "补充"}
 
+# 独立成行的纯数字/序号（含 span 包裹），需要删除
+_ISOLATED_NUM_RE = re.compile(
+    r"^(?:<[^>]+>)?[\s]*(?:0\d+|\d{1,2})[\s]*(?:</[^>]+>)?$"
+)
+
+# 容器语法错误修复：::: 后紧接数字（如 ::: 1. xxx）
+_BROKEN_CONTAINER_RE = re.compile(r"^:::\s*(\d+\.)")
+
+
+def strip_html_tags(text: str) -> str:
+    """剥离 HTML span/div/p 标签，提取纯文本内容"""
+    text = re.sub(r"<span[^>]*>", "", text)
+    text = re.sub(r"</span>", "", text)
+    text = re.sub(r"<div[^>]*>", "", text)
+    text = re.sub(r"</div>", "", text)
+    text = re.sub(r"<p[^>]*>", "", text)
+    text = re.sub(r"</p>", "", text)
+    text = re.sub(r"<br\s*/?>", "\n", text)
+    return text
+
+
+def fix_broken_containers(md_text: str) -> str:
+    """修复 ::: 1. xxx 这类错误的容器语法"""
+    def _fix(m):
+        return "::: info " + m.group(1)
+    return re.sub(_BROKEN_CONTAINER_RE, _fix, md_text)
+
 
 def _normalize_line(line: str) -> str:
     line = line.replace("\xa0", " ")
@@ -86,6 +113,8 @@ def strip_leading_markers(text: str) -> str:
         r"^0\d+(?:-\d+)*(?=[\u4e00-\u9fffA-Za-z])\s*",
         r"^\d+\s+",
         r"^[A-Za-z]\s*[)）.．、:-]\s*",
+        # 复杂序号模式：如 "4.第四步"、"5.第五步"
+        r"^\d+\.\s*第\s*[一二三四五六七八九十百零〇两\d]+\s*[章节步项条部分]\s*[:：、.\-]?\s*",
         r"^第\s*[一二三四五六七八九十百零〇两\d]+\s*[章节步项条部分]\s*[:：、.\-]?\s*",
         r"^步骤\s*[一二三四五六七八九十百零〇两\d]+\s*[:：、.\-]?\s*",
         r"^\d+(?:\.\d+)*\s*[:：、.)．\-]\s*",
@@ -124,12 +153,19 @@ def clean_heading_text(text: str) -> str:
 
 def optimize_text(md_text: str) -> str:
     text = md_text
+    # 1. 剥离 HTML 标签（span/div/p），提取纯文本
+    text = strip_html_tags(text)
+    # 2. 钉钉 emoji 替换
     for label, emo in EMOJI_MAP.items():
         text = re.sub(rf"\[{re.escape(label)}\][ \t]*", f"{emo} ", text)
+    # 3. 标签化文字替换
     text = re.sub(r"(?m)^\s*注意[:：]\s*", "⚠️ 注意：", text)
     text = re.sub(r"(?m)^\s*提示[:：]\s*", "💡 提示：", text)
     text = re.sub(r"(?m)^\s*说明[:：]\s*", "📝 说明：", text)
     text = re.sub(r"(?m)^\s*步骤[:：]\s*", "✅ 步骤：", text)
+    # 4. 修复错误的容器语法
+    text = fix_broken_containers(text)
+    # 5. 清理行内多余空格和行尾空格
     text = re.sub(r"[ \t]+\n", "\n", text)
     text = re.sub(r"[ \t]+", " ", text)
     return text
@@ -239,9 +275,6 @@ def restructure_markdown(md_text: str) -> str:
     intro_list_mode: str | None = None
     ordered_list_index = 0
     in_toc_section = False
-    # 标题计数器
-    h2_counter = 0
-    h3_counter = 0
     i = 0
 
     def close_list() -> None:
@@ -297,6 +330,11 @@ def restructure_markdown(md_text: str) -> str:
             else:
                 i += 1
                 continue
+
+        # 跳过独立成行的纯数字序号行（如 "01" "02" "001"）
+        if _ISOLATED_NUM_RE.match(line):
+            i += 1
+            continue
 
         if not line:
             intro_list_mode = None
@@ -358,8 +396,6 @@ def restructure_markdown(md_text: str) -> str:
                         marks = "##"
                         inside_main_section = True
                         original_level = 2
-                        h2_counter += 1
-                        h3_counter = 0
                     else:
                         # 第一个 H1 保持
                         seen_top_h1 = True
@@ -368,25 +404,11 @@ def restructure_markdown(md_text: str) -> str:
                     # H2 在 main section 内降级为 H3
                     marks = "###"
                     original_level = 3
-                    h3_counter += 1
-                else:
-                    # 其他情况：更新计数器
-                    if original_level == 2:
-                        h2_counter += 1
-                        h3_counter = 0
-                    elif original_level == 3:
-                        h3_counter += 1
                 
                 cleaned = clean_heading_text(text)
                 if cleaned:
-                    # 添加序号
-                    if original_level == 2:
-                        line = f"{marks} {h2_counter}. {cleaned}"
-                    elif original_level == 3:
-                        line = f"{marks} {h2_counter}.{h3_counter} {cleaned}"
-                    else:
-                        # H1 不需要序号
-                        line = f"{marks} {cleaned}"
+                    # 不添加数字序号（原文档已有 01、02 等结构编号，重复添加会导致冗余）
+                    line = f"{marks} {cleaned}"
                 else:
                     line = f"{marks} {text}"
             else:
@@ -621,13 +643,230 @@ def discover_md_files(root: Path) -> list[Path]:
     return found
 
 
+def _normalize_ordered_list_numbers(md_text: str) -> str:
+    """将连续 `1. ` 的有序列表项规范化为递增序号 1. 2. 3. ...（支持 blockquote 嵌套）"""
+    lines = md_text.splitlines()
+    out: list[str] = []
+    counter = 0
+    empty_lines_buffer: list[str] = []
+
+    def flush():
+        for el in empty_lines_buffer:
+            out.append(el)
+        empty_lines_buffer.clear()
+
+    def is_blank(s: str) -> bool:
+        return s.strip() == "" or re.match(r"^>+\s*$", s)
+
+    for line in lines:
+        stripped = line.strip()
+        # 检查是否是以 `1.` 开头的有序列表项（含 blockquote 嵌套）
+        m = re.match(r"^(>+\s*)1\.\s+(.+)$", stripped) if stripped else None
+        if m:
+            flush()
+            counter += 1
+            prefix = m.group(1)
+            content = m.group(2)
+            out.append(f"{prefix}{counter}. {content}")
+        elif is_blank(line):
+            # 空行或 `>` 视为空
+            empty_lines_buffer.append(line)
+        else:
+            flush()
+            out.append(line)
+            counter = 0
+    flush()
+    return "\n".join(out)
+
+
+def strip_bold_in_headings(md_text: str) -> str:
+    """清理标题中的 ** 包裹，保持标题格式统一"""
+    lines = md_text.splitlines()
+    out = []
+    for line in lines:
+        # 匹配标题行并清理其中的 **
+        if re.match(r'^#{1,6}\s+', line):
+            # 清理标题中的 **
+            line = re.sub(r'\*\*([^*]+)\*\*', r'\1', line)
+        out.append(line)
+    return "\n".join(out)
+
+
+def remove_trailing_index(md_text: str) -> str:
+    """移除文件末尾的"更多操作索引"导航内容"""
+    lines = md_text.splitlines()
+    out = []
+    in_index_section = False
+    
+    for line in lines:
+        # 检测"更多操作索引"关键词
+        if '更多操作索引' in line:
+            in_index_section = True
+            continue
+        
+        # 如果已进入索引区域，检查是否是索引内容
+        if in_index_section:
+            # 索引区域的特征：包含 📌、1️⃣、2️⃣、3️⃣ 等
+            if re.match(r'^[\s>]*[\s]*(必知必会|网点|中心|云仓|黑眼圈)', line):
+                continue
+            # 遇到 --- 分隔线也跳过
+            if line.strip() == '---':
+                continue
+            # 如果是空行且之前是索引内容，继续跳过
+            if line.strip() == '':
+                continue
+            # 其他内容说明索引区域结束
+            in_index_section = False
+        
+        out.append(line)
+    
+    # 清理末尾多余空行
+    while out and out[-1].strip() == '':
+        out.pop()
+    
+    return "\n".join(out)
+
+
 def process_file(src: Path, dst: Path) -> None:
     md_text = src.read_text(encoding="utf-8", errors="ignore")
     md_text = optimize_text(md_text)
     md_text = restructure_markdown(md_text)
     md_text = merge_adjacent_containers(md_text)
+    # 后处理：修复钉钉原文 `:::` 块（非 VitePress 容器）
+    md_text = _fix_dingtalk_callout(md_text)
+    # 后处理：修复未闭合的容器（关键！）
+    md_text = fix_unclosed_containers(md_text)
+    # 后处理：规范化有序列表序号
+    md_text = _normalize_ordered_list_numbers(md_text)
+    # 后处理：清理标题中的 ** 包裹
+    md_text = strip_bold_in_headings(md_text)
+    # 后处理：移除"更多操作索引"内容
+    md_text = remove_trailing_index(md_text)
     dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_text(md_text, encoding="utf-8")
+
+
+def fix_unclosed_containers(md_text: str) -> str:
+    """修复未闭合的 VitePress 容器。
+    
+    问题::: warning 后跟内容，没有闭合标记，导致整个后续内容被包住
+    解决：
+    1. 遇到标题时，如果前一个容器未闭合，先闭合它
+    2. 处理嵌套在 blockquote (> ) 内的标题
+    3. 处理连续多个容器的情况
+    """
+    lines = md_text.splitlines()
+    out: list[str] = []
+    container_stack: list[str] = []  # 跟踪开放的容器类型
+    
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        
+        # 去除 blockquote 前缀后检查标题
+        # 例如 "> ## 第二步" 应该被识别为标题
+        content_after_quote = stripped.lstrip('>').strip()
+        is_heading = re.match(r'^#{1,6}\s+', content_after_quote)
+        
+        # 如果遇到标题，先闭合所有未闭合的容器
+        if is_heading and container_stack:
+            for _ in range(len(container_stack)):
+                out.append(':::')
+                out.append('')  # 空行
+            container_stack.clear()
+        
+        # 检查容器开始 ::: type（包括在 blockquote 内的情况）
+        container_in_quote = re.match(r'^>\s*:::\s+(tip|warning|danger|info|details)', stripped)
+        container_start = re.match(r'^:::\s+(tip|warning|danger|info|details)(\s+.*)?', stripped)
+        
+        if container_in_quote:
+            container_type = container_in_quote.group(1)
+            container_stack.append(container_type)
+            out.append(line)
+            continue
+        
+        if container_start:
+            container_type = container_start.group(1)
+            container_stack.append(container_type)
+            out.append(line)
+            continue
+        
+        # 检查容器结束 :::（包括在 blockquote 内的情况）
+        if stripped == ':::' or stripped == '> :::':
+            if container_stack:
+                container_stack.pop()
+            out.append(line)
+            continue
+        
+        # 检查行内容器结束 ::: 后跟其他内容
+        if re.match(r'^:::\s*$', content_after_quote):
+            if container_stack:
+                container_stack.pop()
+            out.append(line)
+            continue
+        
+        out.append(line)
+    
+    # 文件结束时，如果还有未闭合的容器，全部闭合
+    while container_stack:
+        out.append(':::')
+        out.append('')
+        container_stack.pop()
+    
+    return "\n".join(out)
+
+
+_VP_CONTAINER_TYPES = {'tip', 'warning', 'danger', 'info', 'details'}
+
+
+def _fix_dingtalk_callout(md_text: str) -> str:
+    """将钉钉原文的 `:::` 引用块转为 VitePress blockquote/容器"""
+    lines = md_text.splitlines()
+    out: list[str] = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        m = re.match(r"^:::(.*)$", line.strip())
+        if m:
+            rest = m.group(1).strip()
+            # 检查是否是有效的 VitePress 容器开头
+            is_vp = False
+            for vp_type in _VP_CONTAINER_TYPES:
+                if rest == vp_type or rest.startswith(f"{vp_type} "):
+                    is_vp = True
+                    break
+            if is_vp:
+                out.append(line)
+                i += 1
+                continue
+            # 非 VitePress 容器 → 转为 blockquote 块
+            i += 1
+            block_content: list[str] = []
+            # 如果 `:::` 后面有内容，先处理
+            if rest:
+                block_content.append(rest)
+            # 收集到配对的结束 `:::`（如果有的话）
+            while i < len(lines):
+                curr = lines[i]
+                if curr.strip() == ":::":
+                    i += 1
+                    break
+                block_content.append(curr)
+                i += 1
+            # 将收集到的块转为 blockquote
+            for bline in block_content:
+                content = bline.strip()
+                if content:
+                    out.append(f"> {content}")
+                else:
+                    out.append(">")
+            out.append("")
+            continue
+        else:
+            out.append(line)
+        i += 1
+    while out and out[-1] == "":
+        out.pop()
+    return "\n".join(out)
 
 
 def main() -> None:
@@ -668,13 +907,22 @@ def main() -> None:
     images_dst = dst_dir / "根目录"
     if images_src.exists():
         print("Copying images...")
+        copied = 0
+        skipped = 0
         for img_dir in images_src.rglob("images"):
             if img_dir.is_dir():
                 rel_img = img_dir.relative_to(images_src)
                 dst_img = images_dst / rel_img
-                if not dst_img.exists():
-                    shutil.copytree(img_dir, dst_img)
-        print("Images copied.")
+                dst_img.mkdir(parents=True, exist_ok=True)
+                for img_file in img_dir.iterdir():
+                    if img_file.is_file() and img_file.suffix.lower() in ('.png','.jpg','.jpeg','.gif','.webp','.svg'):
+                        try:
+                            import shutil as _shutil
+                            _shutil.copy2(img_file, dst_img / img_file.name)
+                            copied += 1
+                        except (FileNotFoundError, PermissionError, OSError) as e:
+                            skipped += 1
+        print(f"Images: {copied} copied, {skipped} skipped.")
 
     print(f"Done! Reformatted {len(md_files)} files to {dst_dir}")
 
