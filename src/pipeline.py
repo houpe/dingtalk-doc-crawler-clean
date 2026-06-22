@@ -27,7 +27,11 @@ SITE_DIR = ROOT / "site"
 DEPLOY_HOST = os.environ.get("DEPLOY_HOST", "root@42.192.205.206")
 DEPLOY_PATH = os.environ.get("DEPLOY_PATH", "/zto")
 
-EXCLUDE_KEYWORDS = ["日志", "周报", "月报", "记录", "更新"]
+EXCLUDE_KEYWORDS = ["日志", "周报", "月报", "记录", "更新", "历史"]
+
+# 精确排除的文件名（不含扩展名）。这些是占位/模板文档，含无法解析的示例链接，
+# 不应进入站点。用精确匹配避免误伤业务文档。
+EXCLUDE_FILE_NAMES = {"操作说明模板"}
 
 
 # ── 输出工具 ────────────────────────────────────────────────────
@@ -116,10 +120,15 @@ def stage_filter(output_dir: Path, extra_keywords: list[str] | None = None) -> d
 
     for md_file in sorted(root_dir.rglob("*.md")):
         title = md_file.stem
+        reason = None
         m = pattern.search(title)
         if m:
+            reason = m.group()
+        elif title in EXCLUDE_FILE_NAMES:
+            reason = "占位模板"
+        if reason:
             rel = md_file.relative_to(root_dir)
-            excluded_files.append((str(rel), m.group()))
+            excluded_files.append((str(rel), reason))
             md_file.unlink(missing_ok=True)
 
     for rel_path, kw in excluded_files:
@@ -156,18 +165,25 @@ def _cleanup_empty_dirs(root: Path) -> None:
 
 # ── Stage 3: Markdown 优化 ─────────────────────────────────────
 
-def stage_optimize(output_dir: Path, use_ai: bool = True, model: str = "deepseek-chat") -> tuple[Path, dict]:
+def stage_optimize(output_dir: Path, use_ai: bool = False, model: str = "deepseek-chat") -> tuple[Path, dict]:
     banner("Stage 3/4: Markdown 优化")
     t0 = time.time()
 
-    reformatted = ROOT / "output_reformatted"
-    if reformatted.exists():
-        shutil.rmtree(reformatted)
+    if use_ai:
+        reformatted = ROOT / "output_reformatted"
+        if reformatted.exists():
+            shutil.rmtree(reformatted)
+        rule_output = reformatted
+    else:
+        rule_output = ROOT / "output_optimized"
+
+    if rule_output.exists() and rule_output.resolve() != output_dir.resolve():
+        shutil.rmtree(rule_output)
 
     print("  [规则引擎] 开始处理...")
     run([sys.executable, str(ROOT / "src" / "reformat_md.py"),
-         "-s", str(output_dir), "-o", str(reformatted)])
-    rule_count = len(list(reformatted.rglob("*.md")))
+         "-s", str(output_dir), "-o", str(rule_output)])
+    rule_count = len(list(rule_output.rglob("*.md")))
     rule_time = time.time() - t0
     print(f"  [规则引擎] 处理 {rule_count} 个文件 ✓ {fmt_time(rule_time)}")
 
@@ -175,9 +191,9 @@ def stage_optimize(output_dir: Path, use_ai: bool = True, model: str = "deepseek
         elapsed = time.time() - t0
         divider()
         summary_line("规则引擎", f"{rule_count} 个 ✓ {fmt_time(rule_time)}")
-        summary_line("AI 优化", "已跳过")
+        summary_line("AI 优化", "已跳过（加 --use-ai 启用）")
         summary_line("耗时", fmt_time(elapsed))
-        return reformatted, {"rule_count": rule_count, "ai_success": 0, "ai_fail": 0, "elapsed": elapsed}
+        return rule_output, {"rule_count": rule_count, "ai_success": 0, "ai_fail": 0, "elapsed": elapsed}
 
     print(f"\n  [DeepSeek AI] 模型: {model}")
     optimized = ROOT / "output_optimized"
@@ -273,9 +289,11 @@ def _copy_images(src_dir: Path, dst_dir: Path) -> None:
 
 # ── Stage 4: VitePress 构建 ───────────────────────────────────
 
-VP_CONFIG_TS = """import { defineConfig } from 'vitepress'
+VP_CONFIG_MTS = """import { defineConfig } from 'vitepress'
+import sidebar from './sidebar-data.mjs'
 
 export default defineConfig({
+  ignoreDeadLinks: true,
   lang: 'zh-CN',
   title: '中通冷链',
   description: '中通冷链操作手册',
@@ -295,7 +313,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/houpe/dingtalk-doc-crawler' },
     ],
 
-    sidebar: _sidebar,
+    sidebar: sidebar,
 
     footer: {
       message: '中通冷链操作手册',
@@ -839,9 +857,6 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
 
     sd = SITE_DIR
     sd.mkdir(parents=True, exist_ok=True)
-    guide_cleanup = sd / "docs" / "guide"
-    if guide_cleanup.exists():
-        shutil.rmtree(guide_cleanup)
     build_dir_existing = sd / "docs" / ".vitepress" / "dist"
     if build_dir_existing.exists():
         shutil.rmtree(build_dir_existing)
@@ -852,30 +867,40 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
         sys.exit(1)
 
     docs_dir = sd / "docs"
-    guide_dir = docs_dir / "guide"
     vp_dir = docs_dir / ".vitepress"
     public_dir = docs_dir / "public"
 
-    os.makedirs(guide_dir, exist_ok=True)
+    os.makedirs(docs_dir, exist_ok=True)
     os.makedirs(vp_dir, exist_ok=True)
     os.makedirs(public_dir, exist_ok=True)
 
-    _vp_copy_content(src_root, guide_dir)
+    # 构建前清理 docs_dir 下的旧内容，避免上次构建遗留的文档/目录残留
+    # （如已删除的文档、废弃的模块目录、操作说明模板.md 的死链）。
+    # 保护 .vitepress（配置/主题持久化）和 public（edit.html/favicon）。
+    _clean_docs_content(docs_dir)
 
-    guide_index = guide_dir / "index.md"
-    if not guide_index.exists():
-        guide_index.write_text("# 中通冷链文档中心\n\n欢迎查阅中通冷链操作手册。请在左侧导航栏选择对应章节。\n", encoding="utf-8")
+    _vp_copy_content(src_root, docs_dir)
 
-    (docs_dir / "index.md").write_text(VP_INDEX_MD, encoding="utf-8")
+    docs_index = docs_dir / "index.md"
+    if not docs_index.exists():
+        docs_index.write_text("# 中通冷链文档中心\n\n欢迎查阅中通冷链操作手册。请在左侧导航栏选择对应章节。\n", encoding="utf-8")
 
-    sidebar = _vp_build_sidebar(guide_dir, "guide")
-    sidebar_str = "const _sidebar = " + json.dumps(sidebar, ensure_ascii=False, indent=2) + "\n"
-    (vp_dir / "config.ts").write_text(sidebar_str + VP_CONFIG_TS, encoding="utf-8")
+    index_md = docs_dir / "index.md"
+    if not index_md.exists():
+        index_md.write_text(VP_INDEX_MD, encoding="utf-8")
+
+    _build_sidebar(docs_dir, vp_dir)
+
+    config_mts = vp_dir / "config.mts"
+    if not config_mts.exists():
+        config_mts.write_text(VP_CONFIG_MTS, encoding="utf-8")
 
     theme_dir = vp_dir / "theme"
     theme_dir.mkdir(exist_ok=True)
-    (theme_dir / "index.js").write_text(THEME_JS_TPL, encoding="utf-8")
-    (theme_dir / "style.css").write_text(VP_STYLE_CSS, encoding="utf-8")
+    if not (theme_dir / "index.js").exists():
+        (theme_dir / "index.js").write_text(THEME_JS_TPL, encoding="utf-8")
+    if not (theme_dir / "style.css").exists():
+        (theme_dir / "style.css").write_text(VP_STYLE_CSS, encoding="utf-8")
 
     (public_dir / ".nojekyll").write_text("", encoding="utf-8")
     (public_dir / "edit.html").write_text(EDIT_HTML, encoding="utf-8")
@@ -908,12 +933,17 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
         encoding="utf-8",
     )
 
-    md_count = len(list(guide_dir.rglob("*.md")))
+    md_count = len(list(docs_dir.rglob("*.md"))) - 1  # subtract index.md
     summary_line("MD 文件数", str(md_count))
 
-    img_fixed = _fix_image_references(guide_dir)
+    img_fixed = _fix_image_references(docs_dir)
     if img_fixed:
         summary_line("图片引用修复", f"{img_fixed} 处 ✓")
+
+    print("\n  Post-process (HTML cleanup + image fix + link fix)...")
+    pp_t0 = time.time()
+    run([sys.executable, str(ROOT / "src" / "post_process.py"), str(docs_dir)])
+    summary_line("Post-process", fmt_time(time.time() - pp_t0))
 
     print("\n  npm install...")
     install_t0 = time.time()
@@ -949,6 +979,23 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
     return {"pages": md_count, "assets": asset_count, "elapsed": elapsed}
 
 
+def _clean_docs_content(docs_dir: Path) -> None:
+    """清理 docs_dir 下的旧文档内容，但保留 .vitepress / public / node_modules。
+
+    每次构建都应基于最新的源文件，避免上次构建遗留的废弃目录、已删除文档
+    或模板文件（死链）残留下来导致构建失败或站点内容陈旧。
+    """
+    KEEP = {".vitepress", "public", "node_modules"}
+    for item in os.listdir(docs_dir):
+        if item in KEEP:
+            continue
+        p = docs_dir / item
+        if p.is_dir():
+            shutil.rmtree(p)
+        else:
+            p.unlink()
+
+
 def _vp_copy_content(src: Path, dst: Path) -> None:
     for item in sorted(os.listdir(src)):
         s = src / item
@@ -956,6 +1003,8 @@ def _vp_copy_content(src: Path, dst: Path) -> None:
         d = dst / safe_name
         if s.is_dir():
             if s.name == "images":
+                if d.exists():
+                    shutil.rmtree(d)
                 shutil.copytree(s, d)
             else:
                 os.makedirs(d, exist_ok=True)
@@ -1023,6 +1072,95 @@ def _clean_sidebar_text(text: str) -> str:
     return text or text
 
 
+def _build_sidebar(guide_dir: Path, vp_dir: Path) -> list:
+    items = _vp_build_sidebar(guide_dir, "")
+    mjs = "export default " + json.dumps(items, ensure_ascii=False, indent=2) + "\n"
+    (vp_dir / "sidebar-data.mjs").write_text(mjs, encoding="utf-8")
+    return items
+
+
+def _ensure_dir_index(dir_path: Path, sub_items: list[dict]) -> None:
+    """确保目录有一个 index.md：自动生成「文章列表」索引页。
+
+    已存在且非空壳的 index.md（用户手写了内容）不覆盖；
+    只覆盖/创建自动生成的空壳（仅一行标题的）。
+    直接读取 dir_path 的真实子项来生成链接，避免依赖清理过的标题文本。
+    """
+    index_md = dir_path / "index.md"
+    title = _clean_sidebar_text(dir_path.name)
+
+    # 已存在且不是空壳 -> 保留用户内容
+    if index_md.exists():
+        lines = [ln for ln in index_md.read_text(encoding="utf-8").splitlines() if ln.strip()]
+        if len(lines) > 1:  # 超过一行标题 -> 视为用户手写，不覆盖
+            return
+
+    # 直接读真实子项，分类生成链接（链接用真实名字，标题用清理后名字）
+    sub_dirs = sorted([
+        d for d in os.listdir(dir_path)
+        if (dir_path / d).is_dir() and d != "images" and not d.startswith(".")
+    ])
+    sub_mds = sorted([
+        m for m in os.listdir(dir_path)
+        if m.endswith(".md") and m != "index.md"
+    ])
+
+    parts = [f"# {title}\n"]
+
+    if sub_dirs:
+        parts.append("## 分类\n")
+        for d in sub_dirs:
+            parts.append(f"- **[{_clean_sidebar_text(d)}](./{d}/)**")
+        parts.append("")
+
+    if sub_mds:
+        parts.append("## 文档\n")
+        for m in sub_mds:
+            stem = m[:-3]  # 去 .md
+            parts.append(f"- [{_clean_sidebar_text(stem)}](./{stem})")
+        parts.append("")
+
+    if not sub_dirs and not sub_mds:
+        parts.append("_（本目录暂无文档）_\n")
+
+    index_md.write_text("\n".join(parts), encoding="utf-8")
+
+
+def _flatten_docs(dir_path: Path, rel_prefix: str) -> list[dict]:
+    """递归拍平目录下所有层级的文章，返回扁平的 link 列表。
+
+    用于模块内部：把「篇章/子篇章/.../文章」的层级结构全部拍平，
+    让文章直接挂到模块分组下，避免侧边栏层级过深。
+    """
+    items: list[dict] = []
+    entries = sorted(os.listdir(dir_path))
+    dirs = [i for i in entries if (dir_path / i).is_dir() and i != "images" and not i.startswith(".")]
+    mds = [i for i in entries if i.endswith(".md")]
+
+    # 先本目录直属文章
+    for md in sorted(mds):
+        if md == "index.md":
+            continue
+        raw_title = md.replace(".md", "")
+        title = _clean_sidebar_text(raw_title)
+        rel = f"{rel_prefix}/{md}"
+        items.append({"text": title, "link": f"/{rel}"})
+
+    # 再递归子目录，把里面的文章提上来
+    for d in sorted(dirs):
+        full = dir_path / d
+        sub_rel = f"{rel_prefix}/{d}"
+        # 子目录若无任何 md，跳过（避免空分组）
+        if not any(full.rglob("*.md")):
+            continue
+        # 子目录拍平后的文章（同时为子目录生成 index 页）
+        sub_items = _flatten_docs(full, sub_rel)
+        _ensure_dir_index(full, sub_items)
+        items.extend(sub_items)
+
+    return items
+
+
 def _vp_build_sidebar(dir_path: Path, rel_prefix: str) -> list:
     items: list[dict] = []
     entries = sorted(os.listdir(dir_path))
@@ -1032,12 +1170,10 @@ def _vp_build_sidebar(dir_path: Path, rel_prefix: str) -> list:
     for d in sorted(dirs):
         full = dir_path / d
         sub_rel = f"{rel_prefix}/{d}"
-        sub_items = _vp_build_sidebar(full, sub_rel)
+        sub_items = _flatten_docs(full, sub_rel)
         if not sub_items:
             continue
-        index_md = full / "index.md"
-        if not index_md.exists():
-            index_md.write_text(f"# {_clean_sidebar_text(d)}\n\n", encoding="utf-8")
+        _ensure_dir_index(full, sub_items)
         items.append({
             "text": _clean_sidebar_text(d),
             "collapsed": True,
@@ -1117,8 +1253,10 @@ def main() -> None:
     parser.add_argument("url", nargs="?", help="钉钉文档分享 URL")
     parser.add_argument("--source", default=None,
                         help="已有 MD 目录（跳过 Stage 1 抓取）")
-    parser.add_argument("--no-ai", action="store_true",
-                        help="跳过 AI 优化，仅规则引擎")
+    parser.add_argument("--no-ai", action="store_true", default=True,
+                        help="跳过 AI 优化，仅规则引擎（默认启用）")
+    parser.add_argument("--use-ai", action="store_true",
+                        help="启用 DeepSeek AI 语义优化（默认关闭）")
     parser.add_argument("--model", default="deepseek-chat",
                         help="DeepSeek 模型 (default: deepseek-chat)")
     parser.add_argument("--no-serve", action="store_true",
@@ -1150,11 +1288,12 @@ def main() -> None:
     # ── Stage 3: 优化 ──
     optimized, opt_stats = stage_optimize(
         source,
-        use_ai=not args.no_ai,
+        use_ai=args.use_ai,
         model=args.model,
     )
 
     # ── Stage 4: VitePress ──
+    # ── Stage 4: VitePress 构建 ──
     stage_vitepress(
         optimized,
         serve=not args.no_serve and not args.deploy,

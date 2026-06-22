@@ -27,6 +27,11 @@ output_reformatted/
 .DS_Store
 Thumbs.db
 
+# 工具运行产物 / 本地备份
+.opencode/
+.playwright-mcp/
+output_backup_*/
+
 # Node
 node_modules/
 
