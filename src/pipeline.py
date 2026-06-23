@@ -889,7 +889,8 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
     if not index_md.exists():
         index_md.write_text(VP_INDEX_MD, encoding="utf-8")
 
-    _build_sidebar(docs_dir, vp_dir)
+    # Generate sidebar from actual directory structure
+    run([sys.executable, str(ROOT / "src" / "gen_sidebar.py"), str(docs_dir)])
 
     # 防御：清理可能残留的 .js 配置文件。
     # VitePress 会优先加载 config.js / sidebar-data.js（而非 .mts/.mjs），

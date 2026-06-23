@@ -5,7 +5,12 @@ __pycache__/
 
 # 数据目录
 output/
-site/
+
+# site/ 只忽略运行产物，保留配置文件
+site/node_modules/
+site/docs/.vitepress/cache/
+site/docs/.vitepress/dist/
+site/package-lock.json
 
 # AI 相关（保留，不上传）
 ai/
