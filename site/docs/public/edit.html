@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>文档编辑 - 中通冷链</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--green:#3eaf7c;--green-dark:#2e8a5f;--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--muted:#94a3b8;--border:#334155;--danger:#ef4444}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:hidden}
+a{color:var(--green)}
+#login-view{display:flex;align-items:center;justify-content:center;height:100vh}
+.login-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:48px 40px;width:400px;text-align:center}
+.login-card .logo{font-size:40px;margin-bottom:16px;display:block}
+.login-card h2{font-size:22px;margin-bottom:4px}
+.login-card .sub{color:var(--muted);font-size:14px;margin-bottom:32px}
+.login-card input{width:100%;padding:12px 16px;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font-size:15px;margin-bottom:16px;outline:none;transition:border-color .2s}
+.login-card input:focus{border-color:var(--green)}
+.login-card button{width:100%;padding:12px;background:var(--green);border:none;border-radius:10px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s}
+.login-card button:hover{background:var(--green-dark)}
+.login-card .err{color:var(--danger);font-size:13px;margin-top:12px;min-height:20px}
+#editor-view{display:none;flex-direction:column;height:100vh}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:var(--card);border-bottom:1px solid var(--border)}
+.topbar .file-path{font-size:14px;color:var(--muted);font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:50%}
+.topbar .actions{display:flex;gap:8px;align-items:center}
+.topbar .user-tag{font-size:13px;color:var(--green);margin-right:8px}
+.btn{padding:8px 18px;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--text);font-size:13px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn:hover{border-color:var(--green);color:var(--green)}
+.btn.primary{background:var(--green);border-color:var(--green);color:#fff}
+.btn.primary:hover{background:var(--green-dark);border-color:var(--green-dark);color:#fff}
+.btn.danger:hover{border-color:var(--danger);color:var(--danger)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.split{flex:1;display:flex;overflow:hidden}
+.editor-pane{flex:1;border-right:1px solid var(--border);position:relative}
+.preview-pane{flex:1;overflow-y:auto;padding:24px 32px;background:#fff;color:#1a1a1a}
+.preview-pane h1{font-size:28px;margin:16px 0 12px;letter-spacing:-.02em}
+.preview-pane h2{font-size:22px;margin:20px 0 10px;border-bottom:1px solid #e5e7eb;padding-bottom:6px}
+.preview-pane h3{font-size:18px;margin:16px 0 8px}
+.preview-pane h4{font-size:16px;margin:14px 0 6px}
+.preview-pane p{line-height:1.7;margin:8px 0;font-size:15px}
+.preview-pane ul{padding-left:24px;margin:8px 0}
+.preview-pane li{line-height:1.8}
+.preview-pane table{border-collapse:collapse;width:100%;margin:12px 0}
+.preview-pane th,.preview-pane td{border:1px solid #e5e7eb;padding:8px 12px;font-size:14px}
+.preview-pane th{background:#f9fafb;font-weight:600}
+.preview-pane blockquote{border-left:4px solid var(--green);padding:8px 16px;margin:12px 0;color:#64748b;background:#f8fafc;border-radius:4px}
+.preview-pane code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-size:13px}
+.preview-pane pre{background:#1e293b;color:#e2e8f0;padding:16px;border-radius:8px;overflow-x:auto;margin:12px 0}
+.preview-pane pre code{background:none;padding:0;color:inherit}
+.preview-pane img{max-width:100%;border-radius:8px;margin:12px 0}
+.preview-pane hr{border:none;border-top:1px solid #e5e7eb;margin:20px 0}
+.status-bar{padding:10px 20px;background:#1e293b;border-top:1px solid var(--border);display:none;flex-direction:column;max-height:200px;overflow-y:auto}
+.status-bar .row{display:flex;align-items:center;gap:8px;font-size:13px}
+.status-bar .dot{width:8px;height:8px;border-radius:50%;background:#eab308;animation:pulse 1s infinite}
+.status-bar .dot.done{background:var(--green);animation:none}
+.status-bar .dot.fail{background:var(--danger);animation:none}
+.status-bar pre{font-size:12px;color:var(--muted);font-family:monospace;white-space:pre-wrap;margin-top:6px;max-height:120px;overflow-y:auto}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+@media(max-width:768px){.split{flex-direction:column}.preview-pane{display:none}}
+</style>
+</head>
+<body>
+<div id="login-view">
+  <form class="login-card" onsubmit="doLogin(event)">
+    <span class="logo">🍍</span>
+    <h2>中通冷链 · 文档编辑</h2>
+    <p class="sub">需要登录后才能编辑文档</p>
+    <input id="inp-user" type="text" placeholder="用户名" autocomplete="username" autofocus>
+    <input id="inp-pass" type="password" placeholder="密码" autocomplete="current-password">
+    <button type="submit">登 录</button>
+    <div id="login-err" class="err"></div>
+  </form>
+</div>
+<div id="editor-view">
+  <div class="topbar">
+    <span id="file-path" class="file-path"></span>
+    <div class="actions">
+      <span id="user-tag" class="user-tag"></span>
+      <button id="btn-save" class="btn primary" onclick="saveDoc()">保存</button>
+      <button id="btn-build" class="btn" onclick="triggerBuild()">构建</button>
+      <button class="btn danger" onclick="doLogout()">退出</button>
+    </div>
+  </div>
+  <div class="split">
+    <div class="editor-pane" id="editor-container"></div>
+    <div class="preview-pane" id="preview-pane"></div>
+  </div>
+  <div id="status-bar" class="status-bar">
+    <div class="row"><span id="status-dot" class="dot"></span><span id="status-text">构建中...</span></div>
+    <pre id="status-log"></pre>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.44.0/min/vs/loader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+let editor = null;
+let currentPath = '';
+let saveTimer = null;
+
+async function checkAuth() {
+  try { const r = await fetch('/api/auth/check'); const d = await r.json(); return d.loggedIn; } catch { return false; }
+}
+
+async function doLogin(e) {
+  e.preventDefault();
+  const errEl = document.getElementById('login-err');
+  errEl.textContent = '';
+  const username = document.getElementById('inp-user').value.trim();
+  const password = document.getElementById('inp-pass').value;
+  if (!username || !password) { errEl.textContent = '请输入用户名和密码'; return; }
+  try {
+    const r = await fetch('/api/login', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({username, password}) });
+    const d = await r.json();
+    if (!r.ok) { errEl.textContent = d.error || '登录失败'; return; }
+    showEditor();
+  } catch (e) { errEl.textContent = '网络错误: ' + e.message; }
+}
+
+async function doLogout() {
+  await fetch('/api/logout', { method: 'POST' });
+  location.reload();
+}
+
+function showLoginView() {
+  document.getElementById('login-view').style.display = 'flex';
+  document.getElementById('editor-view').style.display = 'none';
+}
+
+async function showEditor() {
+  document.getElementById('login-view').style.display = 'none';
+  document.getElementById('editor-view').style.display = 'flex';
+  const r = await fetch('/api/auth/check');
+  const d = await r.json();
+  if (d.user) document.getElementById('user-tag').textContent = '👤 ' + d.user;
+  currentPath = new URLSearchParams(location.search).get('path') || '';
+  document.getElementById('file-path').textContent = currentPath ? currentPath + '.md' : '';
+  if (currentPath) loadDoc();
+}
+
+async function loadDoc() {
+  if (!currentPath) return;
+  const r = await fetch('/api/docs/' + currentPath);
+  if (!r.ok) { if (r.status === 401) { showLoginView(); return; } return; }
+  const d = await r.json();
+  initEditor(d.content);
+  renderPreview(d.content);
+}
+
+async function saveDoc() {
+  if (!currentPath || !editor) return;
+  const btn = document.getElementById('btn-save');
+  btn.disabled = true; btn.textContent = '保存中...';
+  try {
+    const r = await fetch('/api/docs/' + currentPath, {
+      method: 'PUT', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ content: editor.getValue() }),
+    });
+    if (!r.ok) { alert('保存失败: ' + (await r.json()).error); return; }
+    btn.textContent = '已保存 ✓';
+    setTimeout(() => btn.textContent = '保存', 2000);
+  } catch (e) { alert('保存失败: ' + e.message); }
+  finally { btn.disabled = false; }
+}
+
+async function triggerBuild() {
+  const btn = document.getElementById('btn-build');
+  btn.disabled = true; btn.textContent = '构建中...';
+  const bar = document.getElementById('status-bar');
+  const dot = document.getElementById('status-dot');
+  const txt = document.getElementById('status-text');
+  bar.style.display = 'flex';
+  dot.className = 'dot'; txt.textContent = '构建中...';
+  try {
+    const r = await fetch('/api/build', { method: 'POST' });
+    if (!r.ok) { txt.textContent = '构建启动失败'; dot.className = 'dot fail'; return; }
+    await new Promise(rs => setTimeout(rs, 30000));
+    txt.textContent = '构建完成 ✓'; dot.className = 'dot done';
+  } catch (e) { txt.textContent = '错误: ' + e.message; dot.className = 'dot fail'; }
+  finally { btn.disabled = false; btn.textContent = '构建'; }
+}
+
+function initEditor(content) {
+  if (editor) { try { editor.dispose(); } catch {} editor = null; }
+  const container = document.getElementById('editor-container');
+  container.innerHTML = '';
+  require.config({ paths: { 'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.44.0/min/vs' } });
+  require(['vs/editor/editor.main'], function () {
+    monaco.editor.defineTheme('dark-soft', {
+      base: 'vs-dark', inherit: true, rules: [],
+      colors: { 'editor.background': '#0f172a', 'editor.foreground': '#e2e8f0', 'editorLineNumber.foreground': '#475569' },
+    });
+    editor = monaco.editor.create(container, {
+      value: content, language: 'markdown', theme: 'dark-soft',
+      wordWrap: 'on', automaticLayout: true, minimap: { enabled: false },
+      fontSize: 14, lineHeight: 22, scrollBeyondLastLine: false,
+      tabSize: 2, padding: { top: 16, bottom: 16 },
+      smoothScrolling: true, cursorBlinking: 'smooth',
+    });
+    editor.onDidChangeModelContent(() => {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => renderPreview(editor.getValue()), 300);
+    });
+  });
+}
+
+function renderPreview(md) {
+  document.getElementById('preview-pane').innerHTML = marked.parse(md || '');
+}
+
+(function init() {
+  checkAuth().then(async ok => {
+    if (!ok) { showLoginView(); return; }
+    currentPath = new URLSearchParams(location.search).get('path') || '';
+    if (currentPath) { showEditor(); } else { showEditor(); }
+   });
+})();
+</script>
+</body>
+</html>

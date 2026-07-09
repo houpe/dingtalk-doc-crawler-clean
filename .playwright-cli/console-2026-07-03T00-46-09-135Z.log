@@ -1,0 +1,144 @@
+[ 7575708ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.css:0
+[ 7575754ms] [LOG] %c[zcat]  color:#2db7f5 Register Web Worker for monitoring @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[ 7576114ms] [LOG] import.meta {BASE_URL: /, DEV: true, MODE: development, PROD: false, SSR: false} @ http://localhost:3000/src/config/index.ts:0
+[ 7576116ms] [LOG] document.cookie  @ http://localhost:3000/src/utils/index.ts:19
+[ 7576116ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[ 7576161ms] [LOG] document.cookie  @ http://localhost:3000/src/utils/index.ts:19
+[ 7576161ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[ 7576165ms] [LOG] tototototo--- {fullPath: /dashboard, hash: , query: Object, name: dashboard, path: /dashboard} @ http://localhost:3000/src/router/index.ts:16
+[ 7576165ms] [LOG] tabTarget-addTab {name: dashboard, path: /dashboard, meta: Object, renderTime: 1783047145300} @ http://localhost:3000/src/stores/layout.ts:62
+[ 7576229ms] [LOG] （jt_首页-页面初始化）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 26.34, 当前使用量: 22.43, 网速: 187.50 kb/s,rtt: 0} @ http://localhost:3000/src/utils/performance.ts:290
+[ 7577218ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[ 7586231ms] [LOG] （jt_首页-操作完成后）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 33.82, 当前使用量: 27, 网速: 187.50 kb/s,rtt: 0} @ http://localhost:3000/src/utils/performance.ts:290
+[ 7587234ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[ 7636243ms] CanceledError
+[ 7636244ms] CanceledError
+[31661161ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:3000/@vite/client:559
+[31661271ms] [LOG] %c[zcat]  color:#f9a313 接口 http://localhost:3000/ 响应不是文本类型,zcat仅做简单上报处理 @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[31682477ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.css:0
+[31682521ms] [LOG] %c[zcat]  color:#2db7f5 Register Web Worker for monitoring @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[31682527ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[31682882ms] [LOG] import.meta {BASE_URL: /, DEV: true, MODE: development, PROD: false, SSR: false} @ http://localhost:3000/src/config/index.ts:0
+[31682886ms] [LOG] document.cookie _clck=1bs1x7s%5E2%5Eg7f%5E0%5E2375; _clsk=1cpdzsq%5E1783047147336%5E1%5E1%5Ek.clarity.ms%2Fcollect; __zcat_uuid__=03192bba-475f-4e23-8860-dfde74752c9c @ http://localhost:3000/src/utils/index.ts:19
+[31682886ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[31682937ms] [LOG] document.cookie _clck=1bs1x7s%5E2%5Eg7f%5E0%5E2375; _clsk=1cpdzsq%5E1783047147336%5E1%5E1%5Ek.clarity.ms%2Fcollect; __zcat_uuid__=03192bba-475f-4e23-8860-dfde74752c9c @ http://localhost:3000/src/utils/index.ts:19
+[31682937ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[31682942ms] [LOG] tototototo--- {fullPath: /dashboard, path: /dashboard, query: Object, hash: , name: dashboard} @ http://localhost:3000/src/router/index.ts:16
+[31682943ms] [LOG] tabTarget-addTab {name: dashboard, path: /dashboard, meta: Object, renderTime: 1783071252077} @ http://localhost:3000/src/stores/layout.ts:62
+[31683019ms] [LOG] （jt_首页-页面初始化）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 35.08, 当前使用量: 30.68, 网速: 187.50 kb/s,rtt: 0} @ http://localhost:3000/src/utils/performance.ts:290
+[31723542ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[31723577ms] [LOG] （jt_首页-操作完成后）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 35.71, 当前使用量: 28.23, 网速: 187.50 kb/s,rtt: 250} @ http://localhost:3000/src/utils/performance.ts:290
+[31726264ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://gateway-ll.test.ztoeco.com/uas/auth/v2/generateBoxRedirectUrl:0
+[31726268ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://gateway-ll.test.ztoeco.com/uas/auth/logout:0
+[31726278ms] AxiosError
+[31726278ms] AxiosError
+[32399119ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ https://y.clarity.ms/collect:0
+[32399319ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://y.clarity.ms/collect:0
+[32399333ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://y.clarity.ms/collect:0
+[32399333ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://y.clarity.ms/collect:0
+[105669325ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:3000/@vite/client:559
+[105669338ms] [LOG] %c[zcat]  color:#f9a313 接口 http://localhost:3000/ 响应不是文本类型,zcat仅做简单上报处理 @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[105681149ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.css:0
+[105681153ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[105681179ms] [LOG] %c[zcat]  color:#2db7f5 Register Web Worker for monitoring @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[105681329ms] [LOG] import.meta {BASE_URL: /, DEV: true, MODE: development, PROD: false, SSR: false} @ http://localhost:3000/src/config/index.ts:0
+[105681331ms] [LOG] document.cookie _clck=1bs1x7s%5E2%5Eg7f%5E0%5E2375; __zcat_uuid__=03192bba-475f-4e23-8860-dfde74752c9c @ http://localhost:3000/src/utils/index.ts:19
+[105681332ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[105681357ms] [LOG] document.cookie _clck=1bs1x7s%5E2%5Eg7f%5E0%5E2375; __zcat_uuid__=03192bba-475f-4e23-8860-dfde74752c9c @ http://localhost:3000/src/utils/index.ts:19
+[105681357ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[105681360ms] [LOG] tototototo--- {fullPath: /dashboard, path: /dashboard, query: Object, hash: , name: dashboard} @ http://localhost:3000/src/router/index.ts:16
+[105681360ms] [LOG] tabTarget-addTab {name: dashboard, path: /dashboard, meta: Object, renderTime: 1783145250494} @ http://localhost:3000/src/stores/layout.ts:62
+[105681375ms] [LOG] （jt_首页-页面初始化）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 41.31, 当前使用量: 35.81, 网速: 187.50 kb/s,rtt: 700} @ http://localhost:3000/src/utils/performance.ts:290
+[105686409ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://gateway-ll.test.ztoeco.com/uas/auth/logout:0
+[105686417ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://gateway-ll.test.ztoeco.com/uas/auth/v2/generateBoxRedirectUrl:0
+[105686419ms] AxiosError
+[105686419ms] AxiosError
+[105691372ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[105691378ms] [LOG] （jt_首页-操作完成后）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 35.33, 当前使用量: 24.07, 网速: 187.50 kb/s,rtt: 300} @ http://localhost:3000/src/utils/performance.ts:290
+[134611745ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:3000/@vite/client:559
+[134611858ms] [LOG] %c[zcat]  color:#f9a313 接口 http://localhost:3000/ 响应不是文本类型,zcat仅做简单上报处理 @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[134624473ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.css:0
+[134624479ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[134624503ms] [LOG] %c[zcat]  color:#2db7f5 Register Web Worker for monitoring @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[134624642ms] [LOG] import.meta {BASE_URL: /, DEV: true, MODE: development, PROD: false, SSR: false} @ http://localhost:3000/src/config/index.ts:0
+[134624645ms] [LOG] document.cookie __zcat_uuid__=03192bba-475f-4e23-8860-dfde74752c9c; _clck=1bs1x7s%5E2%5Eg7g%5E0%5E2375; _clsk=1p1gfl1%5E1783145257762%5E1%5E1%5Ey.clarity.ms%2Fcollect @ http://localhost:3000/src/utils/index.ts:19
+[134624645ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[134624694ms] [LOG] document.cookie __zcat_uuid__=03192bba-475f-4e23-8860-dfde74752c9c; _clck=1bs1x7s%5E2%5Eg7g%5E0%5E2375; _clsk=1p1gfl1%5E1783145257762%5E1%5E1%5Ey.clarity.ms%2Fcollect @ http://localhost:3000/src/utils/index.ts:19
+[134624694ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[134624714ms] [LOG] tototototo--- {fullPath: /dashboard, path: /dashboard, query: Object, hash: , name: dashboard} @ http://localhost:3000/src/router/index.ts:16
+[134624714ms] [LOG] tabTarget-addTab {name: dashboard, path: /dashboard, meta: Object, renderTime: 1783174193849} @ http://localhost:3000/src/stores/layout.ts:62
+[134624805ms] [LOG] （jt_首页-页面初始化）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 40.18, 当前使用量: 36.12, 网速: 187.50 kb/s,rtt: 450} @ http://localhost:3000/src/utils/performance.ts:290
+[134629871ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://gateway-ll.test.ztoeco.com/uas/auth/logout:0
+[134629880ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://gateway-ll.test.ztoeco.com/uas/auth/v2/generateBoxRedirectUrl:0
+[134629882ms] AxiosError
+[134629883ms] AxiosError
+[134634734ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[134634806ms] [LOG] （jt_首页-操作完成后）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 44.23, 当前使用量: 41.06, 网速: 187.50 kb/s,rtt: 300} @ http://localhost:3000/src/utils/performance.ts:290
+[203127150ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:3000/@vite/client:559
+[203127380ms] [LOG] %c[zcat]  color:#f9a313 接口 http://localhost:3000/ 响应不是文本类型,zcat仅做简单上报处理 @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[203140240ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.css:0
+[203140244ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[203140271ms] [LOG] %c[zcat]  color:#2db7f5 Register Web Worker for monitoring @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[203140396ms] [LOG] import.meta {BASE_URL: /, DEV: true, MODE: development, PROD: false, SSR: false} @ http://localhost:3000/src/config/index.ts:0
+[203140398ms] [LOG] document.cookie __zcat_uuid__=03192bba-475f-4e23-8860-dfde74752c9c; _clck=1bs1x7s%5E2%5Eg7g%5E0%5E2375 @ http://localhost:3000/src/utils/index.ts:19
+[203140398ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[203140426ms] [LOG] document.cookie __zcat_uuid__=03192bba-475f-4e23-8860-dfde74752c9c; _clck=1bs1x7s%5E2%5Eg7g%5E0%5E2375 @ http://localhost:3000/src/utils/index.ts:19
+[203140426ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[203140429ms] [LOG] tototototo--- {fullPath: /dashboard, path: /dashboard, query: Object, hash: , name: dashboard} @ http://localhost:3000/src/router/index.ts:16
+[203140429ms] [LOG] tabTarget-addTab {name: dashboard, path: /dashboard, meta: Object, renderTime: 1783242709563} @ http://localhost:3000/src/stores/layout.ts:62
+[203140448ms] [LOG] （jt_首页-页面初始化）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 40.69, 当前使用量: 35.39, 网速: 187.50 kb/s,rtt: 400} @ http://localhost:3000/src/utils/performance.ts:290
+[203145477ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://gateway-ll.test.ztoeco.com/uas/auth/logout:0
+[203145480ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://gateway-ll.test.ztoeco.com/uas/auth/v2/generateBoxRedirectUrl:0
+[203145487ms] AxiosError
+[203145488ms] AxiosError
+[203150443ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[203150449ms] [LOG] （jt_首页-操作完成后）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 34.63, 当前使用量: 27.43, 网速: 187.50 kb/s,rtt: 250} @ http://localhost:3000/src/utils/performance.ts:290
+[227842919ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:3000/@vite/client:559
+[227842963ms] [LOG] %c[zcat]  color:#f9a313 接口 http://localhost:3000/ 响应不是文本类型,zcat仅做简单上报处理 @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[227854454ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.css:0
+[227854485ms] [LOG] %c[zcat]  color:#2db7f5 Register Web Worker for monitoring @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[227854610ms] [LOG] import.meta {BASE_URL: /, DEV: true, MODE: development, PROD: false, SSR: false} @ http://localhost:3000/src/config/index.ts:0
+[227854613ms] [LOG] document.cookie __zcat_uuid__=03192bba-475f-4e23-8860-dfde74752c9c; _clck=1bs1x7s%5E2%5Eg7h%5E0%5E2375; _clsk=4ot4lc%5E1783242716978%5E1%5E1%5Ea.clarity.ms%2Fcollect @ http://localhost:3000/src/utils/index.ts:19
+[227854613ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[227854641ms] [LOG] document.cookie __zcat_uuid__=03192bba-475f-4e23-8860-dfde74752c9c; _clck=1bs1x7s%5E2%5Eg7h%5E0%5E2375; _clsk=4ot4lc%5E1783242716978%5E1%5E1%5Ea.clarity.ms%2Fcollect @ http://localhost:3000/src/utils/index.ts:19
+[227854641ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[227854644ms] [LOG] tototototo--- {fullPath: /dashboard, path: /dashboard, query: Object, hash: , name: dashboard} @ http://localhost:3000/src/router/index.ts:16
+[227854645ms] [LOG] tabTarget-addTab {name: dashboard, path: /dashboard, meta: Object, renderTime: 1783267423779} @ http://localhost:3000/src/stores/layout.ts:62
+[227854661ms] [LOG] （jt_首页-页面初始化）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 40.24, 当前使用量: 36.02, 网速: 187.50 kb/s,rtt: 450} @ http://localhost:3000/src/utils/performance.ts:290
+[227854721ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[227859751ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://gateway-ll.test.ztoeco.com/uas/auth/logout:0
+[227859757ms] AxiosError
+[227859760ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://gateway-ll.test.ztoeco.com/uas/auth/v2/generateBoxRedirectUrl:0
+[227859763ms] AxiosError
+[227864667ms] [LOG] （jt_首页-操作完成后）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 34.1, 当前使用量: 24.12, 网速: 187.50 kb/s,rtt: 450} @ http://localhost:3000/src/utils/performance.ts:290
+[227864732ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[244958318ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ https://n.clarity.ms/collect:0
+[262065880ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:3000/@vite/client:559
+[262065885ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[262066893ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[262067896ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[262068899ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[262069903ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[262070927ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[262071930ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[262072933ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[262073937ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[262074941ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/:0
+[262076164ms] [LOG] %c[zcat]  color:#f9a313 接口 http://localhost:3000/ 响应不是文本类型,zcat仅做简单上报处理 @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[262086604ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.css:0
+[262086619ms] [LOG] %c[zcat]  color:#2db7f5 Register Web Worker for monitoring @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[262086734ms] [LOG] import.meta {BASE_URL: /, DEV: true, MODE: development, PROD: false, SSR: false} @ http://localhost:3000/src/config/index.ts:0
+[262086735ms] [LOG] document.cookie __zcat_uuid__=03192bba-475f-4e23-8860-dfde74752c9c; _clck=1bs1x7s%5E2%5Eg7h%5E0%5E2375 @ http://localhost:3000/src/utils/index.ts:19
+[262086735ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[262086755ms] [LOG] document.cookie __zcat_uuid__=03192bba-475f-4e23-8860-dfde74752c9c; _clck=1bs1x7s%5E2%5Eg7h%5E0%5E2375 @ http://localhost:3000/src/utils/index.ts:19
+[262086755ms] [LOG] ingressTag null @ http://localhost:3000/src/utils/index.ts:55
+[262086756ms] [LOG] tototototo--- {fullPath: /dashboard, path: /dashboard, query: Object, hash: , name: dashboard} @ http://localhost:3000/src/router/index.ts:16
+[262086756ms] [LOG] tabTarget-addTab {name: dashboard, path: /dashboard, meta: Object, renderTime: 1783301655891} @ http://localhost:3000/src/stores/layout.ts:62
+[262086835ms] [LOG] （jt_首页-页面初始化）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 31.31, 当前使用量: 21.53, 网速: 187.50 kb/s,rtt: 400} @ http://localhost:3000/src/utils/performance.ts:290
+[262087306ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0
+[262091863ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://gateway-ll.test.ztoeco.com/uas/auth/logout:0
+[262091867ms] AxiosError
+[262091887ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://gateway-ll.test.ztoeco.com/uas/auth/v2/generateBoxRedirectUrl:0
+[262091890ms] AxiosError
+[262096837ms] [LOG] （jt_首页-操作完成后）内存使用情况（MB） {堆大小限制: 4192, 已分配堆大小: 35.54, 当前使用量: 28.53, 网速: 187.50 kb/s,rtt: 250} @ http://localhost:3000/src/utils/performance.ts:290
+[262097324ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://huzhou-oss.test.ztosys.com/zcdn/leplateform-cdn/iconfont/iconfont.js:0

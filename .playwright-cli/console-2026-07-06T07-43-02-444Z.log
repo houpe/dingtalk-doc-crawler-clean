@@ -1,0 +1,39 @@
+[     422ms] [LOG] %c[zcat]  color:#2db7f5 Register Web Worker for monitoring @ https://uedcdn.zto.com/static/zcat/release/zcat.browser.min.js:7
+[    1615ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://gateway-ll.test.ztoeco.com/echo/todoTask/portal/queryCountByTemplate:0
+[    1868ms] z
+[    1636ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://gateway-ll.test.ztoeco.com/echo/message/portal/queryUnreadStat:0
+[    1642ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://gateway-ll.test.ztoeco.com/smartOffice/feature/getReadStatus:0
+[    1872ms] z
+[    2186ms] [LOG] v7.17 @ https://box-im.zto.com/Html/OpenIMByIDEX.js:7
+[    2874ms] [LOG] 
+ _____ __________     _______  __ ____  ____  ________________
+/__  //_  __/ __ \   / ____/ |/ // __ \/ __ \/ ____/ ___/ ___/
+  / /  / / / / / /  / __/  |   // /_/ / /_/ / __/  \__ \\__ \
+ / /__/ / / /_/ /  / /___ /   |/ ____/ _, _/ /___ ___/ /__/ /
+/____/_/  \____/  /_____//_/|_/_/   /_/ |_/_____//____/____/
+
+             想来中通工作？ 发简历到 zthr@zto.com
+ @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:7
+[    2874ms] [LOG] v20260701v1prod @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:7
+[    2920ms] [LOG] 初始化表单类型------------------------------- @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:7
+[    2921ms] [LOG] refreshQrCode @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:9
+[    3555ms] [WARNING] WebGL: INVALID_OPERATION: useProgram: program not valid @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:11
+[    3555ms] [WARNING] WebGL: INVALID_OPERATION: getUniformLocation: program not linked @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:11
+[    3556ms] [WARNING] WebGL: INVALID_OPERATION: drawArrays: no valid shader program in use @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:11
+[    3614ms] [LOG] 新uuid ->  zt147ce8b07745e5ad5b20b4f13496b0 @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:9
+[    3628ms] [LOG] startCheckStatus 1 @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:9
+[    3629ms] [LOG] startCheckStatus 2 @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:9
+[    3630ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://sso.test.ztoeco.com/users/current/profile-v2:0
+[    3630ms] [LOG] userinfo ->  {data: Object, status: 401, headers: connection: keep-alive
+content-length: 123
+conte…quest-id: metacenter:3002-0aa5aa42-495367-14056
+} @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:7
+[    3783ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://fscdn.zto.com/fs3/M00/75/4D/CgkkEGFlaaWICnErAAAhw1qmcMgAAACiQN8PHUAACHb106.png:0
+[    3806ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:48201/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:16
+[    3807ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:48202/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:16
+[    3808ms] [LOG] 宝盒sdk初始化完成 @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:7
+[    3859ms] [LOG] 获取到宝盒用户清单:  [] @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:7
+[    4861ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://lqrcode-zt147ce8b07745e5ad5b20b4f13496b0.gslb.zto.com/:0
+[    5631ms] [LOG] delCookieTracker @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:2
+[    5945ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ http://sso.test.ztoeco.com/users/current/profile-v2:0
+[    5946ms] [LOG] result ->  401 @ http://sso.test.ztoeco.com/oauth2/index.js?t=20251211:2

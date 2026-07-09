@@ -1,0 +1,5 @@
+- main "鲸小宝AI" [ref=e2]:
+  - button "打开鲸小宝AI" [ref=e3] [cursor=pointer]
+  - paragraph [ref=e4]: 鲸小宝AI
+  - paragraph [ref=e5]: 点击后打开智能助手
+  - button "打开助手" [ref=e6] [cursor=pointer]

@@ -1,0 +1,26 @@
+[    8865ms] [WARNING] ElementPlusError: [ElInfiniteScroll] [API] the directive v-infinite-scroll is about to be deprecated in version 3.0.0, please use the el-scrollbar infinite scroll instead.
+For more detail, please visit: https://element-plus.org/en-US/component/scrollbar#infinite-scroll
+
+    at debugWarn (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:21:21223)
+    at watch.immediate (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:21:38434)
+    at callWithErrorHandling (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:17:863)
+    at callWithAsyncErrorHandling (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:17:992)
+    at Wt.call (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:17:6419)
+    at dr (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:10:23358)
+    at watch$1 (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:10:23660)
+    at doWatch (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:17:6700)
+    at watch (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:17:6017)
+    at useDeprecated (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:21:38405) @ https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:20
+[    8866ms] [WARNING] ElementPlusError: [ElInfiniteScroll] [API] the directive v-infinite-scroll is about to be deprecated in version 3.0.0, please use the el-scrollbar infinite scroll instead.
+For more detail, please visit: https://element-plus.org/en-US/component/scrollbar#infinite-scroll
+
+    at debugWarn (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:21:21223)
+    at watch.immediate (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:21:38434)
+    at callWithErrorHandling (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:17:863)
+    at callWithAsyncErrorHandling (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:17:992)
+    at Wt.call (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:17:6419)
+    at dr (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:10:23358)
+    at watch$1 (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:10:23660)
+    at doWatch (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:17:6700)
+    at watch (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:17:6017)
+    at useDeprecated (https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:21:38405) @ https://houpe.top/maxkb-chat/assets/chat-XgakxiS_.js:20

@@ -1,0 +1,6 @@
+- iframe [ref=e2]:
+  - main "鲸小宝AI" [ref=f1e2]:
+    - button "打开鲸小宝AI" [ref=f1e3] [cursor=pointer]
+    - paragraph [ref=f1e4]: 鲸小宝AI
+    - paragraph [ref=f1e5]: 点击后打开智能助手
+    - button "打开助手" [ref=f1e6] [cursor=pointer]

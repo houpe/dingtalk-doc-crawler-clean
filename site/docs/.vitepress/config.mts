@@ -16,13 +16,15 @@ export default defineConfig({
   title: '中通冷链',
   description: '中通冷链操作手册',
   cleanUrls: true,
+  head: [['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }]],
   themeConfig: {
+    logo: '/favicon.png',
     siteTitle: '中通冷链',
     nav: [
       { text: '首页', link: '/' },
       { text: '必读', link: '/「*必知必读」账号权限如何开通？/' },
-      { text: '网点操作', link: '/一、网点操作/' },
-      { text: '云仓操作', link: '/三、云仓操作/' },
+      { text: '网点操作', link: '/网点操作/' },
+      { text: '云仓操作', link: '/云仓操作/' },
     ],
     sidebar,
     search: {

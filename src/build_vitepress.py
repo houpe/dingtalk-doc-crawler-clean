@@ -21,7 +21,7 @@ hero:
   actions:
     - theme: brand
       text: 开始阅读
-      link: /一、网点操作/02客户下单篇/关于客户自主下单，网点必知
+      link: /网点操作/02客户下单篇/关于客户自主下单，网点必知
     - theme: alt
       text: 必知必读
       link: /「*必知必读」账号权限如何开通？/系统如何访问？APP如何下载？
@@ -125,9 +125,9 @@ export default defineConfig({
     logo: '/favicon.png',
     nav: [
       { text: '首页', link: '/' },
-      { text: '网点操作', link: '/一、网点操作/02客户下单篇/关于客户自主下单，网点必知' },
-      { text: '中心操作', link: '/二、中心操作/01司机操作篇/到达中心如何进行靠台操作？' },
-      { text: '云仓操作', link: '/三、云仓操作/BMS操作/01 基础资料篇/1. 创建仓库、货主、员工、' },
+      { text: '网点操作', link: '/网点操作/02客户下单篇/关于客户自主下单，网点必知' },
+      { text: '中心操作', link: '/中心操作/01司机操作篇/到达中心如何进行靠台操作？' },
+      { text: '云仓操作', link: '/云仓操作/BMS操作/01 基础资料篇/1. 创建仓库、货主、员工、' },
     ],
 
     sidebar: ''' + json.dumps(sidebar, ensure_ascii=False, indent=6) + ''',

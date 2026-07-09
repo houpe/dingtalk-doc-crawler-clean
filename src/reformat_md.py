@@ -525,28 +525,10 @@ def restructure_markdown(md_text: str) -> str:
                 current_level = 3
                 i += 1
                 continue
-            if label in {"机构限制", "时间限制", "操作校验", "手续费", "保价费",
-                        "库存相关", "财务", "回单", "运单状态"}:
-                append_block(make_container(value, "warning", label))
-                i += 1
-                continue
-
-        if line.startswith(("例如", "比如")):
-            content = line.strip()
-            if content.startswith(("例如", "比如")):
-                content = re.sub(r"^(例如|比如)\s*[,，:]?\s*", "", content)
-            append_block(make_container(content, "tip", "示例说明"))
-            i += 1
-            continue
-
-        if any(keyword in line for keyword in RULE_KEYWORDS):
-            extra = next_line if next_line.startswith(("例如", "比如")) else None
-            append_block(make_container(line, "danger", "重点提醒"))
-            if extra:
-                i += 2
-            else:
-                i += 1
-            continue
+        # 注：原有关键词→容器（danger/warning/tip）规则已移除。
+        # 规则过宽（"仅/必须/限制"等词在正文高频出现）+ _fix_dingtalk_callout
+        # 的 ::: 配对 bug，会把命中行之后的大段正文误吞进 blockquote，
+        # 导致整篇文章 60-86% 变成引用块。正文保持原样不再装容器。
 
         append_block(line)
         i += 1
@@ -692,6 +674,29 @@ def strip_bold_in_headings(md_text: str) -> str:
     return "\n".join(out)
 
 
+def strip_blockquotes(md_text: str) -> str:
+    """去掉所有正文级 blockquote（行首的 > 前缀）。
+
+    钉钉文档作者常把「第一步/第二步」整段用引用块组织，渲染成大段灰色块，
+    视觉效果差且不符合操作手册的阅读习惯。去掉 > 前缀让内容回归正常正文。
+    保留 ::: tip/warning/danger 这类 VitePress 容器（它们不用 > 表示）。
+    """
+    lines = md_text.splitlines()
+    out = []
+    for line in lines:
+        # 去掉行首的 > 或 > （含多层嵌套 > > 或 >> ）
+        stripped = line.lstrip()
+        if stripped.startswith(">"):
+            # 循环去掉所有层级的 > 前缀及其后空格（处理 > > *例如 这种多层）
+            content = stripped
+            while content.startswith(">"):
+                content = re.sub(r"^>\s*", "", content)
+            out.append(content)
+        else:
+            out.append(line)
+    return "\n".join(out)
+
+
 def remove_trailing_index(md_text: str) -> str:
     """移除文件末尾的"更多操作索引"导航内容"""
     lines = md_text.splitlines()
@@ -734,6 +739,8 @@ def process_file(src: Path, dst: Path) -> None:
     md_text = merge_adjacent_containers(md_text)
     # 后处理：修复钉钉原文 `:::` 块（非 VitePress 容器）
     md_text = _fix_dingtalk_callout(md_text)
+    # 后处理：去掉所有正文级 blockquote（> 前缀）
+    md_text = strip_blockquotes(md_text)
     # 后处理：修复未闭合的容器（关键！）
     md_text = fix_unclosed_containers(md_text)
     # 后处理：规范化有序列表序号

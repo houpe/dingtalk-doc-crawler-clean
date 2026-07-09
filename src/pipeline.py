@@ -419,45 +419,43 @@ layout: home
 hero:
   name: 中通冷链
   text: 操作手册
-  tagline: 覆盖网点、中心、云仓、冷运运、冷链智运全链路业务操作
+  tagline: 覆盖网点、中心、云仓、网络货运全链路业务操作
+  image:
+    src: /home-hero.png
+    alt: 中通冷链
   actions:
     - theme: brand
       text: 开始阅读
-      link: /guide/
+      link: /网点操作/
     - theme: alt
       text: 账号权限
-      link: /guide/「必知必读」账号权限如何开通/
+      link: /「必知必读」账号权限如何开通？/
 
 features:
+  - icon: 📌
+    title: 必知必读
+    details: 账号权限开通、系统访问方式、APP 下载等基础准备。
+    link: /「必知必读」账号权限如何开通？/
+    linkText: 查看文档
   - icon: 🏠
     title: 网点操作
     details: 客户下单、运单管理、品控质量、结算财务、考核相关、物料购买等全流程操作指南。
-    link: /guide/一、网点操作/
+    link: /网点操作/
     linkText: 查看文档
   - icon: 🏢
     title: 中心操作
     details: 司机接单发车、调度任务管理、PDA 扫描操作、小程序使用、数据统计看板。
-    link: /guide/二、中心操作/
+    link: /中心操作/
     linkText: 查看文档
   - icon: 📦
     title: 云仓操作
-    details: 基础资料配置、规则策略、出入库作业、库内盘点、仓库实施切换、日常运营。
-    link: /guide/三、云仓操作/
+    details: WMS/OMS/BMS 仓储管理、出入库作业、基础资料配置、规则策略等。
+    link: /云仓操作/
     linkText: 查看文档
   - icon: 🚛
-    title: 冷运运
-    details: 冷运整车运输业务操作，订单管理与运单跟踪。
-    link: /guide/四、冷运运/
-    linkText: 查看文档
-  - icon: 🧊
-    title: 冷链智运
-    details: 大票零担系统操作、用户操作手册，零担物流全流程管理。
-    link: /guide/五、冷链智运/
-    linkText: 查看文档
-  - icon: 💰
-    title: 财务中心
-    details: 财务结算、对账管理、发票处理等财务相关操作说明。
-    link: /guide/六、财务中心/
+    title: 网络货运
+    details: 网络货运货主注册、操作说明等。
+    link: /网络货运/
     linkText: 查看文档
 ---
 """
@@ -881,10 +879,8 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
 
     _vp_copy_content(src_root, docs_dir)
 
-    docs_index = docs_dir / "index.md"
-    if not docs_index.exists():
-        docs_index.write_text("# 中通冷链文档中心\n\n欢迎查阅中通冷链操作手册。请在左侧导航栏选择对应章节。\n", encoding="utf-8")
-
+    # 首页 index.md：仅在不存在时用 VP_INDEX_MD 模板创建（hero + features 首页）。
+    # 已存在则保留（用户定制内容不被覆盖）。
     index_md = docs_dir / "index.md"
     if not index_md.exists():
         index_md.write_text(VP_INDEX_MD, encoding="utf-8")
@@ -914,9 +910,12 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
 
     (public_dir / ".nojekyll").write_text("", encoding="utf-8")
     (public_dir / "edit.html").write_text(EDIT_HTML, encoding="utf-8")
-    src_icon = ROOT / "assets" / "favicon.png"
-    if src_icon.exists():
-        shutil.copy2(src_icon, public_dir / "favicon.png")
+    # 从 assets/ 拷贝静态资源到 public/（favicon、首页 hero 图等）
+    # 这些是站点的固定资源，每次构建都从 assets 同步，避免 public 被清空后丢失
+    for asset_name in ("favicon.png", "home-hero.png"):
+        src_asset = ROOT / "assets" / asset_name
+        if src_asset.exists():
+            shutil.copy2(src_asset, public_dir / asset_name)
 
     (sd / "server.js").write_text(SERVER_JS.lstrip(), encoding="utf-8")
 
@@ -994,8 +993,9 @@ def _clean_docs_content(docs_dir: Path) -> None:
 
     每次构建都应基于最新的源文件，避免上次构建遗留的废弃目录、已删除文档
     或模板文件（死链）残留下来导致构建失败或站点内容陈旧。
+    保护首页 index.md（用户定制的 hero/features 首页，不应被清理覆盖）。
     """
-    KEEP = {".vitepress", "public", "node_modules"}
+    KEEP = {".vitepress", "public", "node_modules", "index.md"}
     for item in os.listdir(docs_dir):
         if item in KEEP:
             continue
@@ -1010,6 +1010,7 @@ def _vp_copy_content(src: Path, dst: Path) -> None:
     for item in sorted(os.listdir(src)):
         s = src / item
         safe_name = re.sub(r'[?<>:"|*]', '', item)
+        safe_name = _clean_top_level_section_name(safe_name)
         d = dst / safe_name
         if s.is_dir():
             if s.name == "images":
@@ -1022,6 +1023,18 @@ def _vp_copy_content(src: Path, dst: Path) -> None:
         elif item.endswith(".md"):
             d.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(s, d)
+
+
+_TOP_LEVEL_SECTION_RENAMES = {
+    "一、网点操作": "网点操作",
+    "二、中心操作": "中心操作",
+    "三、云仓操作": "云仓操作",
+    "四、网络货运": "网络货运",
+}
+
+
+def _clean_top_level_section_name(name: str) -> str:
+    return _TOP_LEVEL_SECTION_RENAMES.get(name, name)
 
 
 _IMG_REF_PATTERN = re.compile(r'(!\[([^\]]*)\]\(([^)]+\.png)\))')
@@ -1082,6 +1095,26 @@ def _clean_sidebar_text(text: str) -> str:
     return text or text
 
 
+_GENERATED_INDEX_HEADINGS = {"## 分类", "## 文档"}
+_GENERATED_INDEX_LINK_RE = re.compile(r"^- (?:\*\*)?\[[^\]]+\]\(\./[^)]*\)(?:\*\*)?$")
+
+
+def _is_generated_dir_index(content: str) -> bool:
+    lines = [ln.strip() for ln in content.splitlines() if ln.strip()]
+    if len(lines) <= 1:
+        return True
+    if not lines[0].startswith("# "):
+        return False
+
+    for line in lines[1:]:
+        if line in _GENERATED_INDEX_HEADINGS or line == "_（本目录暂无文档）_":
+            continue
+        if _GENERATED_INDEX_LINK_RE.match(line):
+            continue
+        return False
+    return True
+
+
 def _build_sidebar(guide_dir: Path, vp_dir: Path) -> list:
     items = _vp_build_sidebar(guide_dir, "")
     mjs = "export default " + json.dumps(items, ensure_ascii=False, indent=2) + "\n"
@@ -1092,17 +1125,15 @@ def _build_sidebar(guide_dir: Path, vp_dir: Path) -> list:
 def _ensure_dir_index(dir_path: Path, sub_items: list[dict]) -> None:
     """确保目录有一个 index.md：自动生成「文章列表」索引页。
 
-    已存在且非空壳的 index.md（用户手写了内容）不覆盖；
-    只覆盖/创建自动生成的空壳（仅一行标题的）。
+    已存在且不是自动生成样式的 index.md（用户手写了内容）不覆盖。
     直接读取 dir_path 的真实子项来生成链接，避免依赖清理过的标题文本。
     """
     index_md = dir_path / "index.md"
     title = _clean_sidebar_text(dir_path.name)
 
-    # 已存在且不是空壳 -> 保留用户内容
     if index_md.exists():
-        lines = [ln for ln in index_md.read_text(encoding="utf-8").splitlines() if ln.strip()]
-        if len(lines) > 1:  # 超过一行标题 -> 视为用户手写，不覆盖
+        content = index_md.read_text(encoding="utf-8")
+        if not _is_generated_dir_index(content):
             return
 
     # 直接读真实子项，分类生成链接（链接用真实名字，标题用清理后名字）
@@ -1153,7 +1184,7 @@ def _flatten_docs(dir_path: Path, rel_prefix: str) -> list[dict]:
             continue
         raw_title = md.replace(".md", "")
         title = _clean_sidebar_text(raw_title)
-        # rel_prefix 形如 "/一、网点操作/01物料购买篇"，拼接后去掉 .md（clean URL）
+        # rel_prefix 形如 "/网点操作/01物料购买篇"，拼接后去掉 .md（clean URL）
         link = f"{rel_prefix}/{raw_title}".replace("//", "/")
         items.append({"text": title, "link": link})
 

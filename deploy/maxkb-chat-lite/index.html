@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>鲸小宝AI</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      --brand: #1f64ff;
+      --brand-dark: #1550d4;
+      --border: #d9e2f2;
+      --text: #18233c;
+      --muted: #68758c;
+      --surface: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background: transparent;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    .launcher {
+      width: min(100%, 420px);
+      min-height: 220px;
+      display: grid;
+      place-items: center;
+      gap: 14px;
+      padding: 24px;
+      background: var(--surface);
+    }
+
+    .robot {
+      width: 76px;
+      height: 76px;
+      border: 0;
+      padding: 0;
+      border-radius: 50%;
+      background: #f2f6ff;
+      box-shadow: 0 8px 24px rgba(31, 100, 255, .18);
+      cursor: pointer;
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .robot:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(31, 100, 255, .24);
+    }
+
+    .robot img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 50%;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .hint {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .open {
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 18px;
+      color: #fff;
+      background: var(--brand);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .open:hover {
+      background: var(--brand-dark);
+    }
+
+    .frame {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: none;
+      background: #fff;
+    }
+
+    body.loaded {
+      display: block;
+    }
+
+    body.loaded .launcher {
+      display: none;
+    }
+
+    body.loaded .frame {
+      display: block;
+    }
+
+    @media (max-width: 520px) {
+      .launcher {
+        min-height: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="launcher" aria-label="鲸小宝AI">
+    <button class="robot" type="button" aria-label="打开鲸小宝AI">
+      <img src="/maxkb-docs/ztocc_robot.png" alt="">
+    </button>
+    <p class="title">鲸小宝AI</p>
+    <p class="hint">点击后打开智能助手</p>
+    <button class="open" type="button">打开助手</button>
+  </main>
+
+  <iframe class="frame" title="鲸小宝AI" allow="microphone"></iframe>
+
+  <script>
+    const defaultToken = 'd8e06796195ffb94'
+    const params = new URLSearchParams(window.location.search)
+    const token = params.get('token') || defaultToken
+    const mode = params.get('mode') || 'mobile'
+    const target = new URL(`/maxkb-chat/${token}`, window.location.origin)
+    target.searchParams.set('mode', mode)
+
+    function openChat() {
+      const frame = document.querySelector('.frame')
+      if (!frame.src) frame.src = target.href
+      document.body.classList.add('loaded')
+    }
+
+    document.querySelector('.robot').addEventListener('click', openChat)
+    document.querySelector('.open').addEventListener('click', openChat)
+  </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+- generic [ref=e3]:
+  - link "Skip to content" [ref=e4] [cursor=pointer]:
+    - /url: "#VPContent"
+  - banner:
+    - generic:
+      - generic:
+        - generic:
+          - link "中通冷链" [ref=e6] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e7]: 中通冷链
+          - generic [ref=e8]:
+            - button "Search" [ref=e11] [cursor=pointer]:
+              - generic [ref=e14]: Search
+              - generic [ref=e15]:
+                - generic [ref=e16]: ⌘
+                - generic [ref=e17]: K
+            - navigation "Main Navigation" [ref=e18]:
+              - generic [ref=e19]: Main Navigation
+              - link "首页" [ref=e20] [cursor=pointer]:
+                - /url: /
+                - generic [ref=e21]: 首页
+              - link "必读" [ref=e22] [cursor=pointer]:
+                - /url: /「*必知必读」账号权限如何开通？/
+                - generic [ref=e23]: 必读
+              - link "网点操作" [ref=e24] [cursor=pointer]:
+                - /url: /网点操作/
+                - generic [ref=e25]: 网点操作
+              - link "云仓操作" [ref=e26] [cursor=pointer]:
+                - /url: /云仓操作/
+                - generic [ref=e27]: 云仓操作
+            - switch "Switch to dark theme" [ref=e29] [cursor=pointer]
+  - complementary [ref=e34]:
+    - navigation "Sidebar Navigation" [ref=e36]:
+      - generic [ref=e37]: Sidebar Navigation
+      - generic [ref=e39]:
+        - button "「必知必读」账号权限如何开通？" [ref=e40]:
+          - heading "「必知必读」账号权限如何开通？" [level=2] [ref=e42]
+        - generic [ref=e43]:
+          - link "系统如何访问？APP如何下载？" [ref=e47] [cursor=pointer]:
+            - /url: /%E3%80%8C%E5%BF%85%E7%9F%A5%E5%BF%85%E8%AF%BB%E3%80%8D%E8%B4%A6%E5%8F%B7%E6%9D%83%E9%99%90%E5%A6%82%E4%BD%95%E5%BC%80%E9%80%9A%EF%BC%9F/%E7%B3%BB%E7%BB%9F%E5%A6%82%E4%BD%95%E8%AE%BF%E9%97%AE%EF%BC%9FAPP%E5%A6%82%E4%BD%95%E4%B8%8B%E8%BD%BD%EF%BC%9F
+            - paragraph [ref=e48]: 系统如何访问？APP如何下载？
+          - link "系统账号如何开通？权限如何配置？" [ref=e52] [cursor=pointer]:
+            - /url: /%E3%80%8C%E5%BF%85%E7%9F%A5%E5%BF%85%E8%AF%BB%E3%80%8D%E8%B4%A6%E5%8F%B7%E6%9D%83%E9%99%90%E5%A6%82%E4%BD%95%E5%BC%80%E9%80%9A%EF%BC%9F/%E7%B3%BB%E7%BB%9F%E8%B4%A6%E5%8F%B7%E5%A6%82%E4%BD%95%E5%BC%80%E9%80%9A%EF%BC%9F%E6%9D%83%E9%99%90%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%EF%BC%9F
+            - paragraph [ref=e53]: 系统账号如何开通？权限如何配置？
+      - generic [ref=e55]:
+        - button "中心操作" [ref=e56]:
+          - heading "中心操作" [level=2] [ref=e58]
+        - generic [ref=e59]:
+          - generic [ref=e60]:
+            - button "司机操作篇" [ref=e61]:
+              - heading "司机操作篇" [level=3] [ref=e63]
+            - generic [ref=e64]:
+              - link "维保工单操作说明书" [ref=e68] [cursor=pointer]:
+                - /url: /%E4%B8%AD%E5%BF%83%E6%93%8D%E4%BD%9C/01%E5%8F%B8%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%AF%87/%E7%BB%B4%E4%BF%9D%E5%B7%A5%E5%8D%95%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e69]: 维保工单操作说明书
+              - link "自主加油操作说明书" [ref=e73] [cursor=pointer]:
+                - /url: /%E4%B8%AD%E5%BF%83%E6%93%8D%E4%BD%9C/01%E5%8F%B8%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%AF%87/%E8%87%AA%E4%B8%BB%E5%8A%A0%E6%B2%B9%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e74]: 自主加油操作说明书
+              - link "运输任务操作说明书" [ref=e78] [cursor=pointer]:
+                - /url: /%E4%B8%AD%E5%BF%83%E6%93%8D%E4%BD%9C/01%E5%8F%B8%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%AF%87/%E8%BF%90%E8%BE%93%E4%BB%BB%E5%8A%A1%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e79]: 运输任务操作说明书
+          - generic [ref=e80]:
+            - button "调度任务篇" [ref=e81]:
+              - heading "调度任务篇" [level=3] [ref=e83]
+            - generic [ref=e84]:
+              - link "调度任务操作说明书" [ref=e88] [cursor=pointer]:
+                - /url: /%E4%B8%AD%E5%BF%83%E6%93%8D%E4%BD%9C/02%E8%B0%83%E5%BA%A6%E4%BB%BB%E5%8A%A1%E7%AF%87/%E8%B0%83%E5%BA%A6%E4%BB%BB%E5%8A%A1%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e89]: 调度任务操作说明书
+              - link "车辆交接操作说明书" [ref=e93] [cursor=pointer]:
+                - /url: /%E4%B8%AD%E5%BF%83%E6%93%8D%E4%BD%9C/02%E8%B0%83%E5%BA%A6%E4%BB%BB%E5%8A%A1%E7%AF%87/%E8%BD%A6%E8%BE%86%E4%BA%A4%E6%8E%A5%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e94]: 车辆交接操作说明书
+          - generic [ref=e95]:
+            - button "PDA操作篇" [ref=e96]:
+              - heading "PDA操作篇" [level=3] [ref=e98]
+            - link "装卸任务操作说明书" [ref=e103] [cursor=pointer]:
+              - /url: /%E4%B8%AD%E5%BF%83%E6%93%8D%E4%BD%9C/03PDA%E6%93%8D%E4%BD%9C%E7%AF%87/%E8%A3%85%E5%8D%B8%E4%BB%BB%E5%8A%A1%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+              - paragraph [ref=e104]: 装卸任务操作说明书
+          - generic [ref=e105]:
+            - button "小程序操作篇" [ref=e106]:
+              - heading "小程序操作篇" [level=3] [ref=e108]
+            - link "装卸任务操作说明书" [ref=e113] [cursor=pointer]:
+              - /url: /%E4%B8%AD%E5%BF%83%E6%93%8D%E4%BD%9C/04%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%93%8D%E4%BD%9C%E7%AF%87/%E8%A3%85%E5%8D%B8%E4%BB%BB%E5%8A%A1%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+              - paragraph [ref=e114]: 装卸任务操作说明书
+      - generic [ref=e116]:
+        - button "云仓操作" [ref=e117]:
+          - heading "云仓操作" [level=2] [ref=e119]
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - button "OMS操作" [ref=e122]:
+              - heading "OMS操作" [level=3] [ref=e124]
+            - generic [ref=e125]:
+              - link "单据-_入库单" [ref=e129] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/OMS%E6%93%8D%E4%BD%9C/%E5%8D%95%E6%8D%AE-_%E5%85%A5%E5%BA%93%E5%8D%95
+                - paragraph [ref=e130]: 单据-_入库单
+              - link "单据-_出库单(2B)" [ref=e134] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/OMS%E6%93%8D%E4%BD%9C/%E5%8D%95%E6%8D%AE-_%E5%87%BA%E5%BA%93%E5%8D%95(2B)
+                - paragraph [ref=e135]: 单据-_出库单(2B)
+              - link "单据-_销售单(2C)" [ref=e139] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/OMS%E6%93%8D%E4%BD%9C/%E5%8D%95%E6%8D%AE-_%E9%94%80%E5%94%AE%E5%8D%95(2C)
+                - paragraph [ref=e140]: 单据-_销售单(2C)
+              - link "基础数据-_仓库管理" [ref=e144] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/OMS%E6%93%8D%E4%BD%9C/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE-_%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86
+                - paragraph [ref=e145]: 基础数据-_仓库管理
+              - link "基础数据-_商品管理" [ref=e149] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/OMS%E6%93%8D%E4%BD%9C/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE-_%E5%95%86%E5%93%81%E7%AE%A1%E7%90%86
+                - paragraph [ref=e150]: 基础数据-_商品管理
+              - link "基础数据-_客户管理" [ref=e154] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/OMS%E6%93%8D%E4%BD%9C/%E5%9F%BA%E7%A1%80%E6%95%B0%E6%8D%AE-_%E5%AE%A2%E6%88%B7%E7%AE%A1%E7%90%86
+                - paragraph [ref=e155]: 基础数据-_客户管理
+          - generic [ref=e156]:
+            - button "WMS操作" [ref=e157]:
+              - heading "WMS操作" [level=3] [ref=e159]
+            - generic [ref=e160]:
+              - link "01_创建仓库、货主、员工_操作说明书" [ref=e164] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/WMS%E6%93%8D%E4%BD%9C/01_%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93%E3%80%81%E8%B4%A7%E4%B8%BB%E3%80%81%E5%91%98%E5%B7%A5_%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e165]: 01_创建仓库、货主、员工_操作说明书
+              - link "02_创建库位、SKU_操作说明书" [ref=e169] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/WMS%E6%93%8D%E4%BD%9C/02_%E5%88%9B%E5%BB%BA%E5%BA%93%E4%BD%8D%E3%80%81SKU_%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e170]: 02_创建库位、SKU_操作说明书
+              - link "03_仓库初始配置（面向仓库）_操作说明书" [ref=e174] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/WMS%E6%93%8D%E4%BD%9C/03_%E4%BB%93%E5%BA%93%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE%EF%BC%88%E9%9D%A2%E5%90%91%E4%BB%93%E5%BA%93%EF%BC%89_%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e175]: 03_仓库初始配置（面向仓库）_操作说明书
+              - link "04_配置规则策略_操作说明书" [ref=e179] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/WMS%E6%93%8D%E4%BD%9C/04_%E9%85%8D%E7%BD%AE%E8%A7%84%E5%88%99%E7%AD%96%E7%95%A5_%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e180]: 04_配置规则策略_操作说明书
+              - link "05_入库作业_操作说明书" [ref=e184] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/WMS%E6%93%8D%E4%BD%9C/05_%E5%85%A5%E5%BA%93%E4%BD%9C%E4%B8%9A_%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e185]: 05_入库作业_操作说明书
+              - link "06_2C出库作业_操作说明书" [ref=e189] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/WMS%E6%93%8D%E4%BD%9C/06_2C%E5%87%BA%E5%BA%93%E4%BD%9C%E4%B8%9A_%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e190]: 06_2C出库作业_操作说明书
+              - link "07_WMS 2B出库作业_操作说明书" [ref=e194] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/WMS%E6%93%8D%E4%BD%9C/07_WMS%202B%E5%87%BA%E5%BA%93%E4%BD%9C%E4%B8%9A_%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e195]: 07_WMS 2B出库作业_操作说明书
+              - link "08_库内作业_操作说明书" [ref=e199] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/WMS%E6%93%8D%E4%BD%9C/08_%E5%BA%93%E5%86%85%E4%BD%9C%E4%B8%9A_%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e200]: 08_库内作业_操作说明书
+              - link "09_WMS操作手册V1（面向仓库）_操作说明书" [ref=e204] [cursor=pointer]:
+                - /url: /%E4%BA%91%E4%BB%93%E6%93%8D%E4%BD%9C/WMS%E6%93%8D%E4%BD%9C/09_WMS%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8CV1%EF%BC%88%E9%9D%A2%E5%90%91%E4%BB%93%E5%BA%93%EF%BC%89_%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e205]: 09_WMS操作手册V1（面向仓库）_操作说明书
+      - generic [ref=e207]:
+        - button "网点操作" [ref=e208]:
+          - heading "网点操作" [level=2] [ref=e210]
+        - generic [ref=e211]:
+          - generic [ref=e212]:
+            - button "物料购买篇" [ref=e213]:
+              - heading "物料购买篇" [level=3] [ref=e215]
+            - link "如何物料购买充值？" [ref=e220] [cursor=pointer]:
+              - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/01%E7%89%A9%E6%96%99%E8%B4%AD%E4%B9%B0%E7%AF%87/%E5%A6%82%E4%BD%95%E7%89%A9%E6%96%99%E8%B4%AD%E4%B9%B0%E5%85%85%E5%80%BC%EF%BC%9F
+              - paragraph [ref=e221]: 如何物料购买充值？
+          - generic [ref=e222]:
+            - button "客户下单篇" [ref=e223]:
+              - heading "客户下单篇" [level=3] [ref=e225]
+            - generic [ref=e226]:
+              - link "大客户_个人下单操作说明" [ref=e230] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/02%E5%AE%A2%E6%88%B7%E4%B8%8B%E5%8D%95%E7%AF%87/%E5%A4%A7%E5%AE%A2%E6%88%B7_%E4%B8%AA%E4%BA%BA%E4%B8%8B%E5%8D%95%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+                - paragraph [ref=e231]: 大客户_个人下单操作说明
+              - link "客户如何通过电商平台下单？" [ref=e235] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/02%E5%AE%A2%E6%88%B7%E4%B8%8B%E5%8D%95%E7%AF%87/%E5%AE%A2%E6%88%B7%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E7%94%B5%E5%95%86%E5%B9%B3%E5%8F%B0%E4%B8%8B%E5%8D%95%EF%BC%9F
+                - paragraph [ref=e236]: 客户如何通过电商平台下单？
+              - link "扫码下单操作说明" [ref=e240] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/02%E5%AE%A2%E6%88%B7%E4%B8%8B%E5%8D%95%E7%AF%87/%E6%89%AB%E7%A0%81%E4%B8%8B%E5%8D%95%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+                - paragraph [ref=e241]: 扫码下单操作说明
+          - generic [ref=e242]:
+            - button "订单运单篇" [ref=e243]:
+              - heading "订单运单篇" [level=3] [ref=e245]
+            - generic [ref=e246]:
+              - link "删单操作说明" [ref=e250] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/03%E8%AE%A2%E5%8D%95%E8%BF%90%E5%8D%95%E7%AF%87/%E5%88%A0%E5%8D%95%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+                - paragraph [ref=e251]: 删单操作说明
+              - link "原单退回操作说明" [ref=e255] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/03%E8%AE%A2%E5%8D%95%E8%BF%90%E5%8D%95%E7%AF%87/%E5%8E%9F%E5%8D%95%E9%80%80%E5%9B%9E%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+                - paragraph [ref=e256]: 原单退回操作说明
+              - link "回单操作说明" [ref=e260] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/03%E8%AE%A2%E5%8D%95%E8%BF%90%E5%8D%95%E7%AF%87/%E5%9B%9E%E5%8D%95%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+                - paragraph [ref=e261]: 回单操作说明
+              - link "批量录单操作说明" [ref=e265] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/03%E8%AE%A2%E5%8D%95%E8%BF%90%E5%8D%95%E7%AF%87/%E6%89%B9%E9%87%8F%E5%BD%95%E5%8D%95%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+                - paragraph [ref=e266]: 批量录单操作说明
+              - link "网点录单操作说明" [ref=e270] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/03%E8%AE%A2%E5%8D%95%E8%BF%90%E5%8D%95%E7%AF%87/%E7%BD%91%E7%82%B9%E5%BD%95%E5%8D%95%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+                - paragraph [ref=e271]: 网点录单操作说明
+              - link "订单管理操作说明" [ref=e275] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/03%E8%AE%A2%E5%8D%95%E8%BF%90%E5%8D%95%E7%AF%87/%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+                - paragraph [ref=e276]: 订单管理操作说明
+          - generic [ref=e277]:
+            - button "品控质量篇" [ref=e278]:
+              - heading "品控质量篇" [level=3] [ref=e280]
+            - generic [ref=e281]:
+              - link "仲裁如何申报、申诉？" [ref=e285] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/04%E5%93%81%E6%8E%A7%E8%B4%A8%E9%87%8F%E7%AF%87/%E4%BB%B2%E8%A3%81%E5%A6%82%E4%BD%95%E7%94%B3%E6%8A%A5%E3%80%81%E7%94%B3%E8%AF%89%EF%BC%9F
+                - paragraph [ref=e286]: 仲裁如何申报、申诉？
+              - link "工单如何有效处理？" [ref=e290] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/04%E5%93%81%E6%8E%A7%E8%B4%A8%E9%87%8F%E7%AF%87/%E5%B7%A5%E5%8D%95%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E5%A4%84%E7%90%86%EF%BC%9F
+                - paragraph [ref=e291]: 工单如何有效处理？
+              - link "差重差方如何申报" [ref=e295] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/04%E5%93%81%E6%8E%A7%E8%B4%A8%E9%87%8F%E7%AF%87/%E5%B7%AE%E9%87%8D%E5%B7%AE%E6%96%B9%E5%A6%82%E4%BD%95%E7%94%B3%E6%8A%A5
+                - paragraph [ref=e296]: 差重差方如何申报
+              - link "差重差方如何申诉" [ref=e300] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/04%E5%93%81%E6%8E%A7%E8%B4%A8%E9%87%8F%E7%AF%87/%E5%B7%AE%E9%87%8D%E5%B7%AE%E6%96%B9%E5%A6%82%E4%BD%95%E7%94%B3%E8%AF%89
+                - paragraph [ref=e301]: 差重差方如何申诉
+              - link "差错如何申报_申诉？" [ref=e305] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/04%E5%93%81%E6%8E%A7%E8%B4%A8%E9%87%8F%E7%AF%87/%E5%B7%AE%E9%94%99%E5%A6%82%E4%BD%95%E7%94%B3%E6%8A%A5_%E7%94%B3%E8%AF%89%EF%BC%9F
+                - paragraph [ref=e306]: 差错如何申报_申诉？
+              - link "敷衍问题件如何有效举证？" [ref=e310] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/04%E5%93%81%E6%8E%A7%E8%B4%A8%E9%87%8F%E7%AF%87/%E6%95%B7%E8%A1%8D%E9%97%AE%E9%A2%98%E4%BB%B6%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E4%B8%BE%E8%AF%81%EF%BC%9F
+                - paragraph [ref=e311]: 敷衍问题件如何有效举证？
+              - link "问题件如何有效回复" [ref=e315] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/04%E5%93%81%E6%8E%A7%E8%B4%A8%E9%87%8F%E7%AF%87/%E9%97%AE%E9%A2%98%E4%BB%B6%E5%A6%82%E4%BD%95%E6%9C%89%E6%95%88%E5%9B%9E%E5%A4%8D
+                - paragraph [ref=e316]: 问题件如何有效回复
+              - link "问题件预处罚有歧义，想要申诉？" [ref=e320] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/04%E5%93%81%E6%8E%A7%E8%B4%A8%E9%87%8F%E7%AF%87/%E9%97%AE%E9%A2%98%E4%BB%B6%E9%A2%84%E5%A4%84%E7%BD%9A%E6%9C%89%E6%AD%A7%E4%B9%89%EF%BC%8C%E6%83%B3%E8%A6%81%E7%94%B3%E8%AF%89%EF%BC%9F
+                - paragraph [ref=e321]: 问题件预处罚有歧义，想要申诉？
+          - generic [ref=e322]:
+            - button "结算财务篇" [ref=e323]:
+              - heading "结算财务篇" [level=3] [ref=e325]
+            - generic [ref=e326]:
+              - link "包仓仓位用的好快，哪里能看到仓位的使用明细呢？" [ref=e330] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/05%E7%BB%93%E7%AE%97%E8%B4%A2%E5%8A%A1%E7%AF%87/%E5%8C%85%E4%BB%93%E4%BB%93%E4%BD%8D%E7%94%A8%E7%9A%84%E5%A5%BD%E5%BF%AB%EF%BC%8C%E5%93%AA%E9%87%8C%E8%83%BD%E7%9C%8B%E5%88%B0%E4%BB%93%E4%BD%8D%E7%9A%84%E4%BD%BF%E7%94%A8%E6%98%8E%E7%BB%86%E5%91%A2%EF%BC%9F
+                - paragraph [ref=e331]: 包仓仓位用的好快，哪里能看到仓位的使用明细呢？
+              - link "发票绑定" [ref=e335] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/05%E7%BB%93%E7%AE%97%E8%B4%A2%E5%8A%A1%E7%AF%87/%E5%8F%91%E7%A5%A8%E7%BB%91%E5%AE%9A
+                - paragraph [ref=e336]: 发票绑定
+              - link "对总部的销项发票开好了，系统上还会被扣税点？【作废，功能已迁移至财务中心，参考“发票绑定”说明】" [ref=e340] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/05%E7%BB%93%E7%AE%97%E8%B4%A2%E5%8A%A1%E7%AF%87/%E5%AF%B9%E6%80%BB%E9%83%A8%E7%9A%84%E9%94%80%E9%A1%B9%E5%8F%91%E7%A5%A8%E5%BC%80%E5%A5%BD%E4%BA%86%EF%BC%8C%E7%B3%BB%E7%BB%9F%E4%B8%8A%E8%BF%98%E4%BC%9A%E8%A2%AB%E6%89%A3%E7%A8%8E%E7%82%B9%EF%BC%9F%E3%80%90%E4%BD%9C%E5%BA%9F%EF%BC%8C%E5%8A%9F%E8%83%BD%E5%B7%B2%E8%BF%81%E7%A7%BB%E8%87%B3%E8%B4%A2%E5%8A%A1%E4%B8%AD%E5%BF%83%EF%BC%8C%E5%8F%82%E8%80%83%E2%80%9C%E5%8F%91%E7%A5%A8%E7%BB%91%E5%AE%9A%E2%80%9D%E8%AF%B4%E6%98%8E%E3%80%91
+                - paragraph [ref=e341]: 对总部的销项发票开好了，系统上还会被扣税点？【作废，功能已迁移至财务中心，参考“发票绑定”说明】
+              - link "明明系统上账户余额充足，咋开单还提醒余额不足呢_" [ref=e345] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/05%E7%BB%93%E7%AE%97%E8%B4%A2%E5%8A%A1%E7%AF%87/%E6%98%8E%E6%98%8E%E7%B3%BB%E7%BB%9F%E4%B8%8A%E8%B4%A6%E6%88%B7%E4%BD%99%E9%A2%9D%E5%85%85%E8%B6%B3%EF%BC%8C%E5%92%8B%E5%BC%80%E5%8D%95%E8%BF%98%E6%8F%90%E9%86%92%E4%BD%99%E9%A2%9D%E4%B8%8D%E8%B6%B3%E5%91%A2_
+                - paragraph [ref=e346]: 明明系统上账户余额充足，咋开单还提醒余额不足呢_
+              - link "维护对客报价" [ref=e350] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/05%E7%BB%93%E7%AE%97%E8%B4%A2%E5%8A%A1%E7%AF%87/%E7%BB%B4%E6%8A%A4%E5%AF%B9%E5%AE%A2%E6%8A%A5%E4%BB%B7
+                - paragraph [ref=e351]: 维护对客报价
+              - link "网点账户好几个，分不清楚该看哪个余额咋办？" [ref=e355] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/05%E7%BB%93%E7%AE%97%E8%B4%A2%E5%8A%A1%E7%AF%87/%E7%BD%91%E7%82%B9%E8%B4%A6%E6%88%B7%E5%A5%BD%E5%87%A0%E4%B8%AA%EF%BC%8C%E5%88%86%E4%B8%8D%E6%B8%85%E6%A5%9A%E8%AF%A5%E7%9C%8B%E5%93%AA%E4%B8%AA%E4%BD%99%E9%A2%9D%E5%92%8B%E5%8A%9E%EF%BC%9F
+                - paragraph [ref=e356]: 网点账户好几个，分不清楚该看哪个余额咋办？
+          - generic [ref=e357]:
+            - button "相关考核篇" [ref=e358]:
+              - heading "相关考核篇" [level=3] [ref=e360]
+            - link "应该什么时候交提签？" [ref=e365] [cursor=pointer]:
+              - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/06%E7%9B%B8%E5%85%B3%E8%80%83%E6%A0%B8%E7%AF%87/%E5%BA%94%E8%AF%A5%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BA%A4%E6%8F%90%E7%AD%BE%EF%BC%9F
+              - paragraph [ref=e366]: 应该什么时候交提签？
+          - generic [ref=e367]:
+            - button "鲸小宝篇" [ref=e368]:
+              - heading "鲸小宝篇" [level=3] [ref=e370]
+            - link "鲸小宝APP操作说明书" [ref=e375] [cursor=pointer]:
+              - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/07%E9%B2%B8%E5%B0%8F%E5%AE%9D%E7%AF%87/%E9%B2%B8%E5%B0%8F%E5%AE%9DAPP%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+              - paragraph [ref=e376]: 鲸小宝APP操作说明书
+          - generic [ref=e377]:
+            - button "其他设置篇" [ref=e378]:
+              - heading "其他设置篇" [level=3] [ref=e380]
+            - generic [ref=e381]:
+              - link "业务员码设置" [ref=e385] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/08%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE%E7%AF%87/%E4%B8%9A%E5%8A%A1%E5%91%98%E7%A0%81%E8%AE%BE%E7%BD%AE
+                - paragraph [ref=e386]: 业务员码设置
+              - link "实名认证说明" [ref=e390] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/08%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE%E7%AF%87/%E5%AE%9E%E5%90%8D%E8%AE%A4%E8%AF%81%E8%AF%B4%E6%98%8E
+                - paragraph [ref=e391]: 实名认证说明
+              - link "鲸准达相关配置说明" [ref=e395] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/08%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE%E7%AF%87/%E9%B2%B8%E5%87%86%E8%BE%BE%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E
+                - paragraph [ref=e396]: 鲸准达相关配置说明
+          - generic [ref=e397]:
+            - button "冷链快递专题" [ref=e398]:
+              - heading "冷链快递专题" [level=3] [ref=e400]
+            - link "冷链快递操作说明" [ref=e405] [cursor=pointer]:
+              - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/09%E5%86%B7%E9%93%BE%E5%BF%AB%E9%80%92%E4%B8%93%E9%A2%98/%E5%86%B7%E9%93%BE%E5%BF%AB%E9%80%92%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+              - paragraph [ref=e406]: 冷链快递操作说明
+          - generic [ref=e407]:
+            - button "交提货篇" [ref=e408]:
+              - heading "交提货篇" [level=3] [ref=e410]
+            - generic [ref=e411]:
+              - link "交_提货操作说明书" [ref=e415] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/10%E4%BA%A4%E6%8F%90%E8%B4%A7%E7%AF%87/%E4%BA%A4_%E6%8F%90%E8%B4%A7%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e416]: 交_提货操作说明书
+              - link "客户自提操作说明书" [ref=e420] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/10%E4%BA%A4%E6%8F%90%E8%B4%A7%E7%AF%87/%E5%AE%A2%E6%88%B7%E8%87%AA%E6%8F%90%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e421]: 客户自提操作说明书
+              - link "送货入仓操作说明书" [ref=e425] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/10%E4%BA%A4%E6%8F%90%E8%B4%A7%E7%AF%87/%E9%80%81%E8%B4%A7%E5%85%A5%E4%BB%93%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E%E4%B9%A6
+                - paragraph [ref=e426]: 送货入仓操作说明书
+          - generic [ref=e427]:
+            - button "网点数据篇" [ref=e428]:
+              - heading "网点数据篇" [level=3] [ref=e430]
+            - generic [ref=e431]:
+              - link "PC端怎么查看网点相关数据" [ref=e435] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/11%E7%BD%91%E7%82%B9%E6%95%B0%E6%8D%AE%E7%AF%87/PC%E7%AB%AF%E6%80%8E%E4%B9%88%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%82%B9%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE
+                - paragraph [ref=e436]: PC端怎么查看网点相关数据
+              - link "移动端怎么查看网点相关数据" [ref=e440] [cursor=pointer]:
+                - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/11%E7%BD%91%E7%82%B9%E6%95%B0%E6%8D%AE%E7%AF%87/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E6%80%8E%E4%B9%88%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%82%B9%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE
+                - paragraph [ref=e441]: 移动端怎么查看网点相关数据
+          - link "微信AI客服操作手册" [ref=e445] [cursor=pointer]:
+            - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/%E5%BE%AE%E4%BF%A1AI%E5%AE%A2%E6%9C%8D%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C
+            - paragraph [ref=e446]: 微信AI客服操作手册
+      - generic [ref=e448]:
+        - button "网络货运" [ref=e449]:
+          - heading "网络货运" [level=2] [ref=e451]
+        - generic [ref=e452]:
+          - link "司机端注册操作说明" [ref=e456] [cursor=pointer]:
+            - /url: /%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90/%E5%8F%B8%E6%9C%BA%E7%AB%AF%E6%B3%A8%E5%86%8C%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+            - paragraph [ref=e457]: 司机端注册操作说明
+          - link "省公司三方车下单操作说明" [ref=e461] [cursor=pointer]:
+            - /url: /%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90/%E7%9C%81%E5%85%AC%E5%8F%B8%E4%B8%89%E6%96%B9%E8%BD%A6%E4%B8%8B%E5%8D%95%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+            - paragraph [ref=e462]: 省公司三方车下单操作说明
+          - link "网络货运司机抢单接单操作说明" [ref=e466] [cursor=pointer]:
+            - /url: /%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90/%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90%E5%8F%B8%E6%9C%BA%E6%8A%A2%E5%8D%95%E6%8E%A5%E5%8D%95%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+            - paragraph [ref=e467]: 网络货运司机抢单接单操作说明
+          - link "网络货运司机端运输操作手册" [ref=e471] [cursor=pointer]:
+            - /url: /%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90/%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90%E5%8F%B8%E6%9C%BA%E7%AB%AF%E8%BF%90%E8%BE%93%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C
+            - paragraph [ref=e472]: 网络货运司机端运输操作手册
+          - link "网络货运货主下单操作说明" [ref=e476] [cursor=pointer]:
+            - /url: /%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90/%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90%E8%B4%A7%E4%B8%BB%E4%B8%8B%E5%8D%95%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+            - paragraph [ref=e477]: 网络货运货主下单操作说明
+          - link "网络货运货主注册操作说明" [ref=e481] [cursor=pointer]:
+            - /url: /%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90/%E7%BD%91%E7%BB%9C%E8%B4%A7%E8%BF%90%E8%B4%A7%E4%B8%BB%E6%B3%A8%E5%86%8C%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E
+            - paragraph [ref=e482]: 网络货运货主注册操作说明
+      - link "index 2" [ref=e489] [cursor=pointer]:
+        - /url: /index%202
+        - paragraph [ref=e490]: index 2
+  - generic [ref=e493]:
+    - generic [ref=e495]:
+      - heading "中通冷链 操作手册" [level=1] [ref=e496]:
+        - generic [ref=e497]: 中通冷链
+        - generic [ref=e498]: 操作手册
+      - paragraph [ref=e499]: 覆盖网点、中心、云仓、网络货运全链路业务操作
+      - generic [ref=e500]:
+        - link "开始阅读" [ref=e502] [cursor=pointer]:
+          - /url: /网点操作/
+        - link "账号权限" [ref=e504] [cursor=pointer]:
+          - /url: /「必知必读」账号权限如何开通？/
+    - generic [ref=e508]:
+      - main
+      - contentinfo [ref=e509]:
+        - navigation "Pager" [ref=e510]:
+          - generic [ref=e511]: Pager
+          - link "Previous page 如何物料购买充值？" [ref=e513] [cursor=pointer]:
+            - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/01%E7%89%A9%E6%96%99%E8%B4%AD%E4%B9%B0%E7%AF%87/%E5%A6%82%E4%BD%95%E7%89%A9%E6%96%99%E8%B4%AD%E4%B9%B0%E5%85%85%E5%80%BC%EF%BC%9F
+            - generic [ref=e514]: Previous page
+            - generic [ref=e515]: 如何物料购买充值？
+          - link "Next page 客户如何通过电商平台下单？" [ref=e517] [cursor=pointer]:
+            - /url: /%E7%BD%91%E7%82%B9%E6%93%8D%E4%BD%9C/02%E5%AE%A2%E6%88%B7%E4%B8%8B%E5%8D%95%E7%AF%87/%E5%AE%A2%E6%88%B7%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E7%94%B5%E5%95%86%E5%B9%B3%E5%8F%B0%E4%B8%8B%E5%8D%95%EF%BC%9F
+            - generic [ref=e518]: Next page
+            - generic [ref=e519]: 客户如何通过电商平台下单？
