@@ -372,9 +372,5 @@ export default [
         "link": "/网络货运/网络货运货主注册操作说明"
       }
     ]
-  },
-  {
-    "text": "index 2",
-    "link": "/index 2"
   }
 ]

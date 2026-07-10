@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vitepress dev docs --port 4000",
     "build": "vitepress build docs",
+    "docs:sidebar": "python3 ../src/gen_sidebar.py docs",
+    "docs:refresh": "npm run docs:sidebar && vitepress build docs",
     "preview": "vitepress preview docs --port 4000",
     "start": "node server.js"
   },
