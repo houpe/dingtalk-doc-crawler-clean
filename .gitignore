@@ -35,6 +35,7 @@ Thumbs.db
 # 工具运行产物 / 本地备份
 .opencode/
 .playwright-mcp/
+.worktrees/
 output_backup_*/
 
 # Node
