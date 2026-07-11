@@ -6,6 +6,10 @@ Stage 1: 抓取 → Stage 2: 过滤 → Stage 3: 优化 → Stage 4: VitePress �
 Usage:
     python3 pipeline.py <url>                        # 全量一条龙
     python3 pipeline.py --source ./output            # 从已有 MD 开始
+    python3 pipeline.py --source ./output --content-only
+                                                      # 仅过滤和优化
+    python3 pipeline.py --source ./output_optimized --site-only --no-serve
+                                                      # 仅生成本地站点
     python3 pipeline.py --source ./output --no-ai    # 跳过 AI 优化
     python3 pipeline.py --source ./output --deploy full  # 部署到服务器
 """
@@ -917,30 +921,7 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
         if src_asset.exists():
             shutil.copy2(src_asset, public_dir / asset_name)
 
-    (sd / "server.js").write_text(SERVER_JS.lstrip(), encoding="utf-8")
-
-    (sd / "package.json").write_text(
-        json.dumps({
-            "name": "zto-docs",
-            "version": "1.0.0",
-            "private": True,
-            "type": "module",
-            "scripts": {
-                "dev": "vitepress dev docs --port 4000",
-                "build": "vitepress build docs",
-                "preview": "vitepress preview docs --port 4000",
-                "start": "node server.js",
-            },
-            "devDependencies": {
-                "vitepress": "^1.6.0",
-                "vue": "^3.5.0",
-                "express": "^4.21.0",
-                "jsonwebtoken": "^9.0.2",
-                "medium-zoom": "^1.1.0",
-            },
-        }, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
+    _ensure_site_runtime(sd)
 
     md_count = len(list(docs_dir.rglob("*.md"))) - 1  # subtract index.md
     summary_line("MD 文件数", str(md_count))
@@ -986,6 +967,38 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
     summary_line("构建耗时", fmt_time(elapsed))
 
     return {"pages": md_count, "assets": asset_count, "elapsed": elapsed}
+
+
+def _ensure_site_runtime(site_dir: Path) -> None:
+    """Initialize the generated site runtime without overwriting checked-in customizations."""
+    server_path = site_dir / "server.js"
+    if not server_path.exists():
+        server_path.write_text(SERVER_JS.lstrip(), encoding="utf-8")
+
+    package_path = site_dir / "package.json"
+    if not package_path.exists():
+        package_path.write_text(
+            json.dumps({
+                "name": "zto-docs",
+                "version": "1.0.0",
+                "private": True,
+                "type": "module",
+                "scripts": {
+                    "dev": "vitepress dev docs --port 4000",
+                    "build": "vitepress build docs",
+                    "preview": "vitepress preview docs --port 4000",
+                    "start": "node server.js",
+                },
+                "devDependencies": {
+                    "vitepress": "^1.6.0",
+                    "vue": "^3.5.0",
+                    "express": "^4.21.0",
+                    "jsonwebtoken": "^9.0.2",
+                    "medium-zoom": "^1.1.0",
+                },
+            }, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
 
 
 def _clean_docs_content(docs_dir: Path) -> None:
@@ -1291,7 +1304,15 @@ def _deploy(site_dir: Path, mode: str = "fast") -> None:
 
 # ── Main ────────────────────────────────────────────────────────
 
-def main() -> None:
+def _validate_site_source(source: Path) -> None:
+    root_dir = source / "根目录"
+    if not root_dir.is_dir():
+        raise ValueError(f"本地站点源目录不存在: {root_dir}")
+    if not any(root_dir.rglob("*.md")):
+        raise ValueError(f"本地站点源目录没有 Markdown: {root_dir}")
+
+
+def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(
         description="钉钉文档一条龙: 抓取 → 过滤 → 优化 → VitePress",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -1311,9 +1332,43 @@ def main() -> None:
                         help="部署到服务器: fast=只传非图片, full=全部重传")
     parser.add_argument("--exclude", action="append", default=[],
                         help="追加排除关键字（可多次使用）")
-    args = parser.parse_args()
+    stage_mode = parser.add_mutually_exclusive_group()
+    stage_mode.add_argument("--content-only", action="store_true",
+                            help="仅过滤、优化并生成 output_optimized，不构建站点")
+    stage_mode.add_argument("--site-only", action="store_true",
+                            help="仅从优化结果生成 site/docs 和 dist，不再过滤或优化")
+    args = parser.parse_args(argv)
 
     total_t0 = time.time()
+
+    if args.content_only and args.deploy:
+        parser.error("--content-only 不能与 --deploy 同时使用")
+
+    if args.site_only:
+        if args.deploy:
+            parser.error("--site-only 不能与 --deploy 同时使用")
+        if not args.source:
+            parser.error("--site-only 必须通过 --source 指定 output_optimized")
+
+        source = Path(args.source).resolve()
+        if not source.exists():
+            parser.error(f"源目录不存在: {source}")
+        try:
+            _validate_site_source(source)
+        except ValueError as error:
+            parser.error(str(error))
+
+        stage_vitepress(
+            source,
+            serve=not args.no_serve,
+            deploy=None,
+        )
+
+        total_elapsed = time.time() - total_t0
+        print(f"\n{'═' * 60}")
+        print(f"  本地站点构建完成! 总耗时: {fmt_time(total_elapsed)}")
+        print(f"{'═' * 60}\n")
+        return
 
     # ── Stage 1: 抓取 ──
     if args.source:
@@ -1338,8 +1393,15 @@ def main() -> None:
         model=args.model,
     )
 
+    if args.content_only:
+        total_elapsed = time.time() - total_t0
+        print(f"\n{'═' * 60}")
+        print(f"  文档生成完成! 输出: {optimized}")
+        print(f"  总耗时: {fmt_time(total_elapsed)}")
+        print(f"{'═' * 60}\n")
+        return
+
     # ── Stage 4: VitePress ──
-    # ── Stage 4: VitePress 构建 ──
     stage_vitepress(
         optimized,
         serve=not args.no_serve and not args.deploy,

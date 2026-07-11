@@ -9,13 +9,15 @@
     "docs:sidebar": "python3 ../src/gen_sidebar.py docs",
     "docs:refresh": "npm run docs:sidebar && vitepress build docs",
     "preview": "vitepress preview docs --port 4000",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js"
   },
   "devDependencies": {
     "vitepress": "^1.6.0",
     "vue": "^3.5.0",
     "express": "^4.21.0",
     "jsonwebtoken": "^9.0.2",
-    "medium-zoom": "^1.1.0"
+    "medium-zoom": "^1.1.0",
+    "supertest": "^7.1.1"
   }
 }

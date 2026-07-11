@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文档控制台</title>
+    <link rel="stylesheet" href="/admin-static/admin.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="header-inner">
+        <div>
+          <p class="eyebrow">LOCAL DOCS OPERATIONS</p>
+          <h1>文档控制台</h1>
+        </div>
+        <div class="header-actions">
+          <a id="preview-site" class="preview-link" href="/" target="_blank" rel="noopener">
+            预览本地站点
+          </a>
+          <span class="local-address">127.0.0.1</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="status-section" id="status-panel">
+        <div class="section-head">
+          <div>
+            <h2>当前状态</h2>
+            <div id="status-summary" class="status-summary" aria-live="polite">
+              正在获取任务状态...
+            </div>
+          </div>
+          <div class="status-tools">
+            <span id="status-badge" class="badge">加载中</span>
+            <button id="refresh-status" class="secondary" type="button">刷新状态</button>
+          </div>
+        </div>
+        <details class="status-details">
+          <summary>状态详情</summary>
+          <pre id="status-output">加载中...</pre>
+        </details>
+      </section>
+
+      <div class="task-grid">
+        <section class="task-section">
+          <h2>1. 文档生成</h2>
+          <div id="group-content" class="actions" data-group="content">
+            <span class="empty-state">加载任务中...</span>
+          </div>
+        </section>
+
+        <section class="task-section">
+          <h2>2. 本地站点构建与预览</h2>
+          <div id="group-site" class="actions" data-group="site">
+            <span class="empty-state">加载任务中...</span>
+          </div>
+        </section>
+
+        <section class="task-section">
+          <h2>3. 部署到服务器</h2>
+          <div id="group-deploy" class="actions" data-group="deploy">
+            <span class="empty-state">加载任务中...</span>
+          </div>
+          <div class="actions stop-action">
+            <article class="task-card task-card-danger">
+              <button
+                id="stop-task"
+                class="danger"
+                type="button"
+                aria-describedby="stop-task-description"
+              >
+                停止当前任务
+              </button>
+              <p id="stop-task-description" class="task-description">
+                终止当前任务的进程组；5 秒未退出则强制终止。不会回滚已生成文件或已经完成的部署。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="task-section task-section-full">
+          <h2>全量流程（可选）</h2>
+          <div id="group-full" class="actions" data-group="full">
+            <span class="empty-state">加载任务中...</span>
+          </div>
+        </section>
+      </div>
+
+      <section class="logs-section">
+        <div class="section-head">
+          <h2>运行日志</h2>
+          <button id="clear-logs" class="secondary" type="button">清空显示</button>
+        </div>
+        <pre id="log-output" aria-live="polite">暂无日志</pre>
+      </section>
+    </main>
+    <script type="module" src="/admin-static/admin.js"></script>
+  </body>
+</html>

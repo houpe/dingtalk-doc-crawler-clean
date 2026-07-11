@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """使用 dws CLI 从钉钉知识库拉取文档"""
 import json
+import shutil
 import subprocess
 import sys
 import re
@@ -254,14 +255,23 @@ def download_all_images(output_dir: Path) -> dict:
     return total_stats
 
 
+def prepare_output_directory(output_dir: Path) -> Path:
+    """Create a clean raw-output tree so deleted DingTalk docs cannot survive a new run."""
+    if output_dir.exists():
+        shutil.rmtree(output_dir)
+
+    output_base = output_dir / "根目录"
+    output_base.mkdir(parents=True, exist_ok=True)
+    return output_base
+
+
 def main():
     print(f"开始从钉钉知识库拉取文档...")
     print(f"知识库: {WORKSPACE_ID}")
     print(f"排除关键词: {EXCLUDE_KEYWORDS}")
     
     output_dir = Path("output")
-    output_base = output_dir / "根目录"
-    output_base.mkdir(parents=True, exist_ok=True)
+    output_base = prepare_output_directory(output_dir)
     
     # 列出所有顶层节点
     nodes = list_workspace_nodes(WORKSPACE_ID)
