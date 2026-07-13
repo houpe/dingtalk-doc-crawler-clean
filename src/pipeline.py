@@ -169,7 +169,12 @@ def _cleanup_empty_dirs(root: Path) -> None:
 
 # ── Stage 3: Markdown 优化 ─────────────────────────────────────
 
-def stage_optimize(output_dir: Path, use_ai: bool = False, model: str = "deepseek-chat") -> tuple[Path, dict]:
+def stage_optimize(
+    output_dir: Path,
+    use_ai: bool = False,
+    model: str = "deepseek-chat",
+    quality_report: bool = True,
+) -> tuple[Path, dict]:
     banner("Stage 3/4: Markdown 优化")
     t0 = time.time()
 
@@ -192,12 +197,22 @@ def stage_optimize(output_dir: Path, use_ai: bool = False, model: str = "deepsee
     print(f"  [规则引擎] 处理 {rule_count} 个文件 ✓ {fmt_time(rule_time)}")
 
     if not use_ai:
+        quality_stats = _write_quality_report(rule_output) if quality_report else {"files": 0, "issues": 0}
         elapsed = time.time() - t0
         divider()
         summary_line("规则引擎", f"{rule_count} 个 ✓ {fmt_time(rule_time)}")
         summary_line("AI 优化", "已跳过（加 --use-ai 启用）")
+        if quality_report:
+            summary_line("质量报告", f"{quality_stats['files']} 个文件有问题, {quality_stats['issues']} 项")
         summary_line("耗时", fmt_time(elapsed))
-        return rule_output, {"rule_count": rule_count, "ai_success": 0, "ai_fail": 0, "elapsed": elapsed}
+        return rule_output, {
+            "rule_count": rule_count,
+            "ai_success": 0,
+            "ai_fail": 0,
+            "quality_files": quality_stats["files"],
+            "quality_issues": quality_stats["issues"],
+            "elapsed": elapsed,
+        }
 
     print(f"\n  [DeepSeek AI] 模型: {model}")
     optimized = ROOT / "output_optimized"
@@ -245,6 +260,7 @@ def stage_optimize(output_dir: Path, use_ai: bool = False, model: str = "deepsee
 
     _copy_images(reformatted, optimized)
 
+    quality_stats = _write_quality_report(optimized) if quality_report else {"files": 0, "issues": 0}
     ai_time = time.time() - ai_t0
     elapsed = time.time() - t0
     ai_success = total - len(failed)
@@ -252,6 +268,8 @@ def stage_optimize(output_dir: Path, use_ai: bool = False, model: str = "deepsee
     divider()
     summary_line("规则引擎", f"{rule_count} 个 ✓ {fmt_time(rule_time)}")
     summary_line("AI 优化", f"{ai_success}/{total} 成功, {len(failed)} 失败, {fmt_time(ai_time)}")
+    if quality_report:
+        summary_line("质量报告", f"{quality_stats['files']} 个文件有问题, {quality_stats['issues']} 项")
     if failed:
         print(f"  失败文件: {failed}")
     summary_line("耗时", fmt_time(elapsed))
@@ -261,8 +279,19 @@ def stage_optimize(output_dir: Path, use_ai: bool = False, model: str = "deepsee
         "ai_success": ai_success,
         "ai_fail": len(failed),
         "failed_files": failed,
+        "quality_files": quality_stats["files"],
+        "quality_issues": quality_stats["issues"],
         "elapsed": elapsed,
     }
+
+
+def _write_quality_report(md_root: Path) -> dict:
+    sys.path.insert(0, str(ROOT / "src"))
+    from doc_quality import write_report
+
+    report_path = ROOT / "docs" / "doc-quality-report.md"
+    files, issues = write_report(md_root, report_path)
+    return {"files": files, "issues": issues, "path": str(report_path)}
 
 
 def _discover_md(root: Path) -> list[Path]:
@@ -433,13 +462,13 @@ hero:
       link: /网点操作/
     - theme: alt
       text: 账号权限
-      link: /「必知必读」账号权限如何开通？/
+      link: /「_必知必读」账号权限如何开通？/
 
 features:
   - icon: 📌
     title: 必知必读
     details: 账号权限开通、系统访问方式、APP 下载等基础准备。
-    link: /「必知必读」账号权限如何开通？/
+    link: /「_必知必读」账号权限如何开通？/
     linkText: 查看文档
   - icon: 🏠
     title: 网点操作
@@ -1104,6 +1133,10 @@ _SIDEBAR_STRIP_PATTERN = re.compile(
 
 def _clean_sidebar_text(text: str) -> str:
     text = _SIDEBAR_STRIP_PATTERN.sub("", text)
+    text = text.replace("操作说明书", "").replace("操作说明", "")
+    text = re.sub(r"_{2,}", "_", text)
+    text = re.sub(r"[-_]{2,}", "-", text)
+    text = re.sub(r"\s{2,}", " ", text)
     text = text.strip("：:- \t\n\r")
     return text or text
 
@@ -1299,7 +1332,7 @@ def _deploy(site_dir: Path, mode: str = "fast") -> None:
     run(["ssh", DEPLOY_HOST, ssh_cmd])
 
     os.remove(tmp_tar)
-    summary_line("部署完成", f"https://houpe.top/zto/")
+    summary_line("部署完成", f"https://wiki.houpe.top/")
 
 
 # ── Main ────────────────────────────────────────────────────────
@@ -1326,6 +1359,8 @@ def main(argv: list[str] | None = None) -> None:
                         help="启用 DeepSeek AI 语义优化（默认关闭）")
     parser.add_argument("--model", default="deepseek-chat",
                         help="DeepSeek 模型 (default: deepseek-chat)")
+    parser.add_argument("--no-quality-report", action="store_true",
+                        help="不生成 docs/doc-quality-report.md 质量检查报告")
     parser.add_argument("--no-serve", action="store_true",
                         help="构建完不启动本地预览")
     parser.add_argument("--deploy", choices=["fast", "full"], default=None,
@@ -1391,6 +1426,7 @@ def main(argv: list[str] | None = None) -> None:
         source,
         use_ai=args.use_ai,
         model=args.model,
+        quality_report=not args.no_quality_report,
     )
 
     if args.content_only:

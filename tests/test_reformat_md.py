@@ -91,6 +91,22 @@ class BoldLabelNormalizationTest(unittest.TestCase):
 
         self.assertEqual(result, "# 2C出库作业\n\nPC端操作+ PDA端操作\n\n路径：出库 -> 出库包裹")
 
+    def test_enriches_sparse_document_with_manual_sections(self):
+        source = "# 旧标题\n\n点击保存后查看状态。"
+        result = reformat_md.ensure_document_structure(
+            source,
+            reformat_md.Path("/tmp/包仓仓位明细.md"),
+        )
+
+        self.assertIn("## 适用场景", result)
+        self.assertIn("## 前置条件", result)
+        self.assertIn("## 操作入口", result)
+        self.assertIn("## 操作步骤", result)
+        self.assertIn("## 操作结果", result)
+        self.assertIn("## 注意事项", result)
+        self.assertIn("## 常见问题", result)
+        self.assertIn("点击保存后查看状态。", result)
+
 
 if __name__ == "__main__":
     unittest.main()

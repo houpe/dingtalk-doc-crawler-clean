@@ -44,10 +44,31 @@ LEADING_EMOJIS = tuple(sorted(set(EMOJI_MAP.values()), key=len, reverse=True))
 EMOJI_PATTERN = "|".join(re.escape(e) for e in LEADING_EMOJIS)
 
 HEADING_LABELS = {
-    "规则概览", "适用范围", "适用对象", "前置条件", "操作入口",
-    "权限说明", "上架操作", "网点申购明细查询", "撤销购买", "撤销的限制",
-    "撤销成功后", "收货完成", "物流轨迹", "库存相关", "财务", "回单",
-    "运单状态", "常见问题", "结果说明", "使用说明",
+    "规则概览", "适用范围", "适用对象", "适用场景", "前置条件", "操作入口",
+    "操作步骤", "操作结果", "结果校验", "注意事项", "权限说明", "上架操作",
+    "网点申购明细查询", "撤销购买", "撤销的限制", "撤销成功后", "收货完成",
+    "物流轨迹", "库存相关", "财务", "回单", "运单状态", "常见问题", "结果说明",
+    "使用说明",
+}
+
+DOC_STRUCTURE_HEADINGS = (
+    "适用场景",
+    "前置条件",
+    "操作入口",
+    "操作步骤",
+    "操作结果",
+    "注意事项",
+    "常见问题",
+)
+
+DOC_STRUCTURE_KEYWORDS = {
+    "适用场景": ("适用", "场景", "用于", "什么情况下", "业务场景"),
+    "前置条件": ("前置", "条件", "权限", "账号", "登录", "准备"),
+    "操作入口": ("入口", "路径", "菜单", "系统", "页面"),
+    "操作步骤": ("步骤", "操作", "点击", "选择", "填写", "保存"),
+    "操作结果": ("结果", "完成", "成功", "状态", "生成"),
+    "注意事项": ("注意", "限制", "不可", "必须", "仅", "异常", "失败"),
+    "常见问题": ("问题", "FAQ", "为什么", "如何", "怎么办", "无法"),
 }
 
 # 容器类型映射：tip（提示信息）、warning（注意事项）、danger（重点警告）、info（普通信息）
@@ -852,8 +873,84 @@ def normalize_markdown_escapes(md_text: str) -> str:
     return "\n".join(out)
 
 
+def _detect_section_heading(lines: list[str], heading: str) -> bool:
+    pattern = re.compile(rf"^##+\s+{re.escape(heading)}(?:\s|$)")
+    return any(pattern.match(line.strip()) for line in lines)
+
+
+def _infer_operation_entry(lines: list[str]) -> str | None:
+    patterns = (
+        r"(?:操作)?(?:入口|路径|菜单)\s*[：:]\s*(.+)",
+        r"(?:进入|打开)\s*(.+?(?:系统|页面|菜单|管理|中心|平台).*)",
+    )
+    for line in lines:
+        plain = re.sub(r"^[>\-\d.、\s]+", "", line).strip()
+        plain = re.sub(r"<[^>]+>", "", plain)
+        if len(plain) > 120:
+            continue
+        for pattern in patterns:
+            match = re.search(pattern, plain)
+            if match:
+                value = match.group(1).strip(" 。；;，,")
+                if value:
+                    return value
+    return None
+
+
+def _make_placeholder_for_heading(heading: str, title: str, lines: list[str]) -> str:
+    if heading == "适用场景":
+        return f"本文适用于需要了解“{title}”相关操作的业务场景。"
+    if heading == "前置条件":
+        return "请确认账号已开通对应菜单权限，并已准备好操作所需的业务数据。"
+    if heading == "操作入口":
+        entry = _infer_operation_entry(lines)
+        return f"{entry}。" if entry else "请以系统实际菜单路径为准。"
+    if heading == "操作结果":
+        return "操作完成后，请在系统页面确认数据状态或处理结果是否符合预期。"
+    if heading == "注意事项":
+        return "如页面展示、权限范围或业务规则与本文不一致，请以当前系统配置和最新业务规则为准。"
+    if heading == "常见问题":
+        return "暂无。后续可根据一线反馈补充高频问题。"
+    return ""
+
+
+def _should_add_structure(lines: list[str], src: Path) -> bool:
+    if src.name == "index.md":
+        return False
+    body_text = "\n".join(lines[1:]).strip()
+    if not body_text:
+        return False
+    h2_count = sum(1 for line in lines[1:] if re.match(r"^##\s+", line))
+    return h2_count < 2
+
+
+def enrich_document_sections(lines: list[str], src: Path, title: str) -> list[str]:
+    """为结构不足的文档补齐稳定的操作手册骨架。"""
+    if not _should_add_structure(lines, src):
+        return lines
+
+    existing = {heading for heading in DOC_STRUCTURE_HEADINGS if _detect_section_heading(lines, heading)}
+    original_body = [line for line in lines[1:]]
+    new_lines = [lines[0], ""]
+
+    for heading in DOC_STRUCTURE_HEADINGS:
+        if heading in existing:
+            continue
+        if heading == "操作步骤":
+            continue
+        placeholder = _make_placeholder_for_heading(heading, title, original_body)
+        if placeholder:
+            new_lines.extend([f"## {heading}", "", placeholder, ""])
+
+    if not _detect_section_heading(original_body, "操作步骤"):
+        new_lines.extend(["## 操作步骤", ""])
+
+    new_lines.extend(original_body)
+    return new_lines
+
+
 def ensure_document_structure(md_text: str, src: Path) -> str:
-    """统一 frontmatter、H1 和短文档结构。"""
+    """统一 frontmatter、H1 和操作手册结构。"""
     title = _title_from_path(src)
     description = f"{title}的操作说明。"
     text = _strip_existing_generated_frontmatter(md_text).lstrip("\n")
@@ -870,11 +967,7 @@ def ensure_document_structure(md_text: str, src: Path) -> str:
             rest = lines[first_h1_idx:]
             lines = rest[:1] + [""] + prefix + [""] + rest[1:]
 
-    body_after_h1 = "\n".join(lines[1:]).strip()
-    has_subheading = any(re.match(r"^##\s+", line) for line in lines[1:])
-    is_index = src.name == "index.md"
-    if body_after_h1 and not has_subheading and not is_index:
-        lines = [lines[0], "", "## 操作步骤", ""] + [line for line in lines[1:] if line.strip() or line == ""]
+    lines = enrich_document_sections(lines, src, title)
 
     # 压缩多余空行，避免插入结构时产生大段空白。
     compact: list[str] = []
