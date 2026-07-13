@@ -24,18 +24,66 @@ STRIP_RE = re.compile(
 SKIP_DIRS = {"images", ".vitepress", "public", "node_modules", ".git", "__pycache__"}
 INDEX_SECTION_HEADINGS = {"## 分类", "## 文档"}
 INDEX_LINK_RE = re.compile(r"^- (?:\*\*)?\[[^\]]+\]\(\./[^)]*\)(?:\*\*)?$")
+TOP_LEVEL_SECTION_ORDER = {
+    "网点操作": 1,
+    "中心操作": 2,
+    "云仓操作": 3,
+    "网络货运": 4,
+}
+TOP_LEVEL_PATH_RENAMES = {
+    "一、网点操作": "网点操作",
+    "二、中心操作": "中心操作",
+    "三、云仓操作": "云仓操作",
+    "四、网络货运": "网络货运",
+}
+
+
+def strip_operation_instruction(text: str) -> str:
+    """移除仅用于文件命名的“操作说明（书）”，保留真实链接文件名。"""
+    cleaned = text.replace("操作说明书", "").replace("操作说明", "")
+    cleaned = re.sub(r"_{2,}", "_", cleaned)
+    cleaned = re.sub(r"[-_]{2,}", "-", cleaned)
+    cleaned = re.sub(r"\s{2,}", " ", cleaned)
+    return cleaned.strip(" _：:-\t\n\r") or text
 
 
 def clean(text: str) -> str:
     text = STRIP_RE.sub("", text)
+    text = strip_operation_instruction(text)
     return text.strip("：:- \t\n\r") or text
+
+
+def directory_sort_key(name: str, *, is_top_level: bool) -> tuple[int, str]:
+    """首页与侧边栏使用相同的一级栏目顺序，其余目录保持名称排序。"""
+    label = clean(name)
+    if not is_top_level:
+        return (100, label)
+    if "必知必读" in label:
+        return (0, label)
+    return (TOP_LEVEL_SECTION_ORDER.get(label, 100), label)
+
+
+def normalize_order_path(path: str) -> str:
+    """把钉钉原始路径转换为 site/docs 使用的路径。"""
+    parts = path.removeprefix("根目录/").split("/")
+    if parts:
+        parts[0] = TOP_LEVEL_PATH_RENAMES.get(parts[0], parts[0])
+    return "/".join(parts)
 
 
 def _has_docs(dir_path: Path) -> bool:
     return any(path.name != "index.md" for path in dir_path.rglob("*.md"))
 
 
+FRONTMATTER_RE = re.compile(r"\A---\n[\s\S]*?\n---\n?")
+
+
+def strip_frontmatter(content: str) -> str:
+    return FRONTMATTER_RE.sub("", content, count=1).lstrip("\n")
+
+
 def _is_generated_index(content: str) -> bool:
+    content = strip_frontmatter(content)
     lines = [ln.strip() for ln in content.splitlines() if ln.strip()]
     if len(lines) <= 1:
         return True
@@ -51,7 +99,7 @@ def _is_generated_index(content: str) -> bool:
     return True
 
 
-def build_sidebar(dir_path: Path, rel_prefix: str = "") -> list:
+def build_sidebar(dir_path: Path, rel_prefix: str = "", order_map: dict[str, int] | None = None) -> list:
     items = []
     try:
         entries = sorted(os.listdir(dir_path))
@@ -62,10 +110,24 @@ def build_sidebar(dir_path: Path, rel_prefix: str = "") -> list:
             if (dir_path / i).is_dir() and i not in SKIP_DIRS and not i.startswith(".")]
     mds = [i for i in entries if i.endswith(".md") and i != "index.md"]
 
-    for d in sorted(dirs):
+    def order_key(name: str, *, is_dir: bool) -> tuple[int, tuple[int, str]]:
+        relative_path = f"{rel_prefix}/{name}" if rel_prefix else name
+        if order_map:
+            positions = [
+                position
+                for path, position in order_map.items()
+                if path == relative_path
+                or (not is_dir and path == f"{relative_path}.md")
+                or (is_dir and path.startswith(f"{relative_path}/"))
+            ]
+            if positions:
+                return (min(positions), (0, ""))
+        return (10**9, directory_sort_key(name, is_top_level=not rel_prefix) if is_dir else (100, clean(name)))
+
+    for d in sorted(dirs, key=lambda name: order_key(name, is_dir=True)):
         full = dir_path / d
         sub_rel = f"{rel_prefix}/{d}" if rel_prefix else d
-        sub_items = build_sidebar(full, sub_rel)
+        sub_items = build_sidebar(full, sub_rel, order_map)
 
         # If no sub-items found, add direct md files as items
         if not sub_items:
@@ -80,20 +142,31 @@ def build_sidebar(dir_path: Path, rel_prefix: str = "") -> list:
                 })
 
         if sub_items:
-            # 不设 collapsed：VitePress 默认展开，文章直接可见
+            # `collapsed` 同时启用 VitePress 的折叠箭头：一级栏目保持展开，
+            # 二级及更深目录默认收起，当前文章所在分支会由 VitePress 自动展开。
             items.append({
                 "text": clean(d),
+                "collapsed": bool(rel_prefix),
                 "items": sub_items
             })
             # 为目录生成 index.md，使 /模块名/ 这种目录 URL 可访问
             _ensure_dir_index(full, sub_items, clean(d))
 
-    for md in sorted(mds):
+    for md in sorted(mds, key=lambda name: order_key(name[:-3], is_dir=False)):
         raw = md.replace(".md", "")
         link = f"/{rel_prefix}/{raw}" if rel_prefix else f"/{raw}"
         items.append({"text": clean(raw), "link": link})
 
     return items
+
+
+def _yaml_quote(value: str) -> str:
+    return '"' + value.replace('\\', '\\\\').replace('"', '\\"') + '"'
+
+
+def _frontmatter(title: str) -> str:
+    description = f"{title}目录下的操作文档列表。"
+    return "---\n" + f"title: {_yaml_quote(title)}\n" + f"description: {_yaml_quote(description)}\n" + "---\n\n"
 
 
 def _ensure_dir_index(dir_path: Path, sub_items: list[dict], title: str) -> None:
@@ -108,7 +181,7 @@ def _ensure_dir_index(dir_path: Path, sub_items: list[dict], title: str) -> None
         if not _is_generated_index(content):
             return
 
-    parts = [f"# {title}\n"]
+    parts = [_frontmatter(title) + f"# {title}\n"]
     entries = sorted(os.listdir(dir_path))
     sub_dirs = [
         d for d in entries
@@ -154,7 +227,21 @@ def main():
     vp_dir = docs_dir / ".vitepress"
     vp_dir.mkdir(exist_ok=True)
 
-    data = build_sidebar(docs_dir)
+    state_file = docs_dir.parent.parent / "output" / ".dws-crawl-state.json"
+    order_map: dict[str, int] = {}
+    try:
+        nodes = json.loads(state_file.read_text(encoding="utf-8")).get("nodes", {})
+        order_map = {
+            normalize_order_path(document["path"]): document["order"]
+            for document in nodes.values()
+            if isinstance(document, dict)
+            and isinstance(document.get("path"), str)
+            and isinstance(document.get("order"), int)
+        }
+    except (OSError, ValueError, json.JSONDecodeError):
+        pass
+
+    data = build_sidebar(docs_dir, order_map=order_map)
 
     # Count articles
     total = 0

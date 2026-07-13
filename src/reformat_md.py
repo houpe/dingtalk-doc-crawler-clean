@@ -674,6 +674,225 @@ def strip_bold_in_headings(md_text: str) -> str:
     return "\n".join(out)
 
 
+def normalize_bold_label_punctuation(md_text: str) -> str:
+    """将 ``**标签：**说明`` 规范为渲染器兼容的 ``**标签**：说明``。
+
+    当前 VitePress 的 Markdown 渲染器不会把前一种紧邻中文的写法识别为
+    strong 标签，会把两个星号直接显示在页面上。代码块中的示例文本不改动。
+    """
+    lines = md_text.splitlines()
+    out = []
+    in_fence = False
+
+    for line in lines:
+        if re.match(r"^\s*(?:```|~~~)", line):
+            in_fence = not in_fence
+            out.append(line)
+            continue
+        if not in_fence:
+            line = re.sub(r"\*\*([^*\n]*?\S)([：:])\*\*", r"**\1**\2", line)
+        out.append(line)
+
+    return "\n".join(out)
+
+
+def normalize_adjacent_bold_content(md_text: str) -> str:
+    """修复 ``**[标签]**正文`` 这类紧邻标签导致的星号裸露。
+
+    Markdown 的强调分隔符紧邻方括号标签和中文正文时，VitePress 会把结尾
+    ``**`` 视为普通字符。只对 ``[标签]``（含钉钉导出的转义方括号）补一个
+    分隔空格；代码块中的示例不改动。
+    """
+    lines = md_text.splitlines()
+    out = []
+    in_fence = False
+    bracketed_label = re.compile(
+        r"(\*\*(?:\\?\[[^*\n]+?\\?\]|【[^*\n]+?】)\*\*)(?=[\u4e00-\u9fffA-Za-z0-9])"
+    )
+
+    for line in lines:
+        if re.match(r"^\s*(?:```|~~~)", line):
+            in_fence = not in_fence
+            out.append(line)
+            continue
+        if not in_fence:
+            line = bracketed_label.sub(r"\1 ", line)
+        out.append(line)
+
+    return "\n".join(out)
+
+
+def normalize_bold_markup(md_text: str) -> str:
+    """将正文中的钉钉加粗标记规范为稳定的 HTML ``strong`` 标签。
+
+    钉钉导出的 ``**`` 可能紧邻中文、方括号、引号，或出现嵌套的 ``****``。
+    这些写法在 VitePress 的 Markdown 解析规则下会把星号直接显示出来。
+    在格式化完成后统一改为 HTML 标签，避免解析器边界规则影响渲染；围栏代码块
+    和行内代码保持原文，便于保留 Markdown 示例。
+    """
+    lines = md_text.splitlines()
+    out = []
+    in_fence = False
+
+    def normalize_segment(segment: str) -> str:
+        # 修复 ``**外层****内层****尾部**`` 这类嵌套导出，合成一对强调标记。
+        previous = None
+        while previous != segment:
+            previous = segment
+            segment = re.sub(
+                r"\*\*([^*\n]+)\*\*\*\*([^*\n]+)\*\*\*\*([^*\n]+)\*\*",
+                r"**\1\2\3**",
+                segment,
+            )
+
+        # 修复 ``\"**标签\"**`` / ``“**标签”**``，保留引号在强调范围外。
+        segment = re.sub(
+            r'(["“])\*\*([^*\n]+?)(["”])\*\*',
+            r"\1<strong>\2</strong>\3",
+            segment,
+        )
+        segment = re.sub(r"\*\*([^*\n]+?)\*\*", r"<strong>\1</strong>", segment)
+
+        # 剩余的孤立标记没有可恢复的强调范围，去掉以免直接显示在页面上。
+        segment = segment.replace("**", "")
+        return re.sub(r"(?:\\\*){4,}", "", segment)
+
+    for line in lines:
+        if re.match(r"^\s*(?:```|~~~)", line):
+            in_fence = not in_fence
+            out.append(line)
+            continue
+        if in_fence:
+            out.append(line)
+            continue
+
+        # 仅处理行内代码外的普通正文。
+        parts = re.split(r"(`[^`]*`)", line)
+        out.append("".join(
+            part if index % 2 else normalize_segment(part)
+            for index, part in enumerate(parts)
+        ))
+
+    return "\n".join(out)
+
+
+def strip_operation_instruction_from_title(md_text: str) -> str:
+    """移除文章 H1 中仅用于文件命名的“操作说明（书）”。"""
+    lines = md_text.splitlines()
+    out = []
+    for line in lines:
+        if line.startswith("# "):
+            title = _clean_title_text(line[2:])
+            line = f"# {title}"
+        out.append(line)
+    return "\n".join(out)
+
+
+_FRONTMATTER_RE = re.compile(r"\A---\n[\s\S]*?\n---\n?")
+_GENERATED_FRONTMATTER_KEYS = {"title", "description"}
+
+
+def _clean_title_text(title: str) -> str:
+    """清理用于页面标题/侧边栏展示的标题文本。"""
+    title = title.replace("\\", "")
+    title = title.replace("操作说明书", "").replace("操作说明", "")
+    title = title.replace("_", "-")
+    title = re.sub(r"[-]{2,}", "-", title)
+    title = re.sub(r"\s{2,}", " ", title)
+    return title.strip(" _：:-\t\n\r") or "未命名文档"
+
+
+def _title_from_path(src: Path) -> str:
+    """从文件路径推断稳定标题，避免钉钉正文标题与文件名不一致。"""
+    raw = src.parent.name if src.name == "index.md" else src.stem
+    return _clean_title_text(raw)
+
+
+def _yaml_quote(value: str) -> str:
+    return '"' + value.replace('\\', '\\\\').replace('"', '\\"') + '"'
+
+
+def _frontmatter_block(title: str, description: str) -> str:
+    return "---\n" + f"title: {_yaml_quote(title)}\n" + f"description: {_yaml_quote(description)}\n" + "---\n\n"
+
+
+def _strip_existing_generated_frontmatter(md_text: str) -> str:
+    """移除旧的 title/description frontmatter，保留非本脚本生成的复杂首页配置。"""
+    match = _FRONTMATTER_RE.match(md_text)
+    if not match:
+        return md_text
+    block = match.group(0)
+    body = md_text[match.end():]
+    keys = {
+        line.split(":", 1)[0].strip()
+        for line in block.splitlines()[1:-1]
+        if ":" in line and not line.startswith(" ")
+    }
+    if keys and keys.issubset(_GENERATED_FRONTMATTER_KEYS):
+        return body.lstrip("\n")
+    return md_text
+
+
+def normalize_markdown_escapes(md_text: str) -> str:
+    """清理钉钉/转换器残留的 Markdown 转义，跳过围栏代码块。"""
+    lines = md_text.splitlines()
+    out: list[str] = []
+    in_fence = False
+    for line in lines:
+        if re.match(r"^\s*(?:```|~~~)", line):
+            in_fence = not in_fence
+            out.append(line)
+            continue
+        if not in_fence:
+            line = re.sub(r"\\([+>\[\]()._-])", r"\1", line)
+            if re.match(r"^#{1,6}\s+", line):
+                line = line.rstrip("\\ ")
+            line = line.replace(" - > ", " -> ")
+        out.append(line)
+    return "\n".join(out)
+
+
+def ensure_document_structure(md_text: str, src: Path) -> str:
+    """统一 frontmatter、H1 和短文档结构。"""
+    title = _title_from_path(src)
+    description = f"{title}的操作说明。"
+    text = _strip_existing_generated_frontmatter(md_text).lstrip("\n")
+    lines = text.splitlines()
+
+    first_h1_idx = next((i for i, line in enumerate(lines) if re.match(r"^#\s+", line)), None)
+    if first_h1_idx is None:
+        lines.insert(0, f"# {title}")
+        lines.insert(1, "")
+    else:
+        lines[first_h1_idx] = f"# {title}"
+        if first_h1_idx > 0 and any(line.strip() for line in lines[:first_h1_idx]):
+            prefix = lines[:first_h1_idx]
+            rest = lines[first_h1_idx:]
+            lines = rest[:1] + [""] + prefix + [""] + rest[1:]
+
+    body_after_h1 = "\n".join(lines[1:]).strip()
+    has_subheading = any(re.match(r"^##\s+", line) for line in lines[1:])
+    is_index = src.name == "index.md"
+    if body_after_h1 and not has_subheading and not is_index:
+        lines = [lines[0], "", "## 操作步骤", ""] + [line for line in lines[1:] if line.strip() or line == ""]
+
+    # 压缩多余空行，避免插入结构时产生大段空白。
+    compact: list[str] = []
+    blank_count = 0
+    for line in lines:
+        if line.strip():
+            compact.append(line.rstrip())
+            blank_count = 0
+        else:
+            blank_count += 1
+            if blank_count <= 1:
+                compact.append("")
+    while compact and compact[-1] == "":
+        compact.pop()
+
+    return _frontmatter_block(title, description) + "\n".join(compact) + "\n"
+
+
 def strip_blockquotes(md_text: str) -> str:
     """去掉所有正文级 blockquote（行首的 > 前缀）。
 
@@ -747,8 +966,20 @@ def process_file(src: Path, dst: Path) -> None:
     md_text = _normalize_ordered_list_numbers(md_text)
     # 后处理：清理标题中的 ** 包裹
     md_text = strip_bold_in_headings(md_text)
+    # 后处理：修复 ``**标签：**说明`` 在 VitePress 中被显示为星号的问题
+    md_text = normalize_bold_label_punctuation(md_text)
+    # 后处理：修复 ``**[标签]**正文`` 紧邻导致的星号裸露
+    md_text = normalize_adjacent_bold_content(md_text)
+    # 后处理：统一修复钉钉导出的异常强调标记，避免页面显示原始星号
+    md_text = normalize_bold_markup(md_text)
+    # 后处理：标题不展示仅用于文件命名的“操作说明（书）”
+    md_text = strip_operation_instruction_from_title(md_text)
+    # 后处理：清理钉钉/转换器残留的转义符
+    md_text = normalize_markdown_escapes(md_text)
     # 后处理：移除"更多操作索引"内容
     md_text = remove_trailing_index(md_text)
+    # 后处理：统一 frontmatter、H1 和短文档结构
+    md_text = ensure_document_structure(md_text, src)
     dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_text(md_text, encoding="utf-8")
 
