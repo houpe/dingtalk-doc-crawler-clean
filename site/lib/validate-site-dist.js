@@ -41,12 +41,17 @@ export function validateSiteDist({ docsDir, distDir }) {
     skipDirectoryNames: new Set(['.vitepress']),
   }).filter((filePath) => extname(filePath).toLowerCase() === '.md').length;
 
-  const generatedHtmlCount = collectFiles(distDir).filter((filePath) => {
-    if (extname(filePath).toLowerCase() !== '.html') {
-      return false;
-    }
-
-    return !new Set(['404.html', 'edit.html']).has(basename(filePath));
+  // 页面产物：.html 文件 + dist/d/ 下无扩展名的 nodeId URL 文件
+  const skipFiles = new Set(['404.html', 'edit.html']);
+  const allDistFiles = collectFiles(distDir);
+  const generatedHtmlCount = allDistFiles.filter((filePath) => {
+    const name = basename(filePath);
+    if (skipFiles.has(name)) return false;
+    // 标准 .html 页面
+    if (extname(filePath).toLowerCase() === '.html') return true;
+    // nodeId URL 产物：dist/d/ 下的无扩展名文件（HTML 内容）
+    if (filePath.includes(`/d/`) && extname(name) === '') return true;
+    return false;
   }).length;
 
   if (markdownCount === 0) {

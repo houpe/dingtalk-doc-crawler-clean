@@ -1252,22 +1252,11 @@ def _generate_redirects(docs_dir: Path, public_dir: Path, source_dir: Path) -> N
             old_url = "/" + rel.removesuffix(".md")
             redirects[old_url] = f"/d/{node_id}"
 
-    public_dir.mkdir(parents=True, exist_ok=False)
+    public_dir.mkdir(parents=True, exist_ok=True)
     (public_dir / "redirects.json").write_text(
         json.dumps(redirects, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-
-    # 同时生成 nginx map 格式的重定向文件，部署到 dist 后随站点上线。
-    # nginx 配置里 include 此文件 + 用 $doc_redirect 做 301 跳转。
-    dist_dir = docs_dir / ".vitepress" / "dist"
-    if dist_dir.is_dir():
-        lines = ['map $uri $doc_redirect {', '    default "";']
-        for old_url in sorted(redirects):
-            # key 和 value 都加引号，避免中文空格/特殊字符破坏 nginx 语法
-            lines.append(f'    "{old_url}" "{redirects[old_url]}";')
-        lines.append("}")
-        (dist_dir / "redirects.map").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def _is_duplicate_copy(name: str) -> bool:
