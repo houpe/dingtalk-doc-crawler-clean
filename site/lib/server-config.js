@@ -26,7 +26,11 @@ export function buildServerConfig({
 } = {}) {
   const siteCwd = resolve(cwd);
   const docsDir = join(siteCwd, 'docs');
-  const distDir = join(docsDir, '.vitepress', 'dist');
+  // distDir 可被 DOCS_DIST_DIR 覆盖，用于让 Node 服务直接读线上已有的静态产物目录，
+  // 避免重复上传 dist。
+  const distDir = process.env.DOCS_DIST_DIR
+    ? resolve(process.env.DOCS_DIST_DIR)
+    : join(docsDir, '.vitepress', 'dist');
   const projectRoot = resolve(siteCwd, '..');
 
   return {
