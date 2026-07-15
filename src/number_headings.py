@@ -169,14 +169,14 @@ def assign_tree_numbers(docs_dir: Path) -> dict:
 
 
 def number_markdown(path: Path, base: str) -> bool:
-    """清洗单个 markdown 文档的所有标题（H1..H6），去除脏字符与旧编号。
+    """给单个 markdown 文档的标题烤入层级编号（H1..H6），侧边栏编号独立。
 
-    注意：正文标题**不再烤入编号**——侧边栏 / 本页目录已承担层级展示，
-    文章内通常只有一个 H1，再加序号会导致全篇 1.1/1.2 前缀冗余。
-
-    处理内容：
-    - 去 - _、已有编号（循环剥离）、操作说明等噪音词
-    - 标题文本保持干净纯文本
+    正文编号体系（页内独立，不携带侧边栏 base 路径）：
+    - H1  不加编号（文章标题本身，侧边栏已承担层级）
+    - H2  中文序号：一、 二、 三、 ……
+    - H3  阿拉伯点分：1.1  1.2  2.1 ……（随 H2 递增）
+    - H4  括号数字：(1) (2) ……（每个 H3 下重置）
+    标题文本先经 clean_title 清洗（去 - _、已有编号）。
 
     Returns:
         是否有修改。
@@ -199,6 +199,9 @@ def number_markdown(path: Path, base: str) -> bool:
                 break
             i += 1
 
+    h2_counter = 0                 # H2 中文序号计数
+    h3_counter = 0                 # H3 在 H2 下计数
+    h4_counter = 0                 # H4 在 H3 下计数（每 H3 重置）
     heading_re = re.compile(r"^(#{1,6})\s+(.*)$")
 
     while i < len(lines):
@@ -218,7 +221,25 @@ def number_markdown(path: Path, base: str) -> bool:
         if m:
             level = len(m.group(1))
             title = clean_title(m.group(2))
-            out.append(f"{'#' * level} {title}" if title else line)
+            if level == 1:
+                # 文章标题本身不加编号（侧边栏已承担）
+                new_title = title
+            elif level == 2:
+                h2_counter += 1
+                h3_counter = 0
+                h4_counter = 0
+                new_title = f"{cn(h2_counter)}、{title}"
+            elif level == 3:
+                h3_counter += 1
+                h4_counter = 0
+                new_title = f"{h2_counter}.{h3_counter} {title}"
+            elif level == 4:
+                h4_counter += 1
+                new_title = f"({h4_counter}) {title}"
+            else:
+                # H5/H6 兜底：不编号
+                new_title = title
+            out.append(f"{'#' * level} {new_title}" if new_title else line)
         else:
             out.append(line)
         i += 1
