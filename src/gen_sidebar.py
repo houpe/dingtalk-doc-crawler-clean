@@ -100,7 +100,7 @@ def _is_generated_index(content: str) -> bool:
     return True
 
 
-def build_sidebar(dir_path: Path, rel_prefix: str = "", tree: dict | None = None) -> list:
+def build_sidebar(dir_path: Path, rel_prefix: str = "", tree: dict | None = None, node_id_map: dict | None = None) -> list:
     items = []
     try:
         entries = sorted(os.listdir(dir_path))
@@ -134,10 +134,17 @@ def build_sidebar(dir_path: Path, rel_prefix: str = "", tree: dict | None = None
             return [int(x) for x in tree[rel]["base"].split(".")]
         return [10 ** 9]
 
+    def md_link(raw_name: str) -> str:
+        """文档页用 /d/<nodeId> 稳定链接，匹配不上则退回物理路径。"""
+        rel = node_rel(raw_name, False)
+        if node_id_map and rel in node_id_map:
+            return f"/d/{node_id_map[rel]}"
+        return f"/{rel_prefix}/{raw_name}" if rel_prefix else f"/{raw_name}"
+
     for d in sorted(dirs, key=lambda n: base_key(n, True)):
         full = dir_path / d
         sub_rel = node_rel(d, True)
-        sub_items = build_sidebar(full, sub_rel, tree)
+        sub_items = build_sidebar(full, sub_rel, tree, node_id_map)
 
         # If no sub-items found, add direct md files as items
         if not sub_items:
@@ -149,7 +156,8 @@ def build_sidebar(dir_path: Path, rel_prefix: str = "", tree: dict | None = None
             )
             for md in sub_mds:
                 raw = md.replace(".md", "")
-                sub_items.append({"text": disp(raw, False), "link": f"/{sub_rel}/{raw}"})
+                item = {"text": disp(raw, False), "link": md_link(raw), "_raw": raw}
+                sub_items.append(item)
 
         if sub_items:
             # `collapsed` 同时启用 VitePress 的折叠箭头：一级栏目保持展开，
@@ -160,12 +168,11 @@ def build_sidebar(dir_path: Path, rel_prefix: str = "", tree: dict | None = None
                 "items": sub_items
             })
             # 为目录生成 index.md，使 /模块名/ 这种目录 URL 可访问
-            _ensure_dir_index(full, sub_items, clean_title(d), tree)
+            _ensure_dir_index(full, sub_items, clean_title(d), tree, node_id_map)
 
     for md in sorted(mds, key=lambda n: base_key(n[:-3], False)):
         raw = md.replace(".md", "")
-        link = f"/{rel_prefix}/{raw}" if rel_prefix else f"/{raw}"
-        items.append({"text": disp(raw, False), "link": link})
+        items.append({"text": disp(raw, False), "link": md_link(raw)})
 
     return items
 
@@ -179,7 +186,7 @@ def _frontmatter(title: str) -> str:
     return "---\n" + f"title: {_yaml_quote(title)}\n" + f"description: {_yaml_quote(description)}\n" + "---\n\n"
 
 
-def _ensure_dir_index(dir_path: Path, sub_items: list[dict], title: str, tree: dict | None = None) -> None:
+def _ensure_dir_index(dir_path: Path, sub_items: list[dict], title: str, tree: dict | None = None, node_id_map: dict | None = None) -> None:
     """为目录生成 index.md（文章列表页），使 /目录名/ URL 可访问。
 
     title 传入的是已清洗（无编号）的目录名，编号由 number_headings 在构建阶段统一烤入。
@@ -191,6 +198,23 @@ def _ensure_dir_index(dir_path: Path, sub_items: list[dict], title: str, tree: d
         content = index_md.read_text(encoding="utf-8")
         if not _is_generated_index(content):
             return
+
+    def doc_index_link(dir_path: Path, md_filename: str) -> str:
+        """文档在 index.md 里的链接：有 nodeId 用 /d/nodeId，否则用相对路径。"""
+        if node_id_map:
+            # 计算 docs_dir 相对路径：需要从 dir_path 推断。这里用相对当前目录的文件名。
+            # node_id_map 的 key 是 docs_dir 相对路径，但此处只有 dir_path 和文件名。
+            # 通过遍历查找：dir_path 下的文件相对路径 = dir_path 相对 docs_root 的路径 + 文件名
+            # 但此处拿不到 docs_root。改用 sub_items 里已有的 link（它已经算好了）。
+            pass
+        name = md_filename[:-3]
+        return f"./{name}"
+
+    # 从 sub_items 里找文档链接（已由 build_sidebar 用 nodeId 算好），避免重复计算
+    doc_links: dict[str, str] = {}
+    for item in sub_items:
+        if "link" in item and "_raw" in item:
+            doc_links[item["_raw"]] = item["link"]
 
     parts = [_frontmatter(title) + f"# {title}\n"]
     entries = sorted(os.listdir(dir_path))
@@ -218,7 +242,9 @@ def _ensure_dir_index(dir_path: Path, sub_items: list[dict], title: str, tree: d
         parts.append("## 文档\n")
         for md in docs:
             name = md[:-3]
-            parts.append(f"- [{clean_title(name)}](./{name})")
+            # 优先用 sub_items 里已算好的 nodeId 链接
+            link = doc_links.get(name) or doc_links.get(md) or f"./{name}"
+            parts.append(f"- [{clean_title(name)}]({link})")
         parts.append("")
 
     if not sub_dirs and not docs:
@@ -233,6 +259,18 @@ def main():
     else:
         docs_dir = Path(__file__).resolve().parent.parent / "site" / "docs"
 
+    # 第二个参数是 source_dir（output_optimized），用来加载 nodeId 映射做稳定 URL
+    node_id_map = None
+    if len(sys.argv) > 2:
+        source_dir = Path(sys.argv[2]).resolve()
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from url_mapping import load_node_id_map
+        node_id_map = load_node_id_map(source_dir)
+        if not node_id_map:
+            # --site-only 模式下 state 在 output 目录，回退查找
+            project_root = Path(__file__).resolve().parent.parent
+            node_id_map = load_node_id_map(project_root / "output")
+
     if not docs_dir.exists():
         print(f"Error: {docs_dir} not found")
         sys.exit(1)
@@ -243,7 +281,19 @@ def main():
     # 标题自动编号：一次性计算整棵文档树的编号（顶层中文、深层阿拉伯）
     tree = assign_tree_numbers(docs_dir)
 
-    data = build_sidebar(docs_dir, tree=tree)
+    data = build_sidebar(docs_dir, tree=tree, node_id_map=node_id_map)
+
+    def strip_internal(items):
+        """递归移除 _raw 等内部字段，不输出到 mjs。"""
+        cleaned = []
+        for item in items:
+            clean_item = {k: v for k, v in item.items() if not k.startswith("_")}
+            if "items" in clean_item:
+                clean_item["items"] = strip_internal(clean_item["items"])
+            cleaned.append(clean_item)
+        return cleaned
+
+    data = strip_internal(data)
 
     # Count articles
     total = 0

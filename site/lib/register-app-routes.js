@@ -397,6 +397,29 @@ export function registerAppRoutes(
     next();
   });
 
+  // 旧中文 URL → /d/<nodeId> 稳定 URL 重定向（必须在 express.static 之前）。
+  // 钉钉改名后物理路径变化，旧链接会指向旧路径；此处从 redirects.json 查表做 301 跳转。
+  let redirectMap = {};
+  try {
+    const redirectsFile = join(config.publicDir || join(config.docsDir, 'public'), 'redirects.json');
+    redirectMap = JSON.parse(readFileSync(redirectsFile, 'utf-8'));
+  } catch { /* redirects.json 不存在或解析失败，忽略 */ }
+  app.use((req, res, next) => {
+    if (req.method !== 'GET' || req.url.startsWith('/api/') || req.url.startsWith('/d/')) {
+      return next();
+    }
+    const rawPath = req.url.split('?')[0].split('#')[0];
+    // redirects.json 的 key 是中文原文，req.url 是 URL 编码的，需解码后匹配
+    let path;
+    try { path = decodeURIComponent(rawPath); } catch { path = rawPath; }
+    const normalized = path.endsWith('/') && path.length > 1 ? path.slice(0, -1) : path;
+    const target = redirectMap[normalized] || redirectMap[path];
+    if (target) {
+      return res.redirect(301, target);
+    }
+    next();
+  });
+
   // VitePress emits `guide/topic.html` for the clean URL `/guide/topic`.
   // Resolve that HTML before the SPA fallback so server-rendered markup always
   // matches the page Vue hydrates on direct navigation.
