@@ -188,3 +188,8 @@ description: "微信AI客服操作手册的操作说明。"
 如有疑问或需要培训，可扫描下方二维码加入推广培训群（若二维码失效请联系总部技术支持）。
 
 ![image.png](./images/微信AI客服操作手册_8_3db9165b.png)
+
+<!-- AI 优化遗漏的图片，已自动补回 -->
+![image.png](./images/微信AI客服操作手册_9_e5334e01.png)
+![image.png](./images/微信AI客服操作手册_10_b5173766.png)
+![image.png](./images/微信AI客服操作手册_11_75c77d15.png)
