@@ -1,36 +1,33 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import express from 'express';
-import jwt from 'jsonwebtoken';
 import {
   createTaskCatalog,
   getCompositeTaskDefinition,
   listCompositeTaskDefinitions,
 } from './admin-tasks.js';
 import { createTaskRunner } from './task-runner.js';
+import { createDingtalk } from './dingtalk.js';
+import { createAuthRouter } from './auth-routes.js';
 
-function getCookie(req, name) {
-  const cookie = (req.headers.cookie || '')
-    .split('; ')
-    .find((entry) => entry.startsWith(`${name}=`));
-
-  return cookie ? cookie.split('=')[1] : null;
+function buildLoginRedirect(config, req) {
+  const originalUrl = req.originalUrl || req.url || '/';
+  const separator = config.authLoginUrl.includes('?') ? '&' : '?';
+  return `${config.authLoginUrl}${separator}redirect=${encodeURIComponent(originalUrl)}`;
 }
 
-function buildRequireAuth(config) {
+function buildRequireAuth(config, { redirect = false } = {}) {
   return function requireAuth(req, res, next) {
-    const token = getCookie(req, 'jwt');
-
-    if (!token) {
-      return res.status(401).json({ error: '未登录' });
+    if (!config.authRequired || req.session?.user) {
+      req.user = req.session?.user || null;
+      return next();
     }
 
-    try {
-      req.user = jwt.verify(token, config.jwtSecret);
-      next();
-    } catch {
-      res.status(401).json({ error: '登录过期' });
+    if (redirect) {
+      return res.redirect(302, buildLoginRedirect(config, req));
     }
+
+    res.status(401).json({ error: '未登录' });
   };
 }
 
@@ -215,17 +212,15 @@ export function registerAppRoutes(
   },
 ) {
   const requireAuth = buildRequireAuth(config);
+  const requireSiteAuth = buildRequireAuth(config, { redirect: true });
   const adminRouter = contextExpress.Router();
 
-  // VitePress emits `guide/topic.html` for the clean URL `/guide/topic`.
-  // Resolve that HTML before the SPA fallback so server-rendered markup always
-  // matches the page Vue hydrates on direct navigation.
-  app.use(
-    express.static(config.distDir, {
-      extensions: ['html'],
-      index: 'index.html',
-    }),
-  );
+  // 钉钉登录：仅在配置了 AppKey 时启用，避免未配置环境报错。
+  const dingtalk = config.dingtalkAppKey
+    ? createDingtalk({ appKey: config.dingtalkAppKey, appSecret: config.dingtalkAppSecret })
+    : null;
+  app.use(createAuthRouter(config, dingtalk));
+
   app.use(
     '/admin-static',
     requireLocalOnly,
@@ -236,36 +231,15 @@ export function registerAppRoutes(
     res.sendFile(join(config.cwd, 'admin', 'index.html'));
   });
 
-  app.get('/api/auth/check', (req, res) => {
-    const token = getCookie(req, 'jwt');
-
-    if (!token) {
-      return res.json({ loggedIn: false });
-    }
-
-    try {
-      const user = jwt.verify(token, config.jwtSecret);
-      res.json({ loggedIn: true, user: user.username });
-    } catch {
-      res.json({ loggedIn: false });
-    }
+  app.get(['/api/auth/check', '/api/auth/me'], (req, res) => {
+    res.json({
+      loggedIn: Boolean(!config.authRequired || req.session?.user),
+      user: req.session?.user || null,
+    });
   });
 
-  app.post('/api/login', (req, res) => {
-    const { username, password } = req.body;
-
-    if (username === config.adminUser && password === config.adminPass) {
-      const token = jwt.sign({ username }, config.jwtSecret, { expiresIn: '4h' });
-      res.cookie('jwt', token, { httpOnly: true, maxAge: 14400000, sameSite: 'lax' });
-      return res.json({ ok: true });
-    }
-
-    res.status(401).json({ error: '用户名或密码错误' });
-  });
-
-  app.post('/api/logout', (_req, res) => {
-    res.clearCookie('jwt');
-    res.json({ ok: true });
+  app.post(['/api/logout', '/api/auth/logout'], (req, res) => {
+    req.session?.destroy(() => res.json({ ok: true }));
   });
 
   adminRouter.use(requireLocalOnly);
@@ -385,6 +359,24 @@ export function registerAppRoutes(
       res.status(409).json({ error: error.message });
     }
   });
+
+  app.use((req, res, next) => {
+    if (req.url.startsWith('/api/')) {
+      return next();
+    }
+
+    return requireSiteAuth(req, res, next);
+  });
+
+  // VitePress emits `guide/topic.html` for the clean URL `/guide/topic`.
+  // Resolve that HTML before the SPA fallback so server-rendered markup always
+  // matches the page Vue hydrates on direct navigation.
+  app.use(
+    express.static(config.distDir, {
+      extensions: ['html'],
+      index: 'index.html',
+    }),
+  );
 
   app.use('*', (req, res, next) => {
     if (req.url.startsWith('/api/')) {
