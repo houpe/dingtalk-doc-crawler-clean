@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress'
 import sidebar from './sidebar-data.mjs'
-import rewrites from './rewrites-data.mjs'
 
 export default defineConfig({
   ignoreDeadLinks: true,
@@ -9,7 +8,6 @@ export default defineConfig({
   description: '中通冷链操作手册',
   cleanUrls: true,
   lastUpdated: true,
-  rewrites,
 
   head: [['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }]],
 

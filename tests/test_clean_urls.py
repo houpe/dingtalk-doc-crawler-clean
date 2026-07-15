@@ -40,7 +40,7 @@ class CleanSectionUrlTest(unittest.TestCase):
             self.assertNotIn(old_url, content)
 
         for new_url in [
-            "/「_必知必读」账号权限如何开通？/",
+            "/账号权限如何开通？/",
             "/网点操作/",
             "/中心操作/",
             "/云仓操作/",

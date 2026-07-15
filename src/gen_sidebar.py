@@ -22,7 +22,7 @@ STRIP_RE = re.compile(
     r")+"
 )
 
-SKIP_DIRS = {"images", ".vitepress", "public", "node_modules", ".git", "__pycache__"}
+SKIP_DIRS = {"images", ".vitepress", "public", "node_modules", ".git", "__pycache__", "d"}
 INDEX_SECTION_HEADINGS = {"## 分类", "## 文档"}
 INDEX_LINK_RE = re.compile(r"^- (?:\*\*)?\[[^\]]+\]\(\./[^)]*\)(?:\*\*)?$")
 TOP_LEVEL_SECTION_ORDER = {

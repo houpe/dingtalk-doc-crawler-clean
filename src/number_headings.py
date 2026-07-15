@@ -21,7 +21,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-SKIP_DIRS = {".vitepress", "public", "node_modules", ".git", "__pycache__"}
+SKIP_DIRS = {".vitepress", "public", "node_modules", ".git", "__pycache__", "d"}
 
 # 顶层栏目固定顺序（用于决定章节号）：必知必读=1，网点=2，中心=3，云仓=4，网络货运=5
 TOP_ORDER = ["必知必读", "账号权限", "网点操作", "中心操作", "云仓操作", "网络货运"]

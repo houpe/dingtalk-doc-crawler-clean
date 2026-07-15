@@ -427,7 +427,6 @@ def _copy_images(src_dir: Path, dst_dir: Path) -> None:
 
 VP_CONFIG_MTS = """import { defineConfig } from 'vitepress'
 import sidebar from './sidebar-data.mjs'
-import rewrites from './rewrites-data.mjs'
 
 export default defineConfig({
   ignoreDeadLinks: true,
@@ -436,7 +435,6 @@ export default defineConfig({
   description: '中通冷链操作手册',
   cleanUrls: true,
   lastUpdated: true,
-  rewrites,
 
   head: [['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }]],
 
@@ -1030,14 +1028,10 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
 
     _vp_copy_content(src_root, docs_dir)
 
-    # 生成 nodeId 稳定 URL 的 rewrites 映射（/d/<nodeId>），在 sidebar/config 之前
-    rewrites_count = _generate_rewrites(docs_dir, vp_dir, source_dir)
-    if rewrites_count:
-        summary_line("nodeId 稳定 URL", f"{rewrites_count} 篇 ✓")
-
-    # 生成旧 URL → nodeId URL 重定向表，供服务端 404 时跳转。
-    # 来源：当前 docs_dir 下每个 .md 的物理路径（可能随钉钉改名而变）→ /d/nodeId。
-    _generate_redirects(docs_dir, public_dir, source_dir)
+    # 生成 nodeId 稳定 URL：在 docs/d/ 下创建别名页（/d/<nodeId>），在 sidebar/config 之前
+    node_id_count = _create_node_id_pages(docs_dir, source_dir)
+    if node_id_count:
+        summary_line("nodeId 稳定 URL", f"{node_id_count} 篇 ✓")
 
     # 首页 index.md：仅在不存在时用 VP_INDEX_MD 模板创建（hero + features 首页）。
     # 已存在则保留（用户定制内容不被覆盖）。链接用占位符在构建时填充真实目录链接。
@@ -1064,10 +1058,9 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
             stale_path.unlink()
 
     config_mts = vp_dir / "config.mts"
-    # config.mts 首次创建或缺少 rewrites import 时重新生成（rewrites 是机器注入的数据，
-    # 非用户定制；themeConfig 的其他部分由模板统一管理）。
+    # config.mts 首次创建或缺少 sidebar import 时重新生成。
     config_content = config_mts.read_text(encoding="utf-8") if config_mts.exists() else ""
-    if not config_mts.exists() or "rewrites-data.mjs" not in config_content:
+    if not config_mts.exists() or "sidebar-data.mjs" not in config_content:
         config_mts.write_text(VP_CONFIG_MTS, encoding="utf-8")
 
     # 自愈：把首页 hero/feature 与导航里写死的章节入口链接修正为真实目录链接，
@@ -1189,87 +1182,49 @@ def _clean_docs_content(docs_dir: Path) -> None:
             p.unlink()
 
 
-def _generate_rewrites(docs_dir: Path, vp_dir: Path, source_dir: Path) -> int:
-    """生成 rewrites-data.mjs：把每个文档的物理路径映射到 /d/<nodeId> 稳定 URL。
+def _create_node_id_pages(docs_dir: Path, source_dir: Path) -> int:
+    """在 docs/d/ 下为每个文档创建 nodeId 别名页，实现 /d/<nodeId> 稳定 URL。
 
-    从 source_dir/.dws-crawl-state.json 加载 nodeId 映射，扫描 docs_dir 下所有
-    .md，匹配出 rewrites 表写入 vp_dir/rewrites-data.mjs。
-    匹配不上的文档（如新增但还没进 state）不进 rewrites，URL 退化回物理路径。
-    Returns: 成功匹配的文档数。
+    不用 VitePress rewrites（会让原中文路径不再生成 HTML 导致旧 URL 404），
+    而是为每个 nodeId 创建一个 .md 文件，内容与原中文路径的 md 相同。
+    这样两个 URL 都有 HTML：旧中文 URL 不失效，/d/nodeId 永久稳定。
+    Returns: 创建的别名页数。
     """
     sys.path.insert(0, str(ROOT / "src"))
     from url_mapping import load_node_id_map
 
-    # state 文件可能在 output_optimized（stage_optimize 复制过来的）或 output（源头）。
     node_id_map = load_node_id_map(source_dir)
     if not node_id_map:
-        # --site-only 模式没跑 stage_optimize，回退到 output 目录
         node_id_map = load_node_id_map(ROOT / "output")
     if not node_id_map:
-        # 没有 state 文件，生成空 rewrites，不影响构建
-        (vp_dir / "rewrites-data.mjs").write_text(
-            "export default {}\n", encoding="utf-8"
-        )
         return 0
 
-    rewrites: dict[str, str] = {}
+    d_dir = docs_dir / "d"
+    d_dir.mkdir(parents=True, exist_ok=True)
+
+    count = 0
     for md_path in docs_dir.rglob("*.md"):
         if md_path.name == "index.md":
             continue
         if ".vitepress" in md_path.parts:
             continue
+        if d_dir in md_path.parents:
+            continue  # 跳过 d/ 目录自身
         rel = md_path.relative_to(docs_dir).as_posix()
         node_id = node_id_map.get(rel)
-        if node_id:
-            rewrites[rel] = f"d/{node_id}"
-
-    mjs = "export default " + json.dumps(rewrites, ensure_ascii=False, indent=2) + "\n"
-    (vp_dir / "rewrites-data.mjs").write_text(mjs, encoding="utf-8")
-    return len(rewrites)
-
-
-def _generate_redirects(docs_dir: Path, public_dir: Path, source_dir: Path) -> None:
-    """生成 redirects.json：中文物理 URL → /d/<nodeId> 稳定 URL。
-
-    服务端在静态文件 404 时查此表做 301 跳转。这样即使钉钉改名导致物理路径
-    变化，旧链接（指向旧物理路径）也能跳到稳定的 nodeId URL。
-    """
-    sys.path.insert(0, str(ROOT / "src"))
-    from url_mapping import load_node_id_map
-
-    node_id_map = load_node_id_map(source_dir)
-    if not node_id_map:
-        node_id_map = load_node_id_map(ROOT / "output")
-    if not node_id_map:
-        return
-
-    redirects: dict[str, str] = {}
-    for md_path in docs_dir.rglob("*.md"):
-        if md_path.name == "index.md" or ".vitepress" in md_path.parts:
+        if not node_id:
             continue
-        rel = md_path.relative_to(docs_dir).as_posix()
-        node_id = node_id_map.get(rel)
-        if node_id:
-            # 中文物理 URL（cleanUrl 去 .md）→ nodeId 稳定 URL
-            old_url = "/" + rel.removesuffix(".md")
-            redirects[old_url] = f"/d/{node_id}"
+        # 创建 d/nodeId.md，内容复制自原文件
+        dst = d_dir / f"{node_id}.md"
+        content = md_path.read_text(encoding="utf-8")
+        # 修正图片相对路径：d/nodeId.md 的图片引用要回到上级 images 目录
+        depth = rel.count("/") + 2  # d/ 多一层，加原路径深度
+        prefix = "../" * depth
+        content = content.replace("](./images/", f"]({prefix}images/").replace("](images/", f"]({prefix}images/")
+        dst.write_text(content, encoding="utf-8")
+        count += 1
 
-    public_dir.mkdir(parents=True, exist_ok=True)
-    (public_dir / "redirects.json").write_text(
-        json.dumps(redirects, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-
-    # 同时生成 nginx map 格式的重定向文件，部署到 dist 后随站点上线。
-    # nginx 配置里 include 此文件 + 用 $doc_redirect 做 301 跳转。
-    dist_dir = docs_dir / ".vitepress" / "dist"
-    if dist_dir.is_dir():
-        lines = ['map $uri $doc_redirect {', '    default "";']
-        for old_url in sorted(redirects):
-            # key 和 value 都加引号，避免中文空格/特殊字符破坏 nginx 语法
-            lines.append(f'    "{old_url}" "{redirects[old_url]}";')
-        lines.append("}")
-        (dist_dir / "redirects.map").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return count
 
 
 def _is_duplicate_copy(name: str) -> bool:
