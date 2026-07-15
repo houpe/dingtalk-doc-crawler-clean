@@ -74,13 +74,19 @@ Stage 4: VitePress 构建 (pipeline.py::stage_vitepress + post_process.py)
 ├── site/                         # VitePress 站点
 │   ├── docs/                     # 文档源 + 各业务分类目录
 │   │   └── .vitepress/           # 配置/主题（持久化，pipeline 不覆写）
-│   ├── server.js                 # Express 后端 + JWT 登录 + 构建 API（pipeline 生成）
+│   ├── server.js                 # Express 后端（pipeline 初始化，后续不覆写）
+│   ├── lib/                      # 服务端逻辑（鉴权、路由、任务、session）
+│   │   ├── dingtalk.js           # 钉钉 OAuth2 + topapi 封装
+│   │   ├── auth-routes.js        # 钉钉登录路由
+│   │   └── auth-session.js       # session 中间件（Redis 优先回退内存）
 │   └── package.json
 ├── scripts/
 │   └── copy_images.py            # 辅助：复制图片到 site/docs 并改本地引用
 ├── tests/
 ├── docs/                         # 设计/计划文档
 │   ├── workflow.md               # 工作流详解
+│   ├── 钉钉鉴权部署说明.md       # help.beta.ztocc.com 钉钉鉴权实现与部署
+│   ├── site-docs-生成部署说明.md  # 文档生成与静态部署流程
 │   └── plan-md-optimization.md   # MD 优化完成记录
 └── requirements.txt
 ```
@@ -102,11 +108,23 @@ Stage 4: VitePress 构建 (pipeline.py::stage_vitepress + post_process.py)
 
 Stage 4 不仅构建静态站，还会生成：
 
-- **`server.js`** — Express 后端，提供 JWT 登录、`GET/PUT /api/docs/:path`（读写 MD）、`POST /api/build`（触发 VitePress 重建）。默认 `admin/admin123`，可用环境变量 `ADMIN_USER`/`ADMIN_PASS`/`JWT_SECRET`/`PORT` 覆盖。
+- **`server.js`** — Express 后端，提供鉴权、`GET/PUT /api/docs/:path`（读写 MD）、`POST /api/build`（触发 VitePress 重建）。
 - **`public/edit.html`** — Monaco 编辑器 + Markdown 实时预览页，登录后可在线改文档并保存触发重建。
 - **主题注入** — 已登录用户页面右下角会出现「✏️ 编辑」悬浮按钮，跳转到对应文档编辑页。
 
 启动：`node site/server.js`（默认 `http://localhost:4000`，编辑入口 `/edit.html`）。
+
+## 钉钉鉴权
+
+线上文档站 `help.beta.ztocc.com` 已接入钉钉 OAuth2 鉴权：未登录用户被拦截到登录页，钉钉扫码（或 App 内自动登录）后放行。鉴权发生在 Express 服务端（`site/lib/`），VitePress 产物本身不参与鉴权。
+
+关键文件：
+- `site/lib/dingtalk.js` — 钉钉 OAuth2 + topapi 封装
+- `site/lib/auth-routes.js` — 登录路由（`/auth/login` + `/api/auth/dingtalk/*`）
+- `site/lib/auth-session.js` — session 中间件（express-session + connect-redis@7）
+- `site/public/login.html` — 钉钉登录页
+
+> 鉴权的完整架构、部署步骤、环境变量、运维命令和踩坑记录见 **[docs/钉钉鉴权部署说明.md](docs/钉钉鉴权部署说明.md)**。
 
 ## 主题与配置持久化
 
@@ -114,17 +132,27 @@ Stage 4 不仅构建静态站，还会生成：
 
 ## 部署
 
+项目部署到两个站点，架构不同：
+
+### wiki.houpe.top（纯静态）
+
 通过 scp + tar 部署到服务器（默认 `root@42.192.205.206:/zto`，可用 `DEPLOY_HOST`/`DEPLOY_PATH` 环境变量覆盖）：
 
 - `fast` — 只传非图片文件（增量、快）
 - `full` — 全量重传（含图片）
 
-部署后访问 `https://houpe.top/zto/`。
+部署后访问 `https://wiki.houpe.top/`。
+
+### help.beta.ztocc.com（Node 鉴权 + 静态）
+
+前面有一层 Node 钉钉鉴权服务（pm2 进程 `docs-auth`，监听 `127.0.0.1:4000`），nginx 全量 proxy_pass 到它。更新文档内容仍用 tar+scp 更新 `/www/wwwroot/help.beta.ztocc.com`（Node 通过 `DOCS_DIST_DIR` 实时读取，无需重启）；更新鉴权代码则 rsync 到 `/root/docs-site/` 后 `pm2 restart docs-auth`。
+
+详见 **[docs/钉钉鉴权部署说明.md](docs/钉钉鉴权部署说明.md)** 和 **[docs/site-docs-生成部署说明.md](docs/site-docs-生成部署说明.md)**。
 
 ## 依赖
 
 - **Python**: requests, beautifulsoup4, lxml, Markdown, pytest
-- **Node**: VitePress 1.6+, Vue 3.5+, Express, jsonwebtoken, medium-zoom
+- **Node**: VitePress 1.6+, Vue 3.5+, Express, express-session, connect-redis@7, ioredis, axios, medium-zoom
 - **外部工具**: `dws` CLI（钉钉文档 API）、DeepSeek API（可选，仅 `--use-ai` 时）
 
 MIT License
