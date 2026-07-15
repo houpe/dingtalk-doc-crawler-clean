@@ -444,7 +444,9 @@ export default defineConfig({
     logo: '/favicon.png',
 
     nav: [
-      { text: '操作手册', link: '/guide/' },
+      { text: '首页', link: '/' },
+      { text: '网点操作', link: '/网点操作/' },
+      { text: '云仓操作', link: '/云仓操作/' },
     ],
 
     socialLinks: [
@@ -1252,7 +1254,7 @@ def _generate_redirects(docs_dir: Path, public_dir: Path, source_dir: Path) -> N
             old_url = "/" + rel.removesuffix(".md")
             redirects[old_url] = f"/d/{node_id}"
 
-    public_dir.mkdir(parents=True, exist_ok=False)
+    public_dir.mkdir(parents=True, exist_ok=True)
     (public_dir / "redirects.json").write_text(
         json.dumps(redirects, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",

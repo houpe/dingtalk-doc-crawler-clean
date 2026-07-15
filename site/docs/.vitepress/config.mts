@@ -17,7 +17,9 @@ export default defineConfig({
     logo: '/favicon.png',
 
     nav: [
-      { text: '操作手册', link: '/guide/' },
+      { text: '首页', link: '/' },
+      { text: '网点操作', link: '/网点操作/' },
+      { text: '云仓操作', link: '/云仓操作/' },
     ],
 
     socialLinks: [
