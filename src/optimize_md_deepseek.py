@@ -13,7 +13,7 @@ from pathlib import Path
 API_KEY = os.environ.get("DOC_OPTIMIZER_API_KEY") or os.environ.get("OPENAI_API_KEY", "")
 API_URL = os.environ.get("DOC_OPTIMIZER_API_URL", "https://api.openai.com/v1/responses")
 WIRE_API = os.environ.get("DOC_OPTIMIZER_WIRE_API", "responses")
-DEFAULT_MODEL = os.environ.get("DOC_OPTIMIZER_MODEL", "deepseek-v4-flash")
+DEFAULT_MODEL = os.environ.get("DOC_OPTIMIZER_MODEL", "gpt-5.5")
 
 SYSTEM_PROMPT = """你是一个对客操作手册的优化专家。读者是一线网点、中心、云仓或网络货运人员，他们需要按文档完成系统操作。你的任务是把从钉钉导出的 Markdown 优化成稳定、清晰、可重复生成的操作手册。
 

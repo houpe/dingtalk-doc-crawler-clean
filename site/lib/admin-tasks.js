@@ -81,16 +81,15 @@ function buildTaskList(config) {
       key: 'content-generate',
       label: '过滤并优化文档',
       description:
-        '第一步的子任务：过滤并优化 output，使用 DeepSeek 做语义增强（增量，只处理有更新的文档），生成 output_optimized；不会写入 site/docs、构建站点或部署。',
+        '第一步的子任务：过滤并优化 output，使用 GPT 5.5 做语义增强（增量，只处理有更新的文档），生成 output_optimized；不会写入 site/docs、构建站点或部署。',
       command: 'bash',
       args: [
         '-lc',
         'set -a; [ -f .env ] && source .env; set +a; ' +
-        'DOC_OPTIMIZER_API_KEY="${DEEPSEEK_API_KEY:-${DOC_OPTIMIZER_API_KEY:-${OPENAI_API_KEY:-}}}" ' +
-        'DOC_OPTIMIZER_API_URL="${DOC_OPTIMIZER_API_URL:-https://api.deepseek.com/chat/completions}" ' +
-        'DOC_OPTIMIZER_MODEL="${DOC_OPTIMIZER_MODEL:-deepseek-v4-flash}" ' +
+        'DOC_OPTIMIZER_API_URL="${DOC_OPTIMIZER_API_URL:-https://sub2api-qbxihjpy.sealoshzh.site/v1/chat/completions}" ' +
+        'DOC_OPTIMIZER_MODEL="${DOC_OPTIMIZER_MODEL:-gpt-5.5}" ' +
         'DOC_OPTIMIZER_WIRE_API="${DOC_OPTIMIZER_WIRE_API:-chat}" ' +
-        'python3 src/pipeline.py --source ./output --content-only --use-ai --model "${DOC_OPTIMIZER_MODEL:-deepseek-v4-flash}"',
+        'python3 src/pipeline.py --source ./output --content-only --use-ai --model "${DOC_OPTIMIZER_MODEL:-gpt-5.5}"',
       ],
       cwd: config.projectRoot,
     },
@@ -98,16 +97,15 @@ function buildTaskList(config) {
       key: 'content-generate-full',
       label: '全量重优化文档',
       description:
-        '第一步的子任务：忽略增量，强制用 DeepSeek 重新优化 output 全部文档，生成 output_optimized。产物异常或想彻底重刷时使用；耗时较长。不会写入 site/docs、构建站点或部署。',
+        '第一步的子任务：忽略增量，强制用 GPT 5.5 重新优化 output 全部文档，生成 output_optimized。产物异常或想彻底重刷时使用；耗时较长。不会写入 site/docs、构建站点或部署。',
       command: 'bash',
       args: [
         '-lc',
         'set -a; [ -f .env ] && source .env; set +a; ' +
-        'DOC_OPTIMIZER_API_KEY="${DEEPSEEK_API_KEY:-${DOC_OPTIMIZER_API_KEY:-${OPENAI_API_KEY:-}}}" ' +
-        'DOC_OPTIMIZER_API_URL="${DOC_OPTIMIZER_API_URL:-https://api.deepseek.com/chat/completions}" ' +
-        'DOC_OPTIMIZER_MODEL="${DOC_OPTIMIZER_MODEL:-deepseek-v4-flash}" ' +
+        'DOC_OPTIMIZER_API_URL="${DOC_OPTIMIZER_API_URL:-https://sub2api-qbxihjpy.sealoshzh.site/v1/chat/completions}" ' +
+        'DOC_OPTIMIZER_MODEL="${DOC_OPTIMIZER_MODEL:-gpt-5.5}" ' +
         'DOC_OPTIMIZER_WIRE_API="${DOC_OPTIMIZER_WIRE_API:-chat}" ' +
-        'python3 src/pipeline.py --source ./output --content-only --use-ai --force-optimize --model "${DOC_OPTIMIZER_MODEL:-deepseek-v4-flash}"',
+        'python3 src/pipeline.py --source ./output --content-only --use-ai --force-optimize --model "${DOC_OPTIMIZER_MODEL:-gpt-5.5}"',
       ],
       cwd: config.projectRoot,
     },

@@ -225,36 +225,10 @@ def _prune_stale_md(known_sources: set[str], dst_dir: Path) -> list[str]:
     return sorted(removed)
 
 
-_IMG_REF_RE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
-
-
-def _restore_lost_images(original: str, ai_result: str) -> str:
-    """AI 重写后兜底补回被丢掉的图片引用。
-
-    模型不一定遵守“保留图片”的 prompt，会漏掉部分 ![..](..)。这里按 URL
-    比对原始文本与 AI 结果，把丢失的图片按原顺序追加到结果末尾，保证图片
-    引用一条不少（下载图片阶段已按 URL 哈希落地文件名）。
-    """
-    original_imgs = _IMG_REF_RE.findall(original)
-    if not original_imgs:
-        return ai_result
-
-    # 以 URL 去重：AI 结果里已有的图不重复追加
-    kept_urls = {url for _, url in _IMG_REF_RE.findall(ai_result)}
-    missing = [(alt, url) for alt, url in original_imgs if url not in kept_urls]
-    if not missing:
-        return ai_result
-
-    appendix = "\n\n<!-- AI 优化遗漏的图片，已自动补回 -->\n" + "\n".join(
-        f"![{alt}]({url})" for alt, url in missing
-    )
-    return ai_result.rstrip() + appendix
-
-
 def stage_optimize(
     output_dir: Path,
     use_ai: bool = False,
-    model: str = "deepseek-v4-flash",
+    model: str = "gpt-5.5",
     quality_report: bool = True,
     force: bool = False,
 ) -> tuple[Path, dict]:
@@ -365,8 +339,6 @@ def stage_optimize(
         for attempt in range(1, 4):
             try:
                 result = ai_optimize(md_text, model=model)
-                # 兜底：补回 AI 重写时丢掉的图片引用（按 URL 比对原文本）
-                result = _restore_lost_images(md_text, result)
                 dst.write_text(result, encoding="utf-8")
                 ok = True
                 break
@@ -1505,8 +1477,8 @@ def main(argv: list[str] | None = None) -> None:
                         help="跳过 AI 优化，仅规则引擎（默认启用）")
     parser.add_argument("--use-ai", action="store_true",
                         help="启用 AI 语义优化（默认关闭）")
-    parser.add_argument("--model", default="deepseek-v4-flash",
-                        help="AI 语义优化模型 (default: deepseek-v4-flash)")
+    parser.add_argument("--model", default="gpt-5.5",
+                        help="AI 语义优化模型 (default: gpt-5.5)")
     parser.add_argument("--no-quality-report", action="store_true",
                         help="不生成 docs/doc-quality-report.md 质量检查报告")
     parser.add_argument("--force-optimize", action="store_true",

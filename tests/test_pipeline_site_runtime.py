@@ -56,7 +56,7 @@ class PipelineStageIsolationTest(unittest.TestCase):
             stage_optimize.assert_called_once_with(
                 resolved_source,
                 use_ai=False,
-                model="deepseek-v4-flash",
+                model="gpt-5.5",
                 quality_report=True,
                 force=False,
             )
@@ -235,37 +235,6 @@ class PruneStaleMarkdownTest(unittest.TestCase):
             pipeline._prune_stale_md(known, dst)
             # 根目录本身永远保留
             self.assertTrue((dst / "根目录").exists())
-
-
-class RestoreLostImagesTest(unittest.TestCase):
-    """AI 重写文本时可能丢掉图片引用，代码层面兜底补回。"""
-
-    def test_restores_all_images_when_ai_dropped_everything(self):
-        original = "# 文档\n步骤一\n![图1](img/a.png)\n步骤二\n![图2](img/b.png)\n"
-        ai_result = "# 文档\n步骤一\n步骤二\n"  # AI 把图全丢了
-        restored = pipeline._restore_lost_images(original, ai_result)
-        self.assertIn("![图1](img/a.png)", restored)
-        self.assertIn("![图2](img/b.png)", restored)
-
-    def test_restores_only_missing_images(self):
-        original = "![图1](img/a.png)\n![图2](img/b.png)\n![图3](img/c.png)\n"
-        ai_result = "# 标题\n![图1](img/a.png)\n内容\n"  # 只保留了图1
-        restored = pipeline._restore_lost_images(original, ai_result)
-        self.assertEqual(restored.count("![图1](img/a.png)"), 1)  # 不重复
-        self.assertIn("![图2](img/b.png)", restored)
-        self.assertIn("![图3](img/c.png)", restored)
-
-    def test_no_change_when_no_images_lost(self):
-        original = "# 文档\n![图1](img/a.png)\n内容\n![图2](img/b.png)\n"
-        ai_result = "# 优化文档\n![图1](img/a.png)\n新内容\n![图2](img/b.png)\n"
-        restored = pipeline._restore_lost_images(original, ai_result)
-        self.assertEqual(restored, ai_result)
-
-    def test_no_images_in_original_returns_unchanged(self):
-        original = "# 文档\n纯文本\n"
-        ai_result = "# 优化文档\n纯文本\n"
-        restored = pipeline._restore_lost_images(original, ai_result)
-        self.assertEqual(restored, ai_result)
 
 
 if __name__ == "__main__":
