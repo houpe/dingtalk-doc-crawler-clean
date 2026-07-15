@@ -169,13 +169,14 @@ def assign_tree_numbers(docs_dir: Path) -> dict:
 
 
 def number_markdown(path: Path, base: str) -> bool:
-    """把层级编号烤进单个 markdown 文档的标题（H1..H6）。
+    """清洗单个 markdown 文档的所有标题（H1..H6），去除脏字符与旧编号。
 
-    规则（页内独立编号，不携带外部 base 路径）：
-    - H1  用中文数字：一. 二. 三.
-    - H2  用阿拉伯点分：1.1  1.2  2.1 ……
-    - H3+ 继续追加：1.1.1  1.1.2 ……
-    标题文本先经 clean_title 清洗（去 - _、已有编号）。
+    注意：正文标题**不再烤入编号**——侧边栏 / 本页目录已承担层级展示，
+    文章内通常只有一个 H1，再加序号会导致全篇 1.1/1.2 前缀冗余。
+
+    处理内容：
+    - 去 - _、已有编号（循环剥离）、操作说明等噪音词
+    - 标题文本保持干净纯文本
 
     Returns:
         是否有修改。
@@ -198,7 +199,6 @@ def number_markdown(path: Path, base: str) -> bool:
                 break
             i += 1
 
-    counters: list[int] = []       # 页内各级计数器；counters[0]=H2计数, [1]=H3计数 ……
     heading_re = re.compile(r"^(#{1,6})\s+(.*)$")
 
     while i < len(lines):
@@ -218,22 +218,7 @@ def number_markdown(path: Path, base: str) -> bool:
         if m:
             level = len(m.group(1))
             title = clean_title(m.group(2))
-            if level == 1:
-                # H1 页内统一为 一. 二. 三. （从 1 开始递增）
-                counters.append(0)
-                counters[0] += 1
-                num = cn(counters[0]) + "."
-            else:
-                # H2 → "1.1", H3 → "1.1.1", ……（含 H1 序号前缀）
-                idx = level - 2               # H2→0, H3→1, ……
-                counters = counters[: idx + 2]
-                while len(counters) <= idx + 1:
-                    counters.append(0)
-                counters[idx + 1] += 1
-                parts = [str(counters[0])] + [str(c) for c in counters[1:]]
-                num = ".".join(parts)
-            new_title = f"{num} {title}" if title else num
-            out.append(f"{'#' * level} {new_title}")
+            out.append(f"{'#' * level} {title}" if title else line)
         else:
             out.append(line)
         i += 1
