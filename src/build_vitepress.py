@@ -7,6 +7,9 @@ import subprocess
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from link_repair import repair_landing_links, fill_index_template
+
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = ROOT / "output_optimized"
 SITE_DIR = ROOT / "site"
@@ -24,7 +27,7 @@ hero:
       link: /网点操作/02客户下单篇/关于客户自主下单，网点必知
     - theme: alt
       text: 必知必读
-      link: /「*必知必读」账号权限如何开通？/系统如何访问？APP如何下载？
+      link: __ACCOUNT_PERM_LINK__
 features:
   - title: 必知必读
     details: 账号权限开通、系统访问方式等基础准备
@@ -55,7 +58,9 @@ def copy_content():
         else:
             shutil.copy2(item, dst)
 
-    (DOCS_DIR / "index.md").write_text(INDEX_MD, encoding="utf-8")
+    (DOCS_DIR / "index.md").write_text(fill_index_template(INDEX_MD, DOCS_DIR), encoding="utf-8")
+    # 自愈：把导航等写死的章节入口链接修正为真实目录链接，避免 404
+    repair_landing_links(DOCS_DIR)
 
 
 def md_files_in_dir(d: Path) -> list[str]:

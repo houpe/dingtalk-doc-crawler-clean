@@ -18,7 +18,9 @@ test('GET /admin returns the admin console shell with grouped sections', async (
   assert.match(response.text, /文档控制台/);
   assert.match(response.text, /1\. 文档生成/);
   assert.match(response.text, /2\. 本地站点构建与预览/);
-  assert.match(response.text, /3\. 部署到服务器/);
+  assert.match(response.text, /3\. 部署到服务器（选择目标站点）/);
+  assert.match(response.text, /help\.beta\.ztocc\.com/);
+  assert.match(response.text, /wiki\.houpe\.top/);
   assert.match(response.text, /全量流程（可选）/);
   assert.match(response.text, /当前状态/);
   assert.match(response.text, /运行日志/);
@@ -30,19 +32,22 @@ test('admin page groups tasks into three isolated stages and an optional full fl
   const script = readFileSync(join(process.cwd(), 'admin', 'admin.js'), 'utf8');
 
   assert.match(script, /pipeline-crawl/);
+  assert.match(script, /pipeline-crawl-full/);
   assert.match(script, /content-generate/);
   assert.match(script, /content-flow/);
   assert.match(script, /site-build-local/);
   assert.match(script, /local-site-flow/);
   assert.match(script, /validate-site-dist/);
-  assert.match(script, /deploy-flow/);
-  assert.match(script, /full-release-flow/);
+  assert.match(script, /deploy-help-beta-flow/);
+  assert.match(script, /deploy-houpe-wiki-flow/);
+  assert.match(script, /full-release-help-beta-flow/);
+  assert.match(script, /full-release-houpe-wiki-flow/);
   assert.doesNotMatch(script, /full-site-flow/);
   assert.doesNotMatch(script, /full-pipeline-flow/);
   assert.doesNotMatch(script, /pipeline-deploy-fast/);
 });
 
-test('admin page exposes manual refresh and local log clearing controls', async () => {
+test('admin page exposes manual refresh, log copying, and local log clearing controls', async () => {
   const config = buildServerConfig({ cwd: process.cwd() });
   const app = createApp({ config, registerRoutes: registerAppRoutes });
 
@@ -50,8 +55,11 @@ test('admin page exposes manual refresh and local log clearing controls', async 
   const script = readFileSync(join(process.cwd(), 'admin', 'admin.js'), 'utf8');
 
   assert.match(response.text, /id="refresh-status"/);
+  assert.match(response.text, /id="copy-all-logs"/);
   assert.match(response.text, /id="clear-logs"/);
   assert.match(script, /refresh-status/);
+  assert.match(script, /copy-all-logs/);
+  assert.match(script, /navigator\.clipboard\.writeText/);
   assert.match(script, /clear-logs/);
 });
 

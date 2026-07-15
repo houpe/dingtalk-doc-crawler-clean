@@ -20,6 +20,7 @@ from __future__ import annotations
 import re
 import sys
 from pathlib import Path
+from urllib.parse import unquote
 
 # ── HTML tag stripping ──────────────────────────────────────────
 
@@ -78,6 +79,7 @@ EMPTY_IMG_RE = re.compile(
 
 # Local image refs that point to missing files
 MISSING_LOCAL_IMG_RE = re.compile(r'!\[([^\]]*)\]\((\./images/[^)]+)\)')
+LOCAL_IMAGE_REF_RE = re.compile(r'(!\[[^\]]*\]\()(\./images/[^)]+)(\))')
 
 
 def fix_images(md_file: Path) -> int:
@@ -121,13 +123,38 @@ def fix_empty_images(md_file: Path) -> int:
 def fix_missing_local_images(md_file: Path) -> int:
     """Remove image references pointing to files that don't exist."""
     content = md_file.read_text(encoding='utf-8', errors='ignore')
-    new_content = MISSING_LOCAL_IMG_RE.sub(
-        lambda m: m.group(0) if (md_file.parent / m.group(2)).exists() else '',
-        content,
-    )
+    removed = 0
+
+    def keep_existing(match: re.Match) -> str:
+        nonlocal removed
+        if (md_file.parent / unquote(match.group(2))).exists():
+            return match.group(0)
+        removed += 1
+        return ''
+
+    new_content = MISSING_LOCAL_IMG_RE.sub(keep_existing, content)
     if new_content != content:
         md_file.write_text(new_content, encoding='utf-8')
-    return 1
+    return removed
+
+
+def encode_local_image_paths(md_file: Path) -> int:
+    """将本地图片 URL 中的空格编码，避免 Markdown/VitePress 忽略该图片。"""
+    content = md_file.read_text(encoding='utf-8', errors='ignore')
+    changed = 0
+
+    def replace_path(match: re.Match) -> str:
+        nonlocal changed
+        image_path = match.group(2)
+        encoded_path = image_path.replace(' ', '%20')
+        if encoded_path != image_path:
+            changed += 1
+        return f"{match.group(1)}{encoded_path}{match.group(3)}"
+
+    new_content = LOCAL_IMAGE_REF_RE.sub(replace_path, content)
+    if new_content != content:
+        md_file.write_text(new_content, encoding='utf-8')
+    return changed
 
 
 # ── Link fixing ─────────────────────────────────────────────────
@@ -194,6 +221,8 @@ def run(root_dir: Path, verbose: bool = False) -> dict:
         if img_count:
             stats['images_fixed'] += img_count
 
+        encoded_count = encode_local_image_paths(md)
+
         empty_count = fix_empty_images(md)
         if empty_count:
             stats['empty_imgs_removed'] += empty_count
@@ -205,7 +234,7 @@ def run(root_dir: Path, verbose: bool = False) -> dict:
         if verbose:
             rel = md.relative_to(root_dir)
             print(f"  {rel}: html={result.get('html_cleaned')}, "
-                  f"imgs={img_count}, empty={empty_count}, missing={missing}")
+                  f"imgs={img_count}, encoded={encoded_count}, empty={empty_count}, missing={missing}")
 
     return stats
 

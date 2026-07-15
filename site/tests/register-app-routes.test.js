@@ -8,8 +8,10 @@ import { createApp } from '../lib/create-app.js';
 import { buildServerConfig } from '../lib/server-config.js';
 import { registerAppRoutes } from '../lib/register-app-routes.js';
 
-function createTestApp({ cwd = process.cwd(), remoteAddress, taskCatalog, taskRunner } = {}) {
-  const config = buildServerConfig({ cwd });
+const TEST_USER = Object.freeze({ id: 'ding-user-1', name: '测试用户' });
+
+function createTestApp({ cwd = process.cwd(), remoteAddress, taskCatalog, taskRunner, user } = {}) {
+  const config = buildServerConfig({ cwd, sessionStore: 'memory' });
   return createApp({
     config,
     registerRoutes(app, context) {
@@ -19,6 +21,13 @@ function createTestApp({ cwd = process.cwd(), remoteAddress, taskCatalog, taskRu
             value: remoteAddress,
             configurable: true,
           });
+          next();
+        });
+      }
+
+      if (user) {
+        app.use((req, _res, next) => {
+          req.session.user = user;
           next();
         });
       }
@@ -43,8 +52,17 @@ function createStaticSiteFixture(t) {
   return cwd;
 }
 
-test('registerAppRoutes serves generated VitePress clean URLs instead of the homepage fallback', async (t) => {
+test('registerAppRoutes redirects anonymous VitePress requests to central auth', async (t) => {
   const app = createTestApp({ cwd: createStaticSiteFixture(t) });
+
+  const response = await request(app).get('/guide/topic');
+
+  assert.equal(response.status, 302);
+  assert.equal(response.headers.location, '/auth/login?redirect=%2Fguide%2Ftopic');
+});
+
+test('registerAppRoutes serves generated VitePress clean URLs for authenticated users', async (t) => {
+  const app = createTestApp({ cwd: createStaticSiteFixture(t), user: TEST_USER });
 
   const pageResponse = await request(app).get('/guide/topic');
   const sectionResponse = await request(app).get('/guide/');
@@ -80,6 +98,15 @@ test('registerAppRoutes reports anonymous auth state as logged out', async () =>
 
   assert.equal(response.status, 200);
   assert.deepEqual(response.body, { loggedIn: false });
+});
+
+test('registerAppRoutes reports central session auth state as logged in', async () => {
+  const app = createTestApp({ user: TEST_USER });
+
+  const response = await request(app).get('/api/auth/me');
+
+  assert.equal(response.status, 200);
+  assert.deepEqual(response.body, { loggedIn: true, user: TEST_USER });
 });
 
 test('registerAppRoutes rejects non-local access to /admin and /api/admin/tasks', async () => {
@@ -131,13 +158,9 @@ test('legacy editor build endpoint uses the shared task runner lock', async () =
       throw new Error('should not stop');
     },
   };
-  const app = createTestApp({ taskCatalog, taskRunner });
-  const loginResponse = await request(app)
-    .post('/api/login')
-    .send({ username: 'admin', password: 'admin123' });
-  const cookie = loginResponse.headers['set-cookie'];
+  const app = createTestApp({ taskCatalog, taskRunner, user: TEST_USER });
 
-  const response = await request(app).post('/api/build').set('Cookie', cookie).send({});
+  const response = await request(app).post('/api/build').send({});
 
   assert.equal(response.status, 200);
   assert.deepEqual(response.body, { ok: true, message: '构建已启动', runId: 'run-1' });
@@ -168,13 +191,9 @@ test('legacy editor build endpoint returns conflict when another task holds the 
       throw new Error('should not stop');
     },
   };
-  const app = createTestApp({ taskCatalog, taskRunner });
-  const loginResponse = await request(app)
-    .post('/api/login')
-    .send({ username: 'admin', password: 'admin123' });
-  const cookie = loginResponse.headers['set-cookie'];
+  const app = createTestApp({ taskCatalog, taskRunner, user: TEST_USER });
 
-  const response = await request(app).post('/api/build').set('Cookie', cookie).send({});
+  const response = await request(app).post('/api/build').send({});
 
   assert.equal(response.status, 409);
   assert.deepEqual(response.body, { error: '已有任务正在运行' });

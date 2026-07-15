@@ -5,6 +5,10 @@ import { createTaskCatalog } from '../lib/admin-tasks.js';
 import { createTaskRunner } from '../lib/task-runner.js';
 import { buildServerConfig } from '../lib/server-config.js';
 
+const TEST_TIMESTAMP = '2026-07-11T13:40:00.000Z';
+const testNow = () => TEST_TIMESTAMP;
+const withTimestamp = (lines) => lines.map((line) => '[2026-07-11 21:40:00] ' + line);
+
 function createSpawnStub() {
   const calls = [];
 
@@ -27,7 +31,7 @@ test('createTaskRunner exposes single and composite task controls', async () => 
   const { calls, spawnImpl } = createSpawnStub();
   const config = buildServerConfig({ cwd: '/tmp/example-site' });
   const catalog = createTaskCatalog(config);
-  const runner = createTaskRunner({ spawnImpl });
+  const runner = createTaskRunner({ spawnImpl, now: testNow });
   const definition = catalog['docs-build'];
 
   const run = runner.start(definition);
@@ -39,11 +43,11 @@ test('createTaskRunner exposes single and composite task controls', async () => 
   assert.equal(calls[0].options.detached, process.platform !== 'win32');
   assert.equal(calls[0].options.env.PYTHONUNBUFFERED, '1');
 
-  const runningLogs = [
+  const runningLogs = withTimestamp([
     '>>> 开始: 构建站点 (docs-build)',
     '命令: npm run build',
     '目录: /tmp/example-site',
-  ];
+  ]);
 
   let status = runner.getStatus();
   assert.equal(status.running, true);
@@ -84,15 +88,13 @@ test('createTaskRunner exposes single and composite task controls', async () => 
     exitCode: 0,
     logs: [
       ...runningLogs,
-      '[stdout] build ok',
-      '<<< 完成: 构建站点 (docs-build), exit=0',
+      ...withTimestamp(['[stdout] build ok', '<<< 完成: 构建站点 (docs-build), exit=0']),
     ],
     error: null,
   });
   assert.deepEqual(runner.getLogs(), [
     ...runningLogs,
-    '[stdout] build ok',
-    '<<< 完成: 构建站点 (docs-build), exit=0',
+    ...withTimestamp(['[stdout] build ok', '<<< 完成: 构建站点 (docs-build), exit=0']),
   ]);
 });
 
@@ -100,7 +102,7 @@ test('createTaskRunner enforces the single-task lock with the required error mes
   const { calls, spawnImpl } = createSpawnStub();
   const config = buildServerConfig({ cwd: '/tmp/example-site' });
   const catalog = createTaskCatalog(config);
-  const runner = createTaskRunner({ spawnImpl });
+  const runner = createTaskRunner({ spawnImpl, now: testNow });
 
   const firstRun = runner.start(catalog['docs-sidebar']);
 
@@ -115,7 +117,7 @@ test('createTaskRunner stop marks the run as stopped and clears active task', as
   const { calls, spawnImpl } = createSpawnStub();
   const config = buildServerConfig({ cwd: '/tmp/example-site' });
   const catalog = createTaskCatalog(config);
-  const runner = createTaskRunner({ spawnImpl });
+  const runner = createTaskRunner({ spawnImpl, now: testNow });
 
   const run = runner.start(catalog['content-generate']);
   calls[0].child.stderr.emit('data', Buffer.from('building\n'));
@@ -138,28 +140,28 @@ test('createTaskRunner stop marks the run as stopped and clears active task', as
     startedAt: status.lastTask.startedAt,
     finishedAt: status.lastTask.finishedAt,
     exitCode: null,
-    logs: [
+    logs: withTimestamp([
       '>>> 开始: 过滤并优化文档 (content-generate)',
       '命令: python3 src/pipeline.py --source ./output --content-only',
       '目录: /tmp',
       '[stderr] building',
       '<<< 已停止: 过滤并优化文档 (content-generate)',
-    ],
+    ]),
     error: null,
   });
   assert.ok(status.lastTask.finishedAt);
-  assert.deepEqual(runner.getLogs(), [
+  assert.deepEqual(runner.getLogs(), withTimestamp([
     '>>> 开始: 过滤并优化文档 (content-generate)',
     '命令: python3 src/pipeline.py --source ./output --content-only',
     '目录: /tmp',
     '[stderr] building',
     '<<< 已停止: 过滤并优化文档 (content-generate)',
-  ]);
+  ]));
 });
 
 test('createTaskRunner stop reports when there is no running task', () => {
   const { calls, spawnImpl } = createSpawnStub();
-  const runner = createTaskRunner({ spawnImpl });
+  const runner = createTaskRunner({ spawnImpl, now: testNow });
 
   assert.throws(() => runner.stop(), /当前没有运行中的任务/);
   assert.equal(calls.length, 0);
@@ -167,7 +169,7 @@ test('createTaskRunner stop reports when there is no running task', () => {
 
 test('createTaskRunner rejects invalid task definitions before spawn', () => {
   const { calls, spawnImpl } = createSpawnStub();
-  const runner = createTaskRunner({ spawnImpl });
+  const runner = createTaskRunner({ spawnImpl, now: testNow });
 
   assert.throws(() => runner.start(null), /Invalid task definition/);
   assert.equal(calls.length, 0);
@@ -224,7 +226,7 @@ test('createTaskRunner joins split stream chunks before formatting log lines', a
   const { calls, spawnImpl } = createSpawnStub();
   const config = buildServerConfig({ cwd: '/tmp/example-site' });
   const catalog = createTaskCatalog(config);
-  const runner = createTaskRunner({ spawnImpl });
+  const runner = createTaskRunner({ spawnImpl, now: testNow });
   const run = runner.start(catalog['docs-build']);
 
   calls[0].child.stdout.emit('data', Buffer.from('\u001b[3'));
@@ -237,31 +239,31 @@ test('createTaskRunner joins split stream chunks before formatting log lines', a
   calls[0].child.stderr.emit('data', chineseLine.subarray(1, 4));
   calls[0].child.stderr.emit('data', chineseLine.subarray(4));
 
-  assert.deepEqual(runner.getLogs().slice(3), [
+  assert.deepEqual(runner.getLogs().slice(3), withTimestamp([
     '[stdout] hello',
     '[stdout]   indented',
     '[stdout]',
     '[stderr] 中文日志',
-  ]);
+  ]));
 
   calls[0].child.emit('close', 0);
   await run.completed;
 
-  assert.deepEqual(runner.getLogs().slice(3), [
+  assert.deepEqual(runner.getLogs().slice(3), withTimestamp([
     '[stdout] hello',
     '[stdout]   indented',
     '[stdout]',
     '[stderr] 中文日志',
     '[stdout] partial',
     '<<< 完成: 构建站点 (docs-build), exit=0',
-  ]);
+  ]));
 });
 
 test('createTaskRunner records only one terminal result after process errors', async () => {
   const { calls, spawnImpl } = createSpawnStub();
   const config = buildServerConfig({ cwd: '/tmp/example-site' });
   const catalog = createTaskCatalog(config);
-  const runner = createTaskRunner({ spawnImpl });
+  const runner = createTaskRunner({ spawnImpl, now: testNow });
   const run = runner.start(catalog['docs-build']);
 
   calls[0].child.stdout.emit('data', Buffer.from('partial output'));
@@ -271,11 +273,11 @@ test('createTaskRunner records only one terminal result after process errors', a
   calls[0].child.emit('close', 0);
   await new Promise((resolve) => setImmediate(resolve));
 
-  assert.deepEqual(runner.getLogs().slice(3), [
+  assert.deepEqual(runner.getLogs().slice(3), withTimestamp([
     '[stdout] partial output',
     '!!! 进程错误: boom',
     '<<< 失败: 构建站点 (docs-build), process-error',
-  ]);
+  ]));
 });
 
 test('createTaskRunner streams Python output before the process exits', async () => {
@@ -297,13 +299,13 @@ test('createTaskRunner streams Python output before the process exits', async ()
     while (
       Date.now() < deadline &&
       runner.getStatus().running &&
-      !runner.getLogs().includes('[stdout] first line')
+      !runner.getLogs().some((line) => line.endsWith('[stdout] first line'))
     ) {
       await new Promise((resolve) => setTimeout(resolve, 20));
     }
 
     assert.equal(runner.getStatus().running, true);
-    assert.ok(runner.getLogs().includes('[stdout] first line'));
+    assert.ok(runner.getLogs().some((line) => line.endsWith('[stdout] first line')));
   } finally {
     if (runner.getStatus().running) {
       runner.stop();

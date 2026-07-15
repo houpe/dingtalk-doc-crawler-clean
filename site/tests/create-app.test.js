@@ -6,7 +6,7 @@ import { createApp } from '../lib/create-app.js';
 import { buildServerConfig } from '../lib/server-config.js';
 
 test('createApp delegates route registration to registerRoutes', async () => {
-  const config = buildServerConfig({ cwd: '/tmp/example-site' });
+  const config = buildServerConfig({ cwd: '/tmp/example-site', sessionStore: 'memory' });
   let called = false;
 
   const app = createApp({

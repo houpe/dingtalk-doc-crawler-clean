@@ -44,6 +44,15 @@
   --vp-c-text-3: #96a5b8;
   --vp-c-divider: #2d3a4e;
   --vp-sidebar-bg-color: #101827;
+
+  /* 暗黑模式下，正文强调字体（加粗）使用淡黄，提升关键信息可读性 */
+  --vp-c-text-emphasis: #fbbf24;
+}
+
+:root.dark .vp-doc strong,
+:root.dark .vp-doc b {
+  color: var(--vp-c-text-emphasis);
+  font-weight: 700;
 }
 
 h1,
@@ -317,6 +326,18 @@ h4,
 .vp-doc a:hover {
   color: var(--vp-c-brand-2);
   text-decoration: underline;
+}
+
+/* 正文图片限制最大高度，避免长截图撑爆页面；保持比例并居中 */
+.vp-doc img {
+  display: block;
+  max-width: 100%;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  margin: 0.8em auto;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
 }
 
 .vp-doc blockquote {

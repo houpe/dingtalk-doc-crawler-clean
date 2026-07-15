@@ -22,7 +22,7 @@ export default defineConfig({
     siteTitle: '中通冷链',
     nav: [
       { text: '首页', link: '/' },
-      { text: '必读', link: '/「*必知必读」账号权限如何开通？/' },
+      { text: '必读', link: '/「_必知必读」账号权限如何开通？/' },
       { text: '网点操作', link: '/网点操作/' },
       { text: '云仓操作', link: '/云仓操作/' },
     ],

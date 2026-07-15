@@ -130,6 +130,14 @@ h2 {
   gap: 18px;
 }
 
+.section-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
 .section-head h2 {
   margin-bottom: 6px;
 }
@@ -302,22 +310,67 @@ button[data-task$="-flow"] {
   background: #354454;
 }
 
-button[data-task="deploy-site-dist"] {
+button[data-task$="-site-dist"] {
   border-color: #a96717;
   background: #bd761d;
 }
 
-button[data-task="verify-online"],
+button[data-task^="verify-"],
 button.secondary {
   border-color: #aeb8c3;
   background: #fff;
   color: #344250;
 }
 
-button[data-task="verify-online"]:hover:enabled,
+button[data-task^="verify-"]:hover:enabled,
 button.secondary:hover:enabled {
   border-color: #7f8c99;
   background: #edf1f4;
+}
+
+.section-description {
+  margin: -6px 0 16px;
+  color: #607080;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.deploy-target-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.deploy-target {
+  min-width: 0;
+}
+
+.target-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 10px;
+  color: #354454;
+  font-size: 14px;
+}
+
+.target-heading a {
+  color: #2873ad;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.target-heading a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .deploy-target-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 button.danger {

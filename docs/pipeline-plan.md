@@ -210,7 +210,7 @@ npx honkit serve <gitbook-dir>              # 本地预览 http://localhost:4000
 
 - 服务器: `root@42.192.205.206`
 - 路径: `/zto/`
-- URL: `https://houpe.top/zto/`
+- URL: `https://wiki.houpe.top/`
 - `fast` 模式：只传非图片文件（保留远端图片）
 - `full` 模式：全量重传（含图片）
 

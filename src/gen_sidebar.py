@@ -10,6 +10,7 @@ Usage:
 """
 import os, json, re, sys
 from pathlib import Path
+from number_headings import assign_tree_numbers, clean_title, _is_duplicate
 
 STRIP_RE = re.compile(
     r"^(?:"
@@ -99,63 +100,72 @@ def _is_generated_index(content: str) -> bool:
     return True
 
 
-def build_sidebar(dir_path: Path, rel_prefix: str = "", order_map: dict[str, int] | None = None) -> list:
+def build_sidebar(dir_path: Path, rel_prefix: str = "", tree: dict | None = None) -> list:
     items = []
     try:
         entries = sorted(os.listdir(dir_path))
     except PermissionError:
         return items
 
-    dirs = [i for i in entries
-            if (dir_path / i).is_dir() and i not in SKIP_DIRS and not i.startswith(".")]
-    mds = [i for i in entries if i.endswith(".md") and i != "index.md"]
+    dirs = [
+        i for i in entries
+        if (dir_path / i).is_dir() and i not in SKIP_DIRS
+        and not i.startswith(".") and not _is_duplicate(i)
+    ]
+    mds = [
+        i for i in entries
+        if i.endswith(".md") and i != "index.md"
+        and not i.startswith(".") and not _is_duplicate(i)
+    ]
 
-    def order_key(name: str, *, is_dir: bool) -> tuple[int, tuple[int, str]]:
-        relative_path = f"{rel_prefix}/{name}" if rel_prefix else name
-        if order_map:
-            positions = [
-                position
-                for path, position in order_map.items()
-                if path == relative_path
-                or (not is_dir and path == f"{relative_path}.md")
-                or (is_dir and path.startswith(f"{relative_path}/"))
-            ]
-            if positions:
-                return (min(positions), (0, ""))
-        return (10**9, directory_sort_key(name, is_top_level=not rel_prefix) if is_dir else (100, clean(name)))
+    def node_rel(name: str, is_dir: bool) -> str:
+        rel = f"{rel_prefix}/{name}" if rel_prefix else name
+        return rel if is_dir else rel + ".md"
 
-    for d in sorted(dirs, key=lambda name: order_key(name, is_dir=True)):
+    def disp(name: str, is_dir: bool) -> str:
+        rel = node_rel(name, is_dir)
+        if tree and rel in tree:
+            return tree[rel]["display"]
+        return clean_title(name)
+
+    def base_key(name: str, is_dir: bool) -> list[int]:
+        rel = node_rel(name, is_dir)
+        if tree and rel in tree:
+            return [int(x) for x in tree[rel]["base"].split(".")]
+        return [10 ** 9]
+
+    for d in sorted(dirs, key=lambda n: base_key(n, True)):
         full = dir_path / d
-        sub_rel = f"{rel_prefix}/{d}" if rel_prefix else d
-        sub_items = build_sidebar(full, sub_rel, order_map)
+        sub_rel = node_rel(d, True)
+        sub_items = build_sidebar(full, sub_rel, tree)
 
         # If no sub-items found, add direct md files as items
         if not sub_items:
-            sub_mds = sorted([i for i in os.listdir(full)
-                              if i.endswith(".md") and i != "index.md"
-                              and not i.startswith(".")])
+            sub_mds = sorted(
+                [i for i in os.listdir(full)
+                 if i.endswith(".md") and i != "index.md"
+                 and not i.startswith(".") and not _is_duplicate(i)],
+                key=lambda n: base_key(n, False),
+            )
             for md in sub_mds:
                 raw = md.replace(".md", "")
-                sub_items.append({
-                    "text": clean(raw),
-                    "link": f"/{sub_rel}/{raw}"
-                })
+                sub_items.append({"text": disp(raw, False), "link": f"/{sub_rel}/{raw}"})
 
         if sub_items:
             # `collapsed` 同时启用 VitePress 的折叠箭头：一级栏目保持展开，
             # 二级及更深目录默认收起，当前文章所在分支会由 VitePress 自动展开。
             items.append({
-                "text": clean(d),
+                "text": disp(d, True),
                 "collapsed": bool(rel_prefix),
                 "items": sub_items
             })
             # 为目录生成 index.md，使 /模块名/ 这种目录 URL 可访问
-            _ensure_dir_index(full, sub_items, clean(d))
+            _ensure_dir_index(full, sub_items, clean_title(d), tree)
 
-    for md in sorted(mds, key=lambda name: order_key(name[:-3], is_dir=False)):
+    for md in sorted(mds, key=lambda n: base_key(n[:-3], False)):
         raw = md.replace(".md", "")
         link = f"/{rel_prefix}/{raw}" if rel_prefix else f"/{raw}"
-        items.append({"text": clean(raw), "link": link})
+        items.append({"text": disp(raw, False), "link": link})
 
     return items
 
@@ -169,9 +179,10 @@ def _frontmatter(title: str) -> str:
     return "---\n" + f"title: {_yaml_quote(title)}\n" + f"description: {_yaml_quote(description)}\n" + "---\n\n"
 
 
-def _ensure_dir_index(dir_path: Path, sub_items: list[dict], title: str) -> None:
+def _ensure_dir_index(dir_path: Path, sub_items: list[dict], title: str, tree: dict | None = None) -> None:
     """为目录生成 index.md（文章列表页），使 /目录名/ URL 可访问。
 
+    title 传入的是已清洗（无编号）的目录名，编号由 number_headings 在构建阶段统一烤入。
     已存在且不是自动生成样式的 index.md（用户手写）不覆盖。
     """
     index_md = dir_path / "index.md"
@@ -188,24 +199,26 @@ def _ensure_dir_index(dir_path: Path, sub_items: list[dict], title: str) -> None
         if (dir_path / d).is_dir()
         and d not in SKIP_DIRS
         and not d.startswith(".")
+        and not _is_duplicate(d)
         and _has_docs(dir_path / d)
     ]
     docs = [
         md for md in entries
-        if md.endswith(".md") and md != "index.md" and not md.startswith(".")
+        if md.endswith(".md") and md != "index.md"
+        and not md.startswith(".") and not _is_duplicate(md)
     ]
 
     if sub_dirs:
         parts.append("## 分类\n")
         for d in sub_dirs:
-            parts.append(f"- **[{clean(d)}](./{d}/)**")
+            parts.append(f"- **[{clean_title(d)}](./{d}/)**")
         parts.append("")
 
     if docs:
         parts.append("## 文档\n")
         for md in docs:
             name = md[:-3]
-            parts.append(f"- [{clean(name)}](./{name})")
+            parts.append(f"- [{clean_title(name)}](./{name})")
         parts.append("")
 
     if not sub_dirs and not docs:
@@ -227,21 +240,10 @@ def main():
     vp_dir = docs_dir / ".vitepress"
     vp_dir.mkdir(exist_ok=True)
 
-    state_file = docs_dir.parent.parent / "output" / ".dws-crawl-state.json"
-    order_map: dict[str, int] = {}
-    try:
-        nodes = json.loads(state_file.read_text(encoding="utf-8")).get("nodes", {})
-        order_map = {
-            normalize_order_path(document["path"]): document["order"]
-            for document in nodes.values()
-            if isinstance(document, dict)
-            and isinstance(document.get("path"), str)
-            and isinstance(document.get("order"), int)
-        }
-    except (OSError, ValueError, json.JSONDecodeError):
-        pass
+    # 标题自动编号：一次性计算整棵文档树的编号（顶层中文、深层阿拉伯）
+    tree = assign_tree_numbers(docs_dir)
 
-    data = build_sidebar(docs_dir, order_map=order_map)
+    data = build_sidebar(docs_dir, tree=tree)
 
     # Count articles
     total = 0

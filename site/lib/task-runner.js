@@ -2,6 +2,34 @@ import { spawn } from 'node:child_process';
 import { StringDecoder } from 'node:string_decoder';
 import { stripVTControlCharacters } from 'node:util';
 
+const beijingTimeFormatter = new Intl.DateTimeFormat('zh-CN', {
+  timeZone: 'Asia/Shanghai',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+  hourCycle: 'h23',
+});
+
+function formatBeijingTimestamp(value) {
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return String(value);
+  }
+
+  const parts = Object.fromEntries(
+    beijingTimeFormatter
+      .formatToParts(date)
+      .filter((part) => part.type !== 'literal')
+      .map((part) => [part.type, part.value]),
+  );
+
+  return `${parts.year}-${parts.month}-${parts.day} ${parts.hour}:${parts.minute}:${parts.second}`;
+}
+
 function cloneTask(task) {
   if (!task) {
     return null;
@@ -48,21 +76,26 @@ function cloneRun(run) {
   };
 }
 
-function appendLog(run, chunk) {
+function formatLogLine(now, message) {
+  return `[${formatBeijingTimestamp(now())}] ${message}`;
+}
+
+function appendLog(run, chunk, now) {
   const lines = stripVTControlCharacters(String(chunk))
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter(Boolean);
 
-  run.logs.push(...lines);
+  run.logs.push(...lines.map((line) => formatLogLine(now, line)));
 }
 
-function appendStreamLine(run, line, stream) {
+function appendStreamLine(run, line, stream, now) {
   const cleaned = stripVTControlCharacters(line).trimEnd();
-  run.logs.push(cleaned ? `[${stream}] ${cleaned}` : `[${stream}]`);
+  const message = cleaned ? `[${stream}] ${cleaned}` : `[${stream}]`;
+  run.logs.push(formatLogLine(now, message));
 }
 
-function createStreamLogger(run, stream) {
+function createStreamLogger(run, stream, now) {
   let buffer = '';
   const decoder = new StringDecoder('utf8');
 
@@ -76,7 +109,7 @@ function createStreamLogger(run, stream) {
       let match;
 
       while ((match = lineBreak.exec(buffer))) {
-        appendStreamLine(run, buffer.slice(lineStart, match.index), stream);
+        appendStreamLine(run, buffer.slice(lineStart, match.index), stream, now);
         lineStart = match.index + match[0].length;
       }
 
@@ -90,7 +123,7 @@ function createStreamLogger(run, stream) {
       }
 
       if (buffer.length > 0) {
-        appendStreamLine(run, buffer, stream);
+        appendStreamLine(run, buffer, stream, now);
       }
 
       buffer = '';
@@ -106,10 +139,10 @@ function formatCommand(definition) {
   return [definition.command, ...args].join(' ');
 }
 
-function appendTaskStart(run, definition) {
-  appendLog(run, `>>> 开始: ${definition.label} (${definition.key})`);
-  appendLog(run, `命令: ${formatCommand(definition)}`);
-  appendLog(run, `目录: ${definition.cwd}`);
+function appendTaskStart(run, definition, now) {
+  appendLog(run, `>>> 开始: ${definition.label} (${definition.key})`, now);
+  appendLog(run, `命令: ${formatCommand(definition)}`, now);
+  appendLog(run, `目录: ${definition.cwd}`, now);
 }
 
 function isValidTaskDefinition(definition) {
@@ -208,7 +241,7 @@ export function createTaskRunner({
   }
 
   function runOne(definition, run) {
-    appendTaskStart(run, definition);
+    appendTaskStart(run, definition, now);
 
     return new Promise((resolve, reject) => {
       let child;
@@ -221,16 +254,16 @@ export function createTaskRunner({
           stdio: 'pipe',
         });
       } catch (error) {
-        appendLog(run, `!!! 启动失败: ${error.message}`);
-        appendLog(run, `<<< 失败: ${definition.label} (${definition.key}), spawn-error`);
+        appendLog(run, `!!! 启动失败: ${error.message}`, now);
+        appendLog(run, `<<< 失败: ${definition.label} (${definition.key}), spawn-error`, now);
         reject(error);
         return;
       }
 
       activeChild = child;
       let settled = false;
-      const stdoutLogger = createStreamLogger(run, 'stdout');
-      const stderrLogger = createStreamLogger(run, 'stderr');
+      const stdoutLogger = createStreamLogger(run, 'stdout', now);
+      const stderrLogger = createStreamLogger(run, 'stderr', now);
 
       const flushStreamLogs = () => {
         stdoutLogger.flush();
@@ -269,18 +302,18 @@ export function createTaskRunner({
 
       child.on('error', (error) => {
         settle(reject, error, () => {
-          appendLog(run, `!!! 进程错误: ${error.message}`);
-          appendLog(run, `<<< 失败: ${definition.label} (${definition.key}), process-error`);
+          appendLog(run, `!!! 进程错误: ${error.message}`, now);
+          appendLog(run, `<<< 失败: ${definition.label} (${definition.key}), process-error`, now);
         });
       });
       child.on('close', (code) => {
         settle(resolve, code, () => {
           if (run.status === 'stopping') {
-            appendLog(run, `<<< 已停止: ${definition.label} (${definition.key})`);
+            appendLog(run, `<<< 已停止: ${definition.label} (${definition.key})`, now);
           } else if (code === 0) {
-            appendLog(run, `<<< 完成: ${definition.label} (${definition.key}), exit=0`);
+            appendLog(run, `<<< 完成: ${definition.label} (${definition.key}), exit=0`, now);
           } else {
-            appendLog(run, `<<< 失败: ${definition.label} (${definition.key}), exit=${code}`);
+            appendLog(run, `<<< 失败: ${definition.label} (${definition.key}), exit=${code}`, now);
           }
         });
       });

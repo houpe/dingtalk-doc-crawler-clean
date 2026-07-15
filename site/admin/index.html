@@ -58,9 +58,31 @@
         </section>
 
         <section class="task-section">
-          <h2>3. 部署到服务器</h2>
-          <div id="group-deploy" class="actions" data-group="deploy">
+          <h2>3. 部署到服务器（选择目标站点）</h2>
+          <p class="section-description">先完成本地构建；选择一个目标执行部署，不会同时发布到两个站点。</p>
+          <h3 class="target-heading">部署前检查（共用）</h3>
+          <div id="group-deploy-validation" class="actions" data-group="deploy-validation">
             <span class="empty-state">加载任务中...</span>
+          </div>
+          <div class="deploy-target-grid">
+            <section class="deploy-target" aria-labelledby="deploy-help-beta-title">
+              <h3 id="deploy-help-beta-title" class="target-heading">
+                帮助中心
+                <a href="https://help.beta.ztocc.com" target="_blank" rel="noopener">help.beta.ztocc.com</a>
+              </h3>
+              <div id="group-deploy-help-beta" class="actions" data-group="deploy-help-beta">
+                <span class="empty-state">加载任务中...</span>
+              </div>
+            </section>
+            <section class="deploy-target" aria-labelledby="deploy-houpe-wiki-title">
+              <h3 id="deploy-houpe-wiki-title" class="target-heading">
+                个人站点
+                <a href="https://wiki.houpe.top/" target="_blank" rel="noopener">wiki.houpe.top</a>
+              </h3>
+              <div id="group-deploy-houpe-wiki" class="actions" data-group="deploy-houpe-wiki">
+                <span class="empty-state">加载任务中...</span>
+              </div>
+            </section>
           </div>
           <div class="actions stop-action">
             <article class="task-card task-card-danger">
@@ -90,7 +112,10 @@
       <section class="logs-section">
         <div class="section-head">
           <h2>运行日志</h2>
-          <button id="clear-logs" class="secondary" type="button">清空显示</button>
+          <div class="section-actions">
+            <button id="copy-all-logs" class="secondary" type="button" title="将当前任务的全部日志复制到剪贴板（包括已清空显示的内容）">复制全部</button>
+            <button id="clear-logs" class="secondary" type="button" title="仅清空当前页面的日志显示，不删除任务记录">清空显示</button>
+          </div>
         </div>
         <pre id="log-output" aria-live="polite">暂无日志</pre>
       </section>

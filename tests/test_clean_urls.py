@@ -26,6 +26,8 @@ class CleanSectionUrlTest(unittest.TestCase):
             "/二、中心操作/",
             "/三、云仓操作/",
             "/四、网络货运/",
+            "/「必知必读」账号权限如何开通？/",
+            "/「*必知必读」账号权限如何开通？/",
         ]
         files = [
             DOCS_DIR / "index.md",
@@ -37,7 +39,13 @@ class CleanSectionUrlTest(unittest.TestCase):
         for old_url in old_urls:
             self.assertNotIn(old_url, content)
 
-        for new_url in ["/网点操作/", "/中心操作/", "/云仓操作/", "/网络货运/"]:
+        for new_url in [
+            "/「_必知必读」账号权限如何开通？/",
+            "/网点操作/",
+            "/中心操作/",
+            "/云仓操作/",
+            "/网络货运/",
+        ]:
             self.assertIn(new_url, content)
 
     def test_pipeline_copy_normalizes_legacy_top_level_section_names(self):

@@ -7,30 +7,49 @@ const logOutput = document.querySelector('#log-output');
 const stopButton = document.querySelector('#stop-task');
 const refreshStatusButton = document.querySelector('#refresh-status');
 const clearLogsButton = document.querySelector('#clear-logs');
+const copyAllLogsButton = document.querySelector('#copy-all-logs');
 
 const groupContainers = {
   content: document.querySelector('#group-content'),
   site: document.querySelector('#group-site'),
-  deploy: document.querySelector('#group-deploy'),
+  deployValidation: document.querySelector('#group-deploy-validation'),
+  deployHelpBeta: document.querySelector('#group-deploy-help-beta'),
+  deployHoupeWiki: document.querySelector('#group-deploy-houpe-wiki'),
   full: document.querySelector('#group-full'),
 };
 
 const groupDefinitions = [
   {
     id: 'content',
-    taskKeys: ['content-flow', 'pipeline-crawl', 'content-generate'],
+    taskKeys: ['content-flow', 'pipeline-crawl', 'pipeline-crawl-full', 'content-generate'],
   },
   {
     id: 'site',
     taskKeys: ['local-site-flow', 'site-build-local', 'docs-sidebar', 'docs-build', 'docs-refresh'],
   },
   {
-    id: 'deploy',
-    taskKeys: ['deploy-flow', 'validate-site-dist', 'deploy-site-dist', 'verify-online'],
+    id: 'deployValidation',
+    taskKeys: ['validate-site-dist'],
+  },
+  {
+    id: 'deployHelpBeta',
+    taskKeys: [
+      'deploy-help-beta-flow',
+      'deploy-help-beta-site-dist',
+      'verify-help-beta-online',
+    ],
+  },
+  {
+    id: 'deployHoupeWiki',
+    taskKeys: [
+      'deploy-houpe-wiki-flow',
+      'deploy-houpe-wiki-site-dist',
+      'verify-houpe-wiki-online',
+    ],
   },
   {
     id: 'full',
-    taskKeys: ['full-release-flow'],
+    taskKeys: ['full-release-help-beta-flow', 'full-release-houpe-wiki-flow'],
   },
 ];
 
@@ -54,7 +73,9 @@ function formatTime(value) {
   }
 
   const date = new Date(value);
-  return Number.isNaN(date.getTime()) ? value : date.toLocaleString('zh-CN', { hour12: false });
+  return Number.isNaN(date.getTime())
+    ? value
+    : date.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false });
 }
 
 function formatStatusSummary(status) {
@@ -244,6 +265,26 @@ refreshStatusButton.addEventListener('click', () => {
 clearLogsButton.addEventListener('click', () => {
   hiddenLogLineCount = latestLogLines.length;
   renderLogs();
+});
+
+copyAllLogsButton.addEventListener('click', async () => {
+  const logText = latestLogLines.join('\n');
+
+  if (!logText) {
+    window.alert('暂无可复制日志');
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(logText);
+    const originalText = copyAllLogsButton.textContent;
+    copyAllLogsButton.textContent = '已复制';
+    window.setTimeout(() => {
+      copyAllLogsButton.textContent = originalText;
+    }, 1500);
+  } catch {
+    window.alert('复制失败，请检查浏览器剪贴板权限');
+  }
 });
 
 await refreshTasks();

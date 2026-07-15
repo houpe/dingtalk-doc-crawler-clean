@@ -16,9 +16,23 @@ function buildLoginRedirect(config, req) {
   return `${config.authLoginUrl}${separator}redirect=${encodeURIComponent(originalUrl)}`;
 }
 
+// 本地预览（浏览器与 server 同机）免钉钉登录：仅放行 127.0.0.1 / localhost 来源，
+// 远程（公网/局域网其他设备）访问仍走钉钉登录，不影响正式环境安全。
+function isLocalRequest(req) {
+  const ip = req.ip || '';
+  const host = (req.hostname || req.headers?.host || '').split(':')[0];
+  return (
+    ip === '127.0.0.1' ||
+    ip === '::1' ||
+    ip === '::ffff:127.0.0.1' ||
+    host === 'localhost' ||
+    host === '127.0.0.1'
+  );
+}
+
 function buildRequireAuth(config, { redirect = false } = {}) {
   return function requireAuth(req, res, next) {
-    if (!config.authRequired || req.session?.user) {
+    if (!config.authRequired || req.session?.user || isLocalRequest(req)) {
       req.user = req.session?.user || null;
       return next();
     }
@@ -366,6 +380,21 @@ export function registerAppRoutes(
     }
 
     return requireSiteAuth(req, res, next);
+  });
+
+  // VitePress 内部链接均为 clean URL（/foo/ 形式），但产物文件是 foo.html。
+  // 在静态中间件前去掉末尾斜杠，交给 express.static 的 extensions 补 .html，
+  // 否则 /foo/ 会被当作目录请求而 404。
+  app.use((req, res, next) => {
+    if (req.method === 'GET' && !req.url.startsWith('/api/')) {
+      const qi = req.url.indexOf('?');
+      const path = qi === -1 ? req.url : req.url.slice(0, qi);
+      const query = qi === -1 ? '' : req.url.slice(qi);
+      if (path.length > 1 && path.endsWith('/')) {
+        req.url = path.slice(0, -1) + query;
+      }
+    }
+    next();
   });
 
   // VitePress emits `guide/topic.html` for the clean URL `/guide/topic`.

@@ -11,9 +11,17 @@ site/node_modules/
 site/docs/.vitepress/cache/
 site/docs/.vitepress/dist/
 site/package-lock.json
+# 误建的构建目录（正确位置是 site/docs/.vitepress/）
+site/.vitepress/
+# VitePress 构建临时文件
+*.timestamp-*.mjs
+
+# 抓取重复副本（垃圾，不入库）
+* 2.md
 
 # AI 相关（保留，不上传）
 ai/
+.workbuddy/
 
 # 历史遗留（待清理）
 dingtalk_docs_html/

@@ -62,15 +62,12 @@ a{color:var(--green)}
 </head>
 <body>
 <div id="login-view">
-  <form class="login-card" onsubmit="doLogin(event)">
+  <section class="login-card">
     <span class="logo">🍍</span>
     <h2>中通冷链 · 文档编辑</h2>
-    <p class="sub">需要登录后才能编辑文档</p>
-    <input id="inp-user" type="text" placeholder="用户名" autocomplete="username" autofocus>
-    <input id="inp-pass" type="password" placeholder="密码" autocomplete="current-password">
-    <button type="submit">登 录</button>
-    <div id="login-err" class="err"></div>
-  </form>
+    <p class="sub">需要通过统一认证后才能编辑文档</p>
+    <button type="button" onclick="goLogin()">使用统一认证登录</button>
+  </section>
 </div>
 <div id="editor-view">
   <div class="topbar">
@@ -102,24 +99,17 @@ async function checkAuth() {
   try { const r = await fetch('/api/auth/check'); const d = await r.json(); return d.loggedIn; } catch { return false; }
 }
 
-async function doLogin(e) {
-  e.preventDefault();
-  const errEl = document.getElementById('login-err');
-  errEl.textContent = '';
-  const username = document.getElementById('inp-user').value.trim();
-  const password = document.getElementById('inp-pass').value;
-  if (!username || !password) { errEl.textContent = '请输入用户名和密码'; return; }
-  try {
-    const r = await fetch('/api/login', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({username, password}) });
-    const d = await r.json();
-    if (!r.ok) { errEl.textContent = d.error || '登录失败'; return; }
-    showEditor();
-  } catch (e) { errEl.textContent = '网络错误: ' + e.message; }
+function loginUrl() {
+  return '/auth/login?redirect=' + encodeURIComponent(location.pathname + location.search);
+}
+
+function goLogin() {
+  location.href = loginUrl();
 }
 
 async function doLogout() {
-  await fetch('/api/logout', { method: 'POST' });
-  location.reload();
+  await fetch('/api/auth/logout', { method: 'POST' });
+  goLogin();
 }
 
 function showLoginView() {
@@ -132,7 +122,7 @@ async function showEditor() {
   document.getElementById('editor-view').style.display = 'flex';
   const r = await fetch('/api/auth/check');
   const d = await r.json();
-  if (d.user) document.getElementById('user-tag').textContent = '👤 ' + d.user;
+  if (d.user) document.getElementById('user-tag').textContent = '👤 ' + (d.user.name || d.user.id || d.user);
   currentPath = new URLSearchParams(location.search).get('path') || '';
   document.getElementById('file-path').textContent = currentPath ? currentPath + '.md' : '';
   if (currentPath) loadDoc();
@@ -141,7 +131,7 @@ async function showEditor() {
 async function loadDoc() {
   if (!currentPath) return;
   const r = await fetch('/api/docs/' + currentPath);
-  if (!r.ok) { if (r.status === 401) { showLoginView(); return; } return; }
+  if (!r.ok) { if (r.status === 401) { goLogin(); return; } return; }
   const d = await r.json();
   initEditor(d.content);
   renderPreview(d.content);

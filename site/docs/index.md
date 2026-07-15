@@ -14,13 +14,13 @@ hero:
       link: /网点操作/
     - theme: alt
       text: 账号权限
-      link: /「必知必读」账号权限如何开通？/
+      link: /「_必知必读」账号权限如何开通？/
 
 features:
   - icon: 📌
     title: 必知必读
     details: 账号权限开通、系统访问方式、APP 下载等基础准备。
-    link: /「必知必读」账号权限如何开通？/
+    link: /「_必知必读」账号权限如何开通？/
     linkText: 查看文档
   - icon: 🏠
     title: 网点操作

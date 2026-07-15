@@ -6,7 +6,7 @@ import { buildServerConfig } from '../lib/server-config.js';
 import { registerAppRoutes } from '../lib/register-app-routes.js';
 
 function createAdminApiApp({ remoteAddress, taskCatalog, taskRunner } = {}) {
-  const config = buildServerConfig({ cwd: process.cwd() });
+  const config = buildServerConfig({ cwd: process.cwd(), sessionStore: 'memory' });
   return createApp({
     config,
     registerRoutes(app, context) {
@@ -39,16 +39,28 @@ const COMPOSITE_TASK_RESPONSES = [
       '读取 output_optimized，生成 site/docs、侧边栏和 dist；通过本机 4000 端口预览，不会部署服务器。',
   },
   {
-    key: 'deploy-flow',
-    label: '第三步：部署到服务器',
+    key: 'deploy-help-beta-flow',
+    label: '部署帮助中心',
     description:
-      '部署当前 site/docs/.vitepress/dist，完成远端备份与覆盖后校验线上首页；不会重新抓取或构建。',
+      '校验当前 dist 后，部署到 https://help.beta.ztocc.com 并校验线上首页；不会重新抓取或构建。',
   },
   {
-    key: 'full-release-flow',
-    label: '全量一键流程',
+    key: 'deploy-houpe-wiki-flow',
+    label: '部署 wiki.houpe.top',
     description:
-      '依次执行文档生成、本地站点构建、服务器部署和线上校验；任一步失败即停止。',
+      '校验当前 dist 后，部署到 https://wiki.houpe.top/ 并校验线上首页；不会重新抓取或构建。',
+  },
+  {
+    key: 'full-release-help-beta-flow',
+    label: '全量一键发布到帮助中心',
+    description:
+      '依次执行文档生成、本地站点构建，再发布到 https://help.beta.ztocc.com 并校验；任一步失败即停止。',
+  },
+  {
+    key: 'full-release-houpe-wiki-flow',
+    label: '全量一键发布到 wiki.houpe.top',
+    description:
+      '依次执行文档生成、本地站点构建，再发布到 https://wiki.houpe.top/ 并校验；任一步失败即停止。',
   },
 ];
 
@@ -323,16 +335,16 @@ test('POST /api/admin/tasks/:taskKey uses the configured composite label and con
       args: Object.freeze(['run', 'build']),
       cwd: '/tmp/example-site',
     }),
-    'deploy-site-dist': Object.freeze({
-      key: 'deploy-site-dist',
-      label: '部署站点 dist',
+    'deploy-help-beta-site-dist': Object.freeze({
+      key: 'deploy-help-beta-site-dist',
+      label: '部署到帮助中心',
       command: 'bash',
       args: Object.freeze(['-lc', 'deploy']),
       cwd: '/tmp/example-project',
     }),
-    'verify-online': Object.freeze({
-      key: 'verify-online',
-      label: '校验线上站点',
+    'verify-help-beta-online': Object.freeze({
+      key: 'verify-help-beta-online',
+      label: '校验帮助中心',
       command: 'bash',
       args: Object.freeze(['-lc', 'verify']),
       cwd: '/tmp/example-project',
@@ -342,7 +354,7 @@ test('POST /api/admin/tasks/:taskKey uses the configured composite label and con
   let catchAttached = false;
   const taskRunner = {
     getStatus() {
-      return { running: true, activeTask: { id: 'run-1', key: 'deploy-flow' }, lastTask: null };
+      return { running: true, activeTask: { id: 'run-1', key: 'deploy-help-beta-flow' }, lastTask: null };
     },
     getLogs() {
       return [];
@@ -368,16 +380,16 @@ test('POST /api/admin/tasks/:taskKey uses the configured composite label and con
   };
   const app = createAdminApiApp({ taskCatalog, taskRunner });
 
-  const response = await request(app).post('/api/admin/tasks/deploy-flow').send({});
+  const response = await request(app).post('/api/admin/tasks/deploy-help-beta-flow').send({});
 
   assert.equal(response.status, 202);
   assert.equal(response.body.runId, 'run-1');
   assert.equal(catchAttached, true);
   assert.deepEqual(starts, [
     {
-      key: 'deploy-flow',
-      label: '第三步：部署到服务器',
-      steps: ['validate-site-dist', 'deploy-site-dist', 'verify-online'],
+      key: 'deploy-help-beta-flow',
+      label: '部署帮助中心',
+      steps: ['validate-site-dist', 'deploy-help-beta-site-dist', 'verify-help-beta-online'],
       catalog: taskCatalog,
     },
   ]);

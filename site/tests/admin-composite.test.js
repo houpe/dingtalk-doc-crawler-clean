@@ -3,6 +3,10 @@ import assert from 'node:assert/strict';
 import { EventEmitter } from 'node:events';
 import { createTaskRunner } from '../lib/task-runner.js';
 
+const TEST_TIMESTAMP = '2026-07-11T13:40:00.000Z';
+const testNow = () => TEST_TIMESTAMP;
+const withTimestamp = (lines) => lines.map((line) => '[2026-07-11 21:40:00] ' + line);
+
 function createSpawnStub() {
   const calls = [];
 
@@ -48,7 +52,7 @@ function flushEvents() {
 test('startComposite runs steps serially and combines their logs', async () => {
   const { calls, spawnImpl } = createSpawnStub();
   const catalog = createCatalog();
-  const runner = createTaskRunner({ spawnImpl });
+  const runner = createTaskRunner({ spawnImpl, now: testNow });
 
   const run = runner.startComposite({
     key: 'content-flow',
@@ -71,7 +75,7 @@ test('startComposite runs steps serially and combines their logs', async () => {
   const completed = await run.completed;
   assert.equal(completed.status, 'success');
   assert.equal(completed.exitCode, 0);
-  assert.deepEqual(completed.logs, [
+  assert.deepEqual(completed.logs, withTimestamp([
     '>>> 开始: 第一步 (first)',
     '命令: first-command --first',
     '目录: /tmp/first',
@@ -82,7 +86,7 @@ test('startComposite runs steps serially and combines their logs', async () => {
     '目录: /tmp/second',
     '[stderr] second output',
     '<<< 完成: 第二步 (second), exit=0',
-  ]);
+  ]));
   assert.equal(runner.getStatus().running, false);
   assert.deepEqual(runner.getLogs(), completed.logs);
 });

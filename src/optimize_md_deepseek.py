@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Use DeepSeek API to batch optimize MD files for readability."""
+"""Use an OpenAI-compatible API to batch optimize MD files for readability."""
 from __future__ import annotations
 
 import argparse
@@ -11,9 +11,10 @@ from pathlib import Path
 
 import requests
 
-API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
-API_URL = "https://api.deepseek.com/chat/completions"
-DEFAULT_MODEL = "deepseek-chat"
+API_KEY = os.environ.get("DOC_OPTIMIZER_API_KEY") or os.environ.get("OPENAI_API_KEY", "")
+API_URL = os.environ.get("DOC_OPTIMIZER_API_URL", "https://api.openai.com/v1/responses")
+WIRE_API = os.environ.get("DOC_OPTIMIZER_WIRE_API", "responses")
+DEFAULT_MODEL = os.environ.get("DOC_OPTIMIZER_MODEL", "gpt-5.5")
 
 SYSTEM_PROMPT = """你是一个对客操作手册的优化专家。读者是一线网点、中心、云仓或网络货运人员，他们需要按文档完成系统操作。你的任务是把从钉钉导出的 Markdown 优化成稳定、清晰、可重复生成的操作手册。
 
@@ -71,30 +72,22 @@ SYSTEM_PROMPT = """你是一个对客操作手册的优化专家。读者是一�
 6. H4 及更深层级标题压成列表项或正文小标题。"""
 
 
-def optimize(md_text: str, model: str = DEFAULT_MODEL) -> str:
-    if not API_KEY:
-        raise RuntimeError("DEEPSEEK_API_KEY is required when --use-ai is enabled")
+def _extract_responses_text(data: dict) -> str:
+    if isinstance(data.get("output_text"), str):
+        return data["output_text"]
 
-    resp = requests.post(
-        API_URL,
-        headers={
-            "Authorization": f"Bearer {API_KEY}",
-            "Content-Type": "application/json",
-        },
-        json={
-            "model": model,
-            "messages": [
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": md_text},
-            ],
-            "temperature": 0.1,
-            "max_tokens": 8192,
-        },
-        timeout=120,
-    )
-    resp.raise_for_status()
-    data = resp.json()
-    content = data["choices"][0]["message"]["content"]
+    chunks: list[str] = []
+    for item in data.get("output", []) or []:
+        for content in item.get("content", []) or []:
+            if content.get("type") in {"output_text", "text"} and isinstance(content.get("text"), str):
+                chunks.append(content["text"])
+    if chunks:
+        return "".join(chunks)
+
+    raise ValueError("No text content returned by responses API")
+
+
+def _strip_markdown_fence(content: str) -> str:
     content = content.strip()
     if content.startswith("```markdown"):
         content = content[len("```markdown"):]
@@ -103,6 +96,50 @@ def optimize(md_text: str, model: str = DEFAULT_MODEL) -> str:
     if content.endswith("```"):
         content = content[:-3]
     return content.strip()
+
+
+def optimize(md_text: str, model: str = DEFAULT_MODEL) -> str:
+    if not API_KEY:
+        raise RuntimeError("DOC_OPTIMIZER_API_KEY or OPENAI_API_KEY is required when --use-ai is enabled")
+
+    headers = {
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json",
+    }
+
+    if WIRE_API == "responses":
+        payload = {
+            "model": model,
+            "input": [
+                {
+                    "role": "system",
+                    "content": [{"type": "input_text", "text": SYSTEM_PROMPT}],
+                },
+                {
+                    "role": "user",
+                    "content": [{"type": "input_text", "text": md_text}],
+                },
+            ],
+            "reasoning": {"effort": os.environ.get("DOC_OPTIMIZER_REASONING_EFFORT", "high")},
+            "max_output_tokens": int(os.environ.get("DOC_OPTIMIZER_MAX_OUTPUT_TOKENS", "8192")),
+        }
+        resp = requests.post(API_URL, headers=headers, json=payload, timeout=180)
+        resp.raise_for_status()
+        return _strip_markdown_fence(_extract_responses_text(resp.json()))
+
+    payload = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": md_text},
+        ],
+        "temperature": 0.1,
+        "max_tokens": int(os.environ.get("DOC_OPTIMIZER_MAX_OUTPUT_TOKENS", "8192")),
+    }
+    resp = requests.post(API_URL, headers=headers, json=payload, timeout=180)
+    resp.raise_for_status()
+    data = resp.json()
+    return _strip_markdown_fence(data["choices"][0]["message"]["content"])
 
 
 def discover_md_files(root: Path) -> list[Path]:
@@ -127,7 +164,7 @@ def main() -> None:
     parser.add_argument("-o", "--output", default="output_optimized")
     parser.add_argument("-n", "--limit", type=int, default=None)
     parser.add_argument("--model", default=DEFAULT_MODEL,
-                        help=f"DeepSeek model (default: {DEFAULT_MODEL})")
+                        help=f"Optimizer model (default: {DEFAULT_MODEL})")
     parser.add_argument("--retry", type=int, default=3)
     parser.add_argument("--skip-existing", action="store_true", default=True,
                         help="Skip files that already exist in output dir")

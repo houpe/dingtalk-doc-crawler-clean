@@ -14,7 +14,20 @@ test('createTaskCatalog returns the fixed task table defined by the plan', () =>
 
   assert.deepEqual(
     Object.keys(catalog),
-    ['docs-sidebar', 'docs-build', 'docs-refresh', 'pipeline-crawl', 'content-generate', 'site-build-local', 'validate-site-dist', 'deploy-site-dist', 'verify-online'],
+    [
+      'docs-sidebar',
+      'docs-build',
+      'docs-refresh',
+      'pipeline-crawl',
+      'pipeline-crawl-full',
+      'content-generate',
+      'site-build-local',
+      'validate-site-dist',
+      'deploy-help-beta-site-dist',
+      'verify-help-beta-online',
+      'deploy-houpe-wiki-site-dist',
+      'verify-houpe-wiki-online',
+    ],
   );
 
   assert.deepEqual(catalog['docs-sidebar'], {
@@ -37,15 +50,28 @@ test('createTaskCatalog returns the fixed task table defined by the plan', () =>
     cwd: '/tmp/example-site',
   });
 
-  assert.deepEqual(catalog['deploy-site-dist'], {
-    key: 'deploy-site-dist',
-    label: '部署站点 dist',
+  assert.deepEqual(catalog['deploy-help-beta-site-dist'], {
+    key: 'deploy-help-beta-site-dist',
+    label: '部署到帮助中心',
     description:
-      '打包当前 site/docs/.vitepress/dist，备份并覆盖 help.beta.ztocc.com 的站点目录，同时保留远端 .well-known。',
+      '打包当前 site/docs/.vitepress/dist，备份并覆盖 https://help.beta.ztocc.com 的站点目录，同时保留远端 .well-known。',
     command: 'bash',
     args: [
       '-lc',
-      "tar --no-mac-metadata -C '/tmp/example-site/docs/.vitepress/dist' -cf /tmp/help-beta-vitepress.tar . && scp /tmp/help-beta-vitepress.tar root@121.199.175.111:/tmp/help-beta-vitepress.tar && ssh root@121.199.175.111 \"mkdir -p /tmp/help-beta-backup && tar -C /www/wwwroot/help.beta.ztocc.com -cf /tmp/help-beta-backup/help.beta.ztocc.com-$(date +%Y%m%d%H%M%S).tar --exclude=.well-known . && find /www/wwwroot/help.beta.ztocc.com -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} + && tar -C /www/wwwroot/help.beta.ztocc.com -xf /tmp/help-beta-vitepress.tar\"",
+      "tar --no-mac-metadata -C '/tmp/example-site/docs/.vitepress/dist' -cf /tmp/help-beta-vitepress.tar . && scp -o BatchMode=yes -o ConnectTimeout=15 /tmp/help-beta-vitepress.tar root@121.199.175.111:/tmp/help-beta-vitepress.tar && ssh -o BatchMode=yes -o ConnectTimeout=15 root@121.199.175.111 \"mkdir -p /tmp/help-beta-backup && tar -C /www/wwwroot/help.beta.ztocc.com -cf /tmp/help-beta-backup/help.beta.ztocc.com-$(date +%Y%m%d%H%M%S).tar --exclude=.well-known . && find /www/wwwroot/help.beta.ztocc.com -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} + && tar -C /www/wwwroot/help.beta.ztocc.com -xf /tmp/help-beta-vitepress.tar\"",
+    ],
+    cwd: '/tmp',
+  });
+
+  assert.deepEqual(catalog['deploy-houpe-wiki-site-dist'], {
+    key: 'deploy-houpe-wiki-site-dist',
+    label: '部署到 wiki.houpe.top',
+    description:
+      '打包当前 site/docs/.vitepress/dist，备份并覆盖 https://wiki.houpe.top/ 的站点目录。',
+    command: 'bash',
+    args: [
+      '-lc',
+      "tar --no-mac-metadata -C '/tmp/example-site/docs/.vitepress/dist' -cf /tmp/houpe-wiki-vitepress.tar . && scp -o BatchMode=yes -o ConnectTimeout=15 /tmp/houpe-wiki-vitepress.tar root@42.192.205.206:/tmp/houpe-wiki-vitepress.tar && ssh -o BatchMode=yes -o ConnectTimeout=15 root@42.192.205.206 \"mkdir -p /zto /tmp/houpe-wiki-backup && tar -C /zto -cf /tmp/houpe-wiki-backup/wiki.houpe.top-$(date +%Y%m%d%H%M%S).tar . && find /zto -mindepth 1 -maxdepth 1 -exec rm -rf {} + && tar -C /zto -xf /tmp/houpe-wiki-vitepress.tar\"",
     ],
     cwd: '/tmp',
   });
@@ -57,6 +83,26 @@ test('createTaskCatalog returns the fixed task table defined by the plan', () =>
       '第一步的子任务：过滤并优化 output，生成 output_optimized；不会写入 site/docs、构建站点或部署。',
     command: 'python3',
     args: ['src/pipeline.py', '--source', './output', '--content-only'],
+    cwd: '/tmp',
+  });
+
+  assert.deepEqual(catalog['pipeline-crawl'], {
+    key: 'pipeline-crawl',
+    label: '增量抓取钉钉文档',
+    description:
+      '第一步的子任务：只重新下载新增或有更新的钉钉文档和图片，并根据系统更新日志生成待核对手册清单；不会优化、构建或部署。',
+    command: 'python3',
+    args: ['src/dws_crawler.py'],
+    cwd: '/tmp',
+  });
+
+  assert.deepEqual(catalog['pipeline-crawl-full'], {
+    key: 'pipeline-crawl-full',
+    label: '全量重抓钉钉文档',
+    description:
+      '清空本地 output 和抓取状态后，从钉钉完整重新下载 Markdown 和图片；首次初始化、状态异常或需彻底对齐时使用。不会优化、构建或部署。',
+    command: 'python3',
+    args: ['src/dws_crawler.py', '--full'],
     cwd: '/tmp',
   });
 
@@ -80,15 +126,28 @@ test('createTaskCatalog returns the fixed task table defined by the plan', () =>
     cwd: '/tmp/example-site',
   });
 
-  assert.deepEqual(catalog['verify-online'], {
-    key: 'verify-online',
-    label: '校验线上站点',
+  assert.deepEqual(catalog['verify-help-beta-online'], {
+    key: 'verify-help-beta-online',
+    label: '校验帮助中心',
     description:
-      '只读请求 help.beta.ztocc.com 首页，检查标题和描述元信息是否为预期内容。',
+      '只读请求 https://help.beta.ztocc.com 首页，检查标题和描述元信息是否为预期内容。',
     command: 'bash',
     args: [
       '-lc',
-      `set -euo pipefail; page=$(curl -fsS "https://help.beta.ztocc.com/"); grep -Fq '<title>中通冷链</title>' <<<"$page"; grep -Fq '<meta name="description" content="中通冷链操作手册">' <<<"$page"; printf '%s\\n' '<title>中通冷链</title>' '<meta name="description" content="中通冷链操作手册">'`,
+      `set -euo pipefail; page=$(curl -fsS --connect-timeout 10 --max-time 20 "https://help.beta.ztocc.com/"); grep -Fq '<title>中通冷链</title>' <<<"$page"; grep -Fq '<meta name="description" content="中通冷链操作手册">' <<<"$page"; printf '%s\\n' '<title>中通冷链</title>' '<meta name="description" content="中通冷链操作手册">'`,
+    ],
+    cwd: '/tmp',
+  });
+
+  assert.deepEqual(catalog['verify-houpe-wiki-online'], {
+    key: 'verify-houpe-wiki-online',
+    label: '校验 wiki.houpe.top',
+    description:
+      '只读请求 https://wiki.houpe.top/ 首页，检查标题和描述元信息是否为预期内容。',
+    command: 'bash',
+    args: [
+      '-lc',
+      `set -euo pipefail; page=$(curl -fsS --connect-timeout 10 --max-time 20 "https://wiki.houpe.top/"); grep -Fq '<title>中通冷链</title>' <<<"$page"; grep -Fq '<meta name="description" content="中通冷链操作手册">' <<<"$page"; printf '%s\\n' '<title>中通冷链</title>' '<meta name="description" content="中通冷链操作手册">'`,
     ],
     cwd: '/tmp',
   });
@@ -127,19 +186,34 @@ test('createCompositeTaskSteps returns the planned one-click flow steps', () => 
     'site-build-local',
   ]);
 
-  assert.deepEqual(createCompositeTaskSteps('deploy-flow'), [
+  assert.deepEqual(createCompositeTaskSteps('deploy-help-beta-flow'), [
     'validate-site-dist',
-    'deploy-site-dist',
-    'verify-online',
+    'deploy-help-beta-site-dist',
+    'verify-help-beta-online',
   ]);
 
-  assert.deepEqual(createCompositeTaskSteps('full-release-flow'), [
+  assert.deepEqual(createCompositeTaskSteps('deploy-houpe-wiki-flow'), [
+    'validate-site-dist',
+    'deploy-houpe-wiki-site-dist',
+    'verify-houpe-wiki-online',
+  ]);
+
+  assert.deepEqual(createCompositeTaskSteps('full-release-help-beta-flow'), [
     'pipeline-crawl',
     'content-generate',
     'site-build-local',
     'validate-site-dist',
-    'deploy-site-dist',
-    'verify-online',
+    'deploy-help-beta-site-dist',
+    'verify-help-beta-online',
+  ]);
+
+  assert.deepEqual(createCompositeTaskSteps('full-release-houpe-wiki-flow'), [
+    'pipeline-crawl',
+    'content-generate',
+    'site-build-local',
+    'validate-site-dist',
+    'deploy-houpe-wiki-site-dist',
+    'verify-houpe-wiki-online',
   ]);
 
   assert.equal(createCompositeTaskSteps('missing-flow'), null);
@@ -162,16 +236,28 @@ test('listCompositeTaskDefinitions includes user-facing flow descriptions', () =
         '读取 output_optimized，生成 site/docs、侧边栏和 dist；通过本机 4000 端口预览，不会部署服务器。',
     },
     {
-      key: 'deploy-flow',
-      label: '第三步：部署到服务器',
+      key: 'deploy-help-beta-flow',
+      label: '部署帮助中心',
       description:
-        '部署当前 site/docs/.vitepress/dist，完成远端备份与覆盖后校验线上首页；不会重新抓取或构建。',
+        '校验当前 dist 后，部署到 https://help.beta.ztocc.com 并校验线上首页；不会重新抓取或构建。',
     },
     {
-      key: 'full-release-flow',
-      label: '全量一键流程',
+      key: 'deploy-houpe-wiki-flow',
+      label: '部署 wiki.houpe.top',
       description:
-        '依次执行文档生成、本地站点构建、服务器部署和线上校验；任一步失败即停止。',
+        '校验当前 dist 后，部署到 https://wiki.houpe.top/ 并校验线上首页；不会重新抓取或构建。',
+    },
+    {
+      key: 'full-release-help-beta-flow',
+      label: '全量一键发布到帮助中心',
+      description:
+        '依次执行文档生成、本地站点构建，再发布到 https://help.beta.ztocc.com 并校验；任一步失败即停止。',
+    },
+    {
+      key: 'full-release-houpe-wiki-flow',
+      label: '全量一键发布到 wiki.houpe.top',
+      description:
+        '依次执行文档生成、本地站点构建，再发布到 https://wiki.houpe.top/ 并校验；任一步失败即停止。',
     },
   ]);
 });
