@@ -634,15 +634,13 @@ def sync_documents(output_dir: Path, *, full: bool = False) -> dict[str, int]:
             print_change(change)
             continue
 
-        # 文档改名、移动或内容更新时，图片需要跟随 Markdown 一并刷新。
+        # 文档改名或移动时，旧路径需要移除，避免后续建站产生重复文章。
         if old.get("path") and old.get("path") != current_path:
             remove_document_artifacts(output_dir, old["path"])
         images_dir = destination.parent / "images"
-        image_prefix = f"{destination.stem}_"
-        if images_dir.is_dir():
-            for image_path in images_dir.iterdir():
-                if image_path.is_file() and image_path.name.startswith(image_prefix):
-                    image_path.unlink()
+        # 增量更新只下载当前 Markdown 引用的图片。图片文件名带 URL 哈希，旧图
+        # 不会再被新 Markdown 引用；保留缓存可避免在共享 images 目录中逐张删除，
+        # 也避免安全删除保护将一次正常更新误判为批量清理。
         image_stats = download_images_from_markdown(destination, images_dir)
         images_complete = image_stats["failed"] == 0
         next_state[node_id] = {

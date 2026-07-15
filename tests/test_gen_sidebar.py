@@ -4,6 +4,7 @@ from pathlib import Path
 
 from src import gen_sidebar
 from src import pipeline
+from src.number_headings import assign_tree_numbers
 
 
 def write(path: Path, content: str) -> None:
@@ -13,6 +14,9 @@ def write(path: Path, content: str) -> None:
 
 class GenSidebarIndexTest(unittest.TestCase):
     def test_top_level_sections_follow_the_home_page_order(self):
+        # 一级栏目顺序由 assign_tree_numbers 的 tree 驱动（必知必读置顶，
+        # 之后网点→中心→云仓→网络货运），与首页 features 顺序一致。
+        # 标题里的下划线会被 clean_title 清洗掉。
         with tempfile.TemporaryDirectory() as tmp:
             docs_dir = Path(tmp)
             for section in [
@@ -24,28 +28,41 @@ class GenSidebarIndexTest(unittest.TestCase):
             ]:
                 write(docs_dir / section / "手册.md", "# 手册")
 
-            items = gen_sidebar.build_sidebar(docs_dir)
+            tree = assign_tree_numbers(docs_dir)
+            items = gen_sidebar.build_sidebar(docs_dir, tree=tree)
 
         self.assertEqual(
             [item["text"] for item in items],
-            ["「_必知必读」账号权限如何开通？", "网点操作", "中心操作", "云仓操作", "网络货运"],
+            [
+                "一. 「必知必读」账号权限如何开通？",
+                "二. 网点操作",
+                "三. 中心操作",
+                "四. 云仓操作",
+                "五. 网络货运",
+            ],
         )
 
     def test_sidebar_uses_saved_dingtalk_order_for_directories_and_articles(self):
+        # 文章顺序由文件名数字前缀驱动（assign_tree_numbers 的 _child_sort_key），
+        # 侧边栏文本带层级编号，但 link 始终指向真实文件名。
         with tempfile.TemporaryDirectory() as tmp:
             docs_dir = Path(tmp)
-            write(docs_dir / "中心操作" / "B.md", "# B")
-            write(docs_dir / "网点操作" / "Z.md", "# Z")
-            write(docs_dir / "网点操作" / "A.md", "# A")
+            write(docs_dir / "中心操作" / "02调度任务.md", "# 调度任务")
+            write(docs_dir / "网点操作" / "10客户下单.md", "# 客户下单")
+            write(docs_dir / "网点操作" / "02物料购买.md", "# 物料购买")
 
-            items = gen_sidebar.build_sidebar(docs_dir, order_map={
-                "网点操作/Z.md": 0,
-                "网点操作/A.md": 1,
-                "中心操作/B.md": 2,
-            })
+            tree = assign_tree_numbers(docs_dir)
+            items = gen_sidebar.build_sidebar(docs_dir, tree=tree)
 
-        self.assertEqual([item["text"] for item in items], ["网点操作", "中心操作"])
-        self.assertEqual([item["text"] for item in items[0]["items"]], ["Z", "A"])
+        self.assertEqual([item["text"] for item in items], ["一. 网点操作", "二. 中心操作"])
+        self.assertEqual(
+            [item["text"] for item in items[0]["items"]],
+            ["1.1 物料购买", "1.2 客户下单"],
+        )
+        self.assertEqual(
+            [item["link"] for item in items[0]["items"]],
+            ["/网点操作/02物料购买", "/网点操作/10客户下单"],
+        )
 
     def test_sidebar_makes_groups_collapsible_without_hiding_top_level_sections(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -64,14 +81,17 @@ class GenSidebarIndexTest(unittest.TestCase):
         )
 
     def test_sidebar_titles_hide_operation_instruction_suffix_without_changing_links(self):
+        # clean_title 会剥掉文件名里的数字前缀、下划线和“操作说明书”，
+        # 但 link 仍指向未改动的真实文件名。
         with tempfile.TemporaryDirectory() as tmp:
             docs_dir = Path(tmp)
             write(docs_dir / "WMS操作" / "01_创建仓库、货主、员工_操作说明书.md", "# 创建仓库")
 
-            items = gen_sidebar.build_sidebar(docs_dir)
+            tree = assign_tree_numbers(docs_dir)
+            items = gen_sidebar.build_sidebar(docs_dir, tree=tree)
 
         article = items[0]["items"][0]
-        self.assertEqual(article["text"], "01_创建仓库、货主、员工")
+        self.assertEqual(article["text"], "1.1 创建仓库、货主、员工")
         self.assertEqual(article["link"], "/WMS操作/01_创建仓库、货主、员工_操作说明书")
 
     def test_sidebar_titles_collapse_adjacent_hyphens_and_underscores(self):

@@ -1231,8 +1231,8 @@ def main() -> None:
         rel = src.relative_to(src_dir)
         dst = dst_dir / rel
         process_file(src, dst)
-        if idx % 50 == 0 or idx == len(md_files):
-            print(f"  [{idx}/{len(md_files)}] done")
+        if idx % 10 == 0 or idx == len(md_files):
+            print(f"  [规则引擎 {idx}/{len(md_files)}] done")
 
     images_src = src_dir / "根目录"
     images_dst = dst_dir / "根目录"

@@ -5,16 +5,15 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import subprocess
 import sys
 import time
 from pathlib import Path
 
-import requests
-
 API_KEY = os.environ.get("DOC_OPTIMIZER_API_KEY") or os.environ.get("OPENAI_API_KEY", "")
 API_URL = os.environ.get("DOC_OPTIMIZER_API_URL", "https://api.openai.com/v1/responses")
 WIRE_API = os.environ.get("DOC_OPTIMIZER_WIRE_API", "responses")
-DEFAULT_MODEL = os.environ.get("DOC_OPTIMIZER_MODEL", "gpt-5.5")
+DEFAULT_MODEL = os.environ.get("DOC_OPTIMIZER_MODEL", "deepseek-v4-flash")
 
 SYSTEM_PROMPT = """你是一个对客操作手册的优化专家。读者是一线网点、中心、云仓或网络货运人员，他们需要按文档完成系统操作。你的任务是把从钉钉导出的 Markdown 优化成稳定、清晰、可重复生成的操作手册。
 
@@ -98,14 +97,38 @@ def _strip_markdown_fence(content: str) -> str:
     return content.strip()
 
 
+def _http_post_json(url: str, payload: dict, timeout: int = 180) -> dict:
+    """用 curl 子进程发起 HTTPS POST，返回解析后的 JSON。
+
+    部分 API 服务（如 api.deepseek.com）会按 TLS ClientHello 指纹拦截
+    urllib3/httpx 的请求（SSLEOFError），但 curl 不受影响。
+    故统一走 curl，避免库层面的指纹拦截。
+    """
+    result = subprocess.run(
+        [
+            "curl", "-sS",
+            "--connect-timeout", str(min(timeout, 30)),
+            "--max-time", str(timeout),
+            "-X", "POST", url,
+            "-H", f"Authorization: Bearer {API_KEY}",
+            "-H", "Content-Type: application/json",
+            "-d", json.dumps(payload, ensure_ascii=False),
+        ],
+        capture_output=True,
+        text=True,
+        timeout=timeout + 10,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(f"curl 调用失败 (exit {result.returncode}): {result.stderr.strip()}")
+    try:
+        return json.loads(result.stdout)
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"API 返回非 JSON: {result.stdout[:300]}") from e
+
+
 def optimize(md_text: str, model: str = DEFAULT_MODEL) -> str:
     if not API_KEY:
         raise RuntimeError("DOC_OPTIMIZER_API_KEY or OPENAI_API_KEY is required when --use-ai is enabled")
-
-    headers = {
-        "Authorization": f"Bearer {API_KEY}",
-        "Content-Type": "application/json",
-    }
 
     if WIRE_API == "responses":
         payload = {
@@ -123,9 +146,8 @@ def optimize(md_text: str, model: str = DEFAULT_MODEL) -> str:
             "reasoning": {"effort": os.environ.get("DOC_OPTIMIZER_REASONING_EFFORT", "high")},
             "max_output_tokens": int(os.environ.get("DOC_OPTIMIZER_MAX_OUTPUT_TOKENS", "8192")),
         }
-        resp = requests.post(API_URL, headers=headers, json=payload, timeout=180)
-        resp.raise_for_status()
-        return _strip_markdown_fence(_extract_responses_text(resp.json()))
+        data = _http_post_json(API_URL, payload)
+        return _strip_markdown_fence(_extract_responses_text(data))
 
     payload = {
         "model": model,
@@ -136,9 +158,7 @@ def optimize(md_text: str, model: str = DEFAULT_MODEL) -> str:
         "temperature": 0.1,
         "max_tokens": int(os.environ.get("DOC_OPTIMIZER_MAX_OUTPUT_TOKENS", "8192")),
     }
-    resp = requests.post(API_URL, headers=headers, json=payload, timeout=180)
-    resp.raise_for_status()
-    data = resp.json()
+    data = _http_post_json(API_URL, payload)
     return _strip_markdown_fence(data["choices"][0]["message"]["content"])
 
 

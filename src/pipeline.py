@@ -173,11 +173,64 @@ def _cleanup_empty_dirs(root: Path) -> None:
 
 # ── Stage 3: Markdown 优化 ─────────────────────────────────────
 
+def _needs_ai_optimize(source_file: Path, optimized_file: Path, force: bool) -> bool:
+    """判断某篇文档是否需要重新调 AI 优化。
+
+    增量信号是「原始源文件 mtime > 已优化产物 mtime」：只有源（dws_crawler
+    增量抓取只刷新变动文件的 mtime）更新过、或产物尚不存在时才重跑 AI。
+    比较的是 output_dir 下的源，而非每次全量重生的 output_reformatted。
+    """
+    if force:
+        return True
+    if not optimized_file.exists():
+        return True
+    return source_file.stat().st_mtime > optimized_file.stat().st_mtime
+
+
+def _prune_stale_md(known_sources: set[str], dst_dir: Path) -> list[str]:
+    """删除产物目录里源已不存在的 md 文件，再清理因此变空的目录。
+
+    钉钉目录/文件改名后，旧的 md 会在 output_reformatted/output_optimized
+    里残留，导致站点出现重复栏目。逐个文件删除（不 rmtree 整目录）以避免
+    触发本地安全删除保护。images 子目录保留（图片缓存可复用）。
+
+    Args:
+        known_sources: 源目录下所有 md 的相对 posix 路径集合。
+        dst_dir: 产物目录（output_reformatted 或 output_optimized）。
+    Returns:
+        被删除的相对路径列表（排序）。
+    """
+    if not dst_dir.is_dir():
+        return []
+
+    removed: list[str] = []
+    for md_path in dst_dir.rglob("*.md"):
+        rel = md_path.relative_to(dst_dir).as_posix()
+        if rel not in known_sources:
+            md_path.unlink()
+            removed.append(rel)
+
+    # 自下而上清除因此变空的目录，但永远不移除 根目录 本身。
+    root_base = dst_dir / "根目录"
+    for dir_path in sorted((p for p in dst_dir.rglob("*") if p.is_dir()), reverse=True):
+        if dir_path == root_base or dir_path == dst_dir:
+            continue
+        if dir_path.name == "images":
+            continue
+        try:
+            dir_path.rmdir()
+        except OSError:
+            pass  # 目录非空（仍有 md 或 images），保留
+
+    return sorted(removed)
+
+
 def stage_optimize(
     output_dir: Path,
     use_ai: bool = False,
-    model: str = "gpt-5.5",
+    model: str = "deepseek-v4-flash",
     quality_report: bool = True,
+    force: bool = False,
 ) -> tuple[Path, dict]:
     banner("Stage 3/4: Markdown 优化")
     t0 = time.time()
@@ -191,6 +244,21 @@ def stage_optimize(
     # 不在这里整目录删除输出，避免本地安全钩子拦截大批量删除。
     # reformat_md.py 和后续 AI 优化会按同路径覆盖生成的 Markdown。
     rule_output.mkdir(parents=True, exist_ok=True)
+
+    # 清理产物里源已不存在的 md（目录改名/删除后残留），避免站点出现重复栏目。
+    # 以原始源 output_dir 的 md 清单为准，逐个删除（不 rmtree，避免安全删除保护）。
+    known_sources = {
+        p.relative_to(output_dir).as_posix()
+        for p in output_dir.rglob("*.md")
+        if p.is_file()
+    }
+    stale_in_reformatted = _prune_stale_md(known_sources, rule_output)
+    if stale_in_reformatted:
+        print(f"  [清理] reformatted 残留 {len(stale_in_reformatted)} 篇: {stale_in_reformatted}")
+    if use_ai:
+        stale_in_optimized = _prune_stale_md(known_sources, ROOT / "output_optimized")
+        if stale_in_optimized:
+            print(f"  [清理] optimized 残留 {len(stale_in_optimized)} 篇: {stale_in_optimized}")
 
     print("  [规则引擎] 开始处理...")
     run([sys.executable, str(ROOT / "src" / "reformat_md.py"),
@@ -217,17 +285,37 @@ def stage_optimize(
             "elapsed": elapsed,
         }
 
-    print(f"\n  [AI 语义优化] 模型: {model}")
+    print(f"\n  [AI 语义优化] 模型: {model}" + ("（强制全量重优化）" if force else "（增量：源未变的跳过）"))
     optimized = ROOT / "output_optimized"
     optimized.mkdir(parents=True, exist_ok=True)
 
     ai_t0 = time.time()
     md_files = _discover_md(reformatted)
     total = len(md_files)
-    failed: list[str] = []
 
     sys.path.insert(0, str(ROOT / "src"))
     from optimize_md_deepseek import optimize as ai_optimize
+
+    # 先统计需处理/跳过数量，给用户一个预期
+    todo: list[Path] = []
+    skipped = 0
+    empty = 0
+    for src in md_files:
+        rel = src.relative_to(reformatted)
+        dst = optimized / rel
+        md_text = src.read_text(encoding="utf-8", errors="ignore")
+        if len(md_text.strip()) < 10:
+            empty += 1
+            continue
+        if _needs_ai_optimize(output_dir / rel, dst, force):
+            todo.append(src)
+        else:
+            skipped += 1
+    print(f"  [AI] 共 {total} 篇：需处理 {len(todo)}，跳过 {skipped}（已优化），空文件 {empty}")
+    if todo:
+        print(f"  待处理: {[str(s.relative_to(reformatted)) for s in todo]}")
+
+    failed: list[str] = []
 
     for idx, src in enumerate(md_files, 1):
         rel = src.relative_to(reformatted)
@@ -240,6 +328,12 @@ def stage_optimize(
             print(f"    [{idx}/{total}] {rel} (空文件，跳过)")
             continue
 
+        if not _needs_ai_optimize(output_dir / rel, dst, force):
+            print(f"    [{idx}/{total}] {rel} 跳过（已优化，源未变）")
+            continue
+
+        # 开始处理即打印，避免 reasoning 模型长时间无输出导致看着像卡死
+        print(f"    [{idx}/{total}] {rel} 正在优化…", flush=True)
         file_t0 = time.time()
         ok = False
         for attempt in range(1, 4):
@@ -254,6 +348,7 @@ def stage_optimize(
                     dst.write_text(md_text, encoding="utf-8")
                     print(f"    [{idx}/{total}] {rel} FAILED (retry 3/3): {e}")
                 else:
+                    print(f"    [{idx}/{total}] {rel} 重试 {attempt}/3… ({e})")
                     time.sleep(2)
 
         if ok:
@@ -265,11 +360,11 @@ def stage_optimize(
     quality_stats = _write_quality_report(optimized) if quality_report else {"files": 0, "issues": 0}
     ai_time = time.time() - ai_t0
     elapsed = time.time() - t0
-    ai_success = total - len(failed)
+    ai_success = len(todo) - len(failed)
 
     divider()
     summary_line("规则引擎", f"{rule_count} 个 ✓ {fmt_time(rule_time)}")
-    summary_line("AI 优化", f"{ai_success}/{total} 成功, {len(failed)} 失败, {fmt_time(ai_time)}")
+    summary_line("AI 优化", f"处理 {len(todo)}（成功 {ai_success}, 失败 {len(failed)}, 跳过 {skipped}）{fmt_time(ai_time)}")
     if quality_report:
         summary_line("质量报告", f"{quality_stats['files']} 个文件有问题, {quality_stats['issues']} 项")
     if failed:
@@ -280,6 +375,7 @@ def stage_optimize(
         "rule_count": rule_count,
         "ai_success": ai_success,
         "ai_fail": len(failed),
+        "ai_skipped": skipped,
         "failed_files": failed,
         "quality_files": quality_stats["files"],
         "quality_issues": quality_stats["issues"],
@@ -1381,10 +1477,12 @@ def main(argv: list[str] | None = None) -> None:
                         help="跳过 AI 优化，仅规则引擎（默认启用）")
     parser.add_argument("--use-ai", action="store_true",
                         help="启用 AI 语义优化（默认关闭）")
-    parser.add_argument("--model", default="gpt-5.5",
-                        help="AI 语义优化模型 (default: gpt-5.5)")
+    parser.add_argument("--model", default="deepseek-v4-flash",
+                        help="AI 语义优化模型 (default: deepseek-v4-flash)")
     parser.add_argument("--no-quality-report", action="store_true",
                         help="不生成 docs/doc-quality-report.md 质量检查报告")
+    parser.add_argument("--force-optimize", action="store_true",
+                        help="强制全部重新 AI 优化，忽略增量（否则只优化源文件有更新的文档）")
     parser.add_argument("--no-serve", action="store_true",
                         help="构建完不启动本地预览")
     parser.add_argument("--deploy", choices=["fast", "full"], default=None,
@@ -1451,6 +1549,7 @@ def main(argv: list[str] | None = None) -> None:
         use_ai=args.use_ai,
         model=args.model,
         quality_report=not args.no_quality_report,
+        force=args.force_optimize,
     )
 
     if args.content_only:

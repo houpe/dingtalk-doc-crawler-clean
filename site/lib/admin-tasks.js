@@ -81,11 +81,33 @@ function buildTaskList(config) {
       key: 'content-generate',
       label: '过滤并优化文档',
       description:
-        '第一步的子任务：过滤并优化 output，使用 GPT 5.5 做语义增强，生成 output_optimized；不会写入 site/docs、构建站点或部署。',
+        '第一步的子任务：过滤并优化 output，使用 DeepSeek 做语义增强（增量，只处理有更新的文档），生成 output_optimized；不会写入 site/docs、构建站点或部署。',
       command: 'bash',
       args: [
         '-lc',
-        'if [ -z "${DOC_OPTIMIZER_API_KEY:-}" ] && [ -z "${OPENAI_API_KEY:-}" ] && [ -f "$HOME/.codex/config.toml" ]; then export DOC_OPTIMIZER_API_KEY="$(python3 - <<\'PY\'\nfrom pathlib import Path\nimport re\ntext = Path.home().joinpath(".codex/config.toml").read_text(encoding="utf-8", errors="ignore")\nmatch = re.search(r\'^experimental_bearer_token\\s*=\\s*"([^"]+)"\', text, re.M)\nprint(match.group(1) if match else "")\nPY\n)"; fi; DOC_OPTIMIZER_API_URL="${DOC_OPTIMIZER_API_URL:-https://sub2api-qbxihjpy.sealoshzh.site/v1/responses}" DOC_OPTIMIZER_MODEL="${DOC_OPTIMIZER_MODEL:-gpt-5.5}" DOC_OPTIMIZER_WIRE_API="${DOC_OPTIMIZER_WIRE_API:-responses}" python3 src/pipeline.py --source ./output --content-only --use-ai --model "${DOC_OPTIMIZER_MODEL:-gpt-5.5}"',
+        'set -a; [ -f .env ] && source .env; set +a; ' +
+        'DOC_OPTIMIZER_API_KEY="${DEEPSEEK_API_KEY:-${DOC_OPTIMIZER_API_KEY:-${OPENAI_API_KEY:-}}}" ' +
+        'DOC_OPTIMIZER_API_URL="${DOC_OPTIMIZER_API_URL:-https://api.deepseek.com/chat/completions}" ' +
+        'DOC_OPTIMIZER_MODEL="${DOC_OPTIMIZER_MODEL:-deepseek-v4-flash}" ' +
+        'DOC_OPTIMIZER_WIRE_API="${DOC_OPTIMIZER_WIRE_API:-chat}" ' +
+        'python3 src/pipeline.py --source ./output --content-only --use-ai --model "${DOC_OPTIMIZER_MODEL:-deepseek-v4-flash}"',
+      ],
+      cwd: config.projectRoot,
+    },
+    {
+      key: 'content-generate-full',
+      label: '全量重优化文档',
+      description:
+        '第一步的子任务：忽略增量，强制用 DeepSeek 重新优化 output 全部文档，生成 output_optimized。产物异常或想彻底重刷时使用；耗时较长。不会写入 site/docs、构建站点或部署。',
+      command: 'bash',
+      args: [
+        '-lc',
+        'set -a; [ -f .env ] && source .env; set +a; ' +
+        'DOC_OPTIMIZER_API_KEY="${DEEPSEEK_API_KEY:-${DOC_OPTIMIZER_API_KEY:-${OPENAI_API_KEY:-}}}" ' +
+        'DOC_OPTIMIZER_API_URL="${DOC_OPTIMIZER_API_URL:-https://api.deepseek.com/chat/completions}" ' +
+        'DOC_OPTIMIZER_MODEL="${DOC_OPTIMIZER_MODEL:-deepseek-v4-flash}" ' +
+        'DOC_OPTIMIZER_WIRE_API="${DOC_OPTIMIZER_WIRE_API:-chat}" ' +
+        'python3 src/pipeline.py --source ./output --content-only --use-ai --force-optimize --model "${DOC_OPTIMIZER_MODEL:-deepseek-v4-flash}"',
       ],
       cwd: config.projectRoot,
     },

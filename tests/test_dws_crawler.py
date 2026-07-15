@@ -188,6 +188,32 @@ class DwsCrawlerOutputTest(unittest.TestCase):
             self.assertIn("+ 新步骤", report["changes"][0]["content"]["preview"])
             self.assertIn("- 旧步骤", report["changes"][0]["content"]["preview"])
 
+    def test_incremental_update_keeps_previous_image_cache(self):
+        """更新单篇文档不应逐张删除共享 images 目录中的旧图。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            output_dir = Path(tmp) / "output"
+            root = output_dir / "根目录"
+            document = root / "操作手册.md"
+            images_dir = root / "images"
+            old_image = images_dir / "操作手册_1_old.png"
+            images_dir.mkdir(parents=True)
+            document.write_text("# 操作手册\n![旧图](./images/操作手册_1_old.png)\n", encoding="utf-8")
+            old_image.write_bytes(b"old-image")
+            dws_crawler.save_state(
+                output_dir,
+                {"node-1": {"updateTime": 1, "path": "根目录/操作手册.md", "imagesComplete": True}},
+            )
+
+            with patch.object(
+                dws_crawler, "list_workspace_nodes", return_value=[workspace_file(update_time=2)]
+            ), patch.object(dws_crawler, "download_doc", side_effect=write_changed_document), patch.object(
+                dws_crawler, "download_images_from_markdown", return_value={"failed": 0}
+            ):
+                stats = dws_crawler.sync_documents(output_dir)
+
+            self.assertEqual(stats["downloaded"], 1)
+            self.assertTrue(old_image.exists())
+
     def test_system_changelog_is_collected_despite_the_general_update_exclusion(self):
         documents = dws_crawler.collect_documents(
             [workspace_file("log-1", 1, "中通仓链 20260709系统更新日志")]

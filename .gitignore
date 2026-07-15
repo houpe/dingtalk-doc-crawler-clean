@@ -23,6 +23,9 @@ site/.vitepress/
 ai/
 .workbuddy/
 
+# 密钥 / 环境变量（含 API key，绝不入库）
+.env
+
 # 历史遗留（待清理）
 dingtalk_docs_html/
 docs-site/
