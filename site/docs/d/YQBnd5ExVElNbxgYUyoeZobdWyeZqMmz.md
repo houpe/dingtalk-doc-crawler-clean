@@ -29,7 +29,7 @@ description: "问题件预处罚有歧义，想要申诉？的操作说明。"
    用户可针对有歧义的超时单，在 **72小时内（当前时间-创建时间）** 发起申诉。
    :::
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/ZWGl0w5DVmp1O34Y/img/743a33a6-bacd-43b1-a948-e52e5e9776e0.png?Expires=1783781573&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=pMjhXsGmzN5jPikYXOT4BRodG0Y%3D "")
+   ![image.png](./images/YQBnd5ExVElNbxgYUyoeZobdWyeZqMmz/仲裁如何申报、申诉？_10_2674e296.png)
 
 3. 若超时未回复或未申诉，系统将按规则处理。
 
@@ -37,7 +37,7 @@ description: "问题件预处罚有歧义，想要申诉？的操作说明。"
    如超时未申诉，该条申诉单会自动完结并完成处罚。
    :::
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/ZWGl0w5DVmp1O34Y/img/f7d0f077-f683-4047-a9b2-4e4059ceeb8a.png?Expires=1783781573&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=QDxiz8pRdtB7X0WrvNdalkgMtug%3D "")
+   ![image.png](./images/YQBnd5ExVElNbxgYUyoeZobdWyeZqMmz/仲裁如何申报、申诉？_11_14378a46.png)
 
 ## 五、操作结果
 

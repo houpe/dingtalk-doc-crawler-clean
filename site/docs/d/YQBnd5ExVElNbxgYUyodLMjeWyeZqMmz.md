@@ -30,7 +30,7 @@ description: "网点账户好几个，分不清楚该看哪个余额咋办？的
    - **一级网点与总部签约**：查看 **总部平台账户** 下的账户余额。
    - **二级网点与一级网点签约**：查看 **一级网点平台账户** 下的账户余额。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/jP2lR4rvWAV3q8g5/img/f9c64e38-bf62-4c5c-85ad-821fac00439a.png?Expires=1783781614&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=bTOtwg9GJCyDPEqg1EbPVHLrVqw%3D "")
+![image.png](./images/YQBnd5ExVElNbxgYUyodLMjeWyeZqMmz/包仓仓位用的好快，哪里能看到仓位的使用明细呢？_1_4b707d03.png)
 
 ## 五、操作结果
 
@@ -46,7 +46,7 @@ description: "网点账户好几个，分不清楚该看哪个余额咋办？的
 
 通常每个网点会存在三个账户。判断要看哪个账户时，需要结合账户的设计原理和应用场景。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/jP2lR4rvWAV3q8g5/img/15542fb5-7ce2-43a2-8882-7a4db9d20dc5.png?Expires=1783781614&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=dVX%2FeIjgl%2BeirSTuofs9wH%2BexX8%3D "")![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/jP2lR4rvWAV3q8g5/img/98988bc8-5d17-4155-bec0-a4c95db2b929.png?Expires=1783781614&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Hauyz9BXcP5KtINPRdMQinFrO9w%3D "")
+![image.png](./images/YQBnd5ExVElNbxgYUyodLMjeWyeZqMmz/发票绑定_1_5db04e7c.png)![image.png](./images/YQBnd5ExVElNbxgYUyodLMjeWyeZqMmz/发票绑定_2_8ab09d09.png)
 
 - **账户①**：一级网点与总部签约后，预充费用用于发货，可查看总部平台账户下开设的账户①。
   - 若一级网点未开发二级网点，只需关注 **账户①**。

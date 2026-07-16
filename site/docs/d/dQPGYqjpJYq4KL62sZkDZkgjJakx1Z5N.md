@@ -46,7 +46,7 @@ description: "鲸小宝APP注册的操作说明。"
 4. 勾选底部的 **“我已经阅读并同意《隐私政策》”**。
 5. 点击 **【登录】** 按钮进入系统。
 
-![5b41be24ad4325a714753456fbc7968b.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/meonaAr2br7znXxj/img/79d5adc2-6b16-40cc-bcfa-f15547ca2d27.jpeg?Expires=1783781624&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=6o8IGVl0PRDIh2imGS4CP63Zm3k%3D "")
+![5b41be24ad4325a714753456fbc7968b.jpeg](./images/dQPGYqjpJYq4KL62sZkDZkgjJakx1Z5N/鲸小宝APP注册操作说明书_1_c7047ea1.jpg)
 
 ### 4.2 作业网点/组织切换
 
@@ -57,7 +57,7 @@ description: "鲸小宝APP注册的操作说明。"
 4. 选中对应网点后，点击下方的 **【开始使用】** 按钮。
 5. 系统将自动加载该网点的业务数据。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/meonaAr2br7znXxj/img/d8572c39-add2-4d31-9a54-bc8c5e475eb3.png?Expires=1783781624&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=IvrukOu%2BZa0SxNG%2Fpzi0OMO1GV4%3D "")
+![image.png](./images/dQPGYqjpJYq4KL62sZkDZkgjJakx1Z5N/鲸小宝APP注册操作说明书_2_50574d34.png)
 
 ### 4.3 鲸小宝 APP 端自主修改密码
 
@@ -74,7 +74,7 @@ description: "鲸小宝APP注册的操作说明。"
 密码请设置为字母与数字的组合。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/meonaAr2br7znXxj/img/2a07a10b-235d-49f3-a384-880c641cbbcc.png?Expires=1783781624&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=woKzhJ6nf%2FusAZD%2BMB4E3GAHncs%3D "")
+![image.png](./images/dQPGYqjpJYq4KL62sZkDZkgjJakx1Z5N/鲸小宝APP注册操作说明书_3_abebbe68.png)
 
 ### 4.4 PC 端重置鲸小宝 APP 登录密码
 
@@ -94,7 +94,7 @@ description: "鲸小宝APP注册的操作说明。"
 重置鲸小宝 APP 登录密码时，**应用类型** 必须选择 **【鲸小宝APP】**。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/meonaAr2br7znXxj/img/b745fefc-0b77-4b54-aafe-31691ec7fc30.png?Expires=1783781624&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=rmOLE6KOTu7lzRo%2FbYg6Vwn1B8o%3D "")
+![image.png](./images/dQPGYqjpJYq4KL62sZkDZkgjJakx1Z5N/鲸小宝APP注册操作说明书_4_bd434062.png)
 
 ## 五、操作结果
 

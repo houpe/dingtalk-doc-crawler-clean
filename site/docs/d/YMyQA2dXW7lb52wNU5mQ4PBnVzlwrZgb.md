@@ -44,7 +44,7 @@ description: "发票绑定的操作说明。"
 
    核对无误后，登录税局开票。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZ2pJX8OXo/img/9d01351e-27d9-4ca7-9d68-7c36d6b81097.png?Expires=1783781609&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=c6%2F1rrgLlsNFRM0rP4QlGiwX8%2Bw%3D "")
+   ![image.png](./images/YMyQA2dXW7lb52wNU5mQ4PBnVzlwrZgb/包仓仓位用的好快，哪里能看到仓位的使用明细呢？_1_4b707d03.png)
 
 2. **上传发票验真**
 
@@ -58,7 +58,7 @@ description: "发票绑定的操作说明。"
 
    发票上传成功后，检查发票验真状态；待状态显示为 **校验成功** 后，再继续下一步操作。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZ2pJX8OXo/img/edfe000d-87bc-4ee8-8160-9d74a8c7006e.png?Expires=1783781609&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=1JOQaFMs7xONVm3huGfbMGOKTas%3D "")
+   ![image.png](./images/YMyQA2dXW7lb52wNU5mQ4PBnVzlwrZgb/发票绑定_1_5db04e7c.png)
 
 3. **发票绑定账单**
 
@@ -72,9 +72,9 @@ description: "发票绑定的操作说明。"
 
    分摊成功后，点击 **保存**，完成发票绑定。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZ2pJX8OXo/img/276022cc-299b-46af-8b01-bf832b2a9a5a.png?Expires=1783781609&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=1cbG3a8paVHslg3yN0ff8O23UK4%3D "")
+   ![image.png](./images/YMyQA2dXW7lb52wNU5mQ4PBnVzlwrZgb/发票绑定_2_8ab09d09.png)
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZ2pJX8OXo/img/bf898fb5-94ff-4dd4-8a9c-47d105d1dbe4.png?Expires=1783781609&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=%2ByaeuxpGkOr%2FyfH9ijANcEFCNvc%3D "")
+   ![image.png](./images/YMyQA2dXW7lb52wNU5mQ4PBnVzlwrZgb/发票绑定_3_3e26bdf1.png)
 
 ### 4.2 场景二：发票红冲
 

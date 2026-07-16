@@ -50,7 +50,7 @@ description: "送货入仓的操作说明。"
 8. 上传车辆照片。
 9. 点击 **提交**，完成车辆注册绑定。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/1GXn45KoL6JPGqDQ/img/0bba00d0-3b9a-4e15-8067-103b2ed029e1.png?Expires=1783781659&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Y2ejYnDP5l7CsCBQXseOd3XNrsY%3D "")
+![image.png](./images/dpYLaezmVNqnlNZ4sGRklXwBWrMqPxX6/交_提货操作说明书_1_e985df20.png)
 
 ### 4.2 日常送货入仓操作
 
@@ -78,7 +78,7 @@ description: "送货入仓的操作说明。"
 
    **任务管理** 页面可切换 **全部**、**交货**、**提货**、**自提**、**送货入仓** 分类；任务状态分为 **待处理**、**已完成**、**关闭** 等。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/1GXn45KoL6JPGqDQ/img/86c4761b-3c9a-4291-a07e-2168726051d9.png?Expires=1783781659&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=QFPjsfm89bVbW6WzwGA0oDJiZkI%3D "")
+![image.png](./images/dpYLaezmVNqnlNZ4sGRklXwBWrMqPxX6/交_提货操作说明书_2_66c17ef0.png)
 
 ## 五、操作结果
 

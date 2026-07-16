@@ -38,7 +38,7 @@ description: "网络货运司机抢单接单的操作说明。"
 1. 登录 APP，进入**货源大厅**。
 2. 输入**出发地**和**目的地**，查找匹配的货源；也可以添加筛选条件进行查找。
 
-![货源大厅.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/2M9qP5jAZpBLpO01/img/3f3ccb61-8932-417c-98b3-3f58ec384afa.jpeg?Expires=1783781803&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Zj%2Fom7KvOQtuuEt42iLP4wYHEA0%3D "")
+![货源大厅.jpeg](./images/MNDoBb60VLlanM25Um96XNNPVlemrZQ3/司机端注册操作说明_1_ad777e38.png)
 
 3. 找到合适货源后，点击**立即接单**。
 4. 按页面提示缴纳**保证金**，完成抢单。
@@ -52,7 +52,7 @@ description: "网络货运司机抢单接单的操作说明。"
 4. 按页面提示支付**保证金**，完成接单。
 5. 若有车载温控设备，请在接单后进行授权：[如何授权温控设备？](https://docs.qq.com/doc/DZW5IbnJETXhqdlpP)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/2M9qP5jAZpBLpO01/img/b2041597-4878-4dc9-89a1-444b391d8ff8.png?Expires=1783781803&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=lVVyieSTjpUprZMOzZZU1ZtUia4%3D "")
+![image.png](./images/MNDoBb60VLlanM25Um96XNNPVlemrZQ3/司机端注册操作说明_2_5d7f12d2.png)
 
 ## 五、操作结果
 

@@ -71,7 +71,7 @@ description: "批量录单的操作说明。"
 
 📷
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/pLdn55XAxoQewno8/img/41af6bee-203f-4bdf-b144-7459b0ee7405.png?Expires=1783781559&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=%2F1Ii%2B6EyQUbNPaupLxwWhrLH2aI%3D "")
+![](./images/lyQod3RxJKlZLgpwUoAp0Q1r8kb4Mw9r/中心_网点直发操作说明_1_a9158e4e.png)
 
 ### 4.3 导入文件
 
@@ -86,7 +86,7 @@ description: "批量录单的操作说明。"
 
 📷 [此处插入导入成功页面截图]
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/pLdn55XAxoQewno8/img/79f7882f-5698-4f49-a397-b49a189550af.png?Expires=1783781559&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=E%2FTsFAwgQNI8D9%2BAwUGRpRRaico%3D "")
+![](./images/lyQod3RxJKlZLgpwUoAp0Q1r8kb4Mw9r/中心_网点直发操作说明_2_cfb6c218.png)
 
 #### (2) 存在导入失败数据
 
@@ -100,9 +100,9 @@ description: "批量录单的操作说明。"
 
 📷
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/pLdn55XAxoQewno8/img/a2dae6c7-eebb-4bc5-9621-4eee3bb65c83.png?Expires=1783781559&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=s4n71BNf4aUETdgFBQFTV8rJY8A%3D "")
+![](./images/lyQod3RxJKlZLgpwUoAp0Q1r8kb4Mw9r/中心_网点直发操作说明_3_428d0ee7.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/pLdn55XAxoQewno8/img/d487ceb9-8183-427a-9de2-2748dee029af.png?Expires=1783781559&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=iG%2FYVhPxmyWwjVpbz5dU2TEssV0%3D "")
+![](./images/lyQod3RxJKlZLgpwUoAp0Q1r8kb4Mw9r/中心_网点直发操作说明_4_d3c46b22.png)
 
 ### 4.4 批量下单
 
@@ -118,7 +118,7 @@ description: "批量录单的操作说明。"
 
 📷
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/pLdn55XAxoQewno8/img/c723afbb-99eb-4e36-bdeb-86d8b65c3507.png?Expires=1783781559&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ooaaFbkrq0tDdKamNbcvrDO9wb8%3D "")
+![](./images/lyQod3RxJKlZLgpwUoAp0Q1r8kb4Mw9r/中心_网点直发操作说明_5_96a90e56.png)
 
 #### (2) 存在下单失败数据
 
@@ -128,7 +128,7 @@ description: "批量录单的操作说明。"
 
 📷
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/pLdn55XAxoQewno8/img/518f322a-e287-418c-9f2f-6bb7659698b0.png?Expires=1783781559&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=R5n3yEXgU3kCHU960fCufI6fGgU%3D "")
+![](./images/lyQod3RxJKlZLgpwUoAp0Q1r8kb4Mw9r/原单退回操作说明_1_866eec67.png)
 
 ### 4.5 使用辅助功能
 
@@ -142,7 +142,7 @@ description: "批量录单的操作说明。"
 
 📷
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/pLdn55XAxoQewno8/img/366bb05a-91ad-45d5-a6e8-9faaca00692d.png?Expires=1783781559&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ysq%2BIG7QhbQ6cDn2M1xLGC%2BNuME%3D "")
+![](./images/lyQod3RxJKlZLgpwUoAp0Q1r8kb4Mw9r/原单退回操作说明_2_91d7c9fa.png)
 
 ## 五、操作结果
 

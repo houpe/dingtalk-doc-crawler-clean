@@ -1043,11 +1043,6 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
     if n_changed:
         summary_line("标题自动编号", f"{n_changed} 篇 ✓")
 
-    # 生成 nodeId 稳定 URL：在编号之后创建别名页，这样复制的是已编号的原文件。
-    node_id_count = _create_node_id_pages(docs_dir, source_dir)
-    if node_id_count:
-        summary_line("nodeId 稳定 URL", f"{node_id_count} 篇 ✓")
-
     # 防御：清理可能残留的 .js 配置文件。
     # VitePress 会优先加载 config.js / sidebar-data.js（而非 .mts/.mjs），
     # 若存在旧版 .js 配置，会让 pipeline 生成的 .mts/.mjs 配置失效，
@@ -1097,6 +1092,13 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
     pp_t0 = time.time()
     run([sys.executable, str(ROOT / "src" / "post_process.py"), str(docs_dir)])
     summary_line("Post-process", fmt_time(time.time() - pp_t0))
+
+    # 生成 nodeId 稳定 URL：在 post_process 之后创建别名页。
+    # 此时原中文路径文档已完成 URL→本地图片路径替换和标题编号，
+    # 别名页复制的是最终成品，图片路径会修正为指向原 images 目录的相对路径。
+    node_id_count = _create_node_id_pages(docs_dir, source_dir)
+    if node_id_count:
+        summary_line("nodeId 稳定 URL", f"{node_id_count} 篇 ✓")
 
     print("\n  npm install...")
     install_t0 = time.time()
@@ -1214,14 +1216,20 @@ def _create_node_id_pages(docs_dir: Path, source_dir: Path) -> int:
         node_id = node_id_map.get(rel)
         if not node_id:
             continue
-        # 创建 d/nodeId.md，内容复制自原文件
+        # 创建 d/nodeId.md：复制原文件内容，图片路径改为 ./images/{nodeId}/xxx，
+        # 然后把原 images 目录的图片复制到 d/images/{nodeId}/，让 VitePress 能找到。
         dst = d_dir / f"{node_id}.md"
         content = md_path.read_text(encoding="utf-8")
-        # 修正图片相对路径：d/nodeId.md 的图片引用要回到上级 images 目录
-        depth = rel.count("/") + 2  # d/ 多一层，加原路径深度
-        prefix = "../" * depth
-        content = content.replace("](./images/", f"]({prefix}images/").replace("](images/", f"]({prefix}images/")
+        content = content.replace("](./images/", f"](./images/{node_id}/").replace("](images/", f"](./images/{node_id}/")
         dst.write_text(content, encoding="utf-8")
+        # 复制该文档的图片到 d/images/{nodeId}/（VitePress 不跟随软链接，必须实文件）
+        src_img_dir = md_path.parent / "images"
+        if src_img_dir.is_dir():
+            dst_img_dir = d_dir / "images" / node_id
+            dst_img_dir.mkdir(parents=True, exist_ok=True)
+            for img in src_img_dir.iterdir():
+                if img.is_file():
+                    shutil.copy2(img, dst_img_dir / img.name)
         count += 1
 
     return count

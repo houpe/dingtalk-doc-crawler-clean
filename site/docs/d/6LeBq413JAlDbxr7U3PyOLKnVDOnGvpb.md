@@ -74,9 +74,9 @@ description: "网点录单的操作说明。"
 6. 核对全部信息无误后，点击**保存**。
 7. 系统生成正式运单。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35odzYAoXl7E/img/11c17da3-62b2-474e-9802-487ddb9fd24b.png?Expires=1783781562&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=XmgdvgbyPxD1HnaDK5wuqGEnOmE%3D "")
+![image.png](./images/6LeBq413JAlDbxr7U3PyOLKnVDOnGvpb/中心_网点直发操作说明_1_a9158e4e.png)
 
-![1774751647412_28c9047e775c44ecb0c25298ebb85d60.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35odzYAoXl7E/img/c0e401a1-a9aa-4185-bc40-fdfa95e5a5a4.png?Expires=1783781562&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=YzsMDM1itx1qqm9lMeKEDH2jzzE%3D "")
+![1774751647412_28c9047e775c44ecb0c25298ebb85d60.png](./images/6LeBq413JAlDbxr7U3PyOLKnVDOnGvpb/中心_网点直发操作说明_2_cfb6c218.png)
 
 ### 5.2 移动端录单
 
@@ -93,7 +93,7 @@ description: "网点录单的操作说明。"
 移动端录单流程、产品选择逻辑与PC端**完全一致**。
 :::
 
-![9a8051ef1fa9585ce0190a5060587f15.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35odzYAoXl7E/img/cad6dfb3-9bc9-4b08-85bd-a7930143ed26.png?Expires=1783781562&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Plnnd50qunXS8WYsaoPwu1eEmv0%3D "")![lQLPJxrGtcL0B9XNAp7NAX6wxeXNAJIQD9YJofcmhEmCAA_382_670.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35odzYAoXl7E/img/8ef5a214-5a82-4cda-a26e-e1e6f10ea55d.png?Expires=1783781562&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=URD%2FfUE%2BzvOk9ZwPCsCe1vJystc%3D "")
+![9a8051ef1fa9585ce0190a5060587f15.png](./images/6LeBq413JAlDbxr7U3PyOLKnVDOnGvpb/中心_网点直发操作说明_3_428d0ee7.png)![lQLPJxrGtcL0B9XNAp7NAX6wxeXNAJIQD9YJofcmhEmCAA_382_670.png](./images/6LeBq413JAlDbxr7U3PyOLKnVDOnGvpb/中心_网点直发操作说明_4_d3c46b22.png)
 
 ## 六、操作结果
 

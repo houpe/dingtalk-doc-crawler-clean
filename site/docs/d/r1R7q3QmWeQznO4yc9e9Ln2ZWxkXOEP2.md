@@ -15,7 +15,7 @@ description: "仲裁如何申报、申诉？的操作说明。"
 2. 如线下已沟通好理赔事宜，无需总部介入，发起方可**撤销仲裁**。
 3. 在**待处理**节点，新增**处理不通过**，可打回发起方修改仲裁单据。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYkK9YRxO8j9/img/f893ca32-7180-4b13-94f3-2def931ee54c.png?Expires=1783781581&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=w6uXJjCCrLbIfmPgLHpmNwOvRKo%3D "")
+![image.png](./images/r1R7q3QmWeQznO4yc9e9Ln2ZWxkXOEP2/仲裁如何申报、申诉？_10_2674e296.png)
 
 ## 二、前置条件
 
@@ -36,7 +36,7 @@ description: "仲裁如何申报、申诉？的操作说明。"
 2. **协商**：发起网点、责任网点可进行协商。
 3. **申诉**：发起网点、责任网点可进行申诉。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/3657c25c-bd9a-46a7-97b5-2b4f2ec5ca7a.png?Expires=1783781581&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=URpUmcqiWZs4rxBNoeiVO7xkHfQ%3D "")
+![image.png](./images/r1R7q3QmWeQznO4yc9e9Ln2ZWxkXOEP2/仲裁如何申报、申诉？_11_14378a46.png)
 
 ## 四、操作步骤
 
@@ -44,7 +44,7 @@ description: "仲裁如何申报、申诉？的操作说明。"
 
 用户可在此页面进行**仲裁申报**和**申诉处理**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYkK9YRxO8j9/img/f9d943d0-bc41-4743-93af-4d72409b1a8e.png?Expires=1783781581&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=mfyCAHXeRhJ5OpH95QbriuHLjxM%3D "")
+![image.png](./images/r1R7q3QmWeQznO4yc9e9Ln2ZWxkXOEP2/仲裁如何申报、申诉？_1_575eadf9.png)
 
 1. 点击**【发布】**，发起仲裁/理赔申报。
 2. 选择责任网点，并提交相关材料。
@@ -54,11 +54,11 @@ description: "仲裁如何申报、申诉？的操作说明。"
 
 1. 点击**【发布】**后，先选择**申报类型**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYkK9YRxO8j9/img/0d770533-6634-40fb-beec-d0f32d63a829.png?Expires=1783781581&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AnIS6UXPWbi0Z86x6nS4uOCACDY%3D "")
+![image.png](./images/r1R7q3QmWeQznO4yc9e9Ln2ZWxkXOEP2/仲裁如何申报、申诉？_2_1b53f941.png)
 
 2. 选择申报类型后，进入内容填写页面。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYkK9YRxO8j9/img/7eab0b86-7ac2-451b-84d9-f96f56e0288d.png?Expires=1783781581&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=%2FlRnDYHA%2BN0clk2ilb%2BgT1lv3zw%3D "")
+![image.png](./images/r1R7q3QmWeQznO4yc9e9Ln2ZWxkXOEP2/仲裁如何申报、申诉？_3_c164c666.png)
 
 3. 按页面要求填写以下信息：
    - **运单号**：输入运单号后，系统会带出对应的运单、轨迹信息；允许一级代二级网点进行上报。
@@ -72,11 +72,11 @@ description: "仲裁如何申报、申诉？的操作说明。"
 
 1. 申报网点可在列表中进行**协商**操作。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYkK9YRxO8j9/img/08b16d23-c111-4e57-9fba-b910d10c9053.png?Expires=1783781581&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=qGMj%2FebREl4cBa9CEhmgvRF1j4U%3D "")
+![image.png](./images/r1R7q3QmWeQznO4yc9e9Ln2ZWxkXOEP2/仲裁如何申报、申诉？_4_775d1472.png)
 
 2. 点击**【协商】**按钮，进入详情页（发起方协商）。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYkK9YRxO8j9/img/381e71d3-9ebb-4391-80af-8dccc2713f61.png?Expires=1783781581&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Rq7w3jD%2FgBJW%2B%2B%2FHWwxnqO28c%2FM%3D "")
+![image.png](./images/r1R7q3QmWeQznO4yc9e9Ln2ZWxkXOEP2/仲裁如何申报、申诉？_5_cf89d5f4.png)
 
 3. 根据实际情况选择处理方式：
    - **撤销仲裁**：发起方可进行撤销操作；撤销后，该单据完结。
@@ -91,7 +91,7 @@ description: "仲裁如何申报、申诉？的操作说明。"
 
 1. 点击**【协商】**按钮，进入详情页（责任方协商）。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYkK9YRxO8j9/img/fbaf9f94-377d-445a-b24c-eb9ee073df23.png?Expires=1783781581&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=awb79Y1CRLc4Pf8QQ%2FvPCu%2Fs%2BYY%3D "")
+![image.png](./images/r1R7q3QmWeQznO4yc9e9Ln2ZWxkXOEP2/仲裁如何申报、申诉？_6_021a0df3.png)
 
 2. 填写或上传相关举证信息：
    - **举证内容**：责任方可提交自己无责的相关举证内容。
@@ -105,12 +105,12 @@ description: "仲裁如何申报、申诉？的操作说明。"
 
 1. 当单据处于**待申诉**状态时，发起方、责任方可进行**申诉**操作。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYkK9YRxO8j9/img/0a793097-7728-413d-b0d3-f44679dcf9c1.png?Expires=1783781581&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=8EuEWI5axOePKF6gOilrMS%2FRkWw%3D "")
+![image.png](./images/r1R7q3QmWeQznO4yc9e9Ln2ZWxkXOEP2/仲裁如何申报、申诉？_7_19b154ef.png)
 
 2. 填写**申诉内容**，并上传**申诉附件**。
 3. 点击**申诉完成**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYkK9YRxO8j9/img/f7e0ac48-759e-4996-b834-69d281d4fdee.png?Expires=1783781581&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=8dazwBqUgHS3mMIsFjb1oO1Uq4M%3D "")
+![image.png](./images/r1R7q3QmWeQznO4yc9e9Ln2ZWxkXOEP2/仲裁如何申报、申诉？_8_88c044ca.png)
 
 ::: tip 补充说明
 发起方、责任方有 **120H** 申诉时间。
@@ -152,4 +152,4 @@ description: "仲裁如何申报、申诉？的操作说明。"
 4. **仲裁申诉处理节点**
 5. **仲裁处理-处理不通过**
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYkK9YRxO8j9/img/fae564ed-623a-4b7b-95a4-7afe6bbbc0c9.png?Expires=1783781581&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=SK2qp5uNZp1rP1bTjy8%2BWs1Q4No%3D "")
+![image.png](./images/r1R7q3QmWeQznO4yc9e9Ln2ZWxkXOEP2/仲裁如何申报、申诉？_9_3bb6da6b.png)

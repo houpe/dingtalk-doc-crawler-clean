@@ -72,7 +72,7 @@ description: "原单退回的操作说明。"
 3. 仅货物**全部处于同一机构且为在库状态**，才可正常发起原单退回。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35odzYAoXl7E/img/c568cc7a-2659-4aa1-b078-76bf8274ba5b.png?Expires=1783781557&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=i%2FtAgUqEjZrsS98EHfO3uhWcPE8%3D "")
+![image.png](./images/NZQYprEoWoN3M2pQIBao4l6681waOeDk/中心_网点直发操作说明_1_a9158e4e.png)
 
 4. 校验通过后，进入原单退回改单页面。
 5. 按页面提示确认系统自动带出的改单信息。
@@ -98,7 +98,7 @@ description: "原单退回的操作说明。"
 3. 操作完成后，系统自动生成改单记录。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35odzYAoXl7E/img/bef2d3da-2c73-4055-8e96-aed61db8deb3.png?Expires=1783781557&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=baHhhovppolOA%2FjQG3AXQFnPBOY%3D "")
+![image.png](./images/NZQYprEoWoN3M2pQIBao4l6681waOeDk/中心_网点直发操作说明_2_cfb6c218.png)
 
 ### 5.2 查看退回类型
 
@@ -111,7 +111,7 @@ description: "原单退回的操作说明。"
 1. **网点退回**：货物在目的网点/目的所属网点，同一机构内发起退回。
 2. **中转退回**：货物在分拨中心、集配站等中转机构，同一机构内发起退回。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOG5zam4XmMnKa/img/f33717a3-d0b3-4c17-8463-8daf46347b0d.png?Expires=1783781557&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=NtR441jXXihDfLxx6P%2FzJbMHiCE%3D "")
+![image.png](./images/NZQYprEoWoN3M2pQIBao4l6681waOeDk/中心_网点直发操作说明_3_428d0ee7.png)
 
 ### 5.3 改单后换单贴单与面单打印
 

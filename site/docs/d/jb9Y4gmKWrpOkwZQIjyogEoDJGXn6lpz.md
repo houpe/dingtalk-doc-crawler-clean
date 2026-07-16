@@ -14,7 +14,7 @@ description: "单据-出库单(2B)的操作说明。"
 
 ### 1.1 单据业务流程图
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Lk3lbmb2GkDd6Om9/img/2771955b-2011-4def-9f78-7cb03188ae07.png?Expires=1783781782&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=WWWsf2fb89GkcHleZUbU2Ah2Bvs%3D "")
+![image.png](./images/jb9Y4gmKWrpOkwZQIjyogEoDJGXn6lpz/单据-_入库单_1_b9ab1010.png)
 
 ## 二、前置条件
 
@@ -36,7 +36,7 @@ description: "单据-出库单(2B)的操作说明。"
 
 1. 在 **ERP** 中创建 **出库单(2B)**，系统会将出库单同步到 **OMS**。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/ybEnB5joZ0eoGlP1/img/24c7e60a-1c86-42f0-9c89-76402c2e34c7.png?Expires=1783781782&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=PmyQFaCZYVc52%2BYk%2B%2BTVltwVXVM%3D "")
+   ![image.png](./images/jb9Y4gmKWrpOkwZQIjyogEoDJGXn6lpz/单据-_入库单_2_9b4425c3.png)
 
 2. **OMS** 接收出库单后，系统会自动同步到 **WMS**。
 
@@ -76,11 +76,11 @@ description: "单据-出库单(2B)的操作说明。"
 
 3. 新增或导入文件中的必填信息填写完成后，点击保存，返回 **出库单(2B)** 列表。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/ybEnB5joZ0eoGlP1/img/e72a9486-cf3f-4493-9f57-56bd39887154.png?Expires=1783781782&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=k87BYn2oGPzW5ac6ExOGdPOGlAs%3D "")
+   ![image.png](./images/jb9Y4gmKWrpOkwZQIjyogEoDJGXn6lpz/单据-_入库单_3_c7162966.png)
 
 4. 在列表中点击 **审核**。审核后，OMS 接收 **出库单(2B)**，并自动同步到 **WMS**。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/ybEnB5joZ0eoGlP1/img/e7194399-2c7b-4b9d-9b93-21b4be3958b2.png?Expires=1783781782&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=xkPAWQknZiI8ua26QFdAxwDtLRM%3D "")
+   ![image.png](./images/jb9Y4gmKWrpOkwZQIjyogEoDJGXn6lpz/单据-_入库单_4_38169c00.png)
 
 5. 如需调整出库单信息，点击 **编辑**，重新编辑 **出库单(2B)** 信息。
 

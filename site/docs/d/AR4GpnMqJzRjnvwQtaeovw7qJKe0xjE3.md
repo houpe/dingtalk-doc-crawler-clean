@@ -35,7 +35,7 @@ description: "单据-销售单(2C)的操作说明。"
 
 ### 4.1 业务流程图
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Lk3lbmb2GkDd6Om9/img/2771955b-2011-4def-9f78-7cb03188ae07.png?Expires=1783781787&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=A%2FbOO8tKBNWOEGj2k6vH8Jr%2FSPE%3D "")
+![image.png](./images/AR4GpnMqJzRjnvwQtaeovw7qJKe0xjE3/单据-_入库单_1_b9ab1010.png)
 
 ### 4.2 场景一：ERP客户>出库单(2B)
 
@@ -43,7 +43,7 @@ description: "单据-销售单(2C)的操作说明。"
 
    ERP客户在 **ERP** 中创建 **销售单(2C)**，系统同步 **销售单(2C)** 到 **OMS**。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/ybEnB5joZ0eoGlP1/img/24c7e60a-1c86-42f0-9c89-76402c2e34c7.png?Expires=1783781787&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=hvsd1W8SIYSQyEn8JJmVKWxANAQ%3D "")
+   ![image.png](./images/AR4GpnMqJzRjnvwQtaeovw7qJKe0xjE3/单据-_入库单_2_9b4425c3.png)
 
 2. **WMS对接**
 
@@ -67,13 +67,13 @@ description: "单据-销售单(2C)的操作说明。"
 
    3. 新增或导入文件中的必填信息填写完成后，点击保存，返回 **销售单(2C)** 列表。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/1wvqrebR5Xreznak/img/ab92fbdd-abfb-4611-8e3b-b4ce1ea23192.png?Expires=1783781787&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=KHtWog2XHQDHkDRqeHtcgMyQ7ag%3D "")
+   ![image.png](./images/AR4GpnMqJzRjnvwQtaeovw7qJKe0xjE3/单据-_入库单_3_c7162966.png)
 
 2. **WMS对接**
 
    1. 点击 **审核**：**OMS** 审核 **销售单(2C)** 后，系统自动同步到 **WMS** 中。
 
-      ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/ybEnB5joZ0eoGlP1/img/5c59f264-72e0-4645-81cd-7a555d4e6327.png?Expires=1783781787&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=EOdU1QydhatTxPUPmtNy11mMmko%3D "")
+      ![image.png](./images/AR4GpnMqJzRjnvwQtaeovw7qJKe0xjE3/单据-_入库单_4_38169c00.png)
 
    2. 点击 **编辑**：新增完成后，如需调整信息，可点击 **编辑** 重新编辑 **销售单(2C)**。
    3. 点击 **复制**：如需创建相同类型的订单，可复制新增或导入的 **销售单(2C)**；复制后支持重新编辑 **销售单(2C)** 信息。

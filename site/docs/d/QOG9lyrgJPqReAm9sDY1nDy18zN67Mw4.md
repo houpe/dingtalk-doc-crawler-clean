@@ -25,7 +25,7 @@ description: "包仓仓位用的好快，哪里能看到仓位的使用明细呢
 4. 如果该包仓运单存在使用明细，**操作** 列会展示 **查看详情** 按钮。
 5. 点击 **查看详情**，系统会弹出该运单的使用明细。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Lk3lbVmzreA3lm96/img/dad82237-ec5f-45ce-8867-5a06db454863.png?Expires=1783781616&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=JsVOBKCqPaqrB5J4BYoXdC2r7Y0%3D "")
+![image.png](./images/QOG9lyrgJPqReAm9sDY1nDy18zN67Mw4/包仓仓位用的好快，哪里能看到仓位的使用明细呢？_1_4b707d03.png)
 
 ## 五、操作结果
 

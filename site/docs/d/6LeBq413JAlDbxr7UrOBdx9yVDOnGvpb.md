@@ -68,7 +68,7 @@ description: "大客户-个人下单的操作说明。"
 2. 根据 **商家ID** 或客户信息检索客户。
 3. 找到对应客户后，点击 **【绑定客户】**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/a629441c-ee78-43ef-9a52-682d26e31e95.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=NICHSR8u%2BNgJu1L8MPFg7y5kvqA%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_10_69e68144.png)
 
 ::: tip 说明
 单个客户可绑定多个电子面单账户，客户手机号可与开户手机号不一致。
@@ -80,7 +80,7 @@ description: "大客户-个人下单的操作说明。"
 2. 选中目标客户。
 3. 完成绑定。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/a2d2990a-18d6-43d5-896d-a8d8c540253a.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=p0D145SA7Skjcr0FkHLFK5JEm8Q%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_11_d7788ae0.png)
 
 #### (3) 创建新客户和电子面单账户
 
@@ -88,7 +88,7 @@ description: "大客户-个人下单的操作说明。"
 2. 填写客户基础资料。
 3. 保存后，系统将同步生成全新电子面单账户。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/4a4792d7-9a0d-4e4e-92d9-e1eb28e73eda.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=2EVyePwIL1syaLwyeBlmH9nCeAs%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_12_cf24529e.png)
 
 ### 5.2 申购客户主单
 
@@ -102,7 +102,7 @@ description: "大客户-个人下单的操作说明。"
 2. 选择 **客户主单**。
 3. 按页面要求提交申购。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/4b4e9744-58ad-4515-bdca-c9fd44efa606.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=QL%2F2CqZu%2F6mIGT6e3Cdxkx6vtY0%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_13_26f8bc54.png)
 
 ### 5.3 电子面单账户充值
 
@@ -117,7 +117,7 @@ description: "大客户-个人下单的操作说明。"
 订购来源为 **中通冷链** 时，充值额度均为 **客户主单**。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/5b3474c9-25ba-4a82-b345-89c64a374bff.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=TBV5ISj7Is3u3ItdFEKILZ7q1IA%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_14_63a40793.png)
 
 ### 5.4 多端绑定电子面单账户
 
@@ -133,7 +133,7 @@ description: "大客户-个人下单的操作说明。"
 4. 填写编码与密钥。
 5. 提交绑定。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/256a6fc8-ff49-43b0-b840-bc029a1c23f0.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=260uapzY3d0PGV514bss3uvB8Bo%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_15_eb053335.png)
 
 #### (2) 微信小程序绑定
 
@@ -143,7 +143,7 @@ description: "大客户-个人下单的操作说明。"
 4. 输入 **客户编码**、**密码**。
 5. 确认绑定。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/93a1085c-1c8c-4896-8e8a-73cd74127313.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=fi2zA4XdB%2Bfg5Kcq4xPZVajttKk%3D "")![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/10a1d4ae-09c9-4642-b384-b60efc0e2ffc.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=2c8nbXUoCSnrmr6Ikh07XNLaM18%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_16_79f9e269.png)![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_17_bac828f5.png)
 
 ### 5.5 客户服务平台大客户下单
 
@@ -160,9 +160,9 @@ description: "大客户-个人下单的操作说明。"
    - 手动录入全部信息，可勾选 **“保存到地址簿”**，方便下次使用。
 3. 如需长期使用同一寄件地址，可设置 **默认寄件地址**，后续下单自动填充。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/795a39f6-522d-4221-808d-7156f5cc5b1c.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=5aYZwe0sBNA06nL%2BrOP8zSi1mek%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_18_47a131cd.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/5ef7bdba-2220-4e4b-b58f-7cf607372546.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=A5WV2pmEyFjkPV6hVisE4OYXVXw%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_19_63d57e34.png)
 
 4. 填写托寄物信息：
    - 选择物品类型，也可自定义新增品类。
@@ -171,7 +171,7 @@ description: "大客户-个人下单的操作说明。"
    - 填写货物件数、总重量、总体积。
    - 按需填写收派员留言。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/f34e295d-6b16-4da7-96bf-405ad4e7e145.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=0%2FZoB7mxjQ1jJ2JElM%2FAH1E%2BCCQ%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_1_05cb6fd5.png)
 
 5. 选择产品与增值服务：
    - 选择产品类型、寄派方式、派送方式。
@@ -179,7 +179,7 @@ description: "大客户-个人下单的操作说明。"
    - 选择付款方式，默认 **寄付月结**，支持 **寄付现结**、**到付**。
    - 如有可用优惠券，可选择优惠券。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/b0ef7147-c8af-458d-96fc-8ff40aae6440.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Vy0ORJQO6dc%2FNaDpIErSvarSVAg%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_20_99648033.png)
 
 6. 查看费用并提交订单：
    - 在页面查看预估费用及费用明细。
@@ -188,9 +188,9 @@ description: "大客户-个人下单的操作说明。"
    - 如暂不提交，可点击 **【保存草稿】**，后续在草稿箱修改后再提交。
    - 下单成功后，可选择 **再寄一件** 或查看订单详情。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/8e11a4ae-07c9-4e33-aeac-3e3ebb6e21e6.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=CoKtwVSLGUHBwt79rBN%2Biz%2FJ07E%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_21_3f9194c1.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/6cc96c78-29d5-4fb1-a28e-c5d947741c51.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=T9iRKQLZLSyiZhDwnytY14ZsbTc%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_22_0e513aa8.png)
 
 #### (2) 批量导入订单
 
@@ -210,11 +210,11 @@ description: "大客户-个人下单的操作说明。"
    - 导入失败：可下载失败列表，按提示排查并修正。
    - 导入成功：成功订单进入 **【待处理】** 列表。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/9a3ccefc-e2b9-4b34-ae93-1ba1201b54d6.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=b7UmvZoaX8IJzbNO9%2BomGRYQ3FQ%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_23_3fb94ccb.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/c9ec0f32-eece-4ec2-9c44-ae97e3b46099.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=26XzuIRuReGV3MbAyCALRlxYnr0%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_24_f122bc12.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/b45ea771-0598-43d8-8a9b-709de528e681.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AFZGEHPQE8FjlZ%2FHq9fW7P6ncGg%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_25_ea7b2919.png)
 
 #### (3) 待处理订单操作
 
@@ -239,11 +239,11 @@ description: "大客户-个人下单的操作说明。"
 如提示未检测到打印组件，需点击页面 **【下载组件】** 并完成安装。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/73a044b1-25e3-4522-b239-b6ea9c4c9322.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Lwu%2BKdk6fjQ05blZ1LZ2Btfkmqs%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_26_9d56125d.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/c39a8754-0420-465f-9e22-97231f0c0a7b.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=xRQScJFN3DXIEvDYUPmbAxd0APw%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_27_e3214a99.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/0ff80c31-da4d-4f2e-9eda-b47a6ad5cab6.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=8IlBoHLjMnMYEUZ9w%2FLlUiB5uTk%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_28_c588dd60.png)
 
 #### (4) 已处理订单操作
 
@@ -255,7 +255,7 @@ description: "大客户-个人下单的操作说明。"
    - 再次执行打印操作，流程同 **下单并打印**。
 4. 可按需执行订单导出、撤销操作。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/c63b3770-eb2e-4706-90ce-f869db97c31f.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=hbutf5g%2BODMrzN%2BoSYg%2BwxqclCE%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_29_b2e73e5e.png)
 
 #### (5) 全部订单与查询
 
@@ -263,18 +263,18 @@ description: "大客户-个人下单的操作说明。"
 2. 可查看 **订单基础信息**、**实时物流轨迹**、**回单状态**、**打印日志**。
 3. 可依据运单号、时间、收件人等条件筛选订单。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/e5cc8c90-11d6-474e-886c-9edfc659fa03.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=%2BkMCfv5dpIcuoFgOSai2dYEAIqA%3D "")![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/30d590a2-b225-482a-8c0a-fd50ade652de.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AGT6MywMMIiej%2BleFhGgAnhNTFk%3D "")![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/290e5956-5ac2-42f7-bf8b-729f0e392153.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=niAFu83vL6pLwMAcrAS%2Bs%2FZAH5c%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_2_220375cd.png)![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_30_e99da7db.png)![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_31_17d41df6.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/88428df9-ffad-4bcc-8fa3-ff9a4a3ca9dd.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=w8K1tkrTlqgh%2FQpXhw%2FdK%2BfD4qw%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_32_3b448d27.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/351fcdaa-677a-4f47-993d-858d07125b5c.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=zf0Fr6y%2BxDyT3RjQNOzSkqVTeBo%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_3_3345a8cf.png)
 
 ### 5.6 中通冷链微信小程序下单
 
 1. 微信搜索 **「中通冷链」** 小程序。
 2. 使用手机号登录。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/6a5b27aa-bd16-418d-aee5-48fdfe7fef83.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=dvU8DuT2dlN0ETmpdiOZYxRRlBA%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_4_650c4203.png)
 
 3. 进入 **【冷链快运】**。
 4. 选择寄件地址、收件地址。
@@ -284,19 +284,19 @@ description: "大客户-个人下单的操作说明。"
 8. 阅读并同意 **《电子运单契约条款》**。
 9. 点击 **【立即下单】**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/ba4f9a44-8582-40bc-87e2-cf556293e34e.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=zauxm7JCtD0Y7AzJoUMNPy7Rbj0%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_5_903dfd17.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/01464faa-d346-4df3-bbc8-26ed8693a747.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=W9N1bLPPcapq9%2F%2BQMF2YGEAnJJE%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_6_a4d2770c.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/68b7741c-54ab-450e-8810-305767e99c6e.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=8vPZiCQMmfMXfu5CZoK1mFUKWKk%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_7_48acc7f6.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/54a15472-1394-4515-9ccd-1f5beb04bc59.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=%2BnFbuAxvDLlePfauv6M37Nw5ooY%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_8_950b9463.png)
 
 10. 如需跟踪订单，进入小程序 **【查件】** 页面。
 11. 查看所有寄件、收件订单状态。
 12. 打开运单详情，可查看物流轨迹、签收信息。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/697bc7ce-76c4-4805-ac1f-afd723b85198.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=obZrrNhd76v%2Bf%2FVihNt%2Bz3KxV%2Bg%3D "")
+![image.png](./images/6LeBq413JAlDbxr7UrOBdx9yVDOnGvpb/大客户_个人下单操作说明_9_4022b941.png)
 
 ## 六、操作结果
 

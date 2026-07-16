@@ -45,7 +45,7 @@ description: "基础数据-仓库管理的操作说明。"
    - **钉钉token、钉钉secret**：配置后，接收或回传等单据报错时，会推送钉钉消息到钉钉群。
 5. 确认信息填写无误后，按页面提示完成新增操作。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp9bV2plpj/img/8c21464f-aef0-4cb6-82c3-902b28db0783.png?Expires=1783781776&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=9kDXNIICCv5k3VT5xVCBArAyP5s%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skOD2bP3VZd1wyK0/单据-_入库单_1_b9ab1010.png)
 
 ## 五、操作结果
 

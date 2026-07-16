@@ -25,7 +25,7 @@ description: "问题件如何有效回复的操作说明。"
 - 流程节点人员：在 **【操作】** 中处理、查看数据。
 - 非流程节点人员：在 **【查询】** 中查看数据。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/AJdl64954zdyqke1/img/9786f435-83e4-4655-a253-612a3e1f0240.png?Expires=1783781572&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=kIg5lID89%2B53dSWjf9mr80l9HMc%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsDoQ9qzP8BQEx5rG/仲裁如何申报、申诉？_10_2674e296.png)
 
 ## 四、操作步骤
 
@@ -39,7 +39,7 @@ description: "问题件如何有效回复的操作说明。"
 问题件支持**单条发布**和**批量发布**两种模式。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/AJdl64954zdyqke1/img/bff914ee-3ca9-4966-930c-f9fc48926116.png?Expires=1783781572&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=%2FrxasTqe2UJd3t10Gb84OslgWOI%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsDoQ9qzP8BQEx5rG/仲裁如何申报、申诉？_11_14378a46.png)
 
 ### 4.2 回复问题件
 
@@ -77,7 +77,7 @@ description: "问题件如何有效回复的操作说明。"
 **【撤销】仅发布方可操作。**
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/AJdl64954zdyqke1/img/82ec2838-8c7e-4e11-882d-8d72b4954c94.png?Expires=1783781572&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=2KMwTUNH8sWIhXHIvpXIhWK2e7A%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsDoQ9qzP8BQEx5rG/仲裁如何申报、申诉？_1_575eadf9.png)
 
 ### 4.5 回复/发布问题件（鲸小宝）
 
@@ -88,7 +88,7 @@ description: "问题件如何有效回复的操作说明。"
 支持鲸小宝问题件进行**回复 / 完结 / 撤销**操作。
 :::
 
-![image.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/AJdl64954zdyqke1/img/90fe3aaa-c8c7-44ab-a350-78653686c421.jpeg?Expires=1783781572&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=DOTE1KaVaQIqWLg8Y2NIYFgU4sM%3D "")
+![image.jpeg](./images/R1zknDm0WRqbBAlgsDoQ9qzP8BQEx5rG/仲裁如何申报、申诉？_2_1b53f941.png)
 
 ## 五、操作结果
 

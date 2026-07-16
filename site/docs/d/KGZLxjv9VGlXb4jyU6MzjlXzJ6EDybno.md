@@ -80,12 +80,12 @@ description: "冷链快递的操作说明。"
 2. 进入**我的服务商 → 中通快递**。
 3. 点击**新增网点**，发起电子面单订购。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/d5a84910-e6c5-4c74-a420-3ba138abff45.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ZjqQ943GPP4Hx%2BLfc73FCMDeFuE%3D "")
+![image.png](./images/KGZLxjv9VGlXb4jyU6MzjlXzJ6EDybno/冷链快递操作说明_10_62c53672.png)
 
 4. 在新增网点页面，依次选择或填写**发货地址、网点、联系人、联系电话、验证码**。
 5. 点击确认后，完成订购发起。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/94a4da7c-cf46-4375-a86e-add1b2e84609.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=JSseL0Exb1BmLf6i%2BMDiaCkWIdY%3D "")
+![image.png](./images/KGZLxjv9VGlXb4jyU6MzjlXzJ6EDybno/冷链快递操作说明_1_8f0b6a09.png)
 
 #### (2) 网点审核订购电子面单
 
@@ -93,7 +93,7 @@ description: "冷链快递的操作说明。"
 2. 进入**客户申请审核**。
 3. 审核客户发起的电子面单订购申请。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/5378d5c0-9a8f-4ae2-9c78-9bc8665f336d.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=5dWtQCII4u4Rp9%2Fr2vlqrp649l4%3D "")
+![image.png](./images/KGZLxjv9VGlXb4jyU6MzjlXzJ6EDybno/冷链快递操作说明_2_d6ea1948.png)
 
 #### (3) 网点充值电子面单
 
@@ -101,7 +101,7 @@ description: "冷链快递的操作说明。"
 2. 网点进入**中天系统 → 客户信息管理**。
 3. 操作**充值电子面单**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/b01ccb07-f3ff-4f2f-8ccc-c7f059a350b2.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=lbeB%2FENs3Uls0Za4ZNjjEIGbq8o%3D "")
+![image.png](./images/KGZLxjv9VGlXb4jyU6MzjlXzJ6EDybno/冷链快递操作说明_3_e74c6eed.png)
 
 #### (4) 客户下冷链快递单
 
@@ -113,7 +113,7 @@ description: "冷链快递的操作说明。"
 冷链快递1.0此时打印的快递单**不包含云冷分拣码及温层**，需手写**云冷分拣码及温层**。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/010d9c1a-692f-4dd9-8706-294b72588743.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ApGZb0t42ZgvzzZkPv45fgd9w1c%3D "")
+![image.png](./images/KGZLxjv9VGlXb4jyU6MzjlXzJ6EDybno/冷链快递操作说明_4_6bad8af3.png)
 
 #### (5) 客户打印标准冷链快递面单
 
@@ -128,12 +128,12 @@ description: "冷链快递的操作说明。"
 2. 进入**我的服务商 → 中通冷链**。
 3. 点击**新增网点**，发起电子面单订购。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/881fd3b8-9471-4412-b808-a410d331048b.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AWtNQpg58T75SwaquR5MHYF2Oj8%3D "")
+![image.png](./images/KGZLxjv9VGlXb4jyU6MzjlXzJ6EDybno/冷链快递操作说明_5_89c772ec.png)
 
 4. 在新增网点页面，依次选择或填写**发货地址、网点、联系人、联系电话、验证码**。
 5. 点击确认后，完成订购发起。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/ca52922c-a92e-4363-b9b1-711320a78d15.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=h8uti5gDBqOWZddFxS73KZmOYVo%3D "")
+![image.png](./images/KGZLxjv9VGlXb4jyU6MzjlXzJ6EDybno/冷链快递操作说明_6_adc6214c.png)
 
 #### (2) 中通冷链网点审核订购电子面单
 
@@ -141,7 +141,7 @@ description: "冷链快递的操作说明。"
 2. 进入**商户电子面单账户管理**。
 3. 审核客户发起的电子面单订购申请。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/6a8e5e1f-c6df-42d0-a1a9-49f25fe17694.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=N09RVVwhDF61M1na3O%2F9Wvwi%2FWc%3D "")
+![image.png](./images/KGZLxjv9VGlXb4jyU6MzjlXzJ6EDybno/冷链快递操作说明_7_1bc8b8a6.png)
 
 #### (3) 网点充值电子面单
 
@@ -149,7 +149,7 @@ description: "冷链快递的操作说明。"
 2. 网点进入**鲸天系统 → 商户电子面单账户管理**。
 3. 操作**充值电子面单**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/65ea8172-b43b-4649-9cf8-f7617adf274b.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=rcrvGijYmb6zq0BhsE8pNTnkuKk%3D "")
+![image.png](./images/KGZLxjv9VGlXb4jyU6MzjlXzJ6EDybno/冷链快递操作说明_8_f8fbe3de.png)
 
 #### (4) 客户下冷链快递单
 
@@ -161,7 +161,7 @@ description: "冷链快递的操作说明。"
 冷链快递2.0、3.0在店铺后台或打单软件中打印出的快递单目前**不可用**，需到**客户服务平台**打印面单。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/4d20a810-047b-47fb-8694-1b350ee3ece4.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=dmTVb%2F5GOp931x6KBpdJ1KNb7Qw%3D "")
+![image.png](./images/KGZLxjv9VGlXb4jyU6MzjlXzJ6EDybno/冷链快递操作说明_9_b52d17f4.png)
 
 #### (5) 客户打印标准冷链快递面单
 

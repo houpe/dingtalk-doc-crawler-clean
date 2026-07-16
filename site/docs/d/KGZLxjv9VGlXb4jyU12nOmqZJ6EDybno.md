@@ -30,13 +30,13 @@ description: "单据-入库单的操作说明。"
 
 ### 4.1 单据业务流程图
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Lk3lbmb2GkDd6Om9/img/2771955b-2011-4def-9f78-7cb03188ae07.png?Expires=1783781780&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=FzAXZnRKw4gOgtC1t19IqEoKNeA%3D "")
+![image.png](./images/KGZLxjv9VGlXb4jyU12nOmqZJ6EDybno/单据-_入库单_1_b9ab1010.png)
 
 ### 4.2 场景一：ERP客户处理入库单
 
 1. 在ERP中创建入库单，并同步入库单到OMS。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Lk3lbmb2GkDd6Om9/img/1685a119-0241-4f1f-9c0d-a026b70e0bce.png?Expires=1783781780&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=WKYaZJpKFQSvpz0Y6jIh8%2F%2FsYXw%3D "")
+   ![image.png](./images/KGZLxjv9VGlXb4jyU12nOmqZJ6EDybno/单据-_入库单_2_9b4425c3.png)
 
 2. OMS接收入库单后，系统会自动同步到WMS中。
 
@@ -53,13 +53,13 @@ description: "单据-入库单的操作说明。"
 
 3. 新增或导入文件中的必填信息填写完成后，点击保存，返回入库单列表。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Lk3lbmb2GkDd6Om9/img/245bfb37-3f27-4eb7-9644-c569daaf4251.png?Expires=1783781780&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=zQioHC0FFCm9DMGlTAxSYnsLZnU%3D "")
+   ![image.png](./images/KGZLxjv9VGlXb4jyU12nOmqZJ6EDybno/单据-_入库单_3_c7162966.png)
 
 4. 在入库单列表中，根据需要进行以下操作：
 
    - 点击 **审核**：OMS审核入库单后，系统会自动同步到WMS中。
 
-     ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Lk3lbmb2GkDd6Om9/img/030d1a7a-b2ed-49af-8ecf-db8469bf4a9c.png?Expires=1783781780&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=3tTz1JcS0mYEX9JnFLXS5Qle2io%3D "")
+     ![image.png](./images/KGZLxjv9VGlXb4jyU12nOmqZJ6EDybno/单据-_入库单_4_38169c00.png)
 
    - 点击 **编辑**：新增完成后如需调整信息，可重新编辑入库单信息。
    - 点击 **复制**：如需创建相同类型的订单，可复制已新增或已导入的入库单。

@@ -24,7 +24,7 @@ description: "差错如何申报-申诉？的操作说明。"
 - 流程节点人员：在**【操作】**中处理、查看数据。
 - 非流程节点人员：在**【查询】**中查看数据。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/3657c25c-bd9a-46a7-97b5-2b4f2ec5ca7a.png?Expires=1783781587&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=UrifiKSv83tTtCbAXezLn2hDkes%3D "")
+![image.png](./images/YndMj49yWj974eM5cr4r3Xdy83pmz5aA/仲裁如何申报、申诉？_10_2674e296.png)
 
 ## 四、操作步骤
 
@@ -37,13 +37,13 @@ description: "差错如何申报-申诉？的操作说明。"
 3. 总部**受理**后，会产生相应罚款。
 4. **已签收运单不可发起申报**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/eYVOLwoo5AeGqpz2/img/2ee3b434-d927-4b92-a193-c7faf14b1e7f.png?Expires=1783781587&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=R3szncaDV89pjiQOUpoAOm6a9ik%3D "")
+![image.png](./images/YndMj49yWj974eM5cr4r3Xdy83pmz5aA/仲裁如何申报、申诉？_11_14378a46.png)
 
 ### 4.2 查询、申报、申诉处理
 
 1. 进入差错处理页面后，可在此页面进行**差错发布**、**申诉**操作。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/eYVOLwoo5AeGqpz2/img/52692f78-3a85-4f7c-a269-38a690d72f47.png?Expires=1783781587&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Dtcgl9hBmRLc0vSgeYojwLzxyoA%3D "")
+![image.png](./images/YndMj49yWj974eM5cr4r3Xdy83pmz5aA/仲裁如何申报、申诉？_1_575eadf9.png)
 
 2. 点击进入**差错发布**，按页面要求填写信息：
 
@@ -60,7 +60,7 @@ description: "差错如何申报-申诉？的操作说明。"
 2. 同一个运单若存在总部**不受理**的申报数据，则可再次申报；否则不可再次申报。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/eYVOLwoo5AeGqpz2/img/42a80223-eb9f-490d-a69d-224c2b0c0e24.png?Expires=1783781587&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=fKXlJVzmdgotT0WhR7FbNcSYAaI%3D "")
+![image.png](./images/YndMj49yWj974eM5cr4r3Xdy83pmz5aA/仲裁如何申报、申诉？_2_1b53f941.png)
 
 3. 责任方发起**差错申诉**。
 
@@ -72,7 +72,7 @@ description: "差错如何申报-申诉？的操作说明。"
 “**申诉失败！当前差错已在,不可申诉，有疑问请联系总部运营-曲丽娜**”
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/eYVOLwoo5AeGqpz2/img/eaa32f8f-7b3d-45be-98b0-af554a142c37.png?Expires=1783781587&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ongIvd%2FdhfXZq1KTqYGq7NdQ44w%3D "")
+![image.png](./images/YndMj49yWj974eM5cr4r3Xdy83pmz5aA/仲裁如何申报、申诉？_3_c164c666.png)
 
 ## 五、操作结果
 

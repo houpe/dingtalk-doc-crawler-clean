@@ -49,7 +49,7 @@ description: "装卸任务的操作说明。"
 - 小程序功能路径：**微信 → 中通冷链司机版小程序 → 我的 → 登录 → 首页 → 任务管理**
 - 现场终端入口：分拨专用 **PDA设备**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/r4mlQ5bJa9dbklxo/img/f453667c-0d6a-4afc-be28-bd52bf310f59.png?Expires=1783781687&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=gop3xBrTwsHRG%2FyGlcvOJ21UkVI%3D "")
+![image.png](./images/YndMj49yWj974eM5cRYLkrm283pmz5aA/装卸任务操作说明书_1_261091a3.png)
 
 ## 四、操作步骤
 
@@ -76,7 +76,7 @@ description: "装卸任务的操作说明。"
 
 完整流程：确认卸车信息 → 单据交接 → 引导车辆靠台 → 拍照测温 → 劳务任务打卡 → 现场卸车 → 清扫车厢 → 关闭月台门 → 卸车任务验收
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/r4mlQ5bJa9dbklxo/img/8c2af6b8-488d-4f39-995e-5ba5c48d4462.png?Expires=1783781687&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Tdbr%2FVWqk6yQrzCYqhcrHKRKr8I%3D "")
+![image.png](./images/YndMj49yWj974eM5cRYLkrm283pmz5aA/装卸任务操作说明书_2_c24d5d76.png)
 
 #### (1) 确认卸车信息
 
@@ -175,7 +175,7 @@ description: "装卸任务的操作说明。"
 
 完整流程：接收装车任务 → 核对装车单据 → 货物集托分拣 → 劳务任务打卡 → 现场装车 → 封签核验 → 拍照留存 → 车辆离场 → 装车任务验收
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/r4mlQ5bJa9dbklxo/img/8c2af6b8-488d-4f39-995e-5ba5c48d4462.png?Expires=1783781687&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Tdbr%2FVWqk6yQrzCYqhcrHKRKr8I%3D "")
+![image.png](./images/YndMj49yWj974eM5cRYLkrm283pmz5aA/装卸任务操作说明书_3_c24d5d76.png)
 
 #### (1) 接收装车任务
 

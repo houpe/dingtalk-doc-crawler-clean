@@ -33,7 +33,7 @@ description: "基础数据-客户管理的操作说明。"
    - **开启报价确认**：若需要仓库对网点报价时开启；若不需要则关闭。
    :::
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/oJGq75kJZpLNWlAK/img/50fa9bc5-d570-4811-a4eb-1f91be2598f6.png?Expires=1783781777&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ePFndNewO7Ugam69urAC8IexcYs%3D "")
+   ![image.png](./images/YQBnd5ExVElNbxgYU2mpQaYwWyeZqMmz/单据-_入库单_1_b9ab1010.png)
 
 3. 填写完成后保存货主信息。
 
@@ -41,7 +41,7 @@ description: "基础数据-客户管理的操作说明。"
 
 5. 如需进行 **ERP对接**，创建货主后，点击 **详情**，再点击 **获取对接参数**，将对接信息提供给 ERP 侧发起对接请求。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/oJGq75kJZpLNWlAK/img/63fdb2e5-2385-42ef-ae31-1ef559be92bc.png?Expires=1783781777&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=uAXyoUpAE4CJLwcAbfAgjfPzQe8%3D "")
+   ![image.png](./images/YQBnd5ExVElNbxgYU2mpQaYwWyeZqMmz/单据-_入库单_2_9b4425c3.png)
 
 ## 五、操作结果
 

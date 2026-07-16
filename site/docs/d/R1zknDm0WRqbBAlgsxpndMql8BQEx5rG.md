@@ -34,7 +34,7 @@ description: "移动端怎么查看网点相关数据的操作说明。"
 4. 如需核对收支明细，在收支数据卡片中点击 **收入** 或 **支出** 模块的数字。
 5. 系统会跳转至详细的流水账单页面，可在该页面进行账目核对。
 
-![0c02efd0eeda2af46e8a8b9c9a862f99.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4maOgXbEYyWjvlWN/img/1b662b40-8adb-419b-a073-2dd2baf8bc77.jpeg?Expires=1783781663&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=I3Gr2%2FZVpTahPf50TdjaX8%2BIWBo%3D "")![lQDPJxetoWfCKNvNCUjNBDiwd7DPctY--b8KAGjh3Yv7AA_1080_2376.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4maOgXbEYyWjvlWN/img/876acd17-adb9-4abb-8b57-1b9ab299f347.jpeg?Expires=1783781663&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=HAhh1pJ%2FgitnZ3hPPkyWm7bPy24%3D "")
+![0c02efd0eeda2af46e8a8b9c9a862f99.jpeg](./images/R1zknDm0WRqbBAlgsxpndMql8BQEx5rG/PC端怎么查看网点相关数据_1_550a4aa9.png)![lQDPJxetoWfCKNvNCUjNBDiwd7DPctY--b8KAGjh3Yv7AA_1080_2376.jpeg](./images/R1zknDm0WRqbBAlgsxpndMql8BQEx5rG/PC端怎么查看网点相关数据_2_611d49eb.png)
 
 ### 4.2 查看进出港数据
 
@@ -45,7 +45,7 @@ description: "移动端怎么查看网点相关数据的操作说明。"
 3. 点击对应状态卡片，查看运单列表。
 4. 根据运单号及网点信息进行电话联络和及时跟踪处理。
 
-![lQDPJwZqZU7LeNvNBP7NAkWwTxwPUh3N5o4KAGjiOierAA_581_1278.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4maOgXbEYyWjvlWN/img/f85ab901-2041-4d19-baff-bb67d027949f.jpeg?Expires=1783781663&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=R0AGNXEecFWdgF0z4VGIElBqWgM%3D "")
+![lQDPJwZqZU7LeNvNBP7NAkWwTxwPUh3N5o4KAGjiOierAA_581_1278.jpeg](./images/R1zknDm0WRqbBAlgsxpndMql8BQEx5rG/移动端怎么查看网点相关数据_1_f170c02a.jpg)
 
 ### 4.3 查看质量及时效数据
 
@@ -59,7 +59,7 @@ description: "移动端怎么查看网点相关数据的操作说明。"
 当前 **【质量&时效】** 模块优先展示汇总指标数字，底层明细数据下钻功能正处于迭代升级计划中。
 :::
 
-![lQDPKITTfvu7ydvNBP7NAkWwZsPDG55AG5QKAGjirEc9AA_581_1278.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4maOgXbEYyWjvlWN/img/a4583eeb-35ca-4424-884f-b85772bfd804.jpeg?Expires=1783781663&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=S8htYoUBaIbZAVorktriAWi8uwU%3D "")
+![lQDPKITTfvu7ydvNBP7NAkWwZsPDG55AG5QKAGjirEc9AA_581_1278.jpeg](./images/R1zknDm0WRqbBAlgsxpndMql8BQEx5rG/移动端怎么查看网点相关数据_2_70fa0aa3.jpg)
 
 ## 五、操作结果
 

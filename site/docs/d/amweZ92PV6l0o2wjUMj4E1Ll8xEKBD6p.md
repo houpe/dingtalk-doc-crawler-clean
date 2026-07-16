@@ -30,20 +30,20 @@ description: "网络货运司机端运输操作手册的操作说明。"
 
    如果因 **GPS 模糊**或**网络问题**导致无法打卡，可上传**水印相机图片**作为证明，完成打卡。
 
-   ![image.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35oB1mJBgl7E/img/1074621b-c04d-48a8-8bdb-5ddd91ce9dfe.jpeg?Expires=1783781804&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=CLB3q1lY4r0BF5DilyH%2F65KItns%3D "")![image.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35oB1mJBgl7E/img/35392e56-3c0b-4e85-96fb-98f302e64179.jpeg?Expires=1783781804&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=R6bWl8ktfB4qoHpDijq3p4Si3%2B0%3D "")
+   ![image.jpeg](./images/amweZ92PV6l0o2wjUMj4E1Ll8xEKBD6p/司机端注册操作说明_1_ad777e38.png)![image.jpeg](./images/amweZ92PV6l0o2wjUMj4E1Ll8xEKBD6p/司机端注册操作说明_2_5d7f12d2.png)
 
 2. 货主装货完成后，上传以下 **2 张照片**，然后点击**【确定】**，完成**装货完成**操作。
 
    - **装货完成水印照片**
    - **人车合照（包含车牌）水印照片**
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35oB1mJBgl7E/img/66d175c0-fee0-40d6-9e60-2babae3bffd0.png?Expires=1783781804&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=g7FUeHpSPUBzCUp8y1VtlSWPhbQ%3D "")![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35oB1mJBgl7E/img/4f35325d-ba16-4c2a-9b4e-e8a441a23466.png?Expires=1783781804&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=iGEYGXDL645GCMVSbkMYYpwmR38%3D "")
+   ![image.png](./images/amweZ92PV6l0o2wjUMj4E1Ll8xEKBD6p/司机端注册操作说明_3_3281b260.png)![image.png](./images/amweZ92PV6l0o2wjUMj4E1Ll8xEKBD6p/省公司三方车下单操作说明_1_b723c91c.png)
 
 3. 到达卸货地后，点击**【到达卸货地】**，完成**卸货地打卡**。
 
    如果因 **GPS 模糊**或**网络问题**导致无法打卡，可上传**水印相机图片**作为证明，完成打卡。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35oB1mJBgl7E/img/47b9c6a4-70fb-4543-a96d-657321929f20.png?Expires=1783781804&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=cfUhVAQtqKaVSSTc%2BAeWohIFZlw%3D "")![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35oB1mJBgl7E/img/da72f1df-5f62-49d2-8bef-f7e503a18307.png?Expires=1783781804&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=%2BFS16cc7tTjR6GYrqftmAmQqYsY%3D "")
+   ![image.png](./images/amweZ92PV6l0o2wjUMj4E1Ll8xEKBD6p/省公司三方车下单操作说明_2_ba076f40.png)![image.png](./images/amweZ92PV6l0o2wjUMj4E1Ll8xEKBD6p/省公司三方车下单操作说明_3_c3d4a014.png)
 
 4. 货主卸货完成后，上传以下 **3 张照片**，然后点击**【确定】**，完成**卸货完成**操作。
 
@@ -51,7 +51,7 @@ description: "网络货运司机端运输操作手册的操作说明。"
    - **人车合照（包含车牌）水印照片**
    - **货主收货证明单据照片**
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35oB1mJBgl7E/img/f19cd621-1f43-49fb-be62-234348562483.png?Expires=1783781804&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ev9YyZo6ZCR7daPzWsESCPV4Uv4%3D "")
+   ![image.png](./images/amweZ92PV6l0o2wjUMj4E1Ll8xEKBD6p/省公司三方车下单操作说明_4_23bd7c3b.png)
 
 5. 卸货完成后，进入**【我的】-【账户信息】**页面，维护银行卡信息。
 
@@ -61,7 +61,7 @@ description: "网络货运司机端运输操作手册的操作说明。"
 
    司机可提醒货主在系统确认完成。货主确认后，平台审核通过，运费会自动支付到司机维护的银行卡。
 
-   ![我的.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35oB1mJBgl7E/img/fc78d557-dda2-4a6b-9703-85d2fc68a459.jpeg?Expires=1783781804&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=BgVP7bfHu%2BwjzuvSUCKKma%2B1UiA%3D "")
+   ![我的.jpeg](./images/amweZ92PV6l0o2wjUMj4E1Ll8xEKBD6p/省公司三方车下单操作说明_5_c2de3071.png)
 
 ## 五、操作结果
 

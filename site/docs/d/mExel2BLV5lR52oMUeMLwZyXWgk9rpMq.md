@@ -33,7 +33,7 @@ description: "业务员码设置的操作说明。"
 
 系统菜单路径：**经营管理中心 > 地址管理 > 网点业务员围栏**
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/e76340e6-3d3f-4961-9365-ac86676aae73.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=XwAbFpLalw1%2F4jsO5hm10qWtbqw%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_10_2335b472%202.png)
 
 ## 四、业务员编码在哪里看
 
@@ -41,9 +41,9 @@ description: "业务员码设置的操作说明。"
 
 ### 4.1 三段码最后 1 位
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4maOgk5G3b6XOWNX/img/de99dfc1-5afe-47b2-81f0-124a1e8b4a14.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=nIDj1ihY4YDhs8BngQ9groD2fOE%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_10_2335b472.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/3122e8e8-d81c-440a-8df7-f8133369d412.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=NXiTpUtJcaf4c9bKCNoD0A8pHmU%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_11_9ccc3204%202.png)
 
 ### 4.2 快件跟踪或运单详情中
 
@@ -69,29 +69,29 @@ description: "业务员码设置的操作说明。"
 2. 点击**网点业务员围栏**。
 3. 登录后，可查看**本网点及下属网点**的围栏信息。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/b9727ba3-eb3b-4478-88d1-530f834cb579.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=jNqMdpA5lgzGAuC5nDv5zXuHX8I%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_11_9ccc3204.png)
 
 图例说明：
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/e19e5541-6d67-435f-b41b-78c4eebfeca8.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=%2B7yaYtgs4qgyDdf%2Fn69MVUPmlGA%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_12_650b65ce%202.png)
 
 交互说明：
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/4621cacc-d30b-45d0-9e7e-a4790364ddc0.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ONPdVa%2FYOTqPUtcj9gcZqDGs0P4%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_12_650b65ce.png)
 
 ### 6.2 进入围栏勾画页面
 
 1. 点击**勾画业务围栏**图标。
 2. 进入围栏勾画页面。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/19f82bec-2614-4444-a78d-07f1da7860f6.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=n84XzxiJhe2%2BRmjWC19PKqK3w1I%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_13_19522dd5%202.png)
 
 ### 6.3 添加派件业务员围栏
 
 1. 在围栏勾画页面，点击**添加**按钮。
 2. 进入派件业务员围栏初始化界面。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/f0f9707e-0fe7-4bbf-b392-cc6caee75c51.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=1B82Yw7Dsx98hbm635NFfsVenww%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_13_19522dd5.png)
 
 ::: tip 💪 初始化围栏方式
 初始化围栏支持以下方式：
@@ -117,19 +117,19 @@ description: "业务员码设置的操作说明。"
 3. 设置对应的业务员编码。
 4. 完成后点击**应用**，使配置生效。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/33c914b7-9333-4938-b2ec-31dc907f91fb.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=K61j5IY4ltrx8lS41X0b5vt%2Bpc0%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_14_3c63e1cd%202.png)
 
 ::: danger 重点提醒
 业务员编码**不允许重复**。上面图片中的重复编码示例是错误的。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/70a3dd64-6c01-4cb0-97f7-dadb1ee4731e.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=WA9EAimuEQpvrntHCFaJvwTGVCM%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_14_3c63e1cd.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/83b60351-d6be-4393-996e-f864907f69e5.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=dTM4FWpPhOSdg3OB9UYvgbyUVgY%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_15_48eac2b8%202.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/15fd4fd1-0c87-48d6-a6ff-4d1e88980052.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=8WBrAbiO570mRz1zTMyR54BpyHM%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_15_48eac2b8.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/0d90f05f-b15b-4ca5-9299-05eac1826886.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=MOAc1jw1LZTX887NDLneK2GxdNs%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_16_f4385eea%202.png)
 
 配置完成后，派件地址在此区域的订单，业务员编码为 **01**。
 
@@ -146,18 +146,18 @@ description: "业务员码设置的操作说明。"
 3. 设置对应的业务员编码。
 4. 完成后点击**应用**，使配置生效。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/6fac9f9e-1577-46f9-9475-d2063c277933.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=6YSOBq6ed%2FQs6N%2BkrjTMFyvbJWE%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_16_f4385eea.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/0114d2e9-f54c-4614-9c7a-cdc2744deb81.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=PxpmFMElSxlTlrBlXjVAhbRmIvU%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_17_15961f9e%202.png)
 
 ### 6.6 修改已有图层
 
 1. 找到需要修改的业务员围栏。
 2. 点击对应围栏的**编辑**图标。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/ced6fcaa-b528-4c18-9ee7-82d0a3d18935.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=xE%2BFXC39HjbSnPCB%2F2EFxx%2F4j28%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_17_15961f9e.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/fca5c653-418b-4dfb-bad4-717414c635fd.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=pOxD1AiX5mz6gpk8WN53zQxXjh0%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_18_fd6186c0%202.png)
 
 3. 点击**开始绘制**，补充该业务员的围栏。
 4. 完成后点击**应用**，使修改生效。
@@ -172,7 +172,7 @@ description: "业务员码设置的操作说明。"
 2. 修改业务员编码。
 3. 点击**应用**，使修改生效。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/8d1461cd-de38-4e0f-adac-532839e56f0f.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=lw0O6UwHI76Lgei2MS5Tt6oOQ2Y%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_18_fd6186c0.png)
 
 ::: danger 重点提醒
 修改编码后，需点击**应用**才会生效。
@@ -184,7 +184,7 @@ description: "业务员码设置的操作说明。"
 2. 点击删除相关操作。
 3. 点击**应用**，使删除生效。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/3fefe935-0b1b-4a27-9919-13779dee6bd5.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=CENgi0II56TOGbaCnhuyKMv8y5U%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_19_4a4ac041%202.png)
 
 ::: danger 重点提醒
 删除业务员围栏后，需点击**应用**才会生效。
@@ -194,7 +194,7 @@ description: "业务员码设置的操作说明。"
 
 如果画错了，或临时不想修改，可在未点击**应用**前点击**重置**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/mxPOGyjaKvYQnKa9/img/7baa2bab-a547-4580-a0a6-eabf6161a094.png?Expires=1783781630&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=nAeSCCcrDivzIpUhP601qW2CF84%3D "")
+![image.png](./images/mExel2BLV5lR52oMUeMLwZyXWgk9rpMq/业务员码设置_19_4a4ac041.png)
 
 ::: warning 注意事项
 前提是**没有点击应用**。

@@ -31,7 +31,7 @@ description: "实名认证说明的操作说明。"
 
 使用微信扫描下方二维码进入认证页面：
 
-![/Users/houpe/Downloads/httpsplatform-app.ztocc.compagesrealnameztoccloginindex.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/3BMqYyYR6ADBKqwZ/img/b2543ae2-675a-452b-bb43-cd9c980dc035.png?Expires=1783781628&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=qGBHHwOybNRz42g9kZTle67Zncw%3D "")
+![/Users/houpe/Downloads/httpsplatform-app.ztocc.compagesrealnameztoccloginindex.png](./images/QOG9lyrgJPqReAm9snL2gjzR8zN67Mw4/业务员码设置_10_2335b472%202.png)
 
 ## 四、操作步骤
 
@@ -43,7 +43,7 @@ description: "实名认证说明的操作说明。"
    - 上传**清晰 JPG 格式正面半身照**
 3. 确认信息无误后，按页面提示提交认证申请。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/3BMqYyYR6ADBKqwZ/img/a66d60bb-faf3-4060-bb76-b76c2c2c81b9.png?Expires=1783781628&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=UnWoQ0QUYsrfTJfx642uNN58ZpI%3D "")
+![image.png](./images/QOG9lyrgJPqReAm9snL2gjzR8zN67Mw4/业务员码设置_10_2335b472.png)
 
 ## 五、操作结果
 
@@ -61,13 +61,13 @@ description: "实名认证说明的操作说明。"
 
 | **更多渠道，微信扫一扫** |
 |----------------------------------|
-| ![/Users/houpe/Downloads/httpstel-cert.zt-express.comappid=lenglian.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/3BMqYyYR6ADBKqwZ/img/4a0031ae-fedc-4b72-8e0e-3f8e6b5a07c4.png?Expires=1783781628&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Yiz66CcqzbRt%2FMoFvekcJgPmQ90%3D "")
+| ![/Users/houpe/Downloads/httpstel-cert.zt-express.comappid=lenglian.png](./images/QOG9lyrgJPqReAm9snL2gjzR8zN67Mw4/业务员码设置_11_9ccc3204%202.png)
 支持非冷链员工认证，支持拨打任意电商渠道 |
 
-| ![/Users/houpe/Downloads/httpscmccsign.comidentity_trust#loginZjhcompanyTransactionId=8c21cc4666fe4b10ac5780fefd21586d&platformId=1733818705992.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/3BMqYyYR6ADBKqwZ/img/6174a114-1605-486c-94f5-30c8ee0f6fba.png?Expires=1783781628&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=QHEkRPi5%2FZbNo4TdUcbdi9HMnZk%3D "")
+| ![/Users/houpe/Downloads/httpscmccsign.comidentity_trust#loginZjhcompanyTransactionId=8c21cc4666fe4b10ac5780fefd21586d&platformId=1733818705992.png](./images/QOG9lyrgJPqReAm9snL2gjzR8zN67Mw4/业务员码设置_11_9ccc3204.png)
 支持非冷链员工认证，仅支持拨打抖音渠道 |
 
-| ![/Users/houpe/Downloads/httpscmccsign.comidentity_trust#loginZjhplatformId=1733818705992&companyTransactionId=e51c83c38dd2440a8aa9f201be612443.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/3BMqYyYR6ADBKqwZ/img/3e53bdcf-b20c-4a3a-83a8-fbd08f7d86a7.png?Expires=1783781628&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=F0dQaHCpSUOGUE1GL087S5Y8%2FVs%3D "")
+| ![/Users/houpe/Downloads/httpscmccsign.comidentity_trust#loginZjhplatformId=1733818705992&companyTransactionId=e51c83c38dd2440a8aa9f201be612443.png](./images/QOG9lyrgJPqReAm9snL2gjzR8zN67Mw4/业务员码设置_12_650b65ce%202.png)
 支持非冷链员工认证，仅支持拨打淘宝渠道 |
 
 ## 七、注意事项

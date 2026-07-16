@@ -78,11 +78,11 @@ description: "08-库内作业的操作说明。"
 7. 系统生成**调整单据**。
 8. 确认调整单据后，库存变更完成。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/f4fbb5f6-24ad-4529-8a36-554ae3f17c09.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=nYZLFyybeN61RqJDlFUCImEfCV0%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_10_e94b96dc.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/54d9f8c1-e4df-4075-bca1-3348adecbb52.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=7mfcXHxVSWPqcjt2AKg3hA1eZlE%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_11_e213f0ae.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/ea261a29-be53-4075-babc-4b3b7faa1f8c.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=HeVK6bdeQwrjwoVx04zVjO9Bdhw%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_12_4b5dcb0d.png)
 
 #### (2) 盘点开单
 
@@ -94,7 +94,7 @@ description: "08-库内作业的操作说明。"
    - **盲盘**：不显示系统库存数量。
 5. 提交后，系统生成盘点任务。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/bcca411b-d50b-4548-80aa-a74b41ab53b4.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Aub5%2BII12HF5XkSp5ilNWbNdr6k%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_13_2ccb6f1a.png)
 
 #### (3) 盘点任务
 
@@ -112,13 +112,13 @@ description: "08-库内作业的操作说明。"
 **必须分配盘点人账号**，否则无法提交实盘数量。
 :::
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/ef43a596-203d-4f7d-b22d-4b72a92390d8.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=%2BmAFsmESVOdLFjvuMclaJUdW3to%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_14_457f7d24.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/89ff5d4d-9aeb-44fc-8e38-ac45401c08dd.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=nOIfJrkHBc2aGyw9L0LQwVvom0Y%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_15_7567dfc0.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/f874c1d0-8382-4171-ba51-c57154b7817f.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=lT4hXLpsIrZXlaSuOAdDvsaq2B8%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_16_ef5e73cc.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/9df1dd3d-8b62-4663-9fad-33ad35c401fc.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=GlBcfXdS6SBjVLRk5LCNjcPS%2BVc%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_17_9cc56e8f.png)
 
 #### (4) 盈亏单据
 
@@ -133,7 +133,7 @@ description: "08-库内作业的操作说明。"
 如果同一 **SKU** 存在多条不同属性的库存，系统会要求复盘。复盘会生成新的盘点任务，需要重新录入实盘数量。
 :::
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/94dd4f22-e492-48c3-b0fc-e74838a08da9.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=pDTkAxhrvAFYzgzTI7wGkUvC%2BB8%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_18_42ee3433.png)
 
 #### (5) 调整单据
 
@@ -144,21 +144,21 @@ description: "08-库内作业的操作说明。"
 3. 确认调整单据。
 4. 系统正式调整库存数量。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/9f53e964-cc98-4c0d-a0eb-7c6012422b09.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=4EYlRBfhdcdRgaZXDPOf2FyXnSM%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_19_730c34e3.png)
 
 ::: tip 补充说明
 所有库存调整都会进入**调整单据**，包括盘点调整、库位库存状态属性调整、依据 SKU 档案效期属性的自动调整等。
 :::
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/565ba34d-2c32-4932-bc1c-7341288c5eb1.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=89norduuItw04qqisCpw4gD6GBs%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_1_68925fe0.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/77f25abc-9afa-4994-acc1-9124a0795825.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=TYs60fhwmcuJvKdfnLlWw7PiefE%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_20_e59e47f8.png)
 
 盘点流程补充截图：
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/8c676bf6-21f9-4463-b682-4366b9a118eb.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=sxO5IZ2HfCFzyXfrPSNb53qm%2BHs%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_2_5e45b2a3.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/0e5020fc-c8ea-45d4-b47b-99f3cee8b480.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Il0hBRSrtcUPwG4hRu98ICS%2FsCA%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_3_925b7af9.png)
 
 ### 5.2 PDA 直接移库
 
@@ -172,7 +172,7 @@ description: "08-库内作业的操作说明。"
 4. 选择上架库位。
 5. 确认后完成移库。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/3c30a3b1-5027-4d68-8674-2a3057fbac27.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Ebq060lTORXJJfNQuC%2FMc91jX58%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_4_211d769e.png)
 
 ### 5.3 PDA 移库下架与移库上架
 
@@ -196,11 +196,11 @@ description: "08-库内作业的操作说明。"
 4. 确认数量。
 5. 完成上架后，容器释放。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/4a4885eb-359c-4030-9e93-155e67e70a1b.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=jnigy93TpmCPW4kZ7CSs2eNC0dA%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_5_1bc99e39.png)
 
 PDA 移库补充截图：
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/5486207b-f9e5-499b-bc43-e4729096d18a.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=UjB97JekwzTZRsWkh0EK2ErN4KQ%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_6_464c1e9c.png)
 
 ### 5.4 PC 移库
 
@@ -212,7 +212,7 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 2. 创建移库单据或移库计划。
 3. 提交后，由 PDA 端领取并执行移库作业。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/6db7c444-5c94-40f0-9d82-0b7e92bc524c.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=HqPht%2FQNGrAQBGIZScb%2B%2BRlY%2FpY%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_7_1a9ea66b.png)
 
 ### 5.5 补货作业
 
@@ -240,9 +240,9 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 3. 选择需要处理的补货预警。
 4. 批量生成补货任务。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/ed68b2ef-25b9-4613-aa5f-25e5ddbf5771.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=RfuClh5iNnY%2Bn6%2F6fz132JCbnS4%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_8_11d55e9c.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/4f26ccde-4d8b-4522-8d05-40f9eafc2dd9.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Wg70gwIGmnIHyMsvEoHrXOZbsXc%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/01_创建仓库、货主、员工_操作说明书_9_c1a2da40.png)
 
 #### (2) 补货任务
 
@@ -261,13 +261,13 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 9. 再从容器**补货上架**到目标库位。
 10. 补货上架完成后，系统自动释放容器。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/6b87a229-c9ed-410d-8858-ca0b37ac88c4.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=0w3LQ4aYnbcgd70sXDgYshp7mD4%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_10_587285e7.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/63fb52a0-437d-422c-a6ae-809e4656950d.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=5YkbHquqv4U53%2FZouDMDMphVvc4%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_11_47624174.png)
 
 在**【PC-补货任务】**页面可以查看补货记录，包括任务状态、操作人员、完成时间等。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/98aa1970-0cbb-46fb-8317-843d387d64c3.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=WdYjHeUCACRcGBn125E95%2Ftne0o%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_12_df33ca37.png)
 
 ::: warning 注意事项
 依据补货预警产生补货任务后，需要扫描容器进行中转。补货上架完成后，系统自动释放容器。
@@ -275,9 +275,9 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 
 补货任务补充截图：
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/dcf2211d-999a-432f-809f-0c0a701dfe59.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=iXRzvChpZ0%2Fs7nypOzdA2aUbiT8%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_13_72da43aa.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/4cd4dad5-90ed-4d27-8663-1d4e16f2e0e9.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=%2BG6ojxvuuuVRW336mMcl%2F74s9so%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_14_541ce010.png)
 
 ### 5.6 库存状态调整
 
@@ -292,13 +292,13 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 5. 系统正式修改库存状态。
 6. 系统在库存日志中记录完整变更链条。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/671f3b73-75a7-4ee0-b6d2-0a0309c599ee.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=l3RFC583huBLYBVhKn%2FgV2ztIIA%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_15_72da43aa.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/f18020e9-ddc5-423a-985b-aef2cf1d7ec0.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=eXN2kx9lZqqM2YhI8bY%2Ffhofhgw%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_16_17c2827e.png)
 
 库存状态调整补充截图：
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/3c2d0ccb-f55e-43e8-b91b-53c151f457e5.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=rQIcxFDscXWnyOtdhl72p7LTo%2FQ%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_17_efc69466.png)
 
 ### 5.7 加工单组合套装
 
@@ -317,15 +317,15 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 9. 完工确认，同时新品上架。
 10. 可在**【库内-加工拣货】**页面查看拣货详情，追踪加工单的物料下架和完工进度。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/c9882e79-3145-4aa9-88b8-13492069494e.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=hMUhZinszcMyWHFNx84Eb3vnuHc%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_18_48dcac0b.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/39e579ee-8604-4845-b6d5-e023b17ebef7.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=GMTrz1slk2ptusm%2FQCcT9q2ygHQ%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_19_9db39793.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/7830ba83-f62a-4451-a6e0-a49dd24c07a8.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=pCzqH8JWleOddEExdfIadelNSHY%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_1_6a0aed3f.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/03d47eca-bb16-4abe-ac9a-59c2ed69717d.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Skx%2FnCzbgeBSwv%2FYTve1YCj9XGM%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_20_4e4d4b2c.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/73f68dab-8d28-40d5-9e46-663459c0aa9b.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=CReLr6Hw5EugXCN69hQUU1QWne4%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_21_ffe6ff4c.png)
 
 ### 5.8 加工单预包
 
@@ -343,9 +343,9 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 8. 线下完成商品组合。
 9. 完工确认，同时新品上架。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/1e9a83aa-992f-4354-b005-3749026529b4.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=A0tQ1wJRaTWLrsAcRWvQm1WrrAs%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_22_c82e85d1.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/33534c47-7d49-4de7-a2f1-4800ed66b458.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=fxvFRrM4RqM8N5DEEwNU5fO1kRw%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_23_3cc0b891.png)
 
 ::: danger 重点提醒
 预包下架操作需将原材料移库下架到预包区，**必须有规定的下架数量**，系统会校验。
@@ -363,15 +363,15 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 4. 线下完成对应作业。
 5. 系统端完成登记记录，便于后续追溯和计费。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/115cf4fc-8424-4bbf-94bf-4e2245a6237e.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=I9IMZA7VVDNYTRsVehOwbcBeMJk%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_24_6006dbd8.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/e4f8aea4-b84b-4689-a24c-aafe82e9fc48.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=yHKP6Bh0rxpAgTq2t%2FaSImES9d8%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_25_042106a2.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/00f6bee3-7e30-4dfc-abc3-93c1f5cd42a4.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=RcNOOeRuNtIqmoPeVM5pG%2BE0cBM%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_26_4432fa4c.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/59ce2268-f296-4719-b85c-0ea6c929ca5e.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=lX053N%2B%2F5ZpHEDEdnOOdbHdewmI%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_27_22f60eb8.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/6db8e831-1a8e-4fe5-a21d-0516ef4d8969.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=JlbsxTM6OFKJMoANPHvApxtCr3Y%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_28_f5f4853b.png)
 
 ::: tip 补充说明
 增值服务单标准化程度低，主要以线下作业为主，系统端完成登记记录，便于追溯和计费。
@@ -379,9 +379,9 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 
 增值服务补充截图：
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/b54803f9-95ae-4609-a775-1a64b376bddd.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=4C9NGFzMNsUH2T3bCmY2w6sRzVI%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_2_f5ddcdaf.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/9fc090dd-180b-431b-bde9-a7734b1e4b6b.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=iaBDrfN%2Bkn8lERF%2FRJ6EcQeFKQE%3D "")
+![](./images/gwva2dxOW4lr52wgUkxl0Er1Wbkz3BRL/02_创建库位、SKU_操作说明书_3_7eb3cb08.png)
 
 ## 六、操作结果
 

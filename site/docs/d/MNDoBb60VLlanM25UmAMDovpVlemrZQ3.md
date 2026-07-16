@@ -71,24 +71,24 @@ description: "04-配置规则策略的操作说明。"
 作业流程未配置或配置不完整时，可能导致出库包裹无法更新状态，且无法打开出库包裹详情。
 :::
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/c5c70b55-d6f2-41b6-824c-2698548d8ef2.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=f%2BtOMDQsI87QEe8bB%2BX6nvpTHu4%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_10_e94b96dc.png)
 
 #### (2) 配置操作配置
 
 1. 进入 **配置 > 操作配置** 页面。
 2. 根据仓库货主的作业要求，配置满足条件时需要遵循的操作验证规则。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/b05124fb-acbb-450d-afbd-9664060afaa2.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=oohMEqjpEbk1BFEximgnBhfS7kA%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_11_e213f0ae.png)
 
 3. 将 **复核**、**打包**、**称重** 配置为 **无需验证**。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/57832018-7cff-4bdf-8d8e-704204d9b593.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=cudBS%2F0R6vtou0gnUWej%2FoO%2FEr8%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_12_4b5dcb0d.png)
 
 4. 将相关校验项配置为 **否**。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/3d2b2c91-474c-4f3b-a669-7a26533e69d0.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=7B%2F1YfhbeNcM1V%2BPs08KXNtgcbM%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_13_2ccb6f1a.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/6876faf1-0119-47fb-8286-3085589e8ab2.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=JsOFx%2FVynR5rbqJz1MA0Mvxl4S0%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_14_457f7d24.png)
 
 ### 5.2 配置仓库货主参数
 
@@ -96,7 +96,7 @@ description: "04-配置规则策略的操作说明。"
 2. 按仓库、货主维度维护相关业务参数。
 3. 根据业务场景配置 **入库信息**、**库存信息**、**B2C出库信息**、**B2B出库信息**、**回传信息**、**运营配置-B2C**、**配置发件人** 等参数。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/1c67365d-ce63-456e-8455-bb79ccafe806.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=zyZp17k3MtboElKx0%2B5yka2hPpc%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_15_7567dfc0.png)
 
 #### (1) 核心参数表
 
@@ -106,7 +106,7 @@ description: "04-配置规则策略的操作说明。"
 | 入库信息 | 分批入库单据 | 分批入库单据类型 |
 | 入库信息 | 允许超收类型 | 允许超收类型单据类型，允许超出通知数量收货 |
 | 入库信息 | 库存状态强校验 | 开启后对应单据类型的入库单需按订单明细中的库存状态操作收货 |
-| 入库信息 | 序列号强校验 | 开启后，如果入库单下单含snList计划应到的序列号，则只能收计划序列号，在收货时会校验扫描序列号与计划序列号是否一致（入库单明细行维度），不一致则会报错 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/4b82ad2d-cd78-47ef-8bed-f0ab21a2232d.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=O%2BewIf35ARBnaR52DjNVJgVA7UQ%3D "") |
+| 入库信息 | 序列号强校验 | 开启后，如果入库单下单含snList计划应到的序列号，则只能收计划序列号，在收货时会校验扫描序列号与计划序列号是否一致（入库单明细行维度），不一致则会报错 ![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_16_ef5e73cc.png) |
 | 入库信息 | 到货登记回传 | 到货登记页面，登记退件包裹，登记后会回传。到货登记和销退登记的区别：到货登记是包裹到仓后扫描记录有哪些单号的包裹退回 |
 | 入库信息 | 入库抽检类型 | 抽检单据类型，需要质检登记 |
 | 入库信息 | 抽检比例(%) | 以及抽检比例 |
@@ -123,9 +123,9 @@ description: "04-配置规则策略的操作说明。"
 | B2C出库信息 | \*允许作废节点 | 允许仓内作废节点，作废后会将包裹作废，并创建新的包裹，重新出库 |
 | B2C出库信息 | 回传节点 | 回传上游出库单作业节点 |
 | B2C出库信息 | 分批回传 | 是否多个包裹分多次回传 |
-| B2C出库信息 | 序列号加波次 | ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/d56be190-f16b-4216-95fd-8dc7e6ab3190.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=YsNelEP9Y29AtOyIdLgUsFSwH%2Bg%3D "") |
+| B2C出库信息 | 序列号加波次 | ![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_17_9cc56e8f.png) |
 | B2C出库信息 | 扫序列号类型 | 出库单据类型 |
-| B2C出库信息 | 出库序列号库存 | 货品序列号管理：出入库 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/3f1985bf-c916-473f-b611-2e2424190638.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=rqq25LfcSJHiD%2BRl1sZRalUER80%3D "") |
+| B2C出库信息 | 出库序列号库存 | 货品序列号管理：出入库 ![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_18_42ee3433.png) |
 | B2C出库信息 | 缺货判断 | 接口推单是否需要校验仓库库存，如推单总数可超出仓库可用库存 |
 | B2C出库信息 | 抽检比例(%) | 批量单抽检比例，可忽略 |
 | B2C出库信息 | 允许暂挂节点 | 允许上游暂挂节点 |
@@ -138,9 +138,9 @@ description: "04-配置规则策略的操作说明。"
 | B2B出库信息 | 拆分维度 | 拆分拣选任务维度 |
 | B2B出库信息 | 手动生成计划类型 | 手动创建出库计划的出库单据类型 |
 | B2B出库信息 | 不允许拦截节点 | 不允许接口拦截节点 |
-| 回传信息 | 库存调整回传类型 | 回传调整结果给上游客户 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/34c0ecf4-8170-49b3-8052-7223099e007b.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=3%2FSU4p3SwV2TYpZ%2FJcgybmAAyMM%3D "") |
+| 回传信息 | 库存调整回传类型 | 回传调整结果给上游客户 ![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_19_730c34e3.png) |
 | 回传信息 | 盘点通知单回传 | |
-| 回传信息 | 出入库库存异动 | 对接了库存异动通知回传标准接口的，可开启 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/0822e185-e86d-46a6-814d-78452ae83085.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=2Jp766HVj27jM1zazYw3IsP9Tzw%3D "") |
+| 回传信息 | 出入库库存异动 | 对接了库存异动通知回传标准接口的，可开启 ![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_1_68925fe0.png) |
 | 回传信息 | 入库单据类型 | 出入库移动回传的单据类型 |
 | 回传信息 | 出库单据类型 | 出入库移动回传的单据类型 |
 | 运营配置-B2C | 重量验证 | 是否称重环节验证称重与理论重量差异 |
@@ -148,7 +148,7 @@ description: "04-配置规则策略的操作说明。"
 | 运营配置-B2C | 重量验证单据 | 需要校验重量差异的单据类型 |
 | 配置发件人 | 发件人 | 申请面单的寄件人 |
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/58e1f268-95e7-4f9d-9148-33e72a9c494b.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=6VLxMa%2FlmgWASbL8EMW0nesnzgk%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_20_e59e47f8.png)
 
 ### 5.3 配置策略规则
 
@@ -161,18 +161,18 @@ description: "04-配置规则策略的操作说明。"
 
 | <strong>策略名称</strong> | <strong>说明</strong> |
 |----------------|----------|
-| 作业流程 | 不同货主+流程类型+单据类型的作业流程，决定出入库操作流程![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/f686ba44-cb6b-4d94-ae0a-dcd9dfddeecd.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=kEbq%2BNVxK371rMWDYEN2OrgXIUs%3D "") |
-| 定位规则 | 上架定位规则：区域绑定货主优先/默认，根据规格/单位/货主/质量状态选择库位范围，按优先级执行。上架定位条件，关联货主+单据类型+定位![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/5d2935a3-63bb-4efa-877c-415183d33e51.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=4Yh0WFMFp%2BfoaHOC20DKodPZPfg%3D "") |
-| 拣货任务拆分规则 | B2B波次使用，根据分配请求按维度拆分创建任务单![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/1206c1a8-1f8f-4e7e-b8f0-8103c6cd475c.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=xIWMU7%2Bju192ifB2cvUGEj1eJcQ%3D "") |
-| 分配规则 | 出库库存分配规则![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/c8041697-7da8-4fec-a3f2-2bde0ada785d.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ki6GTZZGWdO2W35P7qTu9yl%2BCKA%3D "") |
-| 分配条件 | 将分配规则关联到具体业务场景的条件![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/328135e0-edf8-498f-800e-d074ed851e3e.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=YlyQIzHXUt%2BIDqzWWwHyzLXm7iU%3D "") |
-| 波次规则 | 订单组波规则，包含波次类型/分组/分配规则/打单模式等![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/2d3584a6-50e2-4ab6-8fa9-a32cd0d952e7.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Y%2Fxv6W7nyqathkg9Z6J9Ym7BsIQ%3D "") |
-| 集货规则 | 根据货主/单据类型/集货维度选择集货区，应用于B2B波次![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/41edeb94-71e1-4cfa-a08e-b1368fa1584a.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=e24WGEFg8LU%2B1mYW%2FPvnr5Fsd3U%3D "") |
-| 包装方案 | 为包裹推荐和指定包装方式的配置![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/090c1e71-2d34-4784-a271-1b8411f96a7d.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=jTq7EXOFiT1qrPmtc4fztvM3hF4%3D "") |
-| B2B分配条件 | B2B订单的分配规则：是否自动分配/指定规则/自动拆分任务![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/61f2109f-0a1f-4591-850e-5ca076d1bb3b.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=BaVeK%2B7KZof8DLz6lkFw%2FciFB5A%3D "") |
-| B2B波次规则 | B2B出库的波次规则![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/d824709c-e7b7-4bb4-89c8-7eadacaca8ba.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=2F1fk6o9lQeH6ZZGu6kvmWWkaps%3D "") |
-| 拣货任务拆分规则(2B) | 将分配请求或包裹明细分组合并创建拣货任务![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/ac446f52-a6ee-4af5-82d9-26dc54bc6591.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=GZB1ctT3dgT%2BIlUWqqhSjUGLIJU%3D "") |
-| 赠品规则 | 货主、销售平台与赠品的关系配置![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/5229b776-504a-4811-8181-473f8cdf0730.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ux065OZtlnob8MeMf4UMbGpmRtQ%3D "") |
+| 作业流程 | 不同货主+流程类型+单据类型的作业流程，决定出入库操作流程![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_2_5e45b2a3.png) |
+| 定位规则 | 上架定位规则：区域绑定货主优先/默认，根据规格/单位/货主/质量状态选择库位范围，按优先级执行。上架定位条件，关联货主+单据类型+定位![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_3_925b7af9.png) |
+| 拣货任务拆分规则 | B2B波次使用，根据分配请求按维度拆分创建任务单![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_4_211d769e.png) |
+| 分配规则 | 出库库存分配规则![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_5_1bc99e39.png) |
+| 分配条件 | 将分配规则关联到具体业务场景的条件![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_6_464c1e9c.png) |
+| 波次规则 | 订单组波规则，包含波次类型/分组/分配规则/打单模式等![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_7_1a9ea66b.png) |
+| 集货规则 | 根据货主/单据类型/集货维度选择集货区，应用于B2B波次![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_8_11d55e9c.png) |
+| 包装方案 | 为包裹推荐和指定包装方式的配置![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/01_创建仓库、货主、员工_操作说明书_9_c1a2da40.png) |
+| B2B分配条件 | B2B订单的分配规则：是否自动分配/指定规则/自动拆分任务![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/02_创建库位、SKU_操作说明书_10_587285e7.png) |
+| B2B波次规则 | B2B出库的波次规则![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/02_创建库位、SKU_操作说明书_11_47624174.png) |
+| 拣货任务拆分规则(2B) | 将分配请求或包裹明细分组合并创建拣货任务![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/02_创建库位、SKU_操作说明书_12_df33ca37.png) |
+| 赠品规则 | 货主、销售平台与赠品的关系配置![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/02_创建库位、SKU_操作说明书_13_72da43aa.png) |
 | 拆包规则 | 自动拆包规则，配合组合货品使用 |
 | 序列号管理 | SKU如何管理序列号 |
 | 序列号规则 | 如何截取保存序列号 |
@@ -192,15 +192,15 @@ description: "04-配置规则策略的操作说明。"
 5. 当剩余待定位数量不足第一优先级基本单位时，顺次选择第二优先级，直至全部收货数量定位完成。
 6. 配置 **上架定位条件**，将 **货主 + 单据类型** 与定位规则关联，决定使用哪条定位规则。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/aadc0759-9c44-4382-ab43-242f10d5d437.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=hCb8KTxO7NIZFriDsoaPJWQfbjI%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/02_创建库位、SKU_操作说明书_14_541ce010.png)
 
 - 🔹 **定位原则**：**绑定区域优先**，即绑定货主 / 货品的库位优先。
 - 🔹 **上架策略-空库位优先**：就近找符合条件的空库位。
 - 🔹 **上架策略-补满库位优先**：库位配置 **忽略容量=否** 时，在符合条件库位范围内找到未装满库位填满，不会拆分基本单位。例如基本单位 **100**，库位剩余容量 **80**，则跳过该库位。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/6c3d3427-56ad-490c-b77f-8230b25b8f9c.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=fjTSG%2F3QZNKnDs5XgDJ2Mbsy36Q%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/02_创建库位、SKU_操作说明书_15_72da43aa.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/58e1f268-95e7-4f9d-9148-33e72a9c494b.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=6VLxMa%2FlmgWASbL8EMW0nesnzgk%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/02_创建库位、SKU_操作说明书_16_17c2827e.png)
 
 ### 5.5 配置分配策略
 
@@ -209,13 +209,13 @@ description: "04-配置规则策略的操作说明。"
 3. 按订单下发的商品属性，通过状态属性条件严格筛选库存。
 4. 范围信息按照分配单位级别确定范围。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/1489a0aa-d9f8-43a3-a932-1034b473d324.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=WzhL%2FtEjKujmDMM0KPtDa033On0%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/02_创建库位、SKU_操作说明书_17_efc69466.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/1d22831b-0826-460e-8996-7d6e980a82fb.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=N%2FL0jP%2BV83Wyn5k749eYD%2FuQQ24%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/02_创建库位、SKU_操作说明书_18_48dcac0b.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/0acdf833-0f26-4de3-b873-48202298c8bb.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=o%2B%2BBmneKPdRd2%2FyY3hGxKO1%2BFQU%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/02_创建库位、SKU_操作说明书_19_9db39793.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/02f43ed0-9696-4a2e-8c07-3bbe7102cb03.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=zfQRmjE5pzv%2FKT7WfZYshrkfb7g%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/02_创建库位、SKU_操作说明书_1_6a0aed3f.png)
 
 ### 5.6 配置波次规则
 
@@ -223,7 +223,7 @@ description: "04-配置规则策略的操作说明。"
 2. 按业务需要配置 **波次类型**、**波次分组**、**分配规则**、**打单模式**、**任务数** 等字段。
 3. 根据波次类型，确认订单是否符合加入波次的要求。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qeobp1E2Y7lpj/img/7fecbae8-45c5-490e-a21a-a4260435daa6.png?Expires=1783781747&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=b2MR5qoC%2BWx8sadCj%2FqkcWks%2Fik%3D "")
+![](./images/MNDoBb60VLlanM25UmAMDovpVlemrZQ3/02_创建库位、SKU_操作说明书_20_4e4d4b2c.png)
 
 #### (1) 波次规则字段说明
 

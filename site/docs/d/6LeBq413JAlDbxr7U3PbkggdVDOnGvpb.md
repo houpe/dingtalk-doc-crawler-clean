@@ -71,7 +71,7 @@ description: "回单的操作说明。"
 办理纸质回单仅扣除**1个主单额度**。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/ZWGl05mrx0ANMn34/img/fbdcc6f4-6016-4f4a-aa09-c81dadce8ae8.png?Expires=1783781554&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=3qy98xW8RMCseRalTbdVuq1zw7A%3D "")
+![image.png](./images/6LeBq413JAlDbxr7U3PbkggdVDOnGvpb/中心_网点直发操作说明_1_a9158e4e.png)
 
 ### 4.2 电子回单查询
 
@@ -108,9 +108,9 @@ description: "回单的操作说明。"
 3. 重新上传图片或修改内容。
 4. 确认无误后保存。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/ZWGl05mrx0ANMn34/img/b9bd8e9a-81de-4603-84b5-356bdea72bd1.png?Expires=1783781554&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=9509xXUjdYjDCEowtyiT9rrZKDM%3D "")
+![image.png](./images/6LeBq413JAlDbxr7U3PbkggdVDOnGvpb/中心_网点直发操作说明_2_cfb6c218.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/ZWGl05mrx0ANMn34/img/7a1f5318-532c-470d-b7be-5228ea95f558.png?Expires=1783781554&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=DX0%2Bek3m6HEYZ0irvcRphWPIrqs%3D "")
+![image.png](./images/6LeBq413JAlDbxr7U3PbkggdVDOnGvpb/中心_网点直发操作说明_3_428d0ee7.png)
 
 ## 五、操作结果
 

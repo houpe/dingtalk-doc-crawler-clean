@@ -44,7 +44,7 @@ description: "鲸准达相关配置说明的操作说明。"
 3. 开启或维护**鲸准达时效配置**。
 4. 添加**鲸准达**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4j6OJ5jzzz437q3p/img/5ea57463-6c50-4e8b-a3fc-ccd55b4db1d4.png?Expires=1783781627&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=TqtpdJv2Xx%2BBvtuGEnkzaLShv%2Bk%3D "")
+![image.png](./images/o14dA3GK8gKaeZ9Of9qYl6nn89ekBD76/业务员码设置_10_2335b472%202.png)
 
 ### 4.2 省区勾画鲸准达围栏
 
@@ -53,7 +53,7 @@ description: "鲸准达相关配置说明的操作说明。"
 3. 系统会按照与**小件区域维护**类似的逻辑处理。
 4. 勾画区域会和已有网点区域自动裁剪。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4j6OJ5jzzz437q3p/img/73159d51-e0c4-4d63-ac97-963543796b49.png?Expires=1783781627&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=h%2FQ%2Fn2pRaGViwjCM9bPoeEBtemU%3D "")
+![image.png](./images/o14dA3GK8gKaeZ9Of9qYl6nn89ekBD76/业务员码设置_10_2335b472.png)
 
 ### 4.3 编辑页面查看鲸准达图层
 
@@ -61,7 +61,7 @@ description: "鲸准达相关配置说明的操作说明。"
 2. 查看当前展示的**鲸准达图层**。
 3. 按需调整勾画范围后提交审核。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4j6OJ5jzzz437q3p/img/7a083433-fec4-4c00-8938-a1de9bc7c4c1.png?Expires=1783781627&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=MDXQiVV0XGAddnU2XIE3FvOwdqU%3D "")
+![image.png](./images/o14dA3GK8gKaeZ9Of9qYl6nn89ekBD76/业务员码设置_11_9ccc3204%202.png)
 
 ::: warning 注意事项
 在编辑页面中，**鲸准达图层**和上次提交审核前保持一致，即按最新展示你的勾画和提交结果，简称 **A**。

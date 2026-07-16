@@ -80,7 +80,7 @@ description: "调度任务的操作说明。"
 未审核的运输公司无法正常选用；已审核信息如需修改，也需联系总部处理。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/f3ea1e38-fea7-415f-8169-196ccc51e94e.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=UlJ3sBBzDHYzs3L%2B1Ki%2FFyovhU8%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_10_3dc077b4.png)
 
 ### 6.2 新增车辆信息
 
@@ -98,7 +98,7 @@ description: "调度任务的操作说明。"
 车辆信息无需审核。若调度时无法选择该车辆，可等待 **5分钟** 后退出账号重新登录。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/4e962357-945f-46fc-98d2-14df812d9fff.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Ci7yptIOo62VIhzQiMjlRvf0%2Bo0%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_11_b5eb8418.png)
 
 ### 6.3 修改车辆信息
 
@@ -113,7 +113,7 @@ description: "调度任务的操作说明。"
 仅车辆**所属车队**管理员可编辑车辆信息。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/c282f8b4-4160-4a43-bcf5-aac686be9ea4.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=cy2SI5EKt82pcTWISbzPGCe3GpI%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_12_ea060445.png)
 
 ### 6.4 新增司机信息
 
@@ -135,7 +135,7 @@ description: "调度任务的操作说明。"
 司机信息无需审核。调度无法选中司机时，退出账号重新登录即可。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/2a4de5ac-a124-416b-8284-58e0505101c9.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=FV6GDknUAXgXAwn%2FYWOTd8HMc6s%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_13_0edadde6.png)
 
 ### 6.5 修改司机信息
 
@@ -149,7 +149,7 @@ description: "调度任务的操作说明。"
 仅司机**所属车队**管理员可编辑司机信息。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/cfef33d7-7677-4b0b-9832-04e5046eaa4e.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Y4Hiro8U1xcEuz2Pzr%2BNBrbe9K0%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_14_98dda60e.png)
 
 ## 七、班线车辆调度
 
@@ -177,7 +177,7 @@ description: "调度任务的操作说明。"
 如需换车、换司机，可执行**重新调度**；如需增减经停点，选择**更改经停**。以上操作均需总部值班调度审核。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/7bbc2ecb-4f30-489f-8188-c5e3f69570f1.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=2Zky2ic47%2BeFHBWpaHJmILDssyc%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_15_cd846373.png)
 
 ### 7.2 临时班线/加班车调度
 
@@ -204,7 +204,7 @@ description: "调度任务的操作说明。"
 临时班线/加班车审核通过后，司机方可接收任务。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/216b9b18-38ac-46c6-9f71-17bf70829e3e.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=DyH7JLIG0U8oRH7jXPbyI4807Bw%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_16_e0f06eaf.png)
 
 ### 7.3 调度单预配载
 
@@ -221,7 +221,7 @@ description: "调度任务的操作说明。"
 已发车站点不支持预配载。配载结果用于指导现场 PDA 装车。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/5d80befb-a534-469b-9cdc-633dd06563e7.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=9xLNhWLoqxGQIlF%2FcrRQLa9EXhI%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_1_3f27adce.png)
 
 ### 7.4 调度单打印
 
@@ -260,7 +260,7 @@ description: "调度任务的操作说明。"
 货物价值按实际填写，保险费按货值千分之三收取。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/c48b4712-f930-4140-a821-29af51bdcdf2.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=xA5QbDa48tNYjVw0rrtvYSzMlgs%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_2_4a18ee2e.png)
 
 ### 8.2 编辑整车订单
 
@@ -272,7 +272,7 @@ description: "调度任务的操作说明。"
 4. 补充装卸时间要求。
 5. 确认后，点击**保存**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/162f7c7a-8225-461b-9e1d-135c1c270bca.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=saDj0ItoJtlOAPQuAboSUSztIDA%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_3_7fd19cf4.png)
 
 ### 8.3 订单提交审批
 
@@ -283,7 +283,7 @@ description: "调度任务的操作说明。"
 3. 在弹窗中确认提交。
 4. 提交后，订单状态变更为**待审核**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/c50330ac-7127-46b8-adfe-b85301420221.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=29v380YKSCfe2uaRq7Jb2nZ7xK4%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_4_899968e4.png)
 
 ### 8.4 订单审批
 
@@ -296,7 +296,7 @@ description: "调度任务的操作说明。"
 5. 填写审批说明。
 6. 点击**确认**完成审批。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/c22a3ef6-956f-42ba-a41a-1c9deff5e240.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AYYk%2Fg4A0t3KMkM3YfmI2vUMlFU%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_5_99d2f3a1.png)
 
 ### 8.5 整车订单派车
 
@@ -308,7 +308,7 @@ description: "调度任务的操作说明。"
 4. 点击**提交审批**。
 5. 联系总部值班调度审核。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/7d591577-0842-40f2-b4d2-53ce1a284b42.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=auB%2FxLVteXEj3ep9KCPeOKf1KLU%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_6_a7ec8c0c.png)
 
 ### 8.6 整车订单费用追加
 
@@ -320,7 +320,7 @@ description: "调度任务的操作说明。"
 4. 填写费用金额与追加说明。
 5. 点击**确认**提交。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/faf02eb6-3183-4215-bd09-dde3a812962f.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=1IN8pur7omuJkpz6qqVR2xYn1VM%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_7_5e800667.png)
 
 ## 九、运输任务管理
 
@@ -335,7 +335,7 @@ description: "调度任务的操作说明。"
    - 发车信息：查看货量、票数、体积、重量。
    - 运单列表：查看每笔运单详细资料。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/0aff42a7-3e85-4130-88bc-443816ea4fa3.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AG42DGCptrQmk3WkBlthfeHzJNY%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_8_b5607daf.png)
 
 ## 十、运输费用审批
 
@@ -353,7 +353,7 @@ description: "调度任务的操作说明。"
 审批结果实时同步至天玑系统；审批驳回将退回上一环节。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/53555a76-125f-4865-a121-9425de16397a.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=JZYKFTlVDSypPglMnngAnhEKNAU%3D "")
+![image.png](./images/R1zknDm0WRqbBAlgsxbNl5vy8BQEx5rG/调度任务操作说明书_9_617c6c6f.png)
 
 ## 十一、操作结果
 

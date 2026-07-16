@@ -37,7 +37,7 @@ description: "如何物料购买充值？的操作说明。"
 
 1. 进入 **经营管理中心 > 电子面单 > 电子面单申购**。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/vBPlNYXwg7XzOdG8/img/66ad10f0-587a-4882-9249-04bacf30cc83.png?Expires=1783781506&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=BkeqmipNH4nKaVfEsnNRd23q58I%3D "")
+   ![image.png](./images/Gl6Pm2Db8DlrqxDbUXMzgG3l8xLq0Ee4/如何物料购买充值？_1_c73c011b.png)
 
 2. 根据使用场景选择需要购买或充值的面单类型。
 
@@ -66,7 +66,7 @@ description: "如何物料购买充值？的操作说明。"
 
 1. 进入 **经营管理中心 > 电子面单 > 电子面单申购记录**。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/vBPlNYXwg7XzOdG8/img/a7b09dca-c3f7-4fa3-8f44-fcec06c8667e.png?Expires=1783781506&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=%2FTFHd5AdDyXOs8hGI9xDigDINv4%3D "")
+   ![image.png](./images/Gl6Pm2Db8DlrqxDbUXMzgG3l8xLq0Ee4/如何物料购买充值？_2_40144d09.png)
 
 2. 在页面中查询网点申购明细。
 
@@ -88,11 +88,11 @@ description: "如何物料购买充值？的操作说明。"
 
 1. 进入 **经营管理中心 > 电子面单 > 电子面单上架**。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/vBPlNYXwg7XzOdG8/img/7533f12d-abe2-4a47-abf9-22b3da6ae1d8.png?Expires=1783781506&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=k%2BJsAmlmF%2Fo6JIe%2FB2Py4zxzFZc%3D "")
+   ![image.png](./images/Gl6Pm2Db8DlrqxDbUXMzgG3l8xLq0Ee4/如何物料购买充值？_3_facb8ddb.png)
 
 2. 按页面要求设置对下级售卖的价格、起订量等信息。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/vBPlNYXwg7XzOdG8/img/e56bb496-1272-4eb0-bf2e-f8c219965e25.png?Expires=1783781506&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=l%2FqH2XEDUVs%2Fu9xfz1C1viDzJqM%3D "")
+   ![image.png](./images/Gl6Pm2Db8DlrqxDbUXMzgG3l8xLq0Ee4/如何物料购买充值？_4_9f485649.png)
 
 ::: tip 说明
 上级可对下级进行售卖价格、起订量设置。
@@ -110,7 +110,7 @@ description: "如何物料购买充值？的操作说明。"
 
 1. 进入 **鲸天经营管理中心 > 物料商城 > 物料购买**。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/vBPlNYXwg7XzOdG8/img/2738e802-a58b-41bf-b496-5748f8aac0de.png?Expires=1783781506&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=wMIa1VInSQLZDoUdkl%2FuJLnGiwA%3D "")
+   ![image.png](./images/Gl6Pm2Db8DlrqxDbUXMzgG3l8xLq0Ee4/如何物料购买充值？_5_dc5d7846.png)
 
 2. 选择需要购买的日常经营所需包装耗材或各类设备。
 3. 填写收件地址等购买信息。
@@ -127,7 +127,7 @@ description: "如何物料购买充值？的操作说明。"
 
 1. 进入 **经营管理中心 > 物料商城 > 我的订单**。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/vBPlNYXwg7XzOdG8/img/c7dfa34d-42f8-48a1-a064-8ca722bc6c61.png?Expires=1783781506&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=kp0lgDzIxW500jUQ3vuFBg02Ab8%3D "")
+   ![image.png](./images/Gl6Pm2Db8DlrqxDbUXMzgG3l8xLq0Ee4/如何物料购买充值？_6_ac4cac6f.png)
 
 2. 在订单列表中查看物料申购记录。
 3. 根据订单状态进行后续操作：

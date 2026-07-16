@@ -39,7 +39,7 @@ description: "维护对客报价的操作说明。"
 
 2. 填写**报价名称**，依次选择**报价模式**、**产品类型**、**生效区间**，然后点击 **【下一步】**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Pd6l2Z7P30z1Al7M/img/7644660d-2006-4231-89ad-c4eb8151289a.png?Expires=1783781592&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=fACwuQtXofbR%2BdbxF7Qqs1GcUqQ%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skOZ7vZ5VZd1wyK0/包仓仓位用的好快，哪里能看到仓位的使用明细呢？_1_4b707d03.png)
 
 3. 进入客户基本信息页面后，填写**对象组名称**，依次选择**报价对象**、**计费参数**、**计费参数进位方式**。
 
@@ -51,13 +51,13 @@ description: "维护对客报价的操作说明。"
 维护散客报价时，报价对象选择 **“全部”**，用于维护兜底价格。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Pd6l2Z7P30z1Al7M/img/6c99a7a8-5f7e-4ab1-8547-64c96e5fed42.png?Expires=1783781592&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=8Kg1q37WUx7Q%2BpdFXCExV2w%2FfPI%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skOZ7vZ5VZd1wyK0/发票绑定_1_5db04e7c.png)
 
 5. 点击右上角 **【设置费用项】**。
 
 6. 在弹框中勾选需要配置的**结算费用项**。如果对成本为 **0** 的费用项也需要加收，可勾选**加收开关**后保存。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Pd6l2Z7P30z1Al7M/img/bd8edae3-3455-44cb-8ff2-6a5b8c8d4871.png?Expires=1783781592&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=MjOy9s6y5ZN8CR1sHXvLKGeT%2FNo%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skOZ7vZ5VZd1wyK0/发票绑定_2_8ab09d09.png)
 
 7. 在报价详情列表中，点击**目的地**下方的空白区域，打开目的地维护弹框。
 
@@ -65,13 +65,13 @@ description: "维护对客报价的操作说明。"
 
 9. 如需维护多个目的地报价，点击报价详情模块操作列的 **【新增】**，按上述方法继续增加目的地。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Pd6l2Z7P30z1Al7M/img/2d30098b-4f73-4f41-bcb4-4c35807bc492.png?Expires=1783781592&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=im8qhR%2F6BnKQpkt%2BECADDaB7jz0%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skOZ7vZ5VZd1wyK0/发票绑定_3_3e26bdf1.png)
 
 10. 在**重量段**区域填写**结束重量**。
 
 11. 如需维护多个重量段，填写结束重量后，依次点击重量段后的 **【保存】**、**【新增】**，按上述方法继续增加重量段。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Pd6l2Z7P30z1Al7M/img/b88bef87-28a0-4e68-9213-6958249d504e.png?Expires=1783781592&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ZX49FKGYpx0On%2F5ICCOZrsJVcHQ%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skOZ7vZ5VZd1wyK0/发票绑定_4_ecc74ba4.png)
 
 12. 点击费用项下方的 **【填充计费公式】**。
 
@@ -79,19 +79,19 @@ description: "维护对客报价的操作说明。"
 
 14. 如需设置**最低收费**、**最高收费**，勾选对应开关后填写最低、最高收费标准。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Pd6l2Z7P30z1Al7M/img/309be816-eaeb-4672-b046-033734ece48a.png?Expires=1783781592&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=gh%2FFVNvVFue%2Frm14c%2FNVs24UvKg%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skOZ7vZ5VZd1wyK0/明明系统上账户余额充足，咋开单还提醒余额不足呢__1_28a1a413.png)
 
 15. 所有费用项价格维护完成后，点击右下角 **【保存】**。
 
 16. 如果存在未勾选的费用项，系统会弹出提醒。确认无需添加费用项后，点击 **【确定】**，完成价格维护。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Pd6l2Z7P30z1Al7M/img/f66db14f-83c2-4575-82f7-1b579e1b141e.png?Expires=1783781592&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=aYq3Fp5RA5Qh0RGVm%2FfdyIOh714%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skOZ7vZ5VZd1wyK0/维护对客报价_10_ae2152e2.png)
 
 17. 返回报价列表，勾选报价，点击右上角 **【审核】**。
 
 18. 审核通过后，价格生效。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Pd6l2Z7P30z1Al7M/img/de14395a-defb-48b2-9cda-d343fa04a663.png?Expires=1783781592&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=v1wPkUQYYj9jKLMCYwl%2FpH5U%2BVM%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skOZ7vZ5VZd1wyK0/维护对客报价_1_6e0ecd04.png)
 
 ## 五、操作结果
 
@@ -130,11 +130,11 @@ description: "维护对客报价的操作说明。"
 
 有。价格明细维护可使用 **【报价导入】** 功能。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j9ykevKOY7/img/9d24ce05-4b7e-448c-9b80-f6ce15d8e59e.png?Expires=1783781592&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=4ZGeWvnYROYxmM6B%2Bvdc44hEW4M%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skOZ7vZ5VZd1wyK0/维护对客报价_2_8c8706b2.png)
 
 点击 **【报价导入】**，根据当前选择的**报价模式**，选择对应的导入模板。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j9ykevKOY7/img/9d24ce05-4b7e-448c-9b80-f6ce15d8e59e.png?Expires=1783781592&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=4ZGeWvnYROYxmM6B%2Bvdc44hEW4M%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skOZ7vZ5VZd1wyK0/维护对客报价_3_f12ba360.png)
 
 根据实际情况填写对应的价格标准，可参照下图示例填写。
 

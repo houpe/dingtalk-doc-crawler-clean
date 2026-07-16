@@ -27,7 +27,7 @@ description: "网络货运货主下单的操作说明。"
 
    需要填写发件/收件的**联系人**、**联系方式**、**省市区**和**详细地址**。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/a2QnV4jGdGYZ8O4X/img/2b752b5c-446d-4eba-9515-49bedbed69e5.png?Expires=1783781797&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=9RlYVFRvGaN%2FQAjMYVqNKX5d4As%3D "")
+   ![image.png](./images/vy20BglGWOB7nkavHg7k5M5k8A7depqY/司机端注册操作说明_1_ad777e38.png)
 
 2. 填写**服务信息**。
 
@@ -41,7 +41,7 @@ description: "网络货运货主下单的操作说明。"
    货主自己的温控设备需要进行单独授权。
    :::
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/a2QnV4jGdGYZ8O4X/img/06e02932-fb11-40cd-84d0-d056119e756c.png?Expires=1783781797&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=zpRLVQdrQqpRnSgQdQBqA5z5Uls%3D "")
+   ![image.png](./images/vy20BglGWOB7nkavHg7k5M5k8A7depqY/司机端注册操作说明_2_5d7f12d2.png)
 
 3. 填写**货物信息**。
 
@@ -51,7 +51,7 @@ description: "网络货运货主下单的操作说明。"
    **货物重量不要超过所选车型的最大额定载重重量**（**4 米 2**除外）。
    :::
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/a2QnV4jGdGYZ8O4X/img/cbf7a431-d0a8-460c-af71-3eb94b6b70eb.png?Expires=1783781797&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Vybkw8GudgDp4JCklMHvF7kaB7M%3D "")
+   ![image.png](./images/vy20BglGWOB7nkavHg7k5M5k8A7depqY/司机端注册操作说明_3_3281b260.png)
 
 4. 填写**财务信息**。
 
@@ -67,13 +67,13 @@ description: "网络货运货主下单的操作说明。"
    为了保障货主货物的安全，请足额按照货物价值填写**保价金额**。
    :::
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/a2QnV4jGdGYZ8O4X/img/953d8d13-11d4-451e-86ce-41714a6480f8.png?Expires=1783781797&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=45d9Rm6Kx%2FhrOXjrl89xJLttRJE%3D "")
+   ![image.png](./images/vy20BglGWOB7nkavHg7k5M5k8A7depqY/省公司三方车下单操作说明_1_b723c91c.png)
 
 5. 点击**【保存】**完成下单。
 
    系统会自动扣除**预付款账户余额**，并生成一份运输合同，视为平台确定承运。下单成功后会生成**订单号**。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/a2QnV4jGdGYZ8O4X/img/d256c613-6ddf-4bbd-8165-254ef5bc5e17.png?Expires=1783781797&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=47pm2JIj0%2BFuagfdBbZr059l9tI%3D "")
+   ![image.png](./images/vy20BglGWOB7nkavHg7k5M5k8A7depqY/省公司三方车下单操作说明_2_ba076f40.png)
 
 ## 五、操作结果
 

@@ -25,7 +25,7 @@ description: "差重差方如何申报的操作说明。"
 - **差重差方查询**：查看**无影响申诉单**
 - **差重差方申诉**：查看**有影响申诉单**，并进行**申诉处理**
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/3657c25c-bd9a-46a7-97b5-2b4f2ec5ca7a.png?Expires=1783781576&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=gPzMYaFmAKMGCbu%2FFK2qUWfcNWM%3D "")
+![image.png](./images/14lgGw3P8va9de6QhYKe96kvJ5daZ90D/仲裁如何申报、申诉？_10_2674e296.png)
 
 ## 四、操作步骤
 
@@ -33,7 +33,7 @@ description: "差重差方如何申报的操作说明。"
 
 1. 进入**差重差方查询/申诉页**，点击**发布**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qe95P1Gk7qpj8/img/1e398bff-aa12-493a-aaee-b86351aa6de3.png?Expires=1783781576&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=4cYKRpaTQttcR%2BK6Yhy1NM4Rm4s%3D "")
+![image.png](./images/14lgGw3P8va9de6QhYKe96kvJ5daZ90D/仲裁如何申报、申诉？_11_14378a46.png)
 
 2. 系统跳转到**发布页**后，按页面要求输入内容，并点击**发布**。
 
@@ -58,14 +58,14 @@ description: "差重差方如何申报的操作说明。"
 - **被投诉对象**可以是**任务机构**。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qe95P1Gk7qpj8/img/23c639a5-b246-47c1-9610-b42006ed098c.png?Expires=1783781576&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=MkO38afNm8wm%2FEGmz4NLYoNbj%2Fk%3D "")
+![image.png](./images/14lgGw3P8va9de6QhYKe96kvJ5daZ90D/仲裁如何申报、申诉？_1_575eadf9.png)
 
 3. 根据数据影响情况，查看后续流转结果。
 
 - **差重差方申诉**：有影响数据会流转至**差重差方申诉**，责任方可申诉至总部，由总部进行审核处理。
 - **差重差方查询**：无影响数据仅作为记录展示，无任何处理流程。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qe95P1Gk7qpj8/img/2ce58625-4aeb-4c31-bd23-593fb9d20cc5.png?Expires=1783781576&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=gwrnugk0ETwEjVmrHusZ98Ve8mg%3D "")
+![image.png](./images/14lgGw3P8va9de6QhYKe96kvJ5daZ90D/仲裁如何申报、申诉？_2_1b53f941.png)
 
 ### 4.2 查看待办消息通知
 
@@ -73,7 +73,7 @@ description: "差重差方如何申报的操作说明。"
 
 1. **新差重差方**
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qe95P1Gk7qpj8/img/0567c959-9db1-44cc-b81d-15d3f3c96f58.png?Expires=1783781576&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=oNlVTgdMa%2Fqms1oQct5lixqtkYM%3D "")
+![image.png](./images/14lgGw3P8va9de6QhYKe96kvJ5daZ90D/仲裁如何申报、申诉？_3_c164c666.png)
 
 ## 五、操作结果
 

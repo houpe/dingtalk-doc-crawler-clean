@@ -30,7 +30,7 @@ description: "敷衍问题件如何有效举证？的操作说明。"
 
 3. 在页面中按实际情况发起举证，并提交相关信息。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/r4mlQg5xXzmaqxow/img/cb2797e6-b1b4-4e8e-a68b-787c3740bc95.png?Expires=1783781575&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=r1TsSC0QqKvdvB7Eu%2B%2FagJgvDO4%3D "")
+![image.png](./images/lyQod3RxJKlZLgpwUg5MEQvp8kb4Mw9r/仲裁如何申报、申诉？_10_2674e296.png)
 
 ## 五、操作结果
 

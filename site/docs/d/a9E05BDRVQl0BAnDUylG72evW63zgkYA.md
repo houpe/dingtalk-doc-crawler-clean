@@ -47,7 +47,7 @@ description: "装卸任务的操作说明。"
 
 ### 4.1 通用前置操作：查看任务信息与人员上班打卡
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/r4mlQ5bJa9dbklxo/img/f453667c-0d6a-4afc-be28-bd52bf310f59.png?Expires=1783781685&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=KsDiJ3l16npfzHWGbKw0JuEhV2U%3D "")
+![image.png](./images/a9E05BDRVQl0BAnDUylG72evW63zgkYA/装卸任务操作说明书_1_231764b4.png)
 
 1. 微信搜索 **中通冷链司机版**，点击右下角 **【我的】→【去登录】**，完成账号登录。
 2. 回到小程序首页，点击 **【任务管理】**。
@@ -59,7 +59,7 @@ description: "装卸任务的操作说明。"
 
 完整流程：确认卸车信息 → 单据交接 → 引导车辆靠台 → 拍照测温 → 劳务任务打卡 → 现场卸车 → 清扫车厢 → 关闭月台门 → 卸车任务验收
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/r4mlQ5bJa9dbklxo/img/8c2af6b8-488d-4f39-995e-5ba5c48d4462.png?Expires=1783781685&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=NMQwqKnChIDGoaCru3Pi%2F4k8L9E%3D "")
+![image.png](./images/a9E05BDRVQl0BAnDUylG72evW63zgkYA/装卸任务操作说明书_2_d923f23d.png)
 
 1. **确认卸车信息**
    - 在 **【任务管理】** 中筛选 **卸车** 类任务，按车辆预计到达时间排序查看。
@@ -139,7 +139,7 @@ description: "装卸任务的操作说明。"
 
 完整流程：接收装车任务 → 核对装车单据 → 货物集托分拣 → 劳务任务打卡 → 现场装车 → 封签核验 → 拍照留存 → 车辆离场 → 装车任务验收
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/r4mlQ5bJa9dbklxo/img/8c2af6b8-488d-4f39-995e-5ba5c48d4462.png?Expires=1783781685&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=NMQwqKnChIDGoaCru3Pi%2F4k8L9E%3D "")
+![image.png](./images/a9E05BDRVQl0BAnDUylG72evW63zgkYA/装卸任务操作说明书_3_d923f23d.png)
 
 1. **接收装车任务**
    - 在小程序 **【任务管理】** 中筛选 **装车** 任务。

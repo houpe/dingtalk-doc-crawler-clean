@@ -41,7 +41,7 @@ description: "交-提货的操作说明。"
 5. 在任务列表中选择对应的交货任务，点击 **提交**。
 6. 提交成功后，系统自动跳转至 **任务管理** 列表，可查看任务进度与状态。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/2M9qP5jyB7Px3O01/img/2366e8b4-a4d9-442b-bfb2-53dfc2b6d772.png?Expires=1783781662&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=7Q%2BwNkxSdEtZpprNAuRoMbadQps%3D "")
+![image.png](./images/kDnRL6jAJMqmrjzKsXvRaLZQJyMoPYe1/交_提货操作说明书_1_e985df20.png)
 
 ### 4.2 网点提货
 
@@ -54,7 +54,7 @@ description: "交-提货的操作说明。"
 5. 勾选需要执行的提货任务，点击 **提货** 提交申请。
 6. 提交完成后，系统跳转至 **任务管理** 页面，可查看提货任务状态。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/2M9qP5jyB7Px3O01/img/0e1f8009-66ed-41da-9411-5804ca1c6e07.png?Expires=1783781662&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=tPWrfYq%2FLF%2BWo4rlM5CSR2jQ2KM%3D "")
+![image.png](./images/kDnRL6jAJMqmrjzKsXvRaLZQJyMoPYe1/交_提货操作说明书_2_66c17ef0.png)
 
 ## 五、操作结果
 
@@ -93,11 +93,11 @@ description: "交-提货的操作说明。"
 3. 开启 **位置信息**，选择使用小程序时允许。
 4. 重新进入小程序查看入口。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/2M9qP5jyB7Px3O01/img/8768d864-6eba-4f3c-88a2-94abc3072d4d.png?Expires=1783781662&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=4aV8Domlyw7cXuTbEA8GVZ9Znfk%3D "")
+![image.png](./images/kDnRL6jAJMqmrjzKsXvRaLZQJyMoPYe1/交_提货操作说明书_3_e54cc129.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/2M9qP5jyB7Px3O01/img/1bf84e95-0248-4ceb-a651-1283380b002f.png?Expires=1783781662&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=gXty1oM4PL4PDwEOMBasRwkXXXY%3D "")
+![image.png](./images/kDnRL6jAJMqmrjzKsXvRaLZQJyMoPYe1/交_提货操作说明书_4_545e28c8.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/2M9qP5jyB7Px3O01/img/9a7e59f7-3cfe-495a-80e7-2c679362d457.png?Expires=1783781662&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=BSZGZE0e%2BxvEgUCYCdiBRDlOsUg%3D "")
+![image.png](./images/kDnRL6jAJMqmrjzKsXvRaLZQJyMoPYe1/交_提货操作说明书_5_c7136783.png)
 
 ### 7.4 进入交货/提货页面后，任务列表为空怎么办？
 
@@ -118,11 +118,11 @@ description: "交-提货的操作说明。"
 2. 开启 **位置信息**（使用小程序时允许）；
 3. 重新进入小程序。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/2M9qP5jyB7Px3O01/img/8768d864-6eba-4f3c-88a2-94abc3072d4d.png?Expires=1783781662&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=4aV8Domlyw7cXuTbEA8GVZ9Znfk%3D "")
+![image.png](./images/kDnRL6jAJMqmrjzKsXvRaLZQJyMoPYe1/客户自提操作说明书_1_2e4427ce.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/2M9qP5jyB7Px3O01/img/1bf84e95-0248-4ceb-a651-1283380b002f.png?Expires=1783781662&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=gXty1oM4PL4PDwEOMBasRwkXXXY%3D "")
+![image.png](./images/kDnRL6jAJMqmrjzKsXvRaLZQJyMoPYe1/客户自提操作说明书_2_60cf9122.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/2M9qP5jyB7Px3O01/img/9a7e59f7-3cfe-495a-80e7-2c679362d457.png?Expires=1783781662&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=BSZGZE0e%2BxvEgUCYCdiBRDlOsUg%3D "") |
+![image.png](./images/kDnRL6jAJMqmrjzKsXvRaLZQJyMoPYe1/客户自提操作说明书_3_f7642ebb.png) |
 | 2 | 进入交货/提货页面，任务列表为空 | 网点未创建无班线调度单 | 联系网点工作人员创建调度单，刷新页面即可显示任务。 |
 | 3 | 提交任务失败 | 网络异常、小程序缓存出错 | 1. 切换至稳定网络后重试；
 2. 彻底关闭小程序后台，重新打开操作。 |

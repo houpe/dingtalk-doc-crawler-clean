@@ -60,9 +60,9 @@ description: "扫码下单的操作说明。"
 4. 连接打印机完成打印。
 5. 将纸质二维码张贴至客户门店、合作点位，供客户扫码下单。
 
-📷 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPmNeAvPOdv/img/b47d86c2-d0b3-4d27-8306-60306fe2d813.png?Expires=1783781546&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Yt3ZKZfYXain9ep6sMdG4VDi8jk%3D "")
+📷 ![image.png](./images/G1DKw2zgV2om50w9iPbqLkNQJB5r9YAn/大客户_个人下单操作说明_10_69e68144.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPmNeAvPOdv/img/d8618422-af2d-4456-ae59-92acfd70286a.png?Expires=1783781546&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=pszgI2PPYtV4aZFU3uaDjgiAKFI%3D "")
+![image.png](./images/G1DKw2zgV2om50w9iPbqLkNQJB5r9YAn/大客户_个人下单操作说明_11_d7788ae0.png)
 
 #### (2) 下载二维码图片单独分享
 
@@ -70,7 +70,7 @@ description: "扫码下单的操作说明。"
 2. 二维码图片保存至手机本地。
 3. 通过微信或其他聊天软件，将二维码图片单独发送给对应客户。
 
-![lADPJwKt7CJFlzzNA4TNAo4_654_900.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/r4mlQg5RjAkgqxow/img/80388c4f-c754-4686-84a4-c41756bd57da.jpeg?Expires=1783781546&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=gTufbbG7uQ7AFOQD6fi1ggxPjD0%3D "")
+![lADPJwKt7CJFlzzNA4TNAo4_654_900.jpeg](./images/G1DKw2zgV2om50w9iPbqLkNQJB5r9YAn/大客户_个人下单操作说明_12_cf24529e.png)
 
 #### (3) 分享至微信朋友圈引流
 
@@ -82,7 +82,7 @@ description: "扫码下单的操作说明。"
 苹果 **IOS系统**暂不支持直接分享操作，可选择**下载图片**或**打印二维码**的方式替代。
 :::
 
-![617f69c6fb46c1ac033a10f398564740.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/r4mlQg5RjAkgqxow/img/59f73e47-b0ed-4a79-a329-e1b49a585d7b.jpeg?Expires=1783781546&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=bawYvgP0tmc7ImcTaOKiVD5qrDM%3D "")
+![617f69c6fb46c1ac033a10f398564740.jpeg](./images/G1DKw2zgV2om50w9iPbqLkNQJB5r9YAn/大客户_个人下单操作说明_13_26f8bc54.png)
 
 ### 4.2 场景二：客户扫码完成自主下单
 
@@ -95,7 +95,7 @@ description: "扫码下单的操作说明。"
 5. 阅读并勾选同意《**电子运单契约条款**》。
 6. 核对**预估运费**后提交订单。
 
-![676a1afb25d50102defdb7b292a8f95c.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/Lk3lbVRy7LoGlm96/img/1b9506b7-977d-45db-a425-048a41803b95.jpeg?Expires=1783781546&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=O8nnH8TtrTYfhExSAoPzAlSaHew%3D "")
+![676a1afb25d50102defdb7b292a8f95c.jpeg](./images/G1DKw2zgV2om50w9iPbqLkNQJB5r9YAn/大客户_个人下单操作说明_14_63a40793.png)
 
 #### (2) 订单物流查询
 
@@ -124,9 +124,9 @@ description: "扫码下单的操作说明。"
 - 员工已离职：标注「**（已离职）**」。
 - 员工更换所属组织：标注「**（已更换组织）**」。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/a2QnVJoeMV48n4XB/img/ed3e3767-e335-4e28-93a9-6f868ce7e6b4.png?Expires=1783781546&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=VlJ4vl35b1X8aUIylX%2B4mBWdZMQ%3D "")
+![](./images/G1DKw2zgV2om50w9iPbqLkNQJB5r9YAn/大客户_个人下单操作说明_15_eb053335.png)
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/a2QnVJoeMV48n4XB/img/bc1254d5-23fd-4933-a1c9-77f181411d3f.png?Expires=1783781546&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=vNf0KKrO0T5%2BEHsuSfzFZLr37Vw%3D "")
+![](./images/G1DKw2zgV2om50w9iPbqLkNQJB5r9YAn/大客户_个人下单操作说明_16_79f9e269.png)
 
 #### (2) 在运单管理页面查询
 
@@ -134,7 +134,7 @@ description: "扫码下单的操作说明。"
 2. 打开目标运单的**运单详情**。
 3. 在运单基本信息区域查看 **BD字段**，确认扫码下单对应员工。
 
-![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/a2QnVJoeMV48n4XB/img/725ab086-6834-4f03-9f0c-1112d9300cb0.png?Expires=1783781546&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Yq1we%2BSo8UL3XTBtxAKbBaRJcn8%3D "")
+![](./images/G1DKw2zgV2om50w9iPbqLkNQJB5r9YAn/大客户_个人下单操作说明_17_bac828f5.png)
 
 ## 五、操作结果
 

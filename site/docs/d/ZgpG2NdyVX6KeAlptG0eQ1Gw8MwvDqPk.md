@@ -38,7 +38,7 @@ description: "维保工单的操作说明。"
 
 系统路径：**中通冷链司机版小程序 → 首页 → 小工具 → 维保申请**
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/jP2lRYjNMXoVmO8g/img/1d165c98-3976-4372-a881-2cf313ac3598.png?Expires=1783781672&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=klahNCyQXKym%2FBAYc3G4vrzTU5A%3D "")
+![image.png](./images/ZgpG2NdyVX6KeAlptG0eQ1Gw8MwvDqPk/维保工单操作说明书_1_65ebb6fc.png)
 
 ## 四、操作步骤
 
@@ -74,7 +74,7 @@ description: "维保工单的操作说明。"
 
 系统路径：**中通冷链司机版小程序 → 首页 → 小工具 → 维保申请**
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/jP2lRYjNMXoVmO8g/img/41ab769e-82e7-4c00-baf6-a85128930502.png?Expires=1783781672&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=CfLHGKzDZM0n4tK7FYYugG7xrpg%3D "")
+![image.png](./images/ZgpG2NdyVX6KeAlptG0eQ1Gw8MwvDqPk/维保工单操作说明书_2_e1d68e65.png)
 
 1. 车辆完成保养或维修后，再次进入 **维保申请** 页面。
 2. 在工单列表中找到已审核通过的维保前工单。

@@ -49,7 +49,7 @@ description: "客户自提的操作说明。"
 8. 上传车辆照片。
 9. 点击 **提交**，完成车辆注册绑定。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZA8062xNQqLX/img/6f62a5ff-98a5-495c-a61f-736d5a41eec1.png?Expires=1783781658&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=2zTa%2BOBLF%2FVKP%2B1cWfjN24%2By2gA%3D "")
+![image.png](./images/gwva2dxOW4lr52wgU0r9aqwxWbkz3BRL/交_提货操作说明书_1_e985df20.png)
 
 ### 4.2 查询并提交客户自提
 
@@ -72,7 +72,7 @@ description: "客户自提的操作说明。"
 7. 再次核对汇总运单信息，点击 **提交**，完成自提任务提报。
 8. 提交成功后，系统自动跳转至 **任务管理** 列表，可查看该自提任务状态。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZA8062xNQqLX/img/b14502eb-73d8-4b8d-bf8c-464c32c7cc2e.png?Expires=1783781658&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Hn67WG3VV9HvzBKRr5482Bfxwyw%3D "")
+![image.png](./images/gwva2dxOW4lr52wgU0r9aqwxWbkz3BRL/交_提货操作说明书_2_66c17ef0.png)
 
 ### 4.3 在线签收
 
@@ -87,7 +87,7 @@ description: "客户自提的操作说明。"
 9. 如需重新签名，可点击「重签」。
 10. 签名提交后，提货详情状态更新为 **已签收**，中心自提流程完成。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZA8062xNQqLX/img/fa714391-c021-44f4-896c-bc78279ce370.png?Expires=1783781658&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=5KKKdfXxuqQrKem0eoftnn88luM%3D "")
+![image.png](./images/gwva2dxOW4lr52wgU0r9aqwxWbkz3BRL/交_提货操作说明书_3_e54cc129.png)
 
 ## 五、操作结果
 

@@ -70,7 +70,7 @@ description: "车辆交接的操作说明。"
 6. 填写期望**交接日期**，系统用于校验后续运输任务冲突。
 7. 确认信息无误后提交，任务会下发至对应司机小程序的**【车线任务】**列表。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35o4PJzgXl7E/img/6a2ecc60-00c1-442c-bca8-a5091025b2e6.png?Expires=1783781677&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=zh8vhqti6lEEzImDY1tSUW02%2F6A%3D "")
+![image.png](./images/Obva6QBXJwmDdw0QfMn11xLEWn4qY5Pr/调度任务操作说明书_10_3dc077b4.png)
 
 ### 4.2 提交交车（司机小程序）
 
@@ -104,7 +104,7 @@ description: "车辆交接的操作说明。"
 - **换人交接**：交车提交后，需等待接车司机核验并确认接车。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35o4PJzgXl7E/img/3cd5d599-13b7-4007-9cbb-28a76c471c69.png?Expires=1783781677&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=nAPi%2FHkAVCcf%2FOudpPsFLR%2FPPyA%3D "")
+![image.png](./images/Obva6QBXJwmDdw0QfMn11xLEWn4qY5Pr/调度任务操作说明书_11_b5eb8418.png)
 
 ### 4.3 核验并确认接车（司机小程序）
 
@@ -128,7 +128,7 @@ description: "车辆交接的操作说明。"
    4. 填写**100字内**异常描述。
    5. 提交异常记录后，再完成接车确认。异常数据会同步后台存档。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35o4PJzgXl7E/img/e83d57e2-fba8-4c43-b601-8bce99693cc0.png?Expires=1783781677&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=MMhWfxtB4MesdPp6Mb37ct3Nohw%3D "")
+![image.png](./images/Obva6QBXJwmDdw0QfMn11xLEWn4qY5Pr/调度任务操作说明书_12_ea060445.png)
 
 ### 4.4 转交交接任务
 
@@ -143,7 +143,7 @@ description: "车辆交接的操作说明。"
 司机之间更换交接人，**不可**通过小程序转交，**必须**前往**PC鲸天后台**修改交接人员。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35o4PJzgXl7E/img/f593c0fa-ed04-4d56-aac9-d577c89320f0.png?Expires=1783781677&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=m9l4xC%2F%2BIXGEOMrZACksBtzZLQI%3D "")
+![image.png](./images/Obva6QBXJwmDdw0QfMn11xLEWn4qY5Pr/调度任务操作说明书_13_0edadde6.png)
 
 ### 4.5 查看抄送交接流程（钉钉鲸天审批中心）
 
@@ -160,7 +160,7 @@ description: "车辆交接的操作说明。"
    - **交接类型**
 5. 可继续查看完整交接影像、里程工时、异常上报记录，用于对账和责任追溯。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35o4PJzgXl7E/img/3b94ae7c-5bbe-4ef5-8372-f51a4d476f4e.png?Expires=1783781677&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=BXdel8alriuWhhzNeK0INbOTqKY%3D "")
+![image.png](./images/Obva6QBXJwmDdw0QfMn11xLEWn4qY5Pr/调度任务操作说明书_14_98dda60e.png)
 
 ### 4.6 查询PC后台车辆状态
 
@@ -178,7 +178,7 @@ description: "车辆交接的操作说明。"
    - **停靠地点**：闲置车辆固定停放园区。
 4. 页面支持进行车辆信息编辑、导出台账、年审/运输证过期预警查看。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/54Lq35o4PJzgXl7E/img/5ca0528b-0295-4ccb-a27f-6e67dc8766d8.png?Expires=1783781677&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=VZiALIHp4VAvsyMbJ%2FSkFyRcPfU%3D "")
+![image.png](./images/Obva6QBXJwmDdw0QfMn11xLEWn4qY5Pr/调度任务操作说明书_15_cd846373.png)
 
 ## 五、操作结果
 

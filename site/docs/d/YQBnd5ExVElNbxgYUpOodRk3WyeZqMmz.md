@@ -33,7 +33,7 @@ description: "工单如何有效处理？的操作说明。"
 4. **咨询工单**：可查询所有咨询工单，适用于无需网点处理的工单。
 5. **品控工作台（查询）**：所有人员可查询。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/3657c25c-bd9a-46a7-97b5-2b4f2ec5ca7a.png?Expires=1783781568&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=IhVZpztNxliVqDt%2BJTO%2BHVAP00k%3D "")
+![image.png](./images/YQBnd5ExVElNbxgYUpOodRk3WyeZqMmz/仲裁如何申报、申诉？_10_2674e296.png)
 
 ## 四、操作步骤
 
@@ -49,12 +49,12 @@ description: "工单如何有效处理？的操作说明。"
 
    处理方可点击**处理**按钮，进行**暂存**或**完结**操作。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/884e429b-c5fe-4247-bd94-98c2db3518a4.png?Expires=1783781568&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=CVwTtVIzOmDbrt1uTruebHeWSuY%3D "")
+![image.png](./images/YQBnd5ExVElNbxgYUpOodRk3WyeZqMmz/仲裁如何申报、申诉？_11_14378a46.png)
 
 3. 点击**处理**后，系统跳转至处理详情页。
 4. 在详情页根据实际情况选择**暂存**或**完结**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/f7f0de44-efbf-44b4-a0ac-40eff37d1b7e.png?Expires=1783781568&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=eM3zrXgrl64ORjEhk5W6lJlRIpI%3D "")
+![image.png](./images/YQBnd5ExVElNbxgYUpOodRk3WyeZqMmz/仲裁如何申报、申诉？_1_575eadf9.png)
 
 ::: warning 注意事项
 工单升级至上级后，当前责任网点无法处理，仅上级可处理。
@@ -67,14 +67,14 @@ description: "工单如何有效处理？的操作说明。"
 1. 进入**普通工单申诉单**模块。
 2. 在**72小时**内，点击操作列的**处理**进行申诉处理。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/1d71a411-073f-4275-a84f-e713187f175a.png?Expires=1783781568&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=p%2B%2B5l9G8zja38YKCuTPj7r5PTJA%3D "")
+![image.png](./images/YQBnd5ExVElNbxgYUpOodRk3WyeZqMmz/仲裁如何申报、申诉？_2_1b53f941.png)
 
 3. 点击**处理**后，系统跳转至详情页。
 4. 填写申诉内容并上传附件。
 5. 点击**确认**，提交申诉。
 6. 提交后，该申诉单流转至总部，由总部进行审核裁定。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/b3f5e705-1b94-4656-80b4-3adf3c603582.png?Expires=1783781568&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=LXPHJV7ahSs5jXgyBHj2p1mo128%3D "")
+![image.png](./images/YQBnd5ExVElNbxgYUpOodRk3WyeZqMmz/仲裁如何申报、申诉？_3_c164c666.png)
 
 ### 4.3 录单/发短信（总部权限）
 
@@ -95,13 +95,13 @@ description: "工单如何有效处理？的操作说明。"
 
    输入运单号后，系统会自动带出该条运单的工单记录及物流轨迹，方便快速了解并处理问题。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/08c99b35-908c-489b-ab27-32a62a0bc8f0.png?Expires=1783781568&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=OltBE8SgDzeto2qDeQPPthqdHf8%3D "")
+![image.png](./images/YQBnd5ExVElNbxgYUpOodRk3WyeZqMmz/仲裁如何申报、申诉？_4_775d1472.png)
 
 4. 如需发送短信，点击右下角**icon**，支持自定义发送短信。
 
    目的网点为录单运单对应的目的网点和寄件网点。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/6bf1cad1-0566-4f1d-a15b-42aa8f7cf0d3.png?Expires=1783781568&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Z5U88BN5rOVrKjedNB%2Bd6WRDVlw%3D "")
+![image.png](./images/YQBnd5ExVElNbxgYUpOodRk3WyeZqMmz/仲裁如何申报、申诉？_5_cf89d5f4.png)
 
 5. 对**处理中**工单，可进行追加说明。
 
@@ -111,7 +111,7 @@ description: "工单如何有效处理？的操作说明。"
 
    处理网点可在**普通工单列表**中或**处理记录**中查看催单次数，以便提高处理效率。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/f0074088-0b2b-440b-b182-0c15ce7939d4.png?Expires=1783781568&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=H1UDH5CjeJ8x77k8H2xcnZZEHxM%3D "")
+![image.png](./images/YQBnd5ExVElNbxgYUpOodRk3WyeZqMmz/仲裁如何申报、申诉？_6_021a0df3.png)
 
 ### 4.4 查看待办消息通知
 
@@ -123,7 +123,7 @@ description: "工单如何有效处理？的操作说明。"
 4. 二次工单新申诉单
 5. 超时升级新申诉单
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/838cb768-1406-4c2b-91bf-5b4e7b10bc96.png?Expires=1783781568&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=G8uIjz6O9thT0CV3ue%2FhjZpp9uY%3D "")
+![image.png](./images/YQBnd5ExVElNbxgYUpOodRk3WyeZqMmz/仲裁如何申报、申诉？_7_19b154ef.png)
 
 ## 五、操作结果
 

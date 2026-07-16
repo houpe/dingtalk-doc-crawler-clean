@@ -38,7 +38,7 @@ description: "系统访问及APP下载的操作说明。"
 
 2. 也可以使用手机扫描下方二维码下载 **宝盒**：
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/J9LnWN5YEy0AlvDe/img/84a0205b-9aee-46c7-b35a-d089940f7433.png?Expires=1784089398&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=C%2B1a8UpyzUJxpidCaNV8x9Iyhls%3D "")
+   ![image.png](./images/a9E05BDRVQl0BAnDU9bjEev7W63zgkYA/系统访问及APP下载_1_ed9b87c8.png)
 
 ### 4.2 访问鲸天系统
 
@@ -54,7 +54,7 @@ description: "系统访问及APP下载的操作说明。"
 
 1. 使用手机扫描下方二维码下载 **鲸小宝**：
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/J9LnWN5YEy0AlvDe/img/4322aab0-dc4a-474f-8409-775f5da8bf0d.png?Expires=1784089398&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Imgkl3ROUisjRqXqr5q6YiGQopo%3D "")
+   ![image.png](./images/a9E05BDRVQl0BAnDU9bjEev7W63zgkYA/系统访问及APP下载_2_f6b7e9dc.png)
 
 ### 4.4 登录司机端小程序
 
@@ -64,11 +64,11 @@ description: "系统访问及APP下载的操作说明。"
 
 3. 搜索方式如下：
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/ybEnBB5mp6vdnP13/img/14897a2c-1740-46bf-a147-69db2ef52d12.png?Expires=1784089398&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=8ago9srb3mUKdGfEXzypiQ4hNmA%3D "")
+   ![image.png](./images/a9E05BDRVQl0BAnDU9bjEev7W63zgkYA/系统访问及APP下载_3_321c76ec.png)
 
 4. 也可以直接扫描下方二维码进入：
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/J9LnWN5YEy0AlvDe/img/dcf80886-30d1-4efe-badd-983f93fbb53d.png?Expires=1784089398&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=YNaxcr1NvPybaLWO6szIEsHO4J4%3D "")
+   ![image.png](./images/a9E05BDRVQl0BAnDU9bjEev7W63zgkYA/系统访问及APP下载_4_83ace20e.png)
 
 ## 五、操作结果
 

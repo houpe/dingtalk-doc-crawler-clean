@@ -85,7 +85,7 @@ description: "中心-网点直发的操作说明。"
 4. 核对信息无误后，点击保存。
 5. 提交总部运营完成资质审核。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jRZEEWvOXo/img/ed3fcf3f-72ff-405c-a9e4-2a2b8691414f.png?Expires=1783781550&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=HlPjNox88qsP6e0n%2Fkoc9yKwQFE%3D "")
+![image.png](./images/Y1OQX0akWmMbDZkQSbpbZERXWGlDd3mE/中心_网点直发操作说明_1_a9158e4e.png)
 
 ### 4.2 中心直发线路创建与审批
 
@@ -114,7 +114,7 @@ description: "中心-网点直发的操作说明。"
 列表支持 **复制新增**、**查看版本记录**。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jRZEEWvOXo/img/d610756d-1a16-4d16-913a-aeec86ed666c.png?Expires=1783781550&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=7lJ8cFejwDdAwmvIhAaNmIxTiI0%3D "")
+![image.png](./images/Y1OQX0akWmMbDZkQSbpbZERXWGlDd3mE/中心_网点直发操作说明_2_cfb6c218.png)
 
 ### 4.3 中心直发专属报价配置
 
@@ -130,7 +130,7 @@ description: "中心-网点直发的操作说明。"
 8. 如报价被驳回，可修改后重新提交。
 9. 可使用 **复制报价** 快速创建报价。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jRZEEWvOXo/img/132190ed-21db-4745-bd34-f27fcdb3881c.png?Expires=1783781550&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=xSYUNecx5jo0lUq6aGqOIqb2Y2c%3D "")
+![image.png](./images/Y1OQX0akWmMbDZkQSbpbZERXWGlDd3mE/中心_网点直发操作说明_3_428d0ee7.png)
 
 ### 4.4 网点录单 / 订单转运单选择路由方案
 
@@ -154,7 +154,7 @@ description: "中心-网点直发的操作说明。"
 中心直发线路 **不可使用包仓政策**，仅 **默认路由** 支持包仓勾选。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jRZEEWvOXo/img/87052de1-5e41-4de8-90c3-0b883a9ea5f2.png?Expires=1783781550&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Fu6hoip7%2BLpWRZhLkKqeh6PhxkA%3D "")
+![image.png](./images/Y1OQX0akWmMbDZkQSbpbZERXWGlDd3mE/中心_网点直发操作说明_4_d3c46b22.png)
 
 ### 4.5 寄件运单改单路由相关操作
 
@@ -182,7 +182,7 @@ description: "中心-网点直发的操作说明。"
    - 后接下一操作分拨代码
 4. 面单会完整展示产品、温层、承运商、分拨节点信息，用于区分普通干线与直达干线运单。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jRZEEWvOXo/img/cfee6b5d-6b16-4d87-8b41-490a3d85583c.png?Expires=1783781550&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=zIjmvEOSKUSoQUbNb5ScO6EGq6c%3D "")
+![image.png](./images/Y1OQX0akWmMbDZkQSbpbZERXWGlDd3mE/中心_网点直发操作说明_5_96a90e56.png)
 
 ### 4.7 整体审批链路
 

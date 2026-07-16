@@ -45,7 +45,7 @@ description: "省公司三方车下单的操作说明。"
 
    系统跳转至新增货主资料页面后，按页面要求填写信息。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4j6OJ5jaY59LEq3p/img/d25885d5-e2b6-462f-9e6d-c64aab7bc4b1.png?Expires=1783781799&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=xRPOqVLHqF1vyTBevP6lH50LCeg%3D "")
+   ![image.png](./images/r1R7q3QmWeQznO4ycNplgQwEWxkXOEP2/司机端注册操作说明_1_ad777e38.png)
 
 2. 提交资料后，等待平台审核。
 
@@ -55,7 +55,7 @@ description: "省公司三方车下单的操作说明。"
    审核期间可以编辑修改资料；修改提交后，会重新提交审核。
    :::
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4j6OJ5jaY59LEq3p/img/d0927c9f-36f9-4f2a-8b82-b2d9e9dc818b.png?Expires=1783781799&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=fWyzh69%2FQ0L2KMkr%2BNd6pUdfDl4%3D "")
+   ![image.png](./images/r1R7q3QmWeQznO4ycNplgQwEWxkXOEP2/司机端注册操作说明_2_5d7f12d2.png)
 
 3. 审核通过后，维护税务信息。
 
@@ -66,7 +66,7 @@ description: "省公司三方车下单的操作说明。"
    3. 点击 **【新增】**。
    4. 填写税务信息资料。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4j6OJ5jaY59LEq3p/img/28b5a1da-bcc4-4a93-a6d5-a45c472d7cdb.png?Expires=1783781799&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=iyJu%2Foz6yDjnZULa0Dnrchi2jhk%3D "")
+   ![image.png](./images/r1R7q3QmWeQznO4ycNplgQwEWxkXOEP2/司机端注册操作说明_3_3281b260.png)
 
 4. 联系总部运营关联云冷分拨账号。
 
@@ -78,11 +78,11 @@ description: "省公司三方车下单的操作说明。"
 
 1. 进入 **【充值】** 页面后，点击列表右上角的 **【充值】** 按钮，系统弹出充值框。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/vBPlN5jdAr7b9OdG/img/bf88dbf0-064e-4001-8acb-538c3f738c8c.png?Expires=1783781799&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=FWo5malEElOJYszc69CEI4yzREA%3D "")
+   ![image.png](./images/r1R7q3QmWeQznO4ycNplgQwEWxkXOEP2/省公司三方车下单操作说明_1_b723c91c.png)
 
 2. 核对账户信息，在输入框中填写需要充值的额度，然后点击 **【确认】**。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/vBPlN5jdAr7b9OdG/img/58e9c62f-e7e3-464c-b916-1df470ad0a28.png?Expires=1783781799&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Rf2Whz2px%2BPbRb%2BNHG2VZSQshKo%3D "")
+   ![image.png](./images/r1R7q3QmWeQznO4ycNplgQwEWxkXOEP2/省公司三方车下单操作说明_2_ba076f40.png)
 
 3. 根据页面引导完成充值。
 
@@ -93,7 +93,7 @@ description: "省公司三方车下单的操作说明。"
    - 临时班线：点击 **【新增临时调度计划】**。
    - 固定班线：点击对应班线上的 **【调度】** 按钮。
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/vBPlN5jdAr7b9OdG/img/573e682c-e6f9-4eb5-9bf7-5c372b4a2ab0.png?Expires=1783781799&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=1eJhs%2FTYLZAKWHV61uLqDi1b9us%3D "")
+   ![image.png](./images/r1R7q3QmWeQznO4ycNplgQwEWxkXOEP2/省公司三方车下单操作说明_3_c3d4a014.png)
 
 2. 选择运输公司和司机。
 
@@ -105,7 +105,7 @@ description: "省公司三方车下单的操作说明。"
 
    司机注册方式请见：[司机端注册操作说明](https://alidocs.dingtalk.com/i/nodes/7NkDwLng8Zqv4nlzsNPRolamJKMEvZBY?doc_type=wiki_doc)
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/vBPlN5jdAr7b9OdG/img/1f2c2f21-d510-4162-a3c8-aa7498ea983c.png?Expires=1783781799&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=YcJQ89PzXI%2F57MZ%2B7lNvjrOTsw4%3D "")
+   ![image.png](./images/r1R7q3QmWeQznO4ycNplgQwEWxkXOEP2/省公司三方车下单操作说明_4_23bd7c3b.png)
 
 3. 填写其他必填信息，并输入运费。
 
@@ -116,7 +116,7 @@ description: "省公司三方车下单的操作说明。"
    计费单价填写的是需要支付司机的运费，且为**不含税**金额。
    :::
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/vBPlN5jdAr7b9OdG/img/9df953fb-6ad4-4e97-b485-7a4fa446f4eb.png?Expires=1783781799&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=dHlMfJrj70AwrXmno%2Fns6n9nKjU%3D "")
+   ![image.png](./images/r1R7q3QmWeQznO4ycNplgQwEWxkXOEP2/省公司三方车下单操作说明_5_c2de3071.png)
 
 4. 核实是否下单成功。
 
@@ -126,7 +126,7 @@ description: "省公司三方车下单的操作说明。"
    如果 **【订单编号】** 为空，请联系技术支持处理。此单请不要继续往下操作。
    :::
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/vBPlN5jdAr7b9OdG/img/d4f28d43-6225-4a83-a0b4-aa34ea73f4c2.png?Expires=1783781799&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=v%2BjYfXV93SsTaN9NFIpKPb3RRjw%3D "")
+   ![image.png](./images/r1R7q3QmWeQznO4ycNplgQwEWxkXOEP2/省公司三方车下单操作说明_6_290deea8.png)
 
 ## 五、操作结果
 

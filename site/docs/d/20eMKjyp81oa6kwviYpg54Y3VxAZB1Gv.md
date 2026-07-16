@@ -40,9 +40,9 @@ description: "客户如何通过电商平台下单？的操作说明。"
 
 例如：上海青浦网点地址为**上海-上海-青浦区**，则客户的发货地址也需为**上海-上海-青浦区 XX路XX号**，否则可能会出现选择不到对应网点的情况。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOkpNv2MJ6l4BX/img/75485a8d-551d-4ef4-b22d-099879b9b84a.png?Expires=1783781509&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=e%2Fa0BlPitsjwAI9Gm38ilRqUeoQ%3D "")
+![image.png](./images/20eMKjyp81oa6kwviYpg54Y3VxAZB1Gv/大客户_个人下单操作说明_10_69e68144.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOkpNv2MJ6l4BX/img/570a6cfc-0673-4861-9bd0-f3e8adcbf5fd.png?Expires=1783781509&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=PoZTnLvCyk081kE2gaOhL%2BO1YeM%3D "")
+![image.png](./images/20eMKjyp81oa6kwviYpg54Y3VxAZB1Gv/大客户_个人下单操作说明_11_d7788ae0.png)
 :::
 
 ### 4.2 网点在中通冷链系统审核商家并充值
@@ -53,7 +53,7 @@ description: "客户如何通过电商平台下单？的操作说明。"
 2. 进入**经营管理中心——商户电子面单账户管理——审核**。
 3. 找到对应商家，点击**审核**即可。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOkpNv2MJ6l4BX/img/afadd10f-d3fb-40e8-a0de-fa42cef127b1.png?Expires=1783781509&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=GmxKdGZIh%2BuIqzQ06FpYBrWs9NE%3D "")
+![image.png](./images/20eMKjyp81oa6kwviYpg54Y3VxAZB1Gv/大客户_个人下单操作说明_12_cf24529e.png)
 
 #### (2) 商家充值
 
@@ -69,9 +69,9 @@ description: "客户如何通过电商平台下单？的操作说明。"
 - 如商家有**100个**面单余额，则最多允许输入**-100**。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOkpNv2MJ6l4BX/img/8ecd088a-1a3b-4384-8792-63f4bf591b68.png?Expires=1783781509&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=6VKgGYsu1gWpSgAlSZzSbPXCRRI%3D "")
+![image.png](./images/20eMKjyp81oa6kwviYpg54Y3VxAZB1Gv/大客户_个人下单操作说明_13_26f8bc54.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOkpNv2MJ6l4BX/img/27482055-e08f-4a7c-8a44-cace10c38bf1.png?Expires=1783781509&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=tEtbG%2FigEtwIV74PgmTOJKYyEoA%3D "")
+![image.png](./images/20eMKjyp81oa6kwviYpg54Y3VxAZB1Gv/大客户_个人下单操作说明_14_63a40793.png)
 
 ### 4.3 网点购买对应渠道面单
 
@@ -88,7 +88,7 @@ description: "客户如何通过电商平台下单？的操作说明。"
 **抖音暂不支持。**
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOkpNv2MJ6l4BX/img/3fc3b15c-65f1-46fb-ae44-d8f3523deab3.png?Expires=1783781509&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=svzO%2FjA59h1SVsKMcBt%2BQhz5p8w%3D "")
+![image.png](./images/20eMKjyp81oa6kwviYpg54Y3VxAZB1Gv/大客户_个人下单操作说明_15_eb053335.png)
 
 ### 4.4 商家在打单软件配置打印模板
 
@@ -105,9 +105,9 @@ description: "客户如何通过电商平台下单？的操作说明。"
 若不支持，需要商家侧与对应的**软件服务商**售前支持人员反馈，软件服务商对接后即可使用打单功能。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOkpNv2MJ6l4BX/img/4fb03fba-5cfc-4fda-8814-8aa49775441c.png?Expires=1783781509&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=lOaBDdcQqjheJupuNFESQL8ODqo%3D "")
+![image.png](./images/20eMKjyp81oa6kwviYpg54Y3VxAZB1Gv/大客户_个人下单操作说明_16_79f9e269.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOkpNv2MJ6l4BX/img/31ca8845-ee4c-4db3-8128-4f50fe014cb4.png?Expires=1783781509&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=V8HpZQKPGjuFOJ1bji3h78dWY6E%3D "")
+![image.png](./images/20eMKjyp81oa6kwviYpg54Y3VxAZB1Gv/大客户_个人下单操作说明_17_bac828f5.png)
 
 #### (2) 配置打印模板
 
@@ -115,11 +115,11 @@ description: "客户如何通过电商平台下单？的操作说明。"
 2. 选择对应电商渠道。
 3. 选择**中通冷链**。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOkpNv2MJ6l4BX/img/7fefa274-6f8e-4dad-b6a3-e4dffc5b6fb8.png?Expires=1783781509&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=YZM3lVc7c0pR1RrTq4ZiOfYC%2FgE%3D "")
+![image.png](./images/20eMKjyp81oa6kwviYpg54Y3VxAZB1Gv/大客户_个人下单操作说明_18_47a131cd.png)
 
 4. 维护**温区**、**产品类型**、**付款方式**等信息。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOkpNv2MJ6l4BX/img/4710fd0a-133f-4b22-962a-fa3a481e7318.png?Expires=1783781509&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=z8NGUfMMTEQmX3fM0olJnl%2Ba9zI%3D "")
+![image.png](./images/20eMKjyp81oa6kwviYpg54Y3VxAZB1Gv/大客户_个人下单操作说明_19_63d57e34.png)
 
 ### 4.5 客户在打单软件取号并打印面单
 
@@ -127,7 +127,7 @@ description: "客户如何通过电商平台下单？的操作说明。"
 2. 选择已配置的**电子面单模版**。
 3. 执行打印即可。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOkpNv2MJ6l4BX/img/327f8676-63c0-4a65-961c-225d40801598.png?Expires=1783781509&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=T1aTexEU6psBR4gxSF%2FVOKT5Tgo%3D "")
+![image.png](./images/20eMKjyp81oa6kwviYpg54Y3VxAZB1Gv/大客户_个人下单操作说明_1_05cb6fd5.png)
 
 ::: tip 特殊说明
 目前客户在电商平台上下单，选择任意产品，目前均会转换为**零担产品**至鲸天系统内。
@@ -139,7 +139,7 @@ description: "客户如何通过电商平台下单？的操作说明。"
 2. 网点需及时接单。
 3. 后续操作与现有订单操作相同，正常进行转运单等操作即可。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOkpNv2MJ6l4BX/img/7b4c4625-0711-4503-9d1f-a17be58ce0f6.png?Expires=1783781509&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=72IETp4dAWZLMaB0AJ4wOX5pk9I%3D "")
+![image.png](./images/20eMKjyp81oa6kwviYpg54Y3VxAZB1Gv/大客户_个人下单操作说明_20_99648033.png)
 
 ## 五、操作结果
 

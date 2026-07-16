@@ -27,11 +27,11 @@ description: "网络货运货主注册的操作说明。"
 
 2. 系统跳转至新增货主资料页面后，按页面要求填写货主注册信息并提交。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4j6OJ5jaY59LEq3p/img/d25885d5-e2b6-462f-9e6d-c64aab7bc4b1.png?Expires=1783781791&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=bRXJ7nH6GvNd4xiVeAH6AzPxOWI%3D "")
+![image.png](./images/jb9Y4gmKWrpOkwZQIjbde2o9JGXn6lpz/司机端注册操作说明_1_ad777e38.png)
 
 3. 提交资料后，系统会自动同步给平台审核。请关注审核状态，平台会在**3 个工作日内**完成审核。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4j6OJ5jaY59LEq3p/img/d0927c9f-36f9-4f2a-8b82-b2d9e9dc818b.png?Expires=1783781791&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=gWkh%2FuOp%2Bj%2FjZi7E9Asf4ReeZH4%3D "")
+![image.png](./images/jb9Y4gmKWrpOkwZQIjbde2o9JGXn6lpz/司机端注册操作说明_2_5d7f12d2.png)
 
 4. 审核通过后，为方便后续开票，请及时维护税务信息：
    - 点击**【编辑】**。
@@ -39,7 +39,7 @@ description: "网络货运货主注册的操作说明。"
    - 点击**【新增】**。
    - 填写税务信息资料并提交。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4j6OJ5jaY59LEq3p/img/28b5a1da-bcc4-4a93-a6d5-a45c472d7cdb.png?Expires=1783781791&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AEi7ZGO%2F%2BBxdfpfzvwHvjQwFz9c%3D "")
+![image.png](./images/jb9Y4gmKWrpOkwZQIjbde2o9JGXn6lpz/司机端注册操作说明_3_3281b260.png)
 
 ## 五、操作结果
 

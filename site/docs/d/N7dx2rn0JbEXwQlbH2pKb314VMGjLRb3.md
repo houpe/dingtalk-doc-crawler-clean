@@ -43,7 +43,7 @@ description: "基础数据-商品管理的操作说明。"
    带 **\*** 的字段为必填项。
    :::
 
-   ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZd9aZLWqxA/img/492ed43b-fdc5-4942-9015-e3c1934d6eb9.png?Expires=1783781779&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ZgcH3Xyh4he1mGbdgVaGlFKKcFw%3D "")
+   ![image.png](./images/N7dx2rn0JbEXwQlbH2pKb314VMGjLRb3/单据-_入库单_1_b9ab1010.png)
 
 4. 保存商品信息。
 

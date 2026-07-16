@@ -27,7 +27,7 @@ description: "明明系统上账户余额充足，咋开单还提醒余额不足
    - 差异金额会在**冻结金额**中展示。
    - 可点击**冻结金额**查看对应的详情信息。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/meonaAYVZL1JnXxj/img/7965a5dd-57c9-4814-b7fb-083460fe06c0.png?Expires=1783781616&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=8Gq6%2BcY4hjiIs3KXK9cJRF7KV6Q%3D "")
+![image.png](./images/7NkDwLng8Zqv4nlzsOQ29lg1JKMEvZBY/包仓仓位用的好快，哪里能看到仓位的使用明细呢？_1_4b707d03.png)
 
 ## 五、操作结果
 

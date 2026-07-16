@@ -36,7 +36,7 @@ description: "自主加油的操作说明。"
 
 ### 4.1 选择加油站并确认服务商
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/3M0OzeZN0jyz6qze/img/1f2d6078-ae7e-4f93-9b1d-e61bba5589b4.png?Expires=1783781674&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Gr4VQJfuoQdv2XdsIQasV8wlsnc%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skMgvX7RVZd1wyK0/维保工单操作说明书_1_65ebb6fc.png)
 
 1. 打开 **中通冷链司机版** 小程序首页。
 2. 在 **常用服务** 栏点击 **加油服务** 图标，进入加油列表页面。
@@ -54,7 +54,7 @@ description: "自主加油的操作说明。"
 
 ### 4.2 选择油品、油机并拍摄现场照片
 
-![ad12160a9e906c24ac0846904f4e20d2.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/3M0OzeZN0jyz6qze/img/d2713d15-cd36-4ed6-8d56-dcb49f7b4339.png?Expires=1783781674&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=T%2Fu1ha988TAkGbbObbuqf%2B6%2BEcM%3D "")
+![ad12160a9e906c24ac0846904f4e20d2.png](./images/m9bN7RYPWdq2pGK3skMgvX7RVZd1wyK0/维保工单操作说明书_2_e1d68e65.png)
 
 1. 在加油信息页面，选择对应 **油品类型**、**油枪编号**。
 2. 根据实际加油情况，区分 **主油箱**、**副油箱**。
@@ -69,7 +69,7 @@ description: "自主加油的操作说明。"
 
 ### 4.3 上传加油小票并核对数据
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/3M0OzeZN0jyz6qze/img/71fc0f47-5ef5-41f8-9bad-70eee7c64aaf.png?Expires=1783781674&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=KTjv%2FvgBBtDap6pAnk2XfTm4X7w%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skMgvX7RVZd1wyK0/自主加油操作说明书_1_1747221e.png)
 
 1. 跳转至加油小票页面后，点击 **小票照片**。
 2. 拍摄加油站纸质/电子加油小票，并上传至系统。
@@ -87,7 +87,7 @@ description: "自主加油的操作说明。"
 
 ### 4.4 线上确认支付并完成加油
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/3M0OzeZN0jyz6qze/img/26632cbe-7b3d-409b-8859-121da402ac3e.png?Expires=1783781674&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=tr3aVvs1ihX9txdH4zU5g691cmM%3D "")
+![image.png](./images/m9bN7RYPWdq2pGK3skMgvX7RVZd1wyK0/自主加油操作说明书_2_73fd56d1.png)
 
 1. 页面展示本次加油合计升数与金额。
 2. 核对信息无误后，点击 **确认支付**。

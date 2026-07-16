@@ -24,7 +24,7 @@ description: "系统账号开通及权限配置的操作说明。"
 3. 已确认员工所属机构（网点）及需要配置的岗位角色。
 4. 如需开通鲸小宝、PDA 等账号，需能进入**用户管理**页面。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/J9LnWN5YEy0AlvDe/img/8c55b5a4-b349-4c31-986e-b8169e2f2ba3.png?Expires=1784089884&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=YsGRvSMzd6kiutgOEnLh036HqMQ%3D "")
+![image.png](./images/gvNG4YZ7JnjYrLXQt2P1lzlKJ2LD0oRE/系统访问及APP下载_1_ed9b87c8.png)
 
 ::: tip 账号创建说明
 若在**鲸天系统**中添加账号，系统会自动创建**鲸天系统账号**及对应的**宝盒账号**。
@@ -67,7 +67,7 @@ description: "系统账号开通及权限配置的操作说明。"
 目前录单成本查看配置默认是**“空白”**。网点管理员给本网点创建员工时，必须注意填写该项。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/J9LnWN5YEy0AlvDe/img/4365da79-f707-4a98-9f95-0f783334350a.png?Expires=1784089884&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=xFSZgYAa6kJxaXf8bnN6j7Lwt2c%3D "")
+![image.png](./images/gvNG4YZ7JnjYrLXQt2P1lzlKJ2LD0oRE/系统访问及APP下载_2_f6b7e9dc.png)
 
 ### 4.2 给员工授权
 
@@ -83,7 +83,7 @@ description: "系统账号开通及权限配置的操作说明。"
 如果员工同时负责 **A 网点**和 **B 网点**的网点客服岗位，则在**选择组织**时，需要同时勾选 **A 网点**和 **B 网点**。
 :::
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/J9LnWN5YEy0AlvDe/img/151dc288-e2a0-42ad-a6ce-fd17160e34d0.png?Expires=1784089884&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=VgOiNbDZRgFu7PKj34TZoNgrvEQ%3D "")
+![image.png](./images/gvNG4YZ7JnjYrLXQt2P1lzlKJ2LD0oRE/系统访问及APP下载_3_321c76ec.png)
 
 ::: danger 重点提醒
 1. 授权后，员工账号用户状态才是**“已开通”**，才可以登录系统；否则无权限。
@@ -101,9 +101,9 @@ description: "系统账号开通及权限配置的操作说明。"
 4. 重置后，直接使用密码登录即可。
 5. 如需维护 PDA 用户，可进行**重置 PDA 密码**或**启用 PDA 用户**等操作。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/J9LnWN5YEy0AlvDe/img/885801f4-1d1f-4543-893d-505175f7a751.png?Expires=1784089884&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=IXhTY%2B9Nxu3ArHb0SCdpNkIKf9Y%3D "")
+![image.png](./images/gvNG4YZ7JnjYrLXQt2P1lzlKJ2LD0oRE/系统访问及APP下载_4_83ace20e.png)
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/J9LnWN5YEy0AlvDe/img/6420df28-c37e-45db-9e50-5f236720e14c.png?Expires=1784089884&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=fOF1bBhM8AT2a7Tb9yrgfK5GPbQ%3D "")
+![image.png](./images/gvNG4YZ7JnjYrLXQt2P1lzlKJ2LD0oRE/系统账号开通及权限配置_1_cbb647a6.png)
 
 ::: warning 注意事项
 若需要开通**鲸小宝**、**PDA**等账号，点击此处**重置密码**，直接用密码登录即可。

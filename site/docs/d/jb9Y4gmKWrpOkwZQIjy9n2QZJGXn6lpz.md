@@ -47,7 +47,7 @@ description: "PC端怎么查看网点相关数据的操作说明。"
 3. 检查财务资金状况区，重点核对 **【账户余额】** 与 **【电子面单情况】**。
 4. 如面单库存不足，或余额逼近警戒线，及时发起充值或采购申请，避免因欠费、缺单导致前端无法正常承接派件。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOk2bj5RmKpq4B/img/6a0c71d5-5926-43bb-b2f8-5bc361455768.png?Expires=1783781671&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=bujjfxasqHe3IfKar2kvNUtiDFU%3D "")
+![image.png](./images/jb9Y4gmKWrpOkwZQIjy9n2QZJGXn6lpz/PC端怎么查看网点相关数据_1_550a4aa9.png)
 
 ### 4.3 场景二：日间时效干预与风险监控
 
@@ -57,7 +57,7 @@ description: "PC端怎么查看网点相关数据的操作说明。"
 4. 监控资金回流，查看 **【进港到付款情况(元)】**。
 5. 当累计金额较大时，重点跟进并督促派件员及时回款。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOk2bj5RmKpq4B/img/9b2c0f5f-9011-4f32-bae8-43714a48835a.png?Expires=1783781671&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=gqiDjOtjcPko%2FD1tAGT2hSv73n4%3D "")
+![image.png](./images/jb9Y4gmKWrpOkwZQIjy9n2QZJGXn6lpz/PC端怎么查看网点相关数据_2_611d49eb.png)
 
 ## 五、操作结果
 

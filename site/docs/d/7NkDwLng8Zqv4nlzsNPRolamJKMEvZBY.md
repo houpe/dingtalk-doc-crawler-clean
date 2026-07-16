@@ -40,16 +40,16 @@ description: "司机端注册的操作说明。"
 3. 进入认证页面后，填写认证相关信息，包括 **姓名、身份证、驾驶证** 等。
 4. 上传 **身份证、驾驶证照片**。系统会自动识别并回填信息，请仔细核对填写内容，避免系统识别错误导致信息有误。
 
-![Gemini_Generated_Image_bjl54nbjl54nbjl5.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5jpa3z68OY7/img/f58ea99d-7050-4ec6-a7cd-e20ef2a94558.png?Expires=1783781793&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=eS2mqCQGoUvSSJimFZakNT5kn7o%3D "")
+![Gemini_Generated_Image_bjl54nbjl54nbjl5.png](./images/7NkDwLng8Zqv4nlzsNPRolamJKMEvZBY/司机端注册操作说明_1_ad777e38.png)
 
 5. 提交资料后，系统会进行人脸识别认证，用于核验司机提交的证件是否与本人一致（开发中）。
 6. 填写车辆信息。可通过上传图片由系统自动识别，请仔细核对填写内容，避免系统识别错误导致信息有误。
 
-![Gemini_Generated_Image_emte92emte92emte.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5jpa3z68OY7/img/48cc6dcc-dd21-42e0-976e-7eab9cecbf62.png?Expires=1783781793&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Ss%2FRRTd2BXyIOMs5LJ%2BKIfEYdQo%3D "")
+![Gemini_Generated_Image_emte92emte92emte.png](./images/7NkDwLng8Zqv4nlzsNPRolamJKMEvZBY/司机端注册操作说明_2_5d7f12d2.png)
 
 7. 确认信息无误后提交认证，等待平台审核。
 
-![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5jpa3z68OY7/img/e53752e4-4c0c-41b0-a79d-2e6d231b4e99.png?Expires=1783781793&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=x%2FrZ08hk3VubwRlv1wysErIBI0M%3D "")
+![image.png](./images/7NkDwLng8Zqv4nlzsNPRolamJKMEvZBY/司机端注册操作说明_3_3281b260.png)
 
 ## 五、操作结果
 
