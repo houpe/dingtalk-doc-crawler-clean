@@ -5,7 +5,7 @@ description: "调度任务的操作说明。"
 
 # 调度任务
 
-## 适用场景
+## 一、适用场景
 
 本手册基于**鲸天系统**编制，适用于运输调度岗位人员。
 
@@ -21,7 +21,7 @@ description: "调度任务的操作说明。"
 
 通过以上操作，实现冷链运输线上化、标准化管控，保障干线、支线、整车运输任务有序执行。
 
-## 前置条件
+## 二、前置条件
 
 1. **账号与权限**
    使用专属工号登录**鲸天系统**。调度岗位需开通**运营运输管理**全模块权限；如无权限，请联系系统管理员配置。
@@ -35,7 +35,7 @@ description: "调度任务的操作说明。"
 4. **基础数据准备**
    调度前需维护运输公司、车辆、司机等基础档案。
 
-## 操作入口
+## 三、操作入口
 
 主要操作入口如下：
 
@@ -47,7 +47,7 @@ description: "调度任务的操作说明。"
 - **鲸天系统 → 运营运输管理 → 运输监控 → 运输任务管理**
 - **鲸天系统 → 运营运输管理 → 整车管理 → 运输费用审批**
 
-## 核心名词解释
+## 四、核心名词解释
 
 - **基础数据**：包含运输公司、车辆、司机三大基础档案，是开展调度派单的前置数据源。
 - **固定班线**：常态化运行的固定线路班次，系统自动生成调度计划，直接安排车辆与司机即可。
@@ -57,11 +57,11 @@ description: "调度任务的操作说明。"
 - **运输任务管理**：集中查看所有调度单、子任务、发车及运单明细，跟踪运输全流程状态。
 - **运输费用审批**：对已完结调度任务的运费、补扣款进行审核，数据同步至天玑系统。
 
-## 操作步骤
+## 五、操作步骤
 
-## 基础数据配置
+## 六、基础数据配置
 
-### 新增运输公司
+### 6.1 新增运输公司
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 基础资料 → 运输公司维护**
 
@@ -82,7 +82,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/f3ea1e38-fea7-415f-8169-196ccc51e94e.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=UlJ3sBBzDHYzs3L%2B1Ki%2FFyovhU8%3D "")
 
-### 新增车辆信息
+### 6.2 新增车辆信息
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 车辆管理 → 车辆信息**
 
@@ -100,7 +100,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/4e962357-945f-46fc-98d2-14df812d9fff.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Ci7yptIOo62VIhzQiMjlRvf0%2Bo0%3D "")
 
-### 修改车辆信息
+### 6.3 修改车辆信息
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 车辆管理 → 车辆信息**
 
@@ -115,7 +115,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/c282f8b4-4160-4a43-bcf5-aac686be9ea4.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=cy2SI5EKt82pcTWISbzPGCe3GpI%3D "")
 
-### 新增司机信息
+### 6.4 新增司机信息
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 司机管理 → 司机信息**
 
@@ -137,7 +137,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/2a4de5ac-a124-416b-8284-58e0505101c9.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=FV6GDknUAXgXAwn%2FYWOTd8HMc6s%3D "")
 
-### 修改司机信息
+### 6.5 修改司机信息
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 司机管理 → 司机信息**
 
@@ -151,9 +151,9 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/cfef33d7-7677-4b0b-9832-04e5046eaa4e.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Y4Hiro8U1xcEuz2Pzr%2BNBrbe9K0%3D "")
 
-## 班线车辆调度
+## 七、班线车辆调度
 
-### 固定班线调度
+### 7.1 固定班线调度
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 运输计划 → 调度计划**
 
@@ -179,7 +179,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/7bbc2ecb-4f30-489f-8188-c5e3f69570f1.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=2Zky2ic47%2BeFHBWpaHJmILDssyc%3D "")
 
-### 临时班线/加班车调度
+### 7.2 临时班线/加班车调度
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 运输计划 → 调度计划**
 
@@ -206,7 +206,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/216b9b18-38ac-46c6-9f71-17bf70829e3e.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=DyH7JLIG0U8oRH7jXPbyI4807Bw%3D "")
 
-### 调度单预配载
+### 7.3 调度单预配载
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 运输计划 → 调度计划**
 
@@ -223,7 +223,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/5d80befb-a534-469b-9cdc-633dd06563e7.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=9xLNhWLoqxGQIlF%2FcrRQLa9EXhI%3D "")
 
-### 调度单打印
+### 7.4 调度单打印
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 运输计划 → 调度计划**
 
@@ -234,9 +234,9 @@ description: "调度任务的操作说明。"
 调度单包含调度单号、车辆、司机、途经站点、时间等信息，用于装卸车扫码使用。
 :::
 
-## 整车订单全流程操作
+## 八、整车订单全流程操作
 
-### 新增整车订单
+### 8.1 新增整车订单
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 整车管理 → 整车订单**
 
@@ -262,7 +262,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/c48b4712-f930-4140-a821-29af51bdcdf2.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=xA5QbDa48tNYjVw0rrtvYSzMlgs%3D "")
 
-### 编辑整车订单
+### 8.2 编辑整车订单
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 整车管理 → 整车订单**
 
@@ -274,7 +274,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/162f7c7a-8225-461b-9e1d-135c1c270bca.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=saDj0ItoJtlOAPQuAboSUSztIDA%3D "")
 
-### 订单提交审批
+### 8.3 订单提交审批
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 整车管理 → 整车订单**
 
@@ -285,7 +285,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/c50330ac-7127-46b8-adfe-b85301420221.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=29v380YKSCfe2uaRq7Jb2nZ7xK4%3D "")
 
-### 订单审批
+### 8.4 订单审批
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 整车管理 → 整车订单**
 
@@ -298,7 +298,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/c22a3ef6-956f-42ba-a41a-1c9deff5e240.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AYYk%2Fg4A0t3KMkM3YfmI2vUMlFU%3D "")
 
-### 整车订单派车
+### 8.5 整车订单派车
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 运输计划 → 调度计划**
 
@@ -310,7 +310,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/7d591577-0842-40f2-b4d2-53ce1a284b42.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=auB%2FxLVteXEj3ep9KCPeOKf1KLU%3D "")
 
-### 整车订单费用追加
+### 8.6 整车订单费用追加
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 整车管理 → 整车订单**
 
@@ -322,7 +322,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/faf02eb6-3183-4215-bd09-dde3a812962f.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=1IN8pur7omuJkpz6qqVR2xYn1VM%3D "")
 
-## 运输任务管理
+## 九、运输任务管理
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 运输监控 → 运输任务管理**
 
@@ -337,7 +337,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/0aff42a7-3e85-4130-88bc-443816ea4fa3.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AG42DGCptrQmk3WkBlthfeHzJNY%3D "")
 
-## 运输费用审批
+## 十、运输费用审批
 
 **操作入口**：**鲸天系统 → 运营运输管理 → 整车管理 → 运输费用审批**
 
@@ -355,7 +355,7 @@ description: "调度任务的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/XNkOM5j4x8NMAOY7/img/53555a76-125f-4865-a121-9425de16397a.png?Expires=1783781679&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=JZYKFTlVDSypPglMnngAnhEKNAU%3D "")
 
-## 操作结果
+## 十一、操作结果
 
 完成以上操作后，可得到对应结果：
 
@@ -367,7 +367,7 @@ description: "调度任务的操作说明。"
 - 运输任务管理页面可跟踪调度单、运输子任务、发车信息和运单明细。
 - 运输费用审批完成后，审批结果会**实时同步至天玑系统**。
 
-## 注意事项
+## 十二、注意事项
 
 ::: warning 注意事项
 - 运输公司新增完成后，需联系**总部运输部纪宗君**审核，审核通过后才可正常选用。
@@ -383,9 +383,9 @@ description: "调度任务的操作说明。"
 - 费用审批驳回将退回上一环节。
 :::
 
-## 常见问题
+## 十三、常见问题
 
-### 常见异常与兜底方案
+### 13.1 常见异常与兜底方案
 
 | 序号 | 异常现象 / 报错提示 | 常见原因 | 解决方案 |
 |------|---------------------------|------------|------------|
@@ -397,30 +397,30 @@ description: "调度任务的操作说明。"
 | 6 | 运输费用审批提交失败 | 网络卡顿、单据状态异常 | 1. 切换稳定网络重试；2. 核对调度单状态，完结单据才可进行费用审批。 |
 | 7 | 司机小程序看不到调度下发任务 | 调度单未审核、手机号绑定错误、小程序无定位权限 | 1. 确认调度单已完成总部审核；2. 核对司机绑定手机号与系统一致；3. 指导司机开启小程序定位权限。 |
 
-### 新增运输公司后，为什么不能直接选用？
+### 13.2 新增运输公司后，为什么不能直接选用？
 
 运输公司新增完成后，必须联系总部运输部纪宗君审核，**审核通过**才可在调度、订单模块正常选择使用。
 
-### 固定班线和临时班线调度有什么区别？
+### 13.3 固定班线和临时班线调度有什么区别？
 
 固定班线为常态化线路，系统自动生成计划，直接调度即可；临时班线/加班车需要手动新增计划，且必须经总部值班调度审核，司机才能接单。
 
-### 车辆故障需要更换车辆，如何操作？
+### 13.4 车辆故障需要更换车辆，如何操作？
 
 在对应调度计划页面点击**重新调度**，更换新车辆及司机，操作完成后提交总部值班调度审核。
 
-### 整车订单里的货物价值该如何填写？
+### 13.5 整车订单里的货物价值该如何填写？
 
 按货物实际价值填写，保险费按货值千分之三计收；若不需要投保，货物价值填写**0.01**。
 
-### 运输途中司机上报异常，调度需要做什么？
+### 13.6 运输途中司机上报异常，调度需要做什么？
 
 及时查看司机提交的异常类型、文字说明及图片凭证，根据实际情况审核处理，同步更新运输任务状态。
 
-### 调度单什么时候可以打印？
+### 13.7 调度单什么时候可以打印？
 
 完成车辆、司机调度安排后即可打印，单据用于现场装卸、扫码交接使用。
 
-### 运输费用审批完成后，数据会同步到哪里？
+### 13.8 运输费用审批完成后，数据会同步到哪里？
 
 审批结果会**实时同步至天玑系统**，无需二次录入。

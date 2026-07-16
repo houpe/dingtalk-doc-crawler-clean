@@ -5,26 +5,26 @@ description: "移动端怎么查看网点相关数据的操作说明。"
 
 # 移动端怎么查看网点相关数据
 
-## 适用场景
+## 一、适用场景
 
 本文适用于网点管理者在移动办公或非坐班场景下，通过 **鲸小宝 APP** 查看网点相关数据。
 
 当无法随时操作 PC 端系统时，可通过 **鲸小宝 APP** 随时查看网点核心经营数据、质量考核指标及进出港物流状态，实现移动端管控与跟单。
 
-## 前置条件
+## 二、前置条件
 
 1. 已拥有 **鲸小宝 APP** 登录账号。
 2. 后台已配置对应的 **网点数据查看** 及 **下级网点管理** 权限。
 3. 手机已安装最新版本的 **鲸小宝 APP**。
 4. 已准备好需要查看的网点相关业务数据。
 
-## 操作入口
+## 三、操作入口
 
 打开并登录 **鲸小宝 APP**，进入首页，点击 **【网点数据】** 图标。
 
-## 操作步骤
+## 四、操作步骤
 
-### 查看经营数据
+### 4.1 查看经营数据
 
 适用于业务盘点、财务对账等场景。
 
@@ -36,7 +36,7 @@ description: "移动端怎么查看网点相关数据的操作说明。"
 
 ![0c02efd0eeda2af46e8a8b9c9a862f99.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4maOgXbEYyWjvlWN/img/1b662b40-8adb-419b-a073-2dd2baf8bc77.jpeg?Expires=1783781663&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=I3Gr2%2FZVpTahPf50TdjaX8%2BIWBo%3D "")![lQDPJxetoWfCKNvNCUjNBDiwd7DPctY--b8KAGjh3Yv7AA_1080_2376.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4maOgXbEYyWjvlWN/img/876acd17-adb9-4abb-8b57-1b9ab299f347.jpeg?Expires=1783781663&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=HAhh1pJ%2FgitnZ3hPPkyWm7bPy24%3D "")
 
-### 查看进出港数据
+### 4.2 查看进出港数据
 
 适用于日常履约异常跟单。
 
@@ -47,7 +47,7 @@ description: "移动端怎么查看网点相关数据的操作说明。"
 
 ![lQDPJwZqZU7LeNvNBP7NAkWwTxwPUh3N5o4KAGjiOierAA_581_1278.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4maOgXbEYyWjvlWN/img/f85ab901-2041-4d19-baff-bb67d027949f.jpeg?Expires=1783781663&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=R0AGNXEecFWdgF0z4VGIElBqWgM%3D "")
 
-### 查看质量及时效数据
+### 4.3 查看质量及时效数据
 
 适用于监控网点考核指标。
 
@@ -61,7 +61,7 @@ description: "移动端怎么查看网点相关数据的操作说明。"
 
 ![lQDPKITTfvu7ydvNBP7NAkWwZsPDG55AG5QKAGjirEc9AA_581_1278.jpeg](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4maOgXbEYyWjvlWN/img/a4583eeb-35ca-4424-884f-b85772bfd804.jpeg?Expires=1783781663&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=S8htYoUBaIbZAVorktriAWi8uwU%3D "")
 
-## 操作结果
+## 五、操作结果
 
 操作完成后，可在 **鲸小宝 APP** 的 **【网点数据】** 页面查看以下数据：
 
@@ -69,7 +69,7 @@ description: "移动端怎么查看网点相关数据的操作说明。"
 2. **进出港数据**：按运单流转状态分类展示的进出港运单数据。
 3. **质量&时效数据**：接单及时率、签收及时率等服务质量与时效考核指标。
 
-## 注意事项
+## 六、注意事项
 
 ::: warning 注意事项
 如页面展示、权限范围或业务规则与本文不一致，请以当前系统配置和最新业务规则为准。
@@ -85,6 +85,6 @@ description: "移动端怎么查看网点相关数据的操作说明。"
   - 当查询数据为某一天时，指与上周相同周期对比。例如查看今天数据，今天是周三，则与上周三对比。
   - 当查询数据为某段时间周期时，指与上月相同时间周期对比。例如查看 **6月1日-6月5日** 汇总数据，则同期对比为 **5月1日-5月5日** 汇总数据。
 
-## 常见问题
+## 七、常见问题
 
 暂无。后续可根据一线反馈补充高频问题。

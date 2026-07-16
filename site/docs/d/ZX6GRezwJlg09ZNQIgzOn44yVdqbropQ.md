@@ -3,9 +3,9 @@ title: "07-WMS 2B出库作业"
 description: "07-WMS 2B出库作业的操作说明。"
 ---
 
-# 07-WMS 2B出库作业
+# WMS 2B出库作业
 
-## 适用场景
+## 一、适用场景
 
 本文适用于 **WMS 2B出库** 全流程操作，包括：
 
@@ -26,7 +26,7 @@ description: "07-WMS 2B出库作业的操作说明。"
 取快运子单数量功能需要提升：2B出库计划中 **单据类型=冷链B2B出库（2B）** 时，自动根据 **SKU总数量** 取云冷子单数量，此为新开发功能。
 :::
 
-## 前置条件
+## 二、前置条件
 
 操作前请确认以下准备项：
 
@@ -38,7 +38,7 @@ description: "07-WMS 2B出库作业的操作说明。"
   - PC端：用于操作 **出库订单/计划/波次/交接**。
   - PDA端：用于操作 **B2B拣货/交接发运**。
 
-## 操作入口
+## 三、操作入口
 
 2B出库涉及以下菜单页面，请按实际业务选择对应入口：
 
@@ -57,7 +57,7 @@ description: "07-WMS 2B出库作业的操作说明。"
 - **PDA B2B拣货**：执行拣货任务并放置在集货区
 - **PDA B2B交接发运**：用于与承运公司交接
 
-## 核心名词解释
+## 四、核心名词解释
 
 - **出库订单**：上游推送的出库单据，一个订单可分多次创建出库计划。2B出库单据类型为 **THCK（退货出库）**、**QTCK（其他出库）**。
 - **出库计划**：2B出库订单的一次出库计划任务，是2B出库的核心操作单位。
@@ -68,9 +68,9 @@ description: "07-WMS 2B出库作业的操作说明。"
 - **集货规则**：设置如何分配集货位，出库计划预处理可预分配集货库位。
 - **交接发货**：与承运公司完成包裹交接并触发发运的环节（PC或PDA操作）。
 
-## 操作步骤
+## 五、操作步骤
 
-### 出库订单生成出库计划
+### 5.1 出库订单生成出库计划
 
 **系统功能路径**：**出库 -> 出库订单**
 
@@ -97,7 +97,7 @@ description: "07-WMS 2B出库作业的操作说明。"
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZdGEbRGqxA/img/6ba3e0f5-dcb4-4c10-a4ba-9d9b9da67ef0.png?Expires=1783781725&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=iGYTuRk15cPU2VPznI%2BznpQAjHg%3D "")
 
-### 查看或生成出库计划
+### 5.2 查看或生成出库计划
 
 **系统功能路径**：**出库 -> 出库计划（2B）**
 
@@ -109,13 +109,13 @@ description: "07-WMS 2B出库作业的操作说明。"
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZdGEbRGqxA/img/e3e90591-3423-4645-b2fc-608bf33ff326.png?Expires=1783781725&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AwkPhYWwhH90O%2Bhb5qylTyQnmRw%3D "")
 
-### 生成拣货任务
+### 5.3 生成拣货任务
 
 创建拣货任务前，需要先分配库存，再生成拣货任务。支持以下三种方式，三者可以组合使用、互相补充。
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZdGEbRGqxA/img/7927cee2-b025-436b-b180-2e150a875e13.png?Expires=1783781725&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=qSKVeU7Xg0BDiKXbRrXpZ3BtvmE%3D "")
 
-#### 方式A：加入波次
+#### (1) 方式A：加入波次
 
 适用于批量操作，多个订单一起加入波次组合操作，更普遍、方便。系统会按 **B2B波次规则** 中的分配规则自动分配库存。
 
@@ -156,7 +156,7 @@ description: "07-WMS 2B出库作业的操作说明。"
 - **按单拣货单**：每个出库计划打印一页，用于大2B订单。
 - **送货单**：每个出库计划打印一页，用于与司机、门店交接。
 
-#### 方式B：分配库存
+#### (2) 方式B：分配库存
 
 适用于按单操作，常用于货主有特殊分配要求的场景。
 
@@ -171,7 +171,7 @@ description: "07-WMS 2B出库作业的操作说明。"
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZdGEbRGqxA/img/1034e263-e642-4d03-a674-00369807f5ac.png?Expires=1783781725&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AOVMVe%2F5Nj7zFF4dsiM%2BobPdICY%3D "")
 
-#### 方式C：调整分配
+#### (3) 方式C：调整分配
 
 适用于不需要系统规则分配、需要手动指定库存的场景，例如 **仅出临期**、**仅从退货区出库** 等。
 
@@ -186,11 +186,11 @@ description: "07-WMS 2B出库作业的操作说明。"
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZdGEbRGqxA/img/72cbf501-13a9-46ba-920b-1f2f8f6d0ee2.png?Expires=1783781725&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=q%2F%2BtNsOfcmkPpki8NFJEFjVIqYI%3D "")
 
-### 拣货任务确认
+### 5.4 拣货任务确认
 
 拣货任务生成后，可选择以下任一方式确认拣货。
 
-#### 方式一：纸质单拣货
+#### (1) 方式一：纸质单拣货
 
 1. 打印拣货单。
 2. 仓内按纸质单完成拣货。
@@ -201,7 +201,7 @@ description: "07-WMS 2B出库作业的操作说明。"
 拣货任务不能更改库位，但可以少拣或多拣。是否允许多拣、少拣，取决于 **操作配置-拣货**。
 :::
 
-#### 方式二：PDA拣货
+#### (2) 方式二：PDA拣货
 
 1. 使用PDA进入 **B2B拣货**。
 2. 选择对应拣货任务。
@@ -221,11 +221,11 @@ description: "07-WMS 2B出库作业的操作说明。"
 操作说明可参考：《中通仓链20260423系统更新日志》。
 :::
 
-### 交接发货
+### 5.5 交接发货
 
 拣货完成后，可选择PC或PDA进行交接发货。
 
-#### 方式一：PC交接发货
+#### (1) 方式一：PC交接发货
 
 1. 在PC端进入交接发货相关页面。
 2. 查询需要交接的出库计划或包裹。
@@ -233,7 +233,7 @@ description: "07-WMS 2B出库作业的操作说明。"
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZdGEbRGqxA/img/78acfb11-9617-4040-8b9f-cc2ea7193b03.png?Expires=1783781725&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AD0raTnv6kcGeZSLzANOjoSpr5U%3D "")
 
-#### 方式二：PDA B2B交接发运
+#### (2) 方式二：PDA B2B交接发运
 
 1. 使用PDA进入 **B2B交接发运**。
 2. 查询或扫描需要交接的单据。
@@ -243,7 +243,7 @@ description: "07-WMS 2B出库作业的操作说明。"
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZdGEbRGqxA/img/f3ba8c84-d958-4602-8ca0-591b4b7c9a7d.png?Expires=1783781725&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=j36y6yKfAFHS%2Bsr3%2B4gwMgj%2BW8E%3D "")
 
-## 操作结果
+## 六、操作结果
 
 完成以上操作后，应达到以下结果：
 
@@ -252,7 +252,7 @@ description: "07-WMS 2B出库作业的操作说明。"
 3. 拣货任务已通过PC或PDA完成确认。
 4. 出库货品已完成 **交接发货** 或 **PDA B2B交接发运**。
 
-## 注意事项
+## 七、注意事项
 
 ::: danger 重点提醒
 - 只有 **THCK（退货出库）**、**QTCK（其他出库）** 类型的出库订单，才可按2B流程创建出库计划。
@@ -266,15 +266,15 @@ description: "07-WMS 2B出库作业的操作说明。"
 - 拣货任务不能更改库位；是否允许多拣、少拣，取决于 **操作配置-拣货**。
 :::
 
-### 相关系统参数
+### 7.1 相关系统参数
 
 **仓库货主配置——手动生成计划类型**
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/4EZlweZdGEbRGqxA/img/31e59378-0063-4d79-98b7-8b7f6f07b50f.png?Expires=1783781725&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=GtpD85MJjdZdQZPejxZz4ZcPoas%3D "")
 
-## 常见问题
+## 八、常见问题
 
-### 常见异常与处理
+### 8.1 常见异常与处理
 
 | **序号** | **异常现象** | **常见原因** | **解决方案** |
 |----------|----------------|----------------|----------------|
@@ -283,11 +283,11 @@ description: "07-WMS 2B出库作业的操作说明。"
 | 3 | 取号失败 | 承运商配置未匹配 | 检查承运商配置，确保已为2B出库单据类型配置承运方案 |
 | 4 | 波次释放后无法打印 | 未先释放波次再打印 | 务必先释放波次再打印单据 |
 
-### 2B出库和2C出库有什么区别？
+### 8.2 B出库和2C出库有什么区别？
 
 **A**：2B以 **出库计划** 为操作单位，支持多次分批出库、多种拣货模式、集货交接。2C以 **出库包裹** 为单位，支持自动预处理（取号/承运/包装）。2B取号打印功能相对薄弱。
 
-### 三种波次类型如何选择？
+### 8.3 三种波次类型如何选择？
 
 **A**：
 
@@ -295,6 +295,6 @@ description: "07-WMS 2B出库作业的操作说明。"
 - **B2B按单拣选**：一单一拣，适合大订单。
 - **B2B边拣边分**：按集货位分拣，适合面向门店/车线的出库。
 
-### 出库订单可以分多次出库吗？
+### 8.4 出库订单可以分多次出库吗？
 
 **A**：可以。一个出库订单可以拆分为多次出库计划分批发货。

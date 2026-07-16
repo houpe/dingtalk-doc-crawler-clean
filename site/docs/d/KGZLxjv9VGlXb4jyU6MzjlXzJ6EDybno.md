@@ -5,7 +5,7 @@ description: "冷链快递的操作说明。"
 
 # 冷链快递
 
-## 适用场景
+## 一、适用场景
 
 本文适用于需要操作或了解**冷链快递**业务的客户、一线网点、中心、云仓及网络货运人员。
 
@@ -16,9 +16,9 @@ description: "冷链快递的操作说明。"
 
 该模式用于补充传统冷链零担无法触达末端、传统快递无法保障温控的场景。
 
-## 前置条件
+## 二、前置条件
 
-### 账号与权限
+### 2.1 账号与权限
 
 操作前请确认已具备对应系统账号及权限。
 
@@ -28,11 +28,11 @@ description: "冷链快递的操作说明。"
 | BMS | 结算员 | 费用查询、对账、结算确认 | 财务部统一开通 |
 | 客户服务平台 | 客户/网点操作员 | 面单打印、运单查询 | 网点管理员分配 |
 
-### 配套工具/链接
+### 2.2 配套工具/链接
 
 - 官方系统登录入口：👉 [[https://jt.ztocc.com/app/#/dashboard](https://jt.ztocc.com/app/#/dashboard)]
 
-### 硬件与物料准备
+### 2.3 硬件与物料准备
 
 | **类别** | **物品** | **用途** | **规格要求** |
 |----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|
@@ -43,7 +43,7 @@ description: "冷链快递的操作说明。"
 | 设备 | PDA手持终端 | 扫码操作 | 安装鲸天APP/移动端 |
 | 设备 | 温度记录仪 | 干线温控 | 符合食品冷链运输标准 |
 
-## 操作入口
+## 三、操作入口
 
 根据不同冷链快递版本，操作入口如下：
 
@@ -56,9 +56,9 @@ description: "冷链快递的操作说明。"
 | 冷链快递2.0、3.0 网点审核/充值电子面单 | **中通冷链鲸天系统 → 商户电子面单账户管理**：[https://jt.ztocc.com/app/#/electronicFace/seller](https://jt.ztocc.com/app/#/electronicFace/seller) |
 | 冷链快递2.0、3.0 打印标准冷链快递面单 | **中通冷链客户服务平台**：[https://my.ztocc.com/#/login/Login](https://my.ztocc.com/#/login/Login) |
 
-## 操作步骤
+## 四、操作步骤
 
-### 冷链快递模式说明
+### 4.1 冷链快递模式说明
 
 | **模式** | **支持平台** | **客户订购快递公司** | **客户店铺后台展示单号** | **三方单号** |
 |--------------------------------------------------------|--------------------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------------------|--------------------------------------------------------------|
@@ -66,15 +66,15 @@ description: "冷链快递的操作说明。"
 | 冷链快递2.0 | 拼多多，快手，菜鸟 | 中通冷链 | 8开头单号 | 7开头单号 |
 | 冷链快递3.0 | 快手，拼多多 | 中通冷链 | 742开头单号 | 742开头单号 |
 
-### 核心业务逻辑
+### 4.2 核心业务逻辑
 
 冷链快递的核心逻辑为：**冷链段负责干线温度，快递段负责末端时效**。
 
 客户下单后，货物经冷链干线运输至末中心；末中心完成冷-快交接后，由三方快递网络完成末端配送。
 
-### 冷链快递1.0线上店铺下单流程（以淘宝为例）
+### 4.3 冷链快递1.0线上店铺下单流程（以淘宝为例）
 
-#### 订购电子面单
+#### (1) 订购电子面单
 
 1. 客户登录**淘宝卖家中心**。
 2. 进入**我的服务商 → 中通快递**。
@@ -87,7 +87,7 @@ description: "冷链快递的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/94a4da7c-cf46-4375-a86e-add1b2e84609.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=JSseL0Exb1BmLf6i%2BMDiaCkWIdY%3D "")
 
-#### 网点审核订购电子面单
+#### (2) 网点审核订购电子面单
 
 1. 网点登录**中通快递中天系统**：[https://www.zt-express.com/e-home](https://www.zt-express.com/e-home)。
 2. 进入**客户申请审核**。
@@ -95,7 +95,7 @@ description: "冷链快递的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/5378d5c0-9a8f-4ae2-9c78-9bc8665f336d.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=5dWtQCII4u4Rp9%2Fr2vlqrp649l4%3D "")
 
-#### 网点充值电子面单
+#### (3) 网点充值电子面单
 
 1. 客户通知网点充值电子面单。
 2. 网点进入**中天系统 → 客户信息管理**。
@@ -103,7 +103,7 @@ description: "冷链快递的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/b01ccb07-f3ff-4f2f-8ccc-c7f059a350b2.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=lbeB%2FENs3Uls0Za4ZNjjEIGbq8o%3D "")
 
-#### 客户下冷链快递单
+#### (4) 客户下冷链快递单
 
 1. 客户登录店铺后台，选择**待发货订单**；也可以使用其他打单软件。
 2. 打印快递单前，先打开**菜鸟打印组件**。
@@ -115,14 +115,14 @@ description: "冷链快递的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/010d9c1a-692f-4dd9-8706-294b72588743.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=ApGZb0t42ZgvzzZkPv45fgd9w1c%3D "")
 
-#### 客户打印标准冷链快递面单
+#### (5) 客户打印标准冷链快递面单
 
 1. 客户登录**中通冷链客户服务平台**：[https://my.ztocc.com/#/login/Login](https://my.ztocc.com/#/login/Login)。
 2. 打印**冷链快递面单**。
 
-### 冷链快递2.0、3.0线上店铺下单流程（以淘宝为例）
+### 4.4 冷链快递2.0、3.0线上店铺下单流程（以淘宝为例）
 
-#### 订购电子面单
+#### (1) 订购电子面单
 
 1. 客户登录**淘宝卖家中心**。
 2. 进入**我的服务商 → 中通冷链**。
@@ -135,7 +135,7 @@ description: "冷链快递的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/ca52922c-a92e-4363-b9b1-711320a78d15.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=h8uti5gDBqOWZddFxS73KZmOYVo%3D "")
 
-#### 中通冷链网点审核订购电子面单
+#### (2) 中通冷链网点审核订购电子面单
 
 1. 网点登录**中通冷链鲸天系统**：[https://jt.ztocc.com/app/#/electronicFace/seller](https://jt.ztocc.com/app/#/electronicFace/seller)。
 2. 进入**商户电子面单账户管理**。
@@ -143,7 +143,7 @@ description: "冷链快递的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/6a8e5e1f-c6df-42d0-a1a9-49f25fe17694.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=N09RVVwhDF61M1na3O%2F9Wvwi%2FWc%3D "")
 
-#### 网点充值电子面单
+#### (3) 网点充值电子面单
 
 1. 客户通知网点充值电子面单。
 2. 网点进入**鲸天系统 → 商户电子面单账户管理**。
@@ -151,7 +151,7 @@ description: "冷链快递的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/65ea8172-b43b-4649-9cf8-f7617adf274b.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=rcrvGijYmb6zq0BhsE8pNTnkuKk%3D "")
 
-#### 客户下冷链快递单
+#### (4) 客户下冷链快递单
 
 1. 客户登录店铺后台，选择**待发货订单**；也可以使用其他打单软件。
 2. 打印快递单前，先打开**菜鸟打印组件**。
@@ -163,12 +163,12 @@ description: "冷链快递的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/yBRq1ZPm2VW2QOdv/img/4d20a810-047b-47fb-8694-1b350ee3ece4.png?Expires=1783781655&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=dmTVb%2F5GOp931x6KBpdJ1KNb7Qw%3D "")
 
-#### 客户打印标准冷链快递面单
+#### (5) 客户打印标准冷链快递面单
 
 1. 客户登录**中通冷链客户服务平台**：[https://my.ztocc.com/#/login/Login](https://my.ztocc.com/#/login/Login)。
 2. 打印**冷链快递面单**。
 
-## 操作结果
+## 五、操作结果
 
 完成操作后，应达到以下结果：
 
@@ -180,7 +180,7 @@ description: "冷链快递的操作说明。"
    - **冷链快递2.0、3.0**：需到**客户服务平台**打印标准冷链快递面单。
 5. 后续货物按冷链快递流程流转：冷链干线运输至末中心，完成冷-快交接后由三方快递网络配送。
 
-## 注意事项
+## 六、注意事项
 
 ::: danger 重点提醒
 - **冷链快递1.0**：客户订购快递公司为**中通快递**，客户店铺后台展示单号为**7开头单号(除742开头)**，无三方单号。
@@ -195,9 +195,9 @@ description: "冷链快递的操作说明。"
 - 若提示电子面单余额不足，需网点充值并分配电子面单到具体电子面单账号。
 :::
 
-## 常见问题
+## 七、常见问题
 
-### 如何快速区分冷链快递1.0/2.0/3.0？
+### 7.1 如何快速区分冷链快递1.0/2.0/3.0？
 
 可优先通过运单号区分：
 
@@ -207,7 +207,7 @@ description: "冷链快递的操作说明。"
 | 冷链快递2.0 | 运单号为**8开头**，三方单号为**7开头** |
 | 冷链快递3.0 | 运单号为**742开头**，三方单号与运单号一致，均为**742开头** |
 
-### 如何打印冷链快递面单？
+### 7.2 如何打印冷链快递面单？
 
 可根据实际场景选择打印入口：
 
@@ -217,7 +217,7 @@ description: "冷链快递的操作说明。"
 | 鲸天系统 | **寄件运单管理**支持打印**冷链快递标准面单** |
 | 其他方式 | 冷链快递1.0可通过客户打单软件打印面单，但需要手写**云冷流向码** |
 
-### 常见异常如何处理？
+### 7.3 常见异常如何处理？
 
 | 序号 | ❌ 异常现象 / 报错提示 | 🔍 常见原因 | 🛠️ 解决方案 |
 |------|-------------------------------|-----------------|--------------------|

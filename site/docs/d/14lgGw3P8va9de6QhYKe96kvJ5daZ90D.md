@@ -5,17 +5,17 @@ description: "差重差方如何申报的操作说明。"
 
 # 差重差方如何申报
 
-## 适用场景
+## 一、适用场景
 
 本文适用于需要在系统中进行**差重差方申报**、查看**差重差方查询**、处理**差重差方申诉**的人员。
 
-## 前置条件
+## 二、前置条件
 
 1. 已具备进入**服务质量**相关菜单的账号权限。
 2. 流程节点人员可在操作环节查看对应数据。
 3. 非流程节点人员可查询查看全部数据。
 
-## 操作入口
+## 三、操作入口
 
 **操作入口**：**服务质量**
 
@@ -27,9 +27,9 @@ description: "差重差方如何申报的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/WgZOZw5AzyJdlLX8/img/3657c25c-bd9a-46a7-97b5-2b4f2ec5ca7a.png?Expires=1783781576&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=gPzMYaFmAKMGCbu%2FFK2qUWfcNWM%3D "")
 
-## 操作步骤
+## 四、操作步骤
 
-### 发布/申诉差重差方
+### 4.1 发布/申诉差重差方
 
 1. 进入**差重差方查询/申诉页**，点击**发布**。
 
@@ -67,7 +67,7 @@ description: "差重差方如何申报的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qe95P1Gk7qpj8/img/2ce58625-4aeb-4c31-bd23-593fb9d20cc5.png?Expires=1783781576&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=gwrnugk0ETwEjVmrHusZ98Ve8mg%3D "")
 
-### 查看待办消息通知
+### 4.2 查看待办消息通知
 
 以下场景会提醒处理网点（鲸天）：
 
@@ -75,14 +75,14 @@ description: "差重差方如何申报的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/KM7qe95P1Gk7qpj8/img/0567c959-9db1-44cc-b81d-15d3f3c96f58.png?Expires=1783781576&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=oNlVTgdMa%2Fqms1oQct5lixqtkYM%3D "")
 
-## 操作结果
+## 五、操作结果
 
 1. 发布后，系统会根据差异比例判断数据是否有影响。
 2. **有影响数据**流转至**差重差方申诉**，责任方可发起申诉至总部审核处理。
 3. **无影响数据**流转至**差重差方查询**，仅记录展示，无后续处理流程。
 4. 有新差重差方时，处理网点会收到**待办消息通知（鲸天）**。
 
-## 注意事项
+## 六、注意事项
 
 ::: warning 注意事项
 - 流程节点人员在操作节点查看数据；非流程节点人员可查询查看全部数据。

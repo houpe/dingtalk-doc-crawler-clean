@@ -3,9 +3,9 @@ title: "08-库内作业"
 description: "08-库内作业的操作说明。"
 ---
 
-# 08-库内作业
+# 库内作业
 
-## 适用场景
+## 一、适用场景
 
 本文适用于 WMS 库内作业全流程操作，包括：
 
@@ -16,7 +16,7 @@ description: "08-库内作业的操作说明。"
 - **加工单**：包括**组合套装**和**预包**。
 - **增值服务**：非标准化仓库附加服务，通常线下作业、线上登记。
 
-## 前置条件
+## 二、前置条件
 
 - **权限要求**：操作账号需具备仓库管理员相关权限。
 - **货主配置**：货主档案中需完成相关配置，例如开启**盘点调整允许**。
@@ -28,7 +28,7 @@ description: "08-库内作业的操作说明。"
   - PDA 端：用于**直接移库**、**移库下架/移库上架**、**补货任务执行**等操作。
 - **容器准备**：**移库下架/移库上架**和**补货任务**需使用容器中转，请提前编码容器并在系统中维护。
 
-## 操作入口
+## 三、操作入口
 
 各业务入口如下，具体以系统实际菜单路径为准：
 
@@ -45,7 +45,7 @@ description: "08-库内作业的操作说明。"
 | 加工单-预包 | **库内 -> 加工单 -> 预包** |
 | 增值服务 | **库内 -> 增值服务** |
 
-## 核心名词解释
+## 四、核心名词解释
 
 - **盘点开单**：创建一次盘点任务，选择盘点范围（库区/库位/SKU）和盘点方式（明盘/盲盘）。
 - **盈亏单据**：盘点差异（盘盈/盘亏）自动生成的差异单据，确认后产生调整单。
@@ -57,11 +57,11 @@ description: "08-库内作业的操作说明。"
 - **加工单**：将多品组合为新品的作业单据，运行后生成拣货任务，完工确认后新品上架。
 - **预包**：预先完成商品包装组合的加工方式，下游出库时可直接调用预包结果。
 
-## 操作步骤
+## 五、操作步骤
 
-### 盘点作业
+### 5.1 盘点作业
 
-#### 盘点流程总览
+#### (1) 盘点流程总览
 
 **操作入口**：**库内 -> 盘点计划**
 
@@ -84,7 +84,7 @@ description: "08-库内作业的操作说明。"
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/ea261a29-be53-4075-babc-4b3b7faa1f8c.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=HeVK6bdeQwrjwoVx04zVjO9Bdhw%3D "")
 
-#### 盘点开单
+#### (2) 盘点开单
 
 1. 进入**库内 -> 盘点计划**。
 2. 创建盘点单。
@@ -96,7 +96,7 @@ description: "08-库内作业的操作说明。"
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/bcca411b-d50b-4548-80aa-a74b41ab53b4.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Aub5%2BII12HF5XkSp5ilNWbNdr6k%3D "")
 
-#### 盘点任务
+#### (3) 盘点任务
 
 盘点开单后，系统会自动生成盘点任务。
 
@@ -120,7 +120,7 @@ description: "08-库内作业的操作说明。"
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/9df1dd3d-8b62-4663-9fad-33ad35c401fc.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=GlBcfXdS6SBjVLRk5LCNjcPS%2BVc%3D "")
 
-#### 盈亏单据
+#### (4) 盈亏单据
 
 盘点结果存在盘盈或盘亏差异时，系统会自动创建**盈亏单据**。
 
@@ -135,7 +135,7 @@ description: "08-库内作业的操作说明。"
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/94dd4f22-e492-48c3-b0fc-e74838a08da9.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=pDTkAxhrvAFYzgzTI7wGkUvC%2BB8%3D "")
 
-#### 调整单据
+#### (5) 调整单据
 
 已确认的盈亏单据会自动产生**调整单据**。
 
@@ -160,7 +160,7 @@ description: "08-库内作业的操作说明。"
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/0e5020fc-c8ea-45d4-b47b-99f3cee8b480.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Il0hBRSrtcUPwG4hRu98ICS%2FsCA%3D "")
 
-### PDA 直接移库
+### 5.2 PDA 直接移库
 
 **操作入口**：**PDA -> 直接移库**
 
@@ -174,13 +174,13 @@ description: "08-库内作业的操作说明。"
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/3c30a3b1-5027-4d68-8674-2a3057fbac27.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Ebq060lTORXJJfNQuC%2FMc91jX58%3D "")
 
-### PDA 移库下架与移库上架
+### 5.3 PDA 移库下架与移库上架
 
 **操作入口**：**PDA -> 移库下架 / 移库上架**
 
 该方式需要借助容器中转，适用于跨库区移库、批量移库或需要作业记录的场景。
 
-#### 移库下架
+#### (1) 移库下架
 
 1. 在 PDA 领取或创建移库任务。
 2. 扫描下架库位。
@@ -188,7 +188,7 @@ description: "08-库内作业的操作说明。"
 4. 扫描指定容器编码，将商品下架到容器。
 5. 确认后完成下架，商品进入容器。
 
-#### 移库上架
+#### (2) 移库上架
 
 1. 扫描容器编码。
 2. 确认容器中的商品。
@@ -202,7 +202,7 @@ PDA 移库补充截图：
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/5486207b-f9e5-499b-bc43-e4729096d18a.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=UjB97JekwzTZRsWkh0EK2ErN4KQ%3D "")
 
-### PC 移库
+### 5.4 PC 移库
 
 **操作入口**：**库内 -> PC-移库**
 
@@ -214,7 +214,7 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/6db7c444-5c94-40f0-9d82-0b7e92bc524c.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=HqPht%2FQNGrAQBGIZScb%2B%2BRlY%2FpY%3D "")
 
-### 补货作业
+### 5.5 补货作业
 
 补货用于在拣选区库存不足时，从存储区向拣选区补充库存。系统支持多种触发方式和操作入口。
 
@@ -229,7 +229,7 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 | 出库-缺货提醒、补货 | PDA-补货预警 | PDA 自动根据订单池、安全库存分析，自动生成补货预警，依据补货预警创建补货任务 |
 | 出库-缺货提醒、补货 | PDA-补货任务 | PDA领取并完成补货任务 |
 
-#### 补货预警
+#### (1) 补货预警
 
 **操作入口**：**库内 -> 补货预警**
 
@@ -244,7 +244,7 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/4f26ccde-4d8b-4522-8d05-40f9eafc2dd9.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=Wg70gwIGmnIHyMsvEoHrXOZbsXc%3D "")
 
-#### 补货任务
+#### (2) 补货任务
 
 **操作入口**：**库内 -> 补货任务**
 
@@ -279,7 +279,7 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/4cd4dad5-90ed-4d27-8663-1d4e16f2e0e9.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=%2BG6ojxvuuuVRW336mMcl%2F74s9so%3D "")
 
-### 库存状态调整
+### 5.6 库存状态调整
 
 **操作入口**：**库内 -> 库存状态调整**
 
@@ -300,7 +300,7 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/3c2d0ccb-f55e-43e8-b91b-53c151f457e5.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=rQIcxFDscXWnyOtdhl72p7LTo%2FQ%3D "")
 
-### 加工单-组合套装
+### 5.7 加工单组合套装
 
 **操作入口**：**库内 -> 加工单 -> 组合套装**
 
@@ -327,7 +327,7 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/73f68dab-8d28-40d5-9e46-663459c0aa9b.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=CReLr6Hw5EugXCN69hQUU1QWne4%3D "")
 
-### 加工单-预包
+### 5.8 加工单预包
 
 **操作入口**：**库内 -> 加工单 -> 预包**
 
@@ -351,7 +351,7 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 预包下架操作需将原材料移库下架到预包区，**必须有规定的下架数量**，系统会校验。
 :::
 
-### 增值服务
+### 5.9 增值服务
 
 **操作入口**：**库内 -> 增值服务**
 
@@ -383,7 +383,7 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 
 ![](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/NpQlK5jB090LjqDv/img/9fc090dd-180b-431b-bde9-a7734b1e4b6b.png?Expires=1783781706&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=iaBDrfN%2Bkn8lERF%2FRJ6EcQeFKQE%3D "")
 
-## 操作结果
+## 六、操作结果
 
 完成对应库内作业后，可看到以下结果：
 
@@ -394,7 +394,7 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 - **加工单**：原材料库存扣减，新品库存增加；可在**【库内-加工拣货】**查看进度。
 - **增值服务**：系统完成增值服务登记，便于后续追溯和计费。
 
-## 注意事项
+## 七、注意事项
 
 ::: danger 重点提醒
 - **盘点调整**需在货主档案中开启相关权限。
@@ -410,7 +410,7 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 - 增值服务流程个性化较强，具体作业方式需结合实际服务内容处理。
 :::
 
-## 常见异常与兜底方案
+## 八、常见异常与兜底方案
 
 | **序号** | **异常现象** | **常见原因** | **解决方案** |
 |----------|----------------|----------------|----------------|
@@ -421,17 +421,17 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 | 5 | 补货任务生成失败 | 存储区库存不足以补充；补货预警未触发 | 确认存储区库存数量；检查安全库存设置是否合理 |
 | 6 | 加工单运行失败 | 原材料库存不足；组合货品方案未维护 | 检查原材料库存；在【组合货品】页面确认方案已维护 |
 
-## 常见问题
+## 九、常见问题
 
-### Q1：盘点开单后可以修改盘点范围吗？
+### 9.1 Q1：盘点开单后可以修改盘点范围吗？
 
 **A**：盘点开单后一般不建议修改范围。如确实需要调整，可取消当前盘点计划，重新创建盘点单并选择正确的范围。
 
-### Q2：直接移库和移库下架上架有什么区别？
+### 9.2 Q2：直接移库和移库下架上架有什么区别？
 
 **A**：直接移库无需容器中转，适合单库位快速移库；移库下架上架需要借助容器中转，适合跨库区移库、批量移库或需要作业记录的正式移库场景。
 
-### Q3：补货分析什么时候会触发？
+### 9.3 Q3：补货分析什么时候会触发？
 
 **A**：补货分析在多个环节自动触发，包括：
 
@@ -442,18 +442,18 @@ PC 端支持批量创建移库计划，适用于大量库存的整体转移。PC
 
 可在**补货预警**页面统一查看和生成补货任务。
 
-### Q4：盘点产生亏损后库存何时修正？
+### 9.4 Q4：盘点产生亏损后库存何时修正？
 
 **A**：盘点差异生成盈亏单据后，点击**调整**产生调整单据；确认调整单据后，库存即时修正。所有调整记录都会进入**调整单据**统一管理，可追溯。
 
-### Q5：加工单（组合套装）与预包加工有什么区别？
+### 9.5 Q5：加工单（组合套装）与预包加工有什么区别？
 
 **A**：组合套装是正式加工流程，将多品组合为新 SKU，产生新品库存。预包加工是预先包装作业，为下游出库做备货准备，出库时可直接调用预包结果减少包装耗时。两者操作流程相同，区别在于业务目的和成品用途。
 
-### Q6：增值服务单如何操作？
+### 9.6 Q6：增值服务单如何操作？
 
 **A**：增值服务因需求个性化，目前以线下作业为主。在系统端创建增值服务单进行登记，记录服务内容、工时、耗材等信息，便于后续结算和追溯。具体操作流程根据服务类型单独设计。
 
-### Q7：库位库存调整后在哪里查看变更记录？
+### 9.7 Q7：库位库存调整后在哪里查看变更记录？
 
 **A**：所有库存调整，包括盘点调整、状态属性调整、效期自动调整等，均进入**【调整单据】**统一管理。确认后产生库存日志，可追溯每次变更的时间、操作人、变更前后状态。

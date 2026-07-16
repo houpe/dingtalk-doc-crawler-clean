@@ -1028,11 +1028,6 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
 
     _vp_copy_content(src_root, docs_dir)
 
-    # 生成 nodeId 稳定 URL：在 docs/d/ 下创建别名页（/d/<nodeId>），在 sidebar/config 之前
-    node_id_count = _create_node_id_pages(docs_dir, source_dir)
-    if node_id_count:
-        summary_line("nodeId 稳定 URL", f"{node_id_count} 篇 ✓")
-
     # 首页 index.md：仅在不存在时用 VP_INDEX_MD 模板创建（hero + features 首页）。
     # 已存在则保留（用户定制内容不被覆盖）。链接用占位符在构建时填充真实目录链接。
     index_md = docs_dir / "index.md"
@@ -1047,6 +1042,11 @@ def stage_vitepress(source_dir: Path, serve: bool = True, deploy: str | None = N
     n_changed = _number_all_docs(docs_dir)
     if n_changed:
         summary_line("标题自动编号", f"{n_changed} 篇 ✓")
+
+    # 生成 nodeId 稳定 URL：在编号之后创建别名页，这样复制的是已编号的原文件。
+    node_id_count = _create_node_id_pages(docs_dir, source_dir)
+    if node_id_count:
+        summary_line("nodeId 稳定 URL", f"{node_id_count} 篇 ✓")
 
     # 防御：清理可能残留的 .js 配置文件。
     # VitePress 会优先加载 config.js / sidebar-data.js（而非 .mts/.mjs），

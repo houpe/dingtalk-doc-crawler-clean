@@ -3,9 +3,9 @@ title: "大客户-个人下单"
 description: "大客户-个人下单的操作说明。"
 ---
 
-# 大客户-个人下单
+# 大客户个人下单
 
-## 适用场景
+## 一、适用场景
 
 本文适用于中通冷链运营人员、合作大客户，通过 **鲸天系统**、**中通冷链客户服务平台**、**中通冷链微信小程序** 完成大客户个人下单相关操作。
 
@@ -18,7 +18,7 @@ description: "大客户-个人下单的操作说明。"
 - 微信小程序下单、查件、订单跟踪
 - 查询订单、物流轨迹、打印日志、回单状态等信息
 
-## 前置条件
+## 二、前置条件
 
 1. **账号与权限**
    - 已拥有 **鲸天系统**、**中通冷链客户服务平台** 的登录账号。
@@ -40,7 +40,7 @@ description: "大客户-个人下单的操作说明。"
    - 客户服务平台入口：**中通冷链官网客户端**
    - 小程序入口：微信搜索 **「中通冷链」**
 
-## 操作入口
+## 三、操作入口
 
 - **鲸天系统 > 经营管理中心 > 商户电子面单账户管理**
 - **鲸天系统 > 经营管理中心 > 电子面单申购**
@@ -49,20 +49,20 @@ description: "大客户-个人下单的操作说明。"
 - **中通冷链客户服务平台 > 基础配置 > 电子面单账户管理**
 - 微信搜索 **「中通冷链」** 小程序
 
-## 名词解释
+## 四、名词解释
 
 - **电子面单账户**：客户在系统内用于绑定、使用冷链电子运单的专属账户。下单、打印面单需依赖该账户。
 - **客户主单**：大客户统一申购的基础电子面单额度。完成主单申购后，才可给对应客户账户充值面单。
 - **批量导入下单**：针对大量订单，通过 Excel 模板批量上传完成下单，**单次最多支持 500 条订单**。
 - **待处理订单**：已提交或导入，但未完成下单、打印的订单，可执行 **仅下单**、**下单并打印** 操作。
 
-## 操作步骤
+## 五、操作步骤
 
-### 电子面单账户新增与管理
+### 5.1 电子面单账户新增与管理
 
 操作路径：**鲸天系统 > 经营管理中心 > 商户电子面单账户管理**
 
-#### 绑定现有客户电子面单账户
+#### (1) 绑定现有客户电子面单账户
 
 1. 进入 **商户电子面单账户管理** 页面。
 2. 根据 **商家ID** 或客户信息检索客户。
@@ -74,7 +74,7 @@ description: "大客户-个人下单的操作说明。"
 单个客户可绑定多个电子面单账户，客户手机号可与开户手机号不一致。
 :::
 
-#### 绑定其他客户
+#### (2) 绑定其他客户
 
 1. 输入 **商家ID**、**客户名称/手机号** 查询客户信息。
 2. 选中目标客户。
@@ -82,7 +82,7 @@ description: "大客户-个人下单的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/a2d2990a-18d6-43d5-896d-a8d8c540253a.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=p0D145SA7Skjcr0FkHLFK5JEm8Q%3D "")
 
-#### 创建新客户和电子面单账户
+#### (3) 创建新客户和电子面单账户
 
 1. 在页面选择 **【创建新客户】**。
 2. 填写客户基础资料。
@@ -90,7 +90,7 @@ description: "大客户-个人下单的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/4a4792d7-9a0d-4e4e-92d9-e1eb28e73eda.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=2EVyePwIL1syaLwyeBlmH9nCeAs%3D "")
 
-### 申购客户主单
+### 5.2 申购客户主单
 
 操作路径：**鲸天系统 > 经营管理中心 > 电子面单申购**
 
@@ -104,7 +104,7 @@ description: "大客户-个人下单的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/4b4e9744-58ad-4515-bdca-c9fd44efa606.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=QL%2F2CqZu%2F6mIGT6e3Cdxkx6vtY0%3D "")
 
-### 电子面单账户充值
+### 5.3 电子面单账户充值
 
 操作路径：**鲸天系统 > 经营管理中心 > 商户电子面单账户**
 
@@ -119,13 +119,13 @@ description: "大客户-个人下单的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/5b3474c9-25ba-4a82-b345-89c64a374bff.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=TBV5ISj7Is3u3ItdFEKILZ7q1IA%3D "")
 
-### 多端绑定电子面单账户
+### 5.4 多端绑定电子面单账户
 
 ::: danger 重点提醒
 绑定前需从线下网点获取 **客户编码**、**客户密钥**。未绑定账户可能无法正常下单。
 :::
 
-#### 客户服务平台绑定
+#### (1) 客户服务平台绑定
 
 1. 登录 **客户服务平台**。
 2. 进入 **【基础配置】>【电子面单账户管理】**。
@@ -135,7 +135,7 @@ description: "大客户-个人下单的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/256a6fc8-ff49-43b0-b840-bc029a1c23f0.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=260uapzY3d0PGV514bss3uvB8Bo%3D "")
 
-#### 微信小程序绑定
+#### (2) 微信小程序绑定
 
 1. 微信搜索进入 **「中通冷链」** 小程序。
 2. 进入 **【电子面单账户管理】**。
@@ -145,13 +145,13 @@ description: "大客户-个人下单的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/93a1085c-1c8c-4896-8e8a-73cd74127313.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=fi2zA4XdB%2Bfg5Kcq4xPZVajttKk%3D "")![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/10a1d4ae-09c9-4642-b384-b60efc0e2ffc.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=2c8nbXUoCSnrmr6Ikh07XNLaM18%3D "")
 
-### 客户服务平台大客户下单
+### 5.5 客户服务平台大客户下单
 
 操作路径：**中通冷链客户服务平台 > 首页 > 大客户下单**
 
 页面模块包括：**新增下单**、**批量导入**、**待处理**、**已处理**、**全部订单**。
 
-#### 单个订单下单
+#### (1) 单个订单下单
 
 1. 进入 **【新增下单】**。
 2. 填写寄件人、收件人信息，可选择以下方式：
@@ -192,7 +192,7 @@ description: "大客户-个人下单的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/6cc96c78-29d5-4fb1-a28e-c5d947741c51.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=T9iRKQLZLSyiZhDwnytY14ZsbTc%3D "")
 
-#### 批量导入订单
+#### (2) 批量导入订单
 
 适用场景：订单数量较多，需要批量统一处理。
 
@@ -216,7 +216,7 @@ description: "大客户-个人下单的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/b45ea771-0598-43d8-8a9b-709de528e681.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=AFZGEHPQE8FjlZ%2FHq9fW7P6ncGg%3D "")
 
-#### 待处理订单操作
+#### (3) 待处理订单操作
 
 批量导入或单个下单保存后的订单，会进入 **【待处理】** 列表。
 
@@ -245,7 +245,7 @@ description: "大客户-个人下单的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/0ff80c31-da4d-4f2e-9eda-b47a6ad5cab6.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=8IlBoHLjMnMYEUZ9w%2FLlUiB5uTk%3D "")
 
-#### 已处理订单操作
+#### (4) 已处理订单操作
 
 1. 进入 **【已处理】** 列表。
 2. 查看所有已下单订单的打印状态、运单号、费用等信息。
@@ -257,7 +257,7 @@ description: "大客户-个人下单的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/c63b3770-eb2e-4706-90ce-f869db97c31f.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=hbutf5g%2BODMrzN%2BoSYg%2BwxqclCE%3D "")
 
-#### 全部订单与查询
+#### (5) 全部订单与查询
 
 1. 点击 **【全部订单】**，跳转至 **【物流跟踪-订单查询】**。
 2. 可查看 **订单基础信息**、**实时物流轨迹**、**回单状态**、**打印日志**。
@@ -269,7 +269,7 @@ description: "大客户-个人下单的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/351fcdaa-677a-4f47-993d-858d07125b5c.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=zf0Fr6y%2BxDyT3RjQNOzSkqVTeBo%3D "")
 
-### 中通冷链微信小程序下单
+### 5.6 中通冷链微信小程序下单
 
 1. 微信搜索 **「中通冷链」** 小程序。
 2. 使用手机号登录。
@@ -298,7 +298,7 @@ description: "大客户-个人下单的操作说明。"
 
 ![image.png](https://alidocs2.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnA3jZX8D14OXo/img/697bc7ce-76c4-4805-ac1f-afd723b85198.png?Expires=1783781514&OSSAccessKeyId=LTAI5tKTjg4Kq1HCdBJ8qpSp&Signature=obZrrNhd76v%2Bf%2FVihNt%2Bz3KxV%2Bg%3D "")
 
-## 操作结果
+## 六、操作结果
 
 完成以上操作后，可获得以下结果：
 
@@ -309,7 +309,7 @@ description: "大客户-个人下单的操作说明。"
 - 已完成下单的订单进入 **【已处理】** 列表，并可查看运单号、费用、打印状态等信息。
 - 可通过 **【全部订单】** 或小程序 **【查件】** 查看订单状态、物流轨迹、回单状态、打印日志等信息。
 
-## 注意事项
+## 七、注意事项
 
 ::: danger 重点提醒
 - **必须先申购客户主单，才能为客户电子面单账户充值。**
@@ -325,9 +325,9 @@ description: "大客户-个人下单的操作说明。"
 - 如提示未检测到打印组件，需点击页面 **【下载组件】** 安装，安装后刷新页面重试。
 :::
 
-## 常见问题
+## 八、常见问题
 
-### 常见异常与处理方案
+### 8.1 常见异常与处理方案
 
 | 序号 | ❌ 异常现象 / 报错提示 | 🔍 常见原因 | 🛠️ 解决方案 |
 |------|-------------------------------|-----------------|--------------------|
@@ -337,26 +337,26 @@ description: "大客户-个人下单的操作说明。"
 | 4 | 无法绑定电子面单账户 | 客户编码、密钥填写错误，或账户未开通 | 1. 联系线下网点核对正确的编码与密钥；2. 确认账户已正常开通 |
 | 5 | 找不到目标客户/商家ID | 账号权限不足、信息输入错误 | 1. 核对商家ID、手机号、客户名称；2. 联系管理员补充查询权限 |
 
-### 为什么申购完主单，还是无法给客户账户充值？
+### 8.2 为什么申购完主单，还是无法给客户账户充值？
 
 电子面单申购存在审核流程，需等待状态变为 **「审核通过」** 后，再执行充值操作。
 
-### 小程序和电脑端的订单数据是否互通？
+### 8.3 小程序和电脑端的订单数据是否互通？
 
 数据完全互通，两端均可查询订单、物流轨迹与打印记录。
 
-### 批量导入订单有数量限制吗？
+### 8.4 批量导入订单有数量限制吗？
 
 有。单次批量导入最多支持 **500 条订单**，超出数量请分多次上传。
 
-### 面单打印失败后，如何重新打印？
+### 8.5 面单打印失败后，如何重新打印？
 
 进入 **【已处理】** 订单列表，选中打印失败的订单，重新选择模板和打印机后再次打印即可。
 
-### 忘记客户编码和密钥该如何处理？
+### 8.6 忘记客户编码和密钥该如何处理？
 
 直接联系为您开通电子面单的线下网点工作人员查询。
 
-### 客户可自主下单的方式有哪些？
+### 8.7 客户可自主下单的方式有哪些？
 
 客户可通过 **中通冷链小程序**、**客户服务平台 PC 端**、**扫码下单小程序** 自主下单。
