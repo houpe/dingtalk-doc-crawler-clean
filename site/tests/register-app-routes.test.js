@@ -42,10 +42,14 @@ function createStaticSiteFixture(t) {
   const distDir = join(cwd, 'docs', '.vitepress', 'dist');
 
   mkdirSync(join(distDir, 'guide'), { recursive: true });
+  // /d/{nodeId} 稳定 URL 产物：dist/d/ 下无扩展名的 HTML 文件（由 express.static + extensions 兜底）。
+  mkdirSync(join(distDir, 'd'), { recursive: true });
   writeFileSync(join(distDir, 'index.html'), '<!doctype html><title>ROOT</title>ROOT');
   writeFileSync(join(distDir, '404.html'), '<!doctype html><title>NOT FOUND</title>NOT FOUND');
   writeFileSync(join(distDir, 'guide', 'index.html'), '<!doctype html><title>GUIDE</title>GUIDE');
   writeFileSync(join(distDir, 'guide', 'topic.html'), '<!doctype html><title>TOPIC</title>TOPIC');
+  // /d/{nodeId} 产物：<nodeId>.html（与线上 dist/d/ 一致，靠 express.static extensions 补全 clean URL）。
+  writeFileSync(join(distDir, 'd', 'SECRETDOC001.html'), '<!doctype html><title>SECRET</title>SECRET-DOC-BODY');
 
   t.after(() => rmSync(cwd, { recursive: true, force: true }));
 
@@ -197,4 +201,60 @@ test('legacy editor build endpoint returns conflict when another task holds the 
 
   assert.equal(response.status, 409);
   assert.deepEqual(response.body, { error: '已有任务正在运行' });
+});
+
+// 回归：路径穿越绕过鉴权（安全工单：/api/../d/{nodeId} 可读受保护文档）。
+test('registerAppRoutes blocks path-traversal bypass of /d/* auth (raw ..)', async (t) => {
+  const app = createTestApp({ cwd: createStaticSiteFixture(t), user: TEST_USER });
+
+  // supertest 默认会规范化 URL，需用底层 http 以原始路径发送，模拟 curl --path-as-is。
+  const addr = app.listen(0).address();
+  const http = await import('node:http');
+
+  await new Promise((resolve) => {
+    const req = http.request(
+      { host: '127.0.0.1', port: addr.port, path: '/api/../d/SECRETDOC001', method: 'GET' },
+      (res) => {
+        let body = '';
+        res.on('data', (c) => (body += c));
+        res.on('end', () => {
+          assert.equal(res.statusCode, 400);
+          assert.doesNotMatch(body, /SECRET-DOC-BODY/);
+          resolve();
+        });
+      },
+    );
+    req.end();
+  });
+});
+
+test('registerAppRoutes blocks path-traversal bypass of /d/* auth (encoded %2e)', async (t) => {
+  const app = createTestApp({ cwd: createStaticSiteFixture(t), user: TEST_USER });
+  const addr = app.listen(0).address();
+  const http = await import('node:http');
+
+  await new Promise((resolve) => {
+    const req = http.request(
+      { host: '127.0.0.1', port: addr.port, path: '/api/%2e%2e/d/SECRETDOC001', method: 'GET' },
+      (res) => {
+        let body = '';
+        res.on('data', (c) => (body += c));
+        res.on('end', () => {
+          assert.equal(res.statusCode, 400);
+          assert.doesNotMatch(body, /SECRET-DOC-BODY/);
+          resolve();
+        });
+      },
+    );
+    req.end();
+  });
+});
+
+test('registerAppRoutes serves /d/{nodeId} for authenticated users', async (t) => {
+  const app = createTestApp({ cwd: createStaticSiteFixture(t), user: TEST_USER });
+
+  const response = await request(app).get('/d/SECRETDOC001');
+
+  assert.equal(response.status, 200);
+  assert.match(response.text, /SECRET-DOC-BODY/);
 });

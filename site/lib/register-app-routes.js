@@ -10,6 +10,50 @@ import { createTaskRunner } from './task-runner.js';
 import { createDingtalk } from './dingtalk.js';
 import { createAuthRouter } from './auth-routes.js';
 
+// 取请求路径（不含 query），并 URL 解码。用于鉴权前缀判断——必须用规范化后的路径，
+// 不能用原始 req.url：原始 req.url 不归一化 ".."，攻击者用 /api/../d/x 会骗过前缀判断。
+// 解码失败（畸形 % 序列）回退到原始 pathname，再由下方 rejectPathTraversal 兜底拒绝。
+function getRequestPath(req) {
+  const raw = req.path || '';
+  let decoded;
+  try {
+    decoded = decodeURIComponent(raw);
+  } catch {
+    decoded = raw;
+  }
+  return decoded;
+}
+
+// 判断是否以 /api/ 开头。基于规范化、解码后的路径，并对 ".." 做二次防御：
+// 解码后若含 ".." 视为非法，一律不当作 /api/ 放行（由前置中间件直接 400 拦截）。
+function requestPathIsApi(req) {
+  const path = getRequestPath(req);
+  if (path.includes('..')) {
+    return false;
+  }
+  return path.startsWith('/api/');
+}
+
+// 路径穿越拦截：对原始 URL 与解码后路径双向检测 ".."。
+// Express 在路由匹配前不归一化 req.url，而 express.static 内部会归一化，
+// 两者不一致导致 /api/../d/{nodeId} 骗过前缀判断却被 static 当作 /d/{nodeId} 命中文件（鉴权绕过）。
+// 在最前面统一拒绝任何含 ".."（含编码变体 %2e/%2E）的请求，彻底堵死穿越。
+function rejectPathTraversal(req, res, next) {
+  const rawPath = (req.path || '').split('?')[0];
+  let decoded;
+  try {
+    decoded = decodeURIComponent(rawPath);
+  } catch {
+    decoded = rawPath;
+  }
+
+  if (rawPath.includes('..') || decoded.includes('..')) {
+    return res.status(400).type('text/plain').send('非法路径');
+  }
+
+  next();
+}
+
 function buildLoginRedirect(config, req) {
   const originalUrl = req.originalUrl || req.url || '/';
   const separator = config.authLoginUrl.includes('?') ? '&' : '?';
@@ -235,6 +279,11 @@ export function registerAppRoutes(
     : null;
   app.use(createAuthRouter(config, dingtalk));
 
+  // 路径穿越拦截（鉴权绕过主修复）：必须在所有路由/静态服务之前。
+  // 拒绝任何含 ".."（含 %2e 编码变体）的请求，防止 /api/../d/{nodeId} 骗过
+  // /api/ 前缀判断后被 express.static 归一化命中受保护文档。
+  app.use(rejectPathTraversal);
+
   app.use(
     '/admin-static',
     requireLocalOnly,
@@ -375,7 +424,7 @@ export function registerAppRoutes(
   });
 
   app.use((req, res, next) => {
-    if (req.url.startsWith('/api/')) {
+    if (requestPathIsApi(req)) {
       return next();
     }
 
@@ -386,7 +435,7 @@ export function registerAppRoutes(
   // 在静态中间件前去掉末尾斜杠，交给 express.static 的 extensions 补 .html，
   // 否则 /foo/ 会被当作目录请求而 404。
   app.use((req, res, next) => {
-    if (req.method === 'GET' && !req.url.startsWith('/api/')) {
+    if (req.method === 'GET' && !requestPathIsApi(req)) {
       const qi = req.url.indexOf('?');
       const path = qi === -1 ? req.url : req.url.slice(0, qi);
       const query = qi === -1 ? '' : req.url.slice(qi);
@@ -431,7 +480,7 @@ export function registerAppRoutes(
   );
 
   app.use('*', (req, res, next) => {
-    if (req.url.startsWith('/api/')) {
+    if (requestPathIsApi(req)) {
       return next();
     }
 
