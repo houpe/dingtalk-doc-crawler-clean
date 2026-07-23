@@ -145,7 +145,9 @@ Stage 4 不仅构建静态站，还会生成：
 
 ### help.beta.ztocc.com（Node 鉴权 + 静态）
 
-前面有一层 Node 钉钉鉴权服务（pm2 进程 `docs-auth`，监听 `127.0.0.1:4000`），nginx 全量 proxy_pass 到它。更新文档内容仍用 tar+scp 更新 `/www/wwwroot/help.beta.ztocc.com`（Node 通过 `DOCS_DIST_DIR` 实时读取，无需重启）；更新鉴权代码则 rsync 到 `/root/docs-site/` 后 `pm2 restart docs-auth`。
+部署在服务器 `root@121.199.175.111`（阿里云，注意与上节 wiki 站的 `42.192.205.206` 不是同一台）。前面有一层 Node 钉钉鉴权服务（pm2 进程 `docs-auth`，监听 `127.0.0.1:4000`），nginx 全量 proxy_pass 到它。更新文档内容仍用 tar+scp 更新 `/www/wwwroot/help.beta.ztocc.com`（Node 通过 `DOCS_DIST_DIR` 实时读取，无需重启）；更新鉴权代码则 rsync 到 `/root/docs-site/` 后 `pm2 restart docs-auth`。
+
+nginx conf 已纳入仓库：`deploy/nginx/help.beta.ztocc.com.conf`（含路径穿越拦截，与应用层 `rejectPathTraversal` 形成纵深防御）。
 
 详见 **[docs/钉钉鉴权部署说明.md](docs/钉钉鉴权部署说明.md)** 和 **[docs/site-docs-生成部署说明.md](docs/site-docs-生成部署说明.md)**。
 
